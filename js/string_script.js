@@ -35,12 +35,12 @@ console.log(fullName.length);*/
 
 //--------------
 
-let str = 'xxx';
-/*let txt = 'aaa ' + str + ' bbb';*/
+/*let str = 'xxx';
+/!*let txt = 'aaa ' + str + ' bbb';*!/
 //or
 let txt = `aaa ${str} bbb`;
 
-console.log(txt, str);
+console.log(txt, str);*/
 
 //--------------
 
@@ -57,5 +57,7 @@ b
 c`;
 
 console.log(str);*/
+
+//--------------
 
 
