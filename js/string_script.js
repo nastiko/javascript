@@ -60,4 +60,27 @@ console.log(str);*/
 
 //--------------
 
+/*let str = 'abcde';// finding exactly symbol inside element's string
+let numFirstString = 1;
+let numSecondString = 2;
+let numThirdString = 3;
+
+console.log(str[numFirstString], str[numSecondString], str[numThirdString]);*/
+
+//--------------
+
+let str = 'abcde';
+
+let FifthString = 4;
+let FourthString = 3;
+let ThirdString = 2;
+let SecondString = 1;
+let FirstString = 0;
+
+console.log(str[FifthString] + str[FourthString] + str[ThirdString] + str[SecondString] + str[FirstString]);
+
+
+
+
+
 
