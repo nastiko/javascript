@@ -69,7 +69,7 @@ console.log(str[numFirstString], str[numSecondString], str[numThirdString]);*/
 
 //--------------
 
-let str = 'abcde';
+/*let str = 'abcde';
 
 let FifthString = 4;
 let FourthString = 3;
@@ -77,7 +77,23 @@ let ThirdString = 2;
 let SecondString = 1;
 let FirstString = 0;
 
-console.log(str[FifthString] + str[FourthString] + str[ThirdString] + str[SecondString] + str[FirstString]);
+console.log(str[FifthString] + str[FourthString] + str[ThirdString] + str[SecondString] + str[FirstString]);*/
+
+//--------------
+/*let str = 'gsjrygefvngf'; //find the last symbol
+let lastSymbol = str.length - 1;
+console.log(str[lastSymbol]);*/
+
+//--------------
+/*let str = 'gsjrygefvngf';
+let secondToLast = str.length - 2;
+console.log(str[secondToLast]);*/
+
+//--------------
+let str = 'gsjrygefvngf';
+let thirdToLast = str.length - 3;
+console.log(str[thirdToLast]);
+
 
 
 
