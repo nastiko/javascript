@@ -90,9 +90,22 @@ let secondToLast = str.length - 2;
 console.log(str[secondToLast]);*/
 
 //--------------
-let str = 'gsjrygefvngf';
+
+/*let str = 'gsjrygefvngf';
 let thirdToLast = str.length - 3;
-console.log(str[thirdToLast]);
+console.log(str[thirdToLast]);*/
+
+//--------------
+
+/*let name = prompt('What\'s your name?');
+alert('Your name is ' + name);*/
+
+/*alert('You are ' + prompt('How old are you?'));*/
+
+//--------------
+//--------------
+//--------------
+//--------------
 
 
 

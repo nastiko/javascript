@@ -127,10 +127,15 @@ console.log(num);*/
 
 //---------------
 
-let a = 0.584 * 0.2;
-console.log(a.toFixed(3));
+/*let a = 0.584 * 0.2;
+console.log(a.toFixed(3));*/
 
 //---------------
+
+/*let firstNum  = prompt('What\'s your the first number?');
+let secondNum = prompt ('What\'s is your the second number?');
+
+console.log(Number(firstNum) + Number(secondNum));*/
 
 
 
