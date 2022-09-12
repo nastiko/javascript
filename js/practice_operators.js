@@ -72,10 +72,10 @@ console.log(areaTriangle);*/
 
 //convert Celsius in Fahrenheit
 
-let temperatureCelsius = prompt('Write the number');
+/*let temperatureCelsius = prompt('Write the number');
 
 let temperatureFahrenheit = (temperatureCelsius * 9) / 5 + 32;
-console.log(temperatureFahrenheit);
+console.log(temperatureFahrenheit);*/
 
 //--------------
 //--------------
