@@ -92,19 +92,90 @@ console.log(obj[key]);*/
 
 //--------------
 
-let obj = {x: 1, y: 2, z: 3};
-console.log(obj['x']);
+/*let obj = {x: 1, y: 2, z: 3};
+console.log(obj['x']);*/
 
 //--------------
 
 /*let obj = {x: 1, y: 2, z: 3};
 let key = 'x';
+
 console.log(obj[key]);*/
 
 //--------------
+
+/*let obj = {x: 1, y: 2, z: 3};
+
+let prop = 'x';
+console.log(obj[prop]);*/
+
 //--------------
+
+/*/!*let obj = {a:1, b:2, c:3};*!/
+let key = 'a';
+
+/!*let obj = {[key]:1, b:2, c:3};*!/
+let obj = {[key + '1']:1, [key + '2']:2, [key + '3']:3};
+
+console.log(obj);*/
+
 //--------------
+
+/*let key = 'x';
+
+let obj = {
+    [key]: 1,
+    y: 2,
+    z: 3
+};
+
+console.log(obj);*/
+
 //--------------
+
+/*let obj = {
+    x: 1,
+    y: 2,
+    z: 3
+};*/
+
+/*let key1 = 'x';
+let key2 = 'y';
+let key3 = 'z';
+
+let obj = {
+    [key1]: 1,
+    [key2]: 2,
+    [key3]: 3,
+}
+
+console.log(obj);*/
+
 //--------------
+
+/*let obj = {
+    a:1,
+    b:2,
+    c:3
+}
+
+console.log('d' in obj);*/
+
 //--------------
+
+/*let obj = {x: 1, y: 2, z: 3};
+delete obj.x;
+
+console.log('x' in obj);*/
+
+//--------------
+
+let obj = {x: 1, y: 2, z: 3};
+let sum = obj['x'] + obj['y'] + obj['x'];
+
+console.log(sum);
+
+//--------------
+
+
 
