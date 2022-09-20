@@ -170,12 +170,16 @@ console.log('x' in obj);*/
 
 //--------------
 
-let obj = {x: 1, y: 2, z: 3};
+/*let obj = {x: 1, y: 2, z: 3};
 let sum = obj['x'] + obj['y'] + obj['x'];
 
-console.log(sum);
+console.log(sum);*/
 
 //--------------
 
+/*let obj = {x: 1, y: 2, z: 3};
+console.log(Object.keys(obj).length);*/
+
+//--------------
 
 
