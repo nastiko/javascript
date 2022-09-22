@@ -576,7 +576,7 @@ console.log(sum);*/
 
 //--------------
 
-let num = 245731;
+/*let num = 245731;
 let str = String(num);
 
 let firstSum = Number(str[0]) + Number(str[1]) + Number(str[2]);
@@ -586,7 +586,7 @@ if (firstSum === secondSum) {
     console.log('Yes');
 } else {
     console.log('No');
-}
+}*/
 
 
 
