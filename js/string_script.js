@@ -103,9 +103,7 @@ alert('Your name is ' + name);*/
 /*alert('You are ' + prompt('How old are you?'));*/
 
 //--------------
-//--------------
-//--------------
-//--------------
+
 
 
 
