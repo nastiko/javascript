@@ -459,8 +459,68 @@ function loopsBreak4() {
 
 //loopsBreak2();
 //loopsBreak3();
-loopsBreak4();
+//loopsBreak4();
 
+//--------------
+
+function loopContinue() {
+    let arr = [52, 32, 11, 4, 78, 69, 33, 128, 957, 653, 176, 435, 819];
+
+    for(let elem of arr) {
+        let result;
+
+        if (elem % 2 === 0 ) {
+           result = elem ** 2;
+        } else if (elem % 3 === 0) {
+            result = Math.pow(elem, 3);
+        } else {
+            continue;
+        }
+        console.log(result);
+    }
+}
+
+//loopContinue();
+
+//--------------
+
+function loopsNested1() {
+    for(let i = 1; i <=9; i++) {
+        for(let j=1; j <= 3; j++) {
+            console.log(i);
+        }
+    }
+}
+
+//--------------
+
+function loopsNested2() {
+    for(let i = 1; i <=3; i++) {
+        for(let j = 1; j <= 3; j++) {
+            console.log(i+''+j);
+        }
+    }
+}
+
+//loopsNested1();
+//loopsNested2();
+
+//--------------
+
+
+//--------------
+//--------------
+//--------------
+//--------------
+//--------------
+//--------------
+//--------------
+//--------------
+//--------------
+//--------------
+//--------------
+//--------------
+//--------------
 //--------------
 //--------------
 //--------------
