@@ -57,7 +57,7 @@ while(i <= 99) {
 
 /*let i = 10;
 
-while(i <=32) {
+while(i <= 32) {
     i ++;
     console.log(i);
 }*/
@@ -351,7 +351,7 @@ for(let i = 10; i <= 1000; i++) {
 
 //--------------
 
-/*for(let i = 10; i <=1000; i++) {
+/*for(let i = 10; i <= 1000; i++) {
     let str = String(i);
     let firstNumber = Number(str[0]);
     let secondNumber = Number(str[1]);
@@ -492,6 +492,8 @@ function loopsNested1() {
     }
 }
 
+//loopsNested1();
+
 //--------------
 
 function loopsNested2() {
@@ -502,18 +504,136 @@ function loopsNested2() {
     }
 }
 
-//loopsNested1();
 //loopsNested2();
 
 //--------------
 
+function arraysFilling1() {
+    let arr = [];
+
+    for(let i = 1; i <= 10; i++) {
+        arr.push(i);
+    }
+
+    console.log(arr);
+}
+
+//arraysFilling1();
 
 //--------------
+
+function arraysFilling2() {
+    let arr = [];
+
+    for(let i = 1; i <= 10; i++) {
+        arr.push('x');
+    }
+    console.log(arr);
+}
+
+//arraysFilling2();
+
 //--------------
+
+function arraysFilling3() {
+    let arr = [1,23,523,213,90,845,289,211,98,4,15,98,140,431,436,881,671,671];
+    let newArr = [];
+
+    for(let i = 0; i <= arr.length; i++) {
+        if (arr[i] % 2 === 0) {
+            newArr.push(arr[i]);
+        }
+    }
+    console.log(newArr);
+}
+
+//arraysFilling3();
+
 //--------------
+
+function arraysChanging1() {
+    let arr = [1,23,523,213,90,845,289,211,98,4,15,98,140,431,436,881,671,671];
+    for(let i = 0; i < arr.length; i++) {
+        arr[i] = arr[i]**2;
+    }
+    console.log(arr);
+}
+
+//arraysChanging1();
+
 //--------------
+
+function arraysChanging2() {
+    let arr = [671,999,17,269,254,453,290,57,198,701,764,260,774,336,190,90,126,99,134,77,90,211,198,9,199,211,900,211];
+    for(let i = 0; i < arr.length; i++) {
+        arr[i]--;
+    }
+    console.log(arr);
+}
+
+//arraysChanging2();
+
 //--------------
+
+function arraysChanging3() {
+    let arr = [289,211,98,4,15,98,140,431,436];
+    for(let i = 0; i < arr.length; i++) {
+        arr[i]+=10;
+    }
+    console.log(arr);
+}
+
+//arraysChanging3();
+
 //--------------
+
+function objectsFilling1() {
+    let arr1 = ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'San', 'Sun'];
+    let arr2 = [1, 2, 3, 4, 5, 6, 7];
+
+    let obj = {};
+
+    for(let i = 0; i < arr2.length; i++) {
+        let key = arr1[i];
+        obj[key] = arr2[i];
+    }
+
+    console.log(obj);
+}
+
+//objectsFilling1();
+
+//--------------
+
+function objectsFillings2() {
+    let obj = {a: 1, b: 2, c: 3, d: 4, e: 5};
+
+    for(let key in obj) {
+        if(obj[key] % 2 === 0) {
+            console.log(key + ':' + obj[key]);
+        }
+    }
+}
+
+//objectsFillings2();
+
+//--------------
+
+function objectsFillings3() {
+    let obj = {a: 1, b: 2, c: 3, d: 4, e: 5};
+    let newObj = {};
+
+
+    for(let key in obj) {
+        let newKey = obj[key];
+        newObj[newKey] = key;
+    }
+
+    console.log(newObj);
+}
+
+//objectsFillings3();
+
 //--------------
 //--------------
 //--------------
