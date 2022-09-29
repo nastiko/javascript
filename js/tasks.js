@@ -63,7 +63,7 @@ function repeatNumbers() {
     console.log(num+' -> '+cnt);
 }
 
-repeatNumbers();
+//repeatNumbers();
 
 //--------------
 //--------------

@@ -635,11 +635,107 @@ function objectsFillings3() {
 //objectsFillings3();
 
 //--------------
+
+function objectsChanging1() {
+    let obj = {x: 1, y: 2, z: 3};
+    for(let key in obj) {
+        obj[key] = obj[key] ** 2;
+        console.log(obj[key]);
+    }
+
+}
+
+//objectsChanging1();
+
 //--------------
+
+function objectsChanging2() {
+    let obj = {x: 1, y: 2, z: 3};
+    for(let key in obj) {
+        obj[key]++;
+        console.log(obj[key]);
+    }
+}
+
+//objectsChanging2();
+
 //--------------
+
+function loopsFlags1() {
+    let arr = ['a', 'b', 'c', 'd', 'e'];
+    let flag = false;
+
+    for(let elem of arr) {
+        if(elem === 'c') {
+            flag = true;
+            break;
+        }
+    }
+
+    //you can find out the answer: Do you have element 'c' after loop.
+    if(flag === true) {
+        console.log('Yes');
+    } else {
+        console.log('No');
+    }
+}
+
+//loopsFlags1()
+
 //--------------
+
+function loopsFlags2() {
+    let number = prompt('Write the number');
+    let flag = true;
+    for(let i = 2; i <= number - 1; i++) {
+        if(number % i === 0) {
+            flag = false;
+            break;
+        }
+    }
+    if(flag === true) {
+        console.log('We have the Prime numbers.');
+    } else {
+        console.log('We have the Composite numbers.');
+    }
+}
+
+//loopsFlags2();
+
 //--------------
+
+function arrayCounting1() {
+    let arr = [1, 2, 3, 2, 4, 3, 5, 6, 3, 2, 3];
+    let cnt = 0;
+    for(let elem of arr) {
+        if(elem === 3) {
+            cnt++;
+        }
+    }
+    console.log(cnt);
+}
+
+//arrayCounting1();
+
 //--------------
+
+function arrayCounting2() {
+    let arr = [1, 2, 3, 2, 4, 3, 5, 6, 3, 2, 3];
+    let cntFirst = 0;
+    let cntSecond = 0;
+
+    for(let elem of arr) {
+        if(elem === 3) {
+            cntFirst++;
+        } else if(elem === 2) {
+            cntSecond++;
+        }
+    }
+    console.log(cntFirst, cntSecond);
+}
+
+//arrayCounting2();
+
 //--------------
 //--------------
 //--------------
