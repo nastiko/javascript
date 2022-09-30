@@ -737,7 +737,36 @@ function arrayCounting2() {
 //arrayCounting2();
 
 //--------------
+
+function loopsObjectCounting() {
+    let str = 'Lorem Ipsum is simply dummy text of the printing and typesetting industry.'
+    let obj = {};
+
+    for(let i = 0; i <= str.length; i++) {
+        if(obj[str[i]] === undefined) {
+            obj[str[i]] = 1;
+        } else {
+            obj[str[i]]++;
+        }
+    }
+
+    console.log(obj);
+}
+
+//loopsObjectCounting();
+
 //--------------
+
+function loopsNeighbors1() {
+    let arr = [1, 2, 3, 4, 5];
+
+    for (let i = 1; i < arr.length; i++) {
+        console.log(arr[i - 1] + arr[i]);
+    }
+}
+
+//loopsNeighbors1();
+
 //--------------
 //--------------
 //--------------
