@@ -758,7 +758,7 @@ function loopsObjectCounting() {
 //--------------
 
 function loopsNeighbors1() {
-    let arr = [1, 2, 3, 4, 5];
+    let arr = [10, 21, 3, 99, 5];
 
     for (let i = 1; i < arr.length; i++) {
         console.log(arr[i - 1] + arr[i]);
@@ -768,18 +768,406 @@ function loopsNeighbors1() {
 //loopsNeighbors1();
 
 //--------------
+
+function loopsNeighbors2() {
+    let arr = [12, 32, 64, 125, 5, 47];
+
+    for (let i = 0; i < arr.length; i++) {
+        console.log(arr[i] + arr[i+1]);
+    }
+}
+
+//loopsNeighbors2();
+
 //--------------
+
+function loopsNeighbors3() {
+    let arr = [12, 32, 64, 125, 5, 47];
+
+    for (let i = 2; i < arr.length; i++) {
+        console.log(arr[i-1], arr[i-2]);
+    }
+}
+
+//loopsNeighbors3();
+
 //--------------
+
+function loopsNeighbors4() {
+    let arr = [12, 32, 64, 125, 5, 47];
+
+    for (let i = 2; i < arr.length; i++) {
+        console.log(arr[i-1] + arr[i-2] + arr[i]);
+    }
+}
+
+//loopsNeighbors4();
+
 //--------------
+
+function loopsNeighbors5() {
+    let arr = [12, 32, 64, 125, 5, 47];
+
+    for (let i = 1; i < arr.length; i++) {
+        console.log(arr[i-1] + arr[i] + arr[i+1]);
+    }
+}
+
+//loopsNeighbors5();
+
 //--------------
+
+function loopsCoding() {
+    let arr = [10, 20, 30, 40, 21, 32, 51];
+    let sum = 0;
+
+    for(let i = 0; i < arr.length; i++) {
+        let num = String(arr[i]);
+        let chart = num[0];
+        if (chart === '1' || chart === '2') {
+            console.log(num);
+            sum += Number(num);
+        }
+    }
+    console.log(sum);
+}
+
+//loopsCoding();
+
 //--------------
+
+//you need to fix it
+function loopsDebugging() {
+    let obj = {a: 10, b: 20, c: 30, d: 40, e: 50};
+    let sum = 0;
+
+    for (let key in obj) {
+        if (obj[key] === 1 && obj[key] === 2) {
+            sum += +key;
+        }
+    }
+
+    console.log(sum);
+}
+
+//loopsDebugging();
+
 //--------------
+
+function loopsMistakes1() {
+    for (let i = 0; i <= 10; i++) {
+        console.log(i);
+    }
+}
+
+//loopsMistakes1();
+
 //--------------
+
+function loopsMistakes2() {
+    for (let i = 10; i >= 0; i--) {
+        console.log(i);
+    }
+}
+
+//oopsMistakes2();
+
 //--------------
+
+function loopsMistakes3() {
+    for (let i = 10; i >= 0; i--) {
+        console.log(i);
+    }
+}
+
+//loopsMistakes3();
+
 //--------------
+
+function loopsMistakes4() {
+    let i = 0;
+
+    while (i <= 10) {
+        console.log(i);
+        i++;
+    }
+}
+
+//loopsMistakes4();
+
 //--------------
+
+function loopsMistakes5() {
+    let res = 0;
+
+    for (let i = 1; i <= 10; i++) {
+        res += i;
+    }
+
+    console.log(res);
+}
+
+//loopsMistakes5();
+
 //--------------
+
+function loopsMistakes6() {
+    let res = 1;
+
+    for (let i = 1; i <= 10; i++) {
+        res *= i;
+    }
+
+    console.log(res);
+}
+
+//loopsMistakes6();
+
 //--------------
+
+function loopsMistakes7() {
+    let arr = ['1', '2', '3', '4', '5'];
+    let sum = 0;
+
+    for (let elem of arr) {
+        sum += Number(elem);
+    }
+
+    console.log(sum);
+}
+
+//loopsMistakes7();
+
 //--------------
+
+function loopsMistakes8() {
+    let arr = ['1', '2', '3', '4', '5'];
+    let sum = 0;
+
+    for (let elem of arr) {
+        sum += Number(elem);
+    }
+
+    console.log(sum);
+}
+
+//loopsMistakes8();
+
+//--------------
+
+function loopsMistakes9() {
+    let arr = ['1', '2', '3', '4', '5'];
+    let sum = 0;
+
+    for (let elem of arr) {
+        sum += Number(elem);
+    }
+
+    console.log(sum);
+}
+
+//loopsMistakes9();
+
+//--------------
+
+function loopsMistakes10() {
+    let arr = ['1', '2', '3', '4', '5'];
+    let sum = 0;
+
+    for (let i = 0; i < arr.length; i++) {
+        sum += +arr[i];
+    }
+
+    console.log(sum);
+}
+
+//loopsMistakes10();
+
+//--------------
+
+function loopsMistakes11() {
+    let arr = ['1', '2', '3', '4', '5'];
+    let sum = 0;
+
+    for (let i = 0; i <= arr.length - 1; i++) {
+        sum += Number(arr[i]);
+    }
+
+    console.log(sum);
+}
+
+//loopsMistakes11();
+
+//--------------
+
+function loopsMistakes12() {
+    let arr = ['1', '2', '3', '4', '5'];
+    let sum = 0;
+
+    for (let i = 0; i <= arr.length; i++) {
+        sum += Number(i);
+    }
+
+    console.log(sum);
+}
+
+//loopsMistakes12();
+
+//--------------
+
+function loopsMistakes13() {
+    let arr = [1, 2, 3, 4, 5];
+    let double = 0;
+
+    for (let elem of arr) {
+        double = elem ** 2;
+        console.log(double);
+    }
+}
+
+//loopsMistakes13();
+
+//--------------
+
+function loopsMistakes14() {
+    let arr = [];
+
+    for (let i = 1; i <= 5; i++) {
+        arr.push(i);
+    }
+
+    console.log(arr);
+}
+
+//loopsMistakes14();
+
+//--------------
+
+function loopsMistakes15() {
+    let obj = {a: 1, b: 2, c: 3};
+    let sum = 0;
+
+    for (let key in obj) {
+        sum += obj[key];
+    }
+
+    console.log(sum);
+}
+
+//loopsMistakes15();
+
+//--------------
+
+function loopsMistakes16() {
+    let arr = [1, 2, 3, 4, 5];
+
+    for (let elem of arr) {
+        if (elem === 3) {
+            console.log('Yes');
+        }
+    }
+}
+
+//loopsMistakes16();
+
+//--------------
+
+function loopsMistakes17() {
+    let arr = [];
+    for (let i = 1; i <= 5; i++) {
+        arr.push(i);
+    }
+    console.log(arr);
+}
+
+//loopsMistakes17();
+
+//--------------
+
+function loopsMistakes18() {
+    let arr = [1, 2, 3, 4, 5];
+    let res = false;
+
+    for (let elem of arr) {
+        if (elem === 3) {
+            res = true;
+            break;
+        }
+    }
+    console.log(res);
+}
+
+//loopsMistakes18();
+
+//--------------
+
+function loopsMistakes19() {
+    let arr = [1, 2, 3, 4, 5];
+
+    for (let elem of arr) {
+        if (elem % 2 === 0) {
+            console.log(elem);
+        }
+    }
+}
+
+//loopsMistakes19();
+
+//--------------
+
+function loopsMistakes20() {
+    let arr = [1, 2, 3, 4, 5, 6, 7, 8, 9];
+    let secArr = [];
+
+    for (let elem of arr) {
+        if (elem % 2 !== 0) {
+            secArr.push(elem);
+        }
+    }
+    console.log(secArr);
+}
+
+loopsMistakes20();
+
+//--------------
+
+function loopsMistakes21() {
+
+}
+
+//loopsMistakes6();
+
+//--------------
+
+function loopsMistakes22() {
+
+}
+
+//loopsMistakes6();
+
+//--------------
+
+function loopsMistakes23() {
+
+}
+
+//loopsMistakes6();
+
+//--------------
+
+function loopsMistakes24() {
+
+}
+
+//loopsMistakes6();
+
+//--------------
+
+function loopsMistakes25() {
+
+}
+
+//loopsMistakes6();
+
 //--------------
 
