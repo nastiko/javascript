@@ -431,7 +431,6 @@ function loopsBreak2() {
 function loopsBreak3() {
     let arr = [25, 99, 68, -2, 42, 3, 14, 0];
 
-
     for(let i = 0; i <= arr.length; i++) {
         if(arr[i] === 3) {
             console.log(i);
@@ -1127,47 +1126,363 @@ function loopsMistakes20() {
     console.log(secArr);
 }
 
-loopsMistakes20();
+//loopsMistakes20();
 
 //--------------
 
-function loopsMistakes21() {
+function loopsPracticum1() {
+    for(let i = 1; i <= 100; i++) {
+        console.log(i);
+    }
+}
+
+//loopsPracticum1();
+
+//--------------
+
+function loopsPracticum2() {
+    for(let i = 100; i >= 1; i--) {
+        console.log(i);
+    }
+}
+
+//loopsPracticum2();
+
+//--------------
+
+function loopsPracticum3() {
+    for(let i = 1; i <= 100; i++) {
+        if(i % 2 === 0) {
+            console.log(i);
+        }
+    }
+}
+
+//loopsPracticum3();
+
+//--------------
+
+function loopsPracticum4() {
+    let arr = [];
+    for(let i = 1; i <= 10; i++) {
+        arr.push('x');
+    }
+    console.log(arr);
+}
+
+//loopsPracticum4();
+
+//--------------
+
+function loopsPracticum5() {
+    let arr = [];
+    for(let i = 1; i <= 10; i++) {
+        arr.push(i);
+    }
+    console.log(arr);
+}
+
+//loopsPracticum5();
+
+//--------------
+
+function loopsPracticum6() {
+    let arr = [131, 89, 64, 2, -8, 47, 35, 9, -24, 95, 5, 72, 3, 46, 10, 0];
+    for(let i = 0; i < arr.length; i++) {
+        if(arr[i] > 0 && arr[i] < 10) {
+            console.log(arr[i]);
+        }
+    }
+}
+
+//loopsPracticum6();
+
+//--------------
+
+function loopsPracticum7() {
+    let arr = [131, -8, 35, 9, -24, 95, 5, 72, 3, 10, 0];
+    for(let i = 0; i < arr.length; i++) {
+        if(arr[i] === 5) {
+            console.log('Yes');
+        }
+    }
+}
+
+//loopsPracticum7();
+
+//--------------
+
+function loopsPracticum8() {
+    let arr = [131, 32, -8, 35, 9, 103, -24, 95, 5, 72, 3, 10, 0];
+    let sum = 0;
+    for(let i = 0; i < arr.length; i++) {
+        sum += arr[i];
+    }
+    console.log(sum);
+}
+
+//loopsPracticum8();
+
+//--------------
+
+function loopsPracticum9() {
+    let arr = [-8, 35, 9, 95, 5, 72, 3, 10, 0];
+    let double = 0;
+    let sum = 0;
+
+    for(let i = 0; i < arr.length; i++) {
+        double = arr[i] ** 2;
+        sum += double;
+    }
+    console.log(sum);
+}
+
+//loopsPracticum9();
+
+//--------------
+
+function loopsPracticum10() {
+    let arr = [53, 12, 4, 73, -9, 3, 61];
+    let sum = 0;
+    let mean = 0;
+    for(let i = 0; i < arr.length; i++) {
+        sum += arr[i];
+        mean = sum / arr.length;
+    }
+    console.log(sum);
+    console.log(mean.toFixed(2));
+}
+
+//loopsPracticum10();
+
+//--------------
+
+function loopsPracticum11() {
+    let num = prompt('Write the number');
+    let multiply = 1;
+    for(let i = 1; i <= num; i++) {
+        multiply *= i;
+    }
+    console.log(multiply);
+}
+
+//loopsPracticum11();
+
+//--------------
+
+function loopsPracticum12() {
+    let arr = [];
+    for(let i = 10; i >= 1; i--) {
+        arr.push(i)
+    }
+    console.log(arr);
+}
+
+//loopsPracticum12();
+
+//--------------
+
+function loopsPracticum13() {
+    let arr = [13, 42, -9, 58, 67, -62, -16, 16];
+    let sum = 0;
+    for(let i = 0; i < arr.length; i++) {
+        if(arr[i] > 0) {
+            sum += arr[i];
+        }
+    }
+    console.log(sum);
+}
+
+//loopsPracticum13();
+
+//--------------
+
+function loopsPracticum14() {
+    let arr = [10, 20, 30, 50, 235, 3000];
+
+    for(let i = 0; i < arr.length; i++) {
+        let str = String(arr[i]);
+        let chart = str[0];
+        if(chart === '1' || chart === '2' || chart === '5') {
+            console.log(arr[i]);
+        }
+    }
+}
+
+//loopsPracticum14();
+
+//--------------
+
+function loopsPracticum15() {
+    let arr = [17, 32, -7, 58, 87, -32, -16, 16];
+    for(let i = arr.length; i >= 0; i--) {
+        console.log(arr[i]);
+    }
+}
+
+//loopsPracticum15();
+
+//--------------
+
+function loopsPracticum16() {
+    let arr = [25, 69, 12, -6, 24, 5];
+    for(let i = 0; i < arr.length; i++) {
+        if(arr[i] === i) {
+            console.log(arr[i]);
+        }
+    }
+}
+
+//loopsPracticum16();
+
+//--------------
+
+function loopsPracticum17() {
+    let arr = [11, 54, 63, 82, 4, -8];
+    for(let i = 0; i < arr.length; i++) {
+        document.write(arr[i] + `<br>`);
+    }
+}
+
+//loopsPracticum17();
+
+//--------------
+
+function loopsPracticum18() {
+    let arr = [11, 54, 63, 82, 4, -8];
+    for(let i = 0; i < arr.length; i++) {
+        document.write(`<h1>${arr[i]}</h1>`);
+    }
+}
+
+//loopsPracticum18();
+
+//--------------
+
+function loopsPracticum19() {
+    let arr = ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'];
+    for(let i = 0; i < arr.length; i++) {
+        if(i <= 4) {
+            document.write(arr[i] + `<br>`);
+        } else if(i > 4) {
+            document.write(`<b>${arr[i]}</b><br>`);
+        }
+    }
+}
+
+//loopsPracticum19();
+
+//--------------
+//you need to complete this task
+function loopsPracticum20() {
+    let arr = ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'];
+    let currentDay = [];
+    for(let i = 0; i < arr.length; i++) {
+    }
+}
+
+//loopsPracticum20();
+
+//--------------
+
+function loopsPracticum21() {
+    let obj = {
+        employee1: 100,
+        employee2: 200,
+        employee3: 300,
+        employee4: 400,
+        employee5: 500,
+        employee6: 600,
+        employee7: 700,
+    };
+    let newSalary;
+    for(let key in obj) {
+        newSalary = obj[key] * 10;
+        console.log(newSalary);
+    }
+}
+
+//loopsPracticum21();
+
+//--------------
+
+function loopsPracticum22() {
+    let obj = {
+        employee1: 100,
+        employee2: 200,
+        employee3: 300,
+        employee4: 400,
+        employee5: 500,
+        employee6: 600,
+        employee7: 700,
+    };
+    let newSalary;
+    for(let key in obj) {
+        if(obj[key] <= 400) {
+            newSalary = obj[key] * 10;
+        }
+        console.log(newSalary);
+    }
+}
+
+//loopsPracticum22();
+
+//--------------
+
+function loopsPracticum23() {
+    let arr1 = [1, 2, 3, 4, 5];
+    let arr2 = [6, 7, 8, 9, 10];
+    let obj = {};
+    for(let i = 0; i < arr1.length; i++) {
+        let key = arr1[i];
+        obj[key] = arr2[i];
+    }
+    console.log(obj);
+}
+
+//loopsPracticum23();
+
+//--------------
+
+function loopsPracticum24() {
+    let obj = {1: 6, 2: 7, 3: 8, 4: 9, 5: 10};
+    let num = 0;
+    for(let key in obj) {
+        let sumKey = 0;
+        //let sumObj = 0;
+        sumKey += Number(key);
+        //sumObj += obj[key];
+        //num = sumKey / sumObj;
+        console.log(sumKey);
+    }
+    //console.log(num);
+}
+
+//loopsPracticum24();
+
+//--------------
+
+function loopsPracticum25() {
 
 }
 
-//loopsMistakes6();
+//loopsPracticum9();
 
 //--------------
 
-function loopsMistakes22() {
+function loopsPracticum26() {
 
 }
 
-//loopsMistakes6();
+//loopsPracticum9();
 
 //--------------
 
-function loopsMistakes23() {
+function loopsPracticum27() {
 
 }
 
-//loopsMistakes6();
+//loopsPracticum9();
 
-//--------------
 
-function loopsMistakes24() {
-
-}
-
-//loopsMistakes6();
-
-//--------------
-
-function loopsMistakes25() {
-
-}
-
-//loopsMistakes6();
-
-//--------------
 
