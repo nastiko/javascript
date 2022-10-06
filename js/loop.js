@@ -1434,28 +1434,28 @@ function loopsPracticum23() {
     let arr2 = [6, 7, 8, 9, 10];
     let obj = {};
     for(let i = 0; i < arr1.length; i++) {
-        let key = arr1[i];
-        obj[key] = arr2[i];
+        //let key = arr1[i];
+        //obj[key] = arr2[i];
+        
     }
     console.log(obj);
 }
 
-//loopsPracticum23();
+loopsPracticum23();
 
 //--------------
 
 function loopsPracticum24() {
     let obj = {1: 6, 2: 7, 3: 8, 4: 9, 5: 10};
+    let sumKeys = 0;
+    let sumObj = 0;
     let num = 0;
     for(let key in obj) {
-        let sumKey = 0;
-        //let sumObj = 0;
-        sumKey += Number(key);
-        //sumObj += obj[key];
-        //num = sumKey / sumObj;
-        console.log(sumKey);
+        sumKeys += Number(key);
+        sumObj += obj[key];
+        num = sumKeys / sumObj;
     }
-    //console.log(num);
+    console.log(num);
 }
 
 //loopsPracticum24();
@@ -1463,26 +1463,68 @@ function loopsPracticum24() {
 //--------------
 
 function loopsPracticum25() {
-
+    let obj = {'a': 1, 'b': 2, 'c': 3, 'd': 4, 'e': 5};
+    let arrKeys = [];
+    let arrValues = [];
+    for(let key in obj) {
+        arrKeys = key;
+        arrValues = obj[key];
+        console.log(arrKeys);
+        console.log(arrValues);
+    }
 }
 
-//loopsPracticum9();
+//loopsPracticum25();
 
 //--------------
 
 function loopsPracticum26() {
-
+    let obj = {
+        1: 125,
+        2: 225,
+        3: 128,
+        4: 356,
+        5: 145,
+        6: 281,
+        7: 452,
+    };
+    for(let key in obj) {
+        let str = String(obj[key]);
+        let chart = str[0];
+        if(chart === '1' || chart === '2') {
+            console.log(obj[key]);
+        }
+    }
 }
 
-//loopsPracticum9();
+//loopsPracticum26();
 
 //--------------
 
 function loopsPracticum27() {
-
+    let arr = ['a', 'b', 'c', 'd', 'e'];
+    let values = [];
+    let obj = {};
+    for(let i = 0; i <=4; i++) {
+        let key = values.push(i);
+        obj[key] = arr[i];
+    }
+    console.log(obj);
 }
 
-//loopsPracticum9();
+loopsPracticum27();
 
+//--------------
 
+function loopsPracticum28() {
+    let arr = ['a', 'b', 'c', 'd', 'e'];
+    let values = [];
+    let obj = {};
+    for(let i = 0; i <= 4; i++) {
+        let key = arr[i];
+        obj[key] = values.push(i);
+    }
+    console.log(obj);
+}
 
+//loopsPracticum28();
