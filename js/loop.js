@@ -1512,7 +1512,7 @@ function loopsPracticum27() {
     console.log(obj);
 }
 
-loopsPracticum27();
+//loopsPracticum27();
 
 //--------------
 
