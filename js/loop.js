@@ -93,9 +93,9 @@ for(let i = 0; i <= arr.length; i++) {
 
 //--------------
 
-//let arr = ['a', 'b', 'c', 'd', 'e'];
+/*let arr = ['a', 'b', 'c', 'd', 'e'];
 
-/*for(let i = 0; i <= arr.length; i++) {
+for(let i = 0; i <= arr.length; i++) {
     console.log(arr[i]);
 }*/
 
@@ -426,6 +426,8 @@ function loopsBreak2() {
     console.log(sum);
 }
 
+//loopsBreak2();
+
 //--------------
 
 function loopsBreak3() {
@@ -438,6 +440,8 @@ function loopsBreak3() {
         }
     }
 }
+
+//loopsBreak3();
 
 //--------------
 
@@ -455,9 +459,6 @@ function loopsBreak4() {
     console.log(cnt);
 }
 
-
-//loopsBreak2();
-//loopsBreak3();
 //loopsBreak4();
 
 //--------------
@@ -1429,6 +1430,7 @@ function loopsPracticum22() {
 
 //--------------
 
+//working on here
 function loopsPracticum23() {
     let arr1 = [1, 2, 3, 4, 5];
     let arr2 = [6, 7, 8, 9, 10];
@@ -1441,7 +1443,7 @@ function loopsPracticum23() {
     console.log(obj);
 }
 
-loopsPracticum23();
+//loopsPracticum23();
 
 //--------------
 
