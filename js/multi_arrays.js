@@ -47,7 +47,7 @@ function multiArrays3() {
 
     let total = arr[0][0][0] + arr[0][0][1] + arr[0][1][0] + arr[0][1][1] + arr[1][0][0] + arr[1][0][1] + arr[1][1][0] + arr[1][1][1];
 
-    console.log(total);
+    console.log(arr);
 }
 
 //multiArrays3();
@@ -173,22 +173,228 @@ function multiArraysIteration4() {
 //multiArraysIteration4();
 
 //--------------
+
+function multiArraysFilling() {
+    let arr = [];
+
+    for(let i = 0; i < 3; i++) {
+        arr[i] = [];
+        for (let j = 0; j < 5; j++) {
+            arr[i].push(j + 1); //will start with 1!
+        }
+    }
+
+    console.log(arr);
+}
+
+//multiArraysFilling();
+
 //--------------
+
+function multiArraysFilling1() {
+    let arr = [];
+
+    for(let i = 0; i < 3; i++) {
+        arr[i] = [];
+        for(let j = 0; j < 4; j++) {
+            arr[i].push('x');
+        }
+    }
+
+    console.log(arr);
+}
+
+//multiArraysFilling1();
+
 //--------------
+
+function multiArraysFilling2() {
+    let arr = [];
+
+    for(let i = 0; i < 3; i++) {
+        arr[i] = [];
+        for(let j = 0; j < 2; j++) {
+            arr[i][j] = [];
+            for(let k = 0; k < 5; k++) {
+                arr[i][j].push(k + 1);
+            }
+        }
+    }
+
+    //console.log(arr);
+    print_out(arr);
+}
+
+//multiArraysFilling2();
+
 //--------------
+
+function multiArraysProblems() {
+    let arr = [];
+
+    for (let i = 0; i < 3; i++) {
+        arr[i] = [];
+        for (let j = 1; j <= 5; j++) {
+            arr[i].push(j);
+        }
+    }
+
+    //print_out(arr);
+}
+
+//multiArraysProblems();
+
 //--------------
+
+function multiArraysOrder1() {
+    let arr = [];
+    let count = 1;
+
+    for(let i = 0; i < 4; i++) {
+        arr[i] = [];
+        for(let j = 0; j < 2; j++) {
+            arr[i].push(count++);
+        }
+    }
+
+    //print_out(arr);
+}
+
+//multiArraysOrder1();
+
 //--------------
+
+function multiArraysOrder2() {
+    let arr = [];
+    let count = 0;
+
+    for(let i = 0; i < 4; i++) {
+        arr[i] = [];
+        for(let j = 0; j < 3; j++) {
+            arr[i].push(count+=2);
+        }
+    }
+
+    console.log(arr);
+    //print_out(arr);
+}
+
+//multiArraysOrder2();
+
 //--------------
+
+function multiArraysOrder3() {
+    let arr = [];
+    let count = 1;
+
+    for(let i = 0; i < 2; i++) {
+        arr[i] = [];
+        for(let j = 0; j < 2; j++) {
+            arr[i][j] = [];
+            for(let k = 0; k < 2; k++) {
+                arr[i][j].push(count++);
+            }
+        }
+    }
+
+    console.log(arr);
+    //print_out(arr);
+}
+
+//multiArraysOrder3();
+
 //--------------
+
+function multiArraysOrder4() {
+    let arr = [];
+    let count = 1;
+
+    for (let i = 0; i < 3; i++) {
+        arr[i] = [];
+        for (let j = 0; j < 3; j++) {
+            arr[i].push(count);
+            count++;
+        }
+    }
+
+    console.log(arr);
+    print_out(arr);
+}
+
+//multiArraysOrder4();
+
 //--------------
+
+function multiArraysOrder5() {
+
+}
+
+//multiArraysOrder5();
+
 //--------------
+
+function multiArraysOrder6() {
+
+}
+
+//multiArraysOrder6();
+
 //--------------
+
+function multiArraysOrder7() {
+
+}
+
+//multiArraysOrder7();
+
 //--------------
+
+function multiArraysOrder8() {
+
+}
+
+//multiArraysOrder8();
+
 //--------------
+
+function multiArraysOrder9() {
+
+}
+
+//multiArraysOrder9();
+
 //--------------
+
+function multiArraysOrder10() {
+
+}
+
+//multiArraysOrder10();
+
 //--------------
+
+function multiArraysOrder11() {
+
+}
+
+//multiArraysOrder11();
+
 //--------------
+
+function multiArraysOrder12() {
+
+}
+
+//multiArraysOrder12();
+
 //--------------
+
+function multiArraysOrder13() {
+
+}
+
+//multiArraysOrder13();
+
 //--------------
 //--------------
 //--------------

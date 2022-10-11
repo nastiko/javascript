@@ -836,14 +836,15 @@ function loopsCoding() {
 
 //--------------
 
-//you need to fix it
 function loopsDebugging() {
     let obj = {a: 10, b: 20, c: 30, d: 40, e: 50};
     let sum = 0;
 
     for (let key in obj) {
-        if (obj[key] === 1 && obj[key] === 2) {
-            sum += +key;
+        let str = String(obj[key]);
+        let chart = str[0];
+        if(chart === '1' || chart === '2') {
+            sum += obj[key];
         }
     }
 
@@ -1376,9 +1377,15 @@ function loopsPracticum19() {
 //--------------
 //you need to complete this task
 function loopsPracticum20() {
-    let arr = ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'];
-    let currentDay = [];
+    let arr = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
+
     for(let i = 0; i < arr.length; i++) {
+        let currentDay = new Date().getDay();
+        if (currentDay === i) {
+            document.write(`<i> `+ arr[i] + `</i><br>`);
+            continue;
+        }
+        document.write(arr[i] + `<br>`);
     }
 }
 
@@ -1436,9 +1443,7 @@ function loopsPracticum23() {
     let arr2 = [6, 7, 8, 9, 10];
     let obj = {};
     for(let i = 0; i < arr1.length; i++) {
-        //let key = arr1[i];
-        //obj[key] = arr2[i];
-        
+        obj[arr1[i]] = arr2[i];
     }
     console.log(obj);
 }
