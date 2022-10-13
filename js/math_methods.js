@@ -106,16 +106,22 @@ function inBuiltString1() {
 
 function inBuiltString2() {
     let strSentence = 'JavaScript';
-    let sub = strSentence.substring(4);
-    console.log(sub);
+    let sub = strSentence.substring(0, 4);
+    let slice = strSentence.slice(4);
+    console.log(sub + slice);
 }
 
-inBuiltString2();
+//inBuiltString2();
 
 //--------------
 
 function inBuiltString3() {
-
+     let str = 'abcde';
+     console.log(str.indexOf('c'));
+     console.log(str.lastIndexOf('a'));
+     console.log(str.indexOf('a', 0));
+     console.log(str.indexOf('http://'));
+     console.log(str.lastIndexOf('.html'));
 }
 
 //inBuiltString3();
@@ -123,7 +129,9 @@ function inBuiltString3() {
 //--------------
 
 function inBuiltString4() {
-
+    let str = 'https://anastasia.grinkevi.ch/';
+    console.log(str.startsWith('https://'));
+    console.log(str.endsWith('.html'));
 }
 
 //inBuiltString4();
@@ -131,7 +139,9 @@ function inBuiltString4() {
 //--------------
 
 function inBuiltString5() {
-
+    let str = '1-2-3-4-5';
+    let arr = str.split('-');
+    console.log(arr);
 }
 
 //inBuiltString5();
@@ -139,7 +149,9 @@ function inBuiltString5() {
 //--------------
 
 function inBuiltString6() {
-
+    let str = '12345';
+    let arr = str.split('');
+    console.log(arr);
 }
 
 //inBuiltString6();
@@ -147,10 +159,12 @@ function inBuiltString6() {
 //--------------
 
 function inBuiltString7() {
-
+    let arr = [1, 2, 3, 4, 5];
+    let str = arr.join('');
+    console.log(str);
 }
 
-//inBuiltString7();
+inBuiltString7();
 
 //--------------
 
