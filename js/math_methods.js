@@ -164,27 +164,272 @@ function inBuiltString7() {
     console.log(str);
 }
 
-inBuiltString7();
+//inBuiltString7();
 
 //--------------
 
-function inBuiltString8() {
+function inBuiltArray1() {
+    let arr = [1, 2, 3];
+    arr.push(4, 5, 6);
+
+    console.log(arr);
+}
+
+//inBuiltArray1();
+
+//--------------
+
+function inBuiltArray2() {
+    let arr = [1, 2, 3];
+    arr.unshift(4, 5, 6);
+
+    console.log(arr);
+}
+
+//inBuiltArray2();
+
+//--------------
+
+function inBuiltArray3() {
+    let arr = [1, 2, 3];
+    let elem = arr.shift();
+
+    console.log(elem);
+}
+
+//inBuiltArray3();
+
+//--------------
+
+function inBuiltArray4() {
+    let arr = [1, 2, 3];
+    let elem = arr.pop();
+
+    console.log(elem);
+}
+
+//inBuiltArray4();
+
+//--------------
+
+function inBuiltArray5() {
+    let arr = [1, 2, 3, 4, 5];
+    let sub = arr.slice(0, 3);
+
+    console.log(sub);
+}
+
+//inBuiltArray5();
+
+//--------------
+
+function inBuiltArray6() {
+    let arr = [1, 2, 3, 4, 5];
+    let sub = arr.slice(3);
+
+    console.log(sub);
+}
+
+//inBuiltArray6();
+
+//--------------
+
+function inBuiltArray7() {
+   let arr = [1, 2, 3, 4, 5];
+   let del = arr.splice(1, 2);
+
+   console.log(arr);
+}
+
+//inBuiltArray7();
+
+//--------------
+
+function inBuiltArray8() {
+    let arr = [1, 2, 3, 4, 5];
+    arr.splice(2, 0, 'a' , 'b', 'c');
+
+    console.log(arr);
 
 }
 
-//inBuiltString8();
+//inBuiltArray8();
 
 //--------------
 
-function inBuiltString9() {
+function inBuiltArray9() {
+    let arr = [1, 2, 3, 4, 5];
+    arr.splice(1, 0, 'a', 'b');
+    arr.splice(6, 0, 'c');
+    arr.splice(8, 0, 'e');
+
+    console.log(arr);
 
 }
 
-//inBuiltString9();
+//inBuiltArray9();
 
 //--------------
+
+function inBuiltArray10() {
+    let arr = [1, 2, 3, 4, 5];
+    let number = arr.indexOf(3);
+
+    console.log(number);
+}
+
+//inBuiltArray10();
+
 //--------------
+
+function inBuiltArray11() {
+    let arr = [1, 2, 3, 4, 5];
+    let number = arr.includes(3);
+
+    console.log(number);
+}
+
+//inBuiltArray11();
+
 //--------------
+
+function inBuiltPracticum1() {
+    let str = 'london';
+    let result = str.slice(0, 1).toUpperCase() + str.slice(1);
+
+    console.log(result);
+}
+
+//inBuiltPracticum1();
+
 //--------------
+
+function inBuiltPracticum2() {
+    let str = 'london';
+    let result = str.slice(0, -1) + str.slice(5).toUpperCase();
+
+    console.log(result);
+}
+
+//inBuiltPracticum2();
+
 //--------------
+
+function inBuiltPracticum3() {
+    let str = 'london';
+    let result = str.slice(0, 2).toUpperCase() + str.slice(2);
+
+    console.log(result);
+}
+
+//inBuiltPracticum3();
+
+//--------------
+
+function inBuiltPracticum4() {
+    let str = 'loNDon';
+    let result = str.slice(0, 2) + str.slice(2, 4).toLowerCase() + str.slice(4);
+
+    console.log(result);
+}
+
+//inBuiltPracticum4();
+
+//--------------
+
+function inBuiltPracticum5() {
+    let str = 'word1 word2 word3';
+    let words = str.split(' ');
+
+    for(let i = 0; i < words.length; i++) {
+        words[i] = words[i].slice(0, 1).toUpperCase() + words[i].slice(1);
+    }
+
+    let result = words.join(' ');
+
+    console.log(result);
+}
+
+//inBuiltPracticum5();
+
+//--------------
+
+function inBuiltPracticum6() {
+    let str = 'var_test_text';
+    let arr = str.split('_');
+
+    for(let i = 0; i < arr.length; i++) {
+        arr[i] = arr[i].slice(0, 1).toUpperCase() + arr[i].slice(1);
+    }
+
+    let result = arr.join('');
+
+    console.log(result);
+}
+
+//inBuiltPracticum6();
+
+//--------------
+
+function inBuiltPracticum7() {
+    let str = 'var_test_text';
+    let arr = str.split('_');
+
+    for(let i = 1; i < arr.length; i++) {
+        arr[i] = arr[i].slice(0, 1).toUpperCase() + arr[i].slice(1);
+    }
+
+    let result = arr.join('');
+
+    console.log(result);
+}
+
+//inBuiltPracticum7();
+
+//--------------
+
+function inBuiltPracticum8() {
+    let str = 'You are welcome';
+    let result = str.split(' ').reverse().join(' ');
+
+    console.log(result);
+}
+
+//inBuiltPracticum8();
+
+//--------------
+
+function inBuiltMistakes1() {
+    let num = 12345;
+    /*let str = String(num);
+    let arr = str.split('');*/
+    // you can write short a let:
+    let arr = String(num).split('');
+    let sum = 0;
+
+    for (let elem of arr) {
+        sum += Number(elem);
+    }
+
+    console.log(sum);
+}
+
+//inBuiltMistakes1();
+
+//--------------
+
+function inBuiltMistakes2() {
+    let num = 12345;
+    let arr = String(num).split('');
+    let prod = 1;
+
+    for (let elem of arr) {
+        prod *= Number(elem);
+    }
+
+    console.log(prod);
+}
+
+inBuiltMistakes2();
+
 //--------------
