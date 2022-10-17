@@ -430,6 +430,6 @@ function inBuiltMistakes2() {
     console.log(prod);
 }
 
-inBuiltMistakes2();
+//inBuiltMistakes2();
 
 //--------------
