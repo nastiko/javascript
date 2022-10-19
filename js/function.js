@@ -39,26 +39,29 @@ function findSum(num1, num2, num3) {
             car = 'Smart';
             break;
         default:
-           car = 'Unknown';
+            car = 'Unknown';
     }
 
     return car;
 }
 
-//let carColour = 'yellow';
-let carColour = 'red';
-let carModel = getCarModelByColor(carColour);
-console.log(carModel);*/
+let temp = '';
+let carColours = ['yellow','red','orange','blue'];
+
+for(let x in carColours) {
+    temp = getCarModelByColor(carColours[x]);
+    console.log(temp);
+}*/
+
 
 //--------------
 
 function calculateSquareArea(a){
-    let area = a*a;
-    return area;
+    return a * a;
 }
 
 let squareSide = 5;
-let squareArea = calculateSquareArea(squareSide);
+//let squareArea = calculateSquareArea(squareSide);
 //console.log(squareArea);
 
 //--------------
@@ -108,7 +111,7 @@ function findCube(num = 1) {
     return num ** 2;
 }
 
-let res = findCube(3);
+//let res = findCube(3);
 //console.log(res);
 
 //--------------
@@ -118,8 +121,8 @@ function findTotal(num) {
 }
 
 let x = 0;
-x += findTotal(3);
-x += findTotal(4);
+//x += findTotal(3);
+//x += findTotal(4);
 
 //console.log(x.toFixed(2));
 
@@ -145,7 +148,7 @@ function round1(num) {
     return num.toFixed(3);
 }
 
-let result = round1(sqrt1(2));
+//let result = round1(sqrt1(2));
 //console.log(result);
 
 //--------------
@@ -158,7 +161,7 @@ function sum(num1, num2, num3) {
     return num1 + num2 + num3;
 }
 
-let resultSum = sum(sqrt2(2), sqrt2(3), sqrt2(4));
+//let resultSum = sum(sqrt2(2), sqrt2(3), sqrt2(4));
 //console.log(resultSum);
 
 //--------------
@@ -171,7 +174,7 @@ function sumThirdNumbers(num1, num2, num3) {
     return num1 + num2 + num3;
 }
 
-let totalSum = round2(sumThirdNumbers(6.45895, 1.347823, 7.32148953));
+//let totalSum = round2(sumThirdNumbers(6.45895, 1.347823, 7.32148953));
 //console.log(totalSum);
 
 //--------------
@@ -378,37 +381,197 @@ function findMistakes5() {
     return 5;
 }
 
-let sumTwoFunctions = findMistakes4() + findMistakes5();
+//let sumTwoFunctions = findMistakes4() + findMistakes5();
 
 //console.log(sumTwoFunctions);
 
 //--------------
 
-let arr = [1, 2, 3, 4, 5];
-let sumElements = 0;
+let arrElements = [1, 2, 3, 4, 5];
 
-function findSumElements() {
-    for (let elem of arr) {
-        sumElements += elem;
+function findSumElements(arrElements) {
+    let sum = 0;
+
+    for (let elem of arrElements) {
+        sum += elem;
     }
 
-    return sumElements;
+    return sum;
 }
 
-//findSumElements();
+//findSumElements(arrElements);
 
 //--------------
+
+//let resultArr = total([1, 2, 3, 4, 5]);
+//console.log(resultArr);
+
+function totalForOf(arr) {
+    let sum = 0;
+
+    for (let elem of arr) {
+        sum += elem;
+    }
+
+    return sum;
+
+}
+
 //--------------
+
+function add(num) {
+    if (num <= 9) {
+        return '0' + num;
+    }
+}
+
+//add(10);
+
 //--------------
+
+function total(arr) {
+    let res = 0;
+
+    for (let elem of arr) {
+        res += elem;
+    }
+
+    return res;
+}
+
+let arrNumbers = [1, 2, 3, 4, 5];
+//let sumNumber = total(arrNumbers);
+//console.log(sumNumber);
+
 //--------------
+
+function getDigitsSum(x) {
+    let arr = String(x).split('');
+    let sum = 0;
+
+    for (let elem of arr) {
+        sum += Number(elem);
+    }
+
+    return sum;
+}
+
+let num = 25487;
+//let resNumber = getDigitsSum(num);
+//console.log(resNumber);
+
 //--------------
+
+//console.log(isPrime(13)); // must show true
+
+function isPrime(num) {
+        return num % 2 !== 0;
+}
+
 //--------------
+
+function findSumArrElements(arr) {
+    let sumArr = 0;
+
+    for(let i = 0; i < arr.length; i++) {
+        sumArr += arr[i];
+    }
+
+    return sumArr;
+}
+
+let arrOfNumbers = [25, 3, 0, 91, 11, 5];
+//let sumOfElements = findSumArrElements(arrOfNumbers);
+
+//console.log(sumOfElements);
+
 //--------------
+
+function findDividers(x) {
+
+    let arr = [];
+    for(let i = 1; i <= x; i++) {
+        if(x % i === 0) {
+            arr.push(i);
+        }
+    }
+
+    return arr;
+}
+
+let number = 25;
+//let dividerOfNumber = findDividers(number);
+
+//console.log(dividerOfNumber);
+
 //--------------
+
+function pushArrString(str) {
+    return str.split('');
+}
+
+let nameString = 'Congratulation';
+//let findSymbols = pushArrString(nameString);
+
+//console.log(findSymbols);
+
 //--------------
+
+function reverseString(color) {
+    return color.split('').reverse().join('');
+
+}
+
+let favouriteColor = 'green';
+//let reversed = reverseString(favouriteColor);
+
+//console.log(reversed);
+
 //--------------
+
+function firstUpperLetter(str) {
+    return str.slice(0, 1).toUpperCase() + str.slice(1);
+}
+
+let sentence = 'what is your name?';
+//let upperletter = firstUpperLetter(sentence);
+
+//console.log(upperletter);
+
 //--------------
+
+function UpperLetterWords(str) {
+    for(let i = 0; i < str.length; i++) {
+        str[i] = str[i].slice(0, 1).toUpperCase() + str[i].slice(1);
+    }
+
+    let displayName = str.join(' ');
+
+    return displayName;
+}
+
+let name = 'anastasia hrynkevich';
+let words = name.split(' ');
+//let upperLetter = UpperLetterWords(words);
+
+//console.log(upperLetter);
+
 //--------------
+
+function createArr(arr) {
+    for(let i = 1; i <= arr; i++) {
+        readyArr.push(i);
+    }
+
+    return readyArr;
+}
+
+let readyArr = [];
+let useNumber = 25;
+//let fillArr  = createArr(useNumber);
+
+//console.log(fillArr);
+
 //--------------
 //--------------
 //--------------
