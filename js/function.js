@@ -573,8 +573,57 @@ let useNumber = 25;
 //console.log(fillArr);
 
 //--------------
+
+function findRandomElement(arr) {
+    return arr[Math.floor(Math.random() * arr.length)];
+}
+
+let differentNumbers = [15, 4, 21, 87, -8, 3, 14, 0, 54], j;
+//let randomElement = findRandomElement(differentNumbers);
+
+//console.log(randomElement);
+
 //--------------
+
+function findPrimeNumber(num) {
+    for(let i = 2; i < num.length; i++) {
+        if(num % i === 0) {
+            return false;
+        }
+    }
+
+    return true;
+}
+
+//let promptNumber = prompt('Write the number');
+//let primeNumber = findPrimeNumber(promptNumber);
+
+//console.log(primeNumber);
+
 //--------------
+
+/**
+ * This is it
+ * @param {number} num number one
+ * @returns {number} dividers sum
+ */
+function getDividersSum(num) {
+    let sumDividers = 0;
+    for(let i = 0; i <= num ; i++) {
+        if(num % i === 0) {
+            sumDividers += i;
+        }
+    }
+
+    return sumDividers;
+}
+
+let firstNumber = 220;
+let secondNumber = 284;
+
+//let friendlinessNumbers = getDividersSum(firstNumber) === getDividersSum(secondNumber);
+//console.log(friendlinessNumbers);
+
 //--------------
 //--------------
 //--------------
