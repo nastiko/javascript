@@ -182,4 +182,19 @@ console.log(Object.keys(obj).length);*/
 
 //--------------
 
+/*//learning with mentor how to work with function inside obj
+let car = {
+    model: 'Mazda',
+
+    getModel(){
+        return `Your car is ${this.model}`;
+    },
+
+    setModel(newModel){
+        return this.model = newModel;
+    }
+}
+
+console.log(car.getModel());*/
+
 

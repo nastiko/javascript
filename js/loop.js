@@ -1437,7 +1437,6 @@ function loopsPracticum22() {
 
 //--------------
 
-//working on here
 function loopsPracticum23() {
     let arr1 = [1, 2, 3, 4, 5];
     let arr2 = [6, 7, 8, 9, 10];
@@ -1535,3 +1534,21 @@ function loopsPracticum28() {
 }
 
 //loopsPracticum28();
+
+function loopsPracticum29() {
+    let arr1 = [1, 2, 3, 4, 5];
+    let arr2 = [6, 2, 8, 5, 10];
+    let arrCommon = [];
+
+    for(let i of arr1) {
+        for(let j of arr2) {
+            if(i === j) {
+                arrCommon.push(i);
+            }
+        }
+    }
+
+    console.log(arrCommon);
+}
+
+//loopsPracticum29();
