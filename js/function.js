@@ -868,7 +868,7 @@ function funcPracticum32() {
         let translit = '';
         let letters = str.split('');
         for (let x in letters) {
-        //for (let i=0;i<letters.length;i++){
+            //for (let i=0;i<letters.length;i++){
             translit += convert[letters[x]];
         }
         return translit;
@@ -881,13 +881,137 @@ function funcPracticum32() {
 }
 
 //funcPracticum32();
+
 //--------------
+
+
+//Advanced theory of functions
+
 //--------------
+
+function advancedFunc1() {
+    function funcAsVariable() {
+        return 'I have been learning the advanced theory of functions.'
+    }
+
+    funcAsVariable();
+
+    funcAsVariable = 123; //overwrites the variable funcAsVariable
+    console.log(funcAsVariable);
+}
+
+//advancedFunc1();
+
 //--------------
+
+function advancedFunc2() {
+    function funcl() {
+        return 3;
+    }
+
+    let funcl2 = funcl();
+    console.log(funcl() + funcl2);
+}
+
+//advancedFunc2();
+
 //--------------
+
+function advancedFunc3() {
+    let func = function () {
+        console.log('!');
+    };
+
+    func();
+}
+
+//advancedFunc3();
+
 //--------------
+
+function advancedFunc4() {
+    let func1 = function () {
+        console.log('!');
+    };
+
+    let func2 = function () {
+        console.log('!');
+    };
+
+    function func3() {
+        console.log('!');
+    }
+}
+
+//advancedFunc4();
+
 //--------------
+
+function advancedFunc5() {
+    test();  // function Expression
+    let test = function () {
+        console.log('!');
+    }
+
+}
+
+//advancedFunc5();
+
 //--------------
+
+function advancedFunc6() {
+    func(); // Function Declaration
+
+    function func() {
+        console.log('!');
+    }
+}
+
+//advancedFunc6();
+
 //--------------
+
+function advancedFunc7() {
+    let arr = [
+        function () {
+            //return 1;
+            console.log('1');
+        },
+        function () {
+            //return 2;
+            console.log('2');
+        },
+        function () {
+            //return 3;
+            console.log('3');
+        }
+    ]
+
+    for (let func of arr) {
+        func();
+    }
+
+    //console.log(arr[0]() + arr[1]() + arr[2]());
+}
+
+//advancedFunc7();
+
 //--------------
+
+function advancedFunc8() {
+
+}
+
+
+//advancedFunc2();
+
+//--------------
+
+function advancedFunc9() {
+
+}
+
+
+//advancedFunc2();
+
 //--------------
