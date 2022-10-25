@@ -463,7 +463,7 @@ function funcPracticum14() {
 //--------------
 
 function funcPracticum15() {
-    let resultArr = total([1, 2, 3, 4, 5]);
+    //let resultArr = total([1, 2, 3, 4, 5]);
     console.log(resultArr);
 
     function totalForOf(arr) {
@@ -896,7 +896,7 @@ function advancedFunc1() {
 
     funcAsVariable();
 
-    funcAsVariable = 123; //overwrites the variable funcAsVariable
+    //funcAsVariable = 123; //overwrites the variable funcAsVariable
     console.log(funcAsVariable);
 }
 
@@ -999,6 +999,259 @@ function advancedFunc7() {
 //--------------
 
 function advancedFunc8() {
+    let obj = {
+        num1: function () {
+            return 1;
+        },
+        num2: function () {
+            return 2;
+        },
+        num3: function () {
+            return 3;
+        },
+    };
+
+    //let sum = obj.num1() + obj.num2() + obj.num3();
+
+    let sum = 0;
+
+    for (let keys in obj) {
+        sum += obj[keys]();
+    }
+    console.log(sum);
+}
+
+//advancedFunc8();
+
+//--------------
+
+function advancedFunc9() {
+    let obj = {
+        sum: function (arr) {
+            let sum = 0;
+            for (let elem of arr) {
+                sum += elem;
+            }
+            return sum;
+        },
+        sumSquare: function (arr) {
+            let sum = 0;
+            for (let elem of arr) {
+                sum += elem * elem;
+            }
+            return sum;
+        },
+        sumCube: function (arr) {
+            let sum = 0;
+            for (let elem of arr) {
+                sum += elem * elem * elem;
+            }
+            return sum;
+        },
+    };
+
+    let arrNumbers = [7, 2, 13, 32];
+    let findSum = obj.sum(arrNumbers);
+    let findSumSquare = obj.sumSquare(arrNumbers);
+    let findSumCube = obj.sumCube(arrNumbers);
+
+    console.log(findSum, findSumSquare, findSumCube);
+}
+
+//advancedFunc9();
+
+//--------------
+
+function advancedFunc10() {
+    test(
+        function () {
+            return 1
+        },
+        function () {
+            return 2
+        },
+        function () {
+            return 3
+        },
+    )
+
+    function test(num1, num2, num3) {
+        console.log(num1() + num2() + num3());
+    }
+}
+
+//advancedFunc10();
+
+//--------------
+
+function advancedFunc11() {
+    function num1() {
+        return 25;
+    }
+
+    function num2() {
+        return 13;
+    }
+
+    function num3() {
+        return 79;
+    }
+
+    test(num1, num2, num3);
+
+    function test(func1, func2, func3) {
+        console.log(func1() + func2() + func3());
+    }
+
+}
+
+//advancedFunc11();
+
+//--------------
+
+function advancedFunc12() {
+    let get1 = function () {
+        return 25;
+    }
+    let get2 = function () {
+        return 13;
+    }
+    let get3 = function () {
+        return 79;
+    }
+
+    test(get1, get2, get3);
+
+    function test(func1, func2, func3) {
+        console.log(func1() + func2() + func3());
+    }
+}
+
+//advancedFunc12();
+
+//--------------
+
+function advancedFunc13() {
+    test(function (num) {
+        return num * num * num;
+    });
+
+    function test(func) {
+        console.log(func(3));
+    }
+}
+
+//advancedFunc13();
+
+//--------------
+
+function advancedFunc14() {
+    function func() {
+        return 3;
+    }
+
+    test(func);
+
+    function test(num) {
+        console.log(num() * num() * num());
+    }
+}
+
+//advancedFunc14();
+
+//--------------
+
+function advancedFunc15() {
+    let func = function () {
+        return 5;
+    }
+
+    test(func);
+
+    function test(num) {
+        console.log(num() * num() * num());
+    }
+}
+
+//advancedFunc15();
+
+//--------------
+
+function advancedFunc16() {
+    //passed function takes two parameters and return their sum
+    function test(func) {
+        console.log(func(2, 3));
+    }
+
+    //calling the passed function with two parameters
+    test(function (num1, num2) {
+        return num1 + num2;
+    });
+}
+
+//advancedFunc16();
+
+//--------------
+
+function advancedFunc17() {
+    function test(num, func1, func2) {
+        console.log(func1(num) + func2(num));
+    }
+
+    test(
+        3,
+        function (num) {
+            return num * num;
+        },
+        function (num) {
+            return num * num * num;
+        }
+    );
+}
+
+//advancedFunc17();
+
+//--------------
+
+function advancedFunc18() {
+    function test(arr, func) {
+        for(let i = 0; i < arr.length; i++) {
+            arr[i] = func(arr[i]);
+        }
+        return arr;
+    }
+
+    let result = test([5, 10, 24], function(num) {
+        return num * num * num;
+    });
+
+    console.log(result);
+}
+
+//advancedFunc18();
+
+//--------------
+
+function advancedFunc19() {
+    function func(num1, num2) {
+        function sumSquare(num) {
+            return num * num;
+        }
+        function sumCube(num) {
+            return num * num *num;
+        }
+
+        return sumSquare(num1) + sumCube(num2);
+    }
+
+    console.log(func(5, 3));
+}
+
+//advancedFunc19();
+
+//--------------
+
+function advancedFunc20() {
 
 }
 
@@ -1007,7 +1260,169 @@ function advancedFunc8() {
 
 //--------------
 
-function advancedFunc9() {
+function advancedFunc21() {
+
+}
+
+
+//advancedFunc2();
+
+//--------------
+
+function advancedFunc22() {
+
+}
+
+
+//advancedFunc2();
+
+//--------------
+
+function advancedFunc23() {
+
+}
+
+
+//advancedFunc2();
+
+//--------------
+
+function advancedFunc24() {
+
+}
+
+
+//advancedFunc2();
+
+//--------------
+
+function advancedFunc25() {
+
+}
+
+
+//advancedFunc2();
+
+//--------------
+
+function advancedFunc26() {
+
+}
+
+
+//advancedFunc2();
+
+//--------------
+
+function advancedFunc27() {
+
+}
+
+
+//advancedFunc2();
+
+//--------------
+
+function advancedFunc28() {
+
+}
+
+
+//advancedFunc2();
+
+//--------------
+
+function advancedFunc29() {
+
+}
+
+
+//advancedFunc2();
+
+//--------------
+
+function advancedFunc30() {
+
+}
+
+
+//advancedFunc2();
+
+//--------------
+
+function advancedFunc31() {
+
+}
+
+
+//advancedFunc2();
+
+//--------------
+
+function advancedFunc32() {
+
+}
+
+
+//advancedFunc2();
+
+//--------------
+
+function advancedFunc33() {
+
+}
+
+
+//advancedFunc2();
+
+//--------------
+
+function advancedFunc34() {
+
+}
+
+
+//advancedFunc2();
+
+//--------------
+
+function advancedFunc35() {
+
+}
+
+
+//advancedFunc2();
+
+//--------------
+
+function advancedFunc36() {
+
+}
+
+
+//advancedFunc2();
+
+//--------------
+
+function advancedFunc37() {
+
+}
+
+
+//advancedFunc2();
+
+//--------------
+
+function advancedFunc38() {
+
+}
+
+
+//advancedFunc2();
+
+//--------------
+
+function advancedFunc39() {
 
 }
 
