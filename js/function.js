@@ -1252,173 +1252,375 @@ function advancedFunc19() {
 //--------------
 
 function advancedFunc20() {
+    function func1() {
+        return function() {
+            return 1;
+        };
+    }
 
+    function func2() {
+        return function() {
+            return 2;
+        };
+    }
+
+    console.log(func1()() + func2()());
 }
 
 
-//advancedFunc2();
+//advancedFunc20();
 
 //--------------
 
 function advancedFunc21() {
+    function func() {
+        return function() {
+            return function() {
+                return function() {
+                    return '!';
+                };
+            };
+        };
+    }
 
+    console.log(func()()()());
 }
 
 
-//advancedFunc2();
+//advancedFunc21();
 
 //--------------
 
 function advancedFunc22() {
+    function func(num1) {
+        return function(num2) {
+            return function(num3) {
+                return num1 + num2 + num3;
+            };
+        };
+    }
 
+    console.log(func(2)(3)(4));
 }
 
-
-//advancedFunc2();
+//advancedFunc22();
 
 //--------------
 
 function advancedFunc23() {
+    function func(num1) {
+        return function(num2) {
+            return function(num3) {
+                return function(num4) {
+                    return function() {
+                        return arr.push(num1, num2, num3, num4);
+                    };
+                };
+            };
+        };
+    }
 
+    let arr = [];
+    func(2)(3)(4)(5)();
+
+    console.log(arr);
 }
 
-
-//advancedFunc2();
+//advancedFunc23();
 
 //--------------
 
 function advancedFunc24() {
+    function test() {
+        let num = 1;
+        return function() {
+            console.log(num);
+            num++;
+        };
+    }
 
+    let closure = test();
+    closure();
+    closure();
+    closure();
 }
 
-
-//advancedFunc2();
+//advancedFunc24();
 
 //--------------
 
 function advancedFunc25() {
+    function test() {
+        let num = 10;
+        return function() {
+            console.log(num);
+            num--;
+            if(num < 0) {
+                console.log('The countdown has ended');
+            }
+        };
+    }
 
+    let closure = test();
+    closure();
+    closure();
+    closure();
+    closure();
+    closure();
+    closure();
+    closure();
+    closure();
+    closure();
+    closure();
+    closure();
 }
 
-
-//advancedFunc2();
+//advancedFunc25();
 
 //--------------
 
 function advancedFunc26() {
+    let result = function() {
+        return 1;
+    }() + function() {
+        return 2;
+    }();
 
+    console.log(result);
 }
 
-
-//advancedFunc2();
+//advancedFunc26();
 
 //--------------
 
 function advancedFunc27() {
+    let result = (function() {
+        return '!';
+    })();
 
+    console.log(result);
 }
 
-
-//advancedFunc2();
+//advancedFunc27();
 
 //--------------
 
 function advancedFunc28() {
-
+    (function() {
+        return function(){
+            return function() {
+                console.log('!');
+            };
+        };
+    })()()();
 }
 
-
-//advancedFunc2();
+//advancedFunc28();
 
 //--------------
 
 function advancedFunc29() {
-
+    (function(num1) {
+        return function(num2){
+            console.log(num1 + num2);
+        }
+    })(1)(2);
 }
 
-
-//advancedFunc2();
+//advancedFunc29();
 
 //--------------
 
 function advancedFunc30() {
-
+    (function(num1) {
+        return function(num2) {
+            return function(num3) {
+                console.log(num1 + num2 + num3);
+            }
+        }
+    })(1)(2)(3);
 }
 
-
-//advancedFunc2();
+//advancedFunc30();
 
 //--------------
 
 function advancedFunc31() {
+    let func = (function() {
+        let num = 1;
+        return function() {
+            console.log(num);
+            num++;
+            if(num > 5) {
+                num = 1;
+            }
+        };
+    })();
 
+    func();
+    func();
+    func();
+    func();
+    func();
+    func();
+    func();
+    func();
+    func();
+    func();
 }
 
-
-//advancedFunc2();
+//advancedFunc31();
 
 //--------------
 
 function advancedFunc32() {
+    function each(arr, callback) {
+        let result = [];
 
+        for (let elem of arr) {
+            result.push(callback(elem)); // calling callback
+        }
+
+        return result;
+    }
+
+    let result = each([5, 14, 61, 2], function(num) {
+        return num * 2;
+    });
+
+    console.log(result);
 }
 
-
-//advancedFunc2();
+//advancedFunc32();
 
 //--------------
 
 function advancedFunc33() {
+    function each(arr, callback) {
+        let result = [];
 
+        for(let elem of arr) {
+            result.push(callback(elem));
+        }
+
+        return result;
+    }
+
+    let result = each(['Anastasia', 'Stanislau', 'Walle'], function(str) {
+        return str.split('').reverse().join('');
+    });
+
+    console.log(result);
 }
 
-
-//advancedFunc2();
+//advancedFunc33();
 
 //--------------
 
 function advancedFunc34() {
+    function each(arr, callback) {
+        let result = [];
 
+        for(let elem of arr) {
+            result.push(callback(elem));
+        }
+
+        return result;
+    }
+
+    let result = each(['anastasia', 'stanislau', 'walle'], function(str) {
+        return str.slice(0, 1).toUpperCase() + str.slice(1);
+    });
+
+    console.log(result);
 }
 
-
-//advancedFunc2();
+//advancedFunc34();
 
 //--------------
 
 function advancedFunc35() {
+    function each(arr, cube) {
+        let result = [];
 
+        for(let elem of arr) {
+            result.push(cube(elem));
+        }
+
+        return result;
+    }
+
+    function cube(num) {
+        return num ** 3;
+    }
+
+    let result = each([1, 2, 3, 4, 5], cube);
+    console.log(result);
 }
 
-
-//advancedFunc2();
+//advancedFunc35();
 
 //--------------
 
 function advancedFunc36() {
+    function every(arr, callback) {
+        let result = [];
 
+        for(let elem of arr) {
+            result.push(callback(elem));
+        }
+
+        return result;
+    }
+
+    let result = every([1, 2, 3, 4, 5], elem => elem > 0);
+
+    console.log(result);
 }
 
-
-//advancedFunc2();
+//advancedFunc36();
 
 //--------------
 
 function advancedFunc37() {
+    function every(arr, callback) {
+        let result = [];
 
+        for(let i = 0; i < arr.length; i++) {
+            result.push(callback(arr[i], i));
+        }
+
+        return result;
+    }
+
+    let result = every([1, 2, 3, 4, 5], (elem, index) => elem * index > 10);
+
+    console.log(result);
 }
 
-
-//advancedFunc2();
+//advancedFunc37();
 
 //--------------
 
 function advancedFunc38() {
+    /*let arr = [[1, 2, 3], [4, 5, 6], [7, 8, 9]];
 
+    function each(arr, callback) {
+        let result = [];
+
+        for(let elem of arr) {
+
+        }
+
+        return result;
+    }
+
+    let result = each(arr, (elem, index) => elem * index > 10);
+
+    console.log(result);*/
 }
 
-
-//advancedFunc2();
+//advancedFunc38();
 
 //--------------
 
