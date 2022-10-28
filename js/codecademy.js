@@ -143,7 +143,7 @@ function findRockPaperScissor() {
             return 'The game is a tie!';
         }
 
-        if(userChoice === 'rock') {
+        if (userChoice === 'rock') {
             if (computerChoice === 'paper') {
                 return 'The computer won';
             } else {
@@ -151,16 +151,16 @@ function findRockPaperScissor() {
             }
         }
 
-        if(userChoice === 'paper') {
-            if(computerChoice === 'scissors') {
+        if (userChoice === 'paper') {
+            if (computerChoice === 'scissors') {
                 return 'The computer won';
             } else {
                 return 'You won';
             }
         }
 
-        if(userChoice === 'scissors') {
-            if(computerChoice === 'rock') {
+        if (userChoice === 'scissors') {
+            if (computerChoice === 'rock') {
                 return 'The computer won';
             } else {
                 return 'You won';
@@ -187,19 +187,19 @@ function findRockPaperScissor() {
 
 function calculateSleepTime() {
     function getSleepHours(day) {
-        if(day === 'monday') {
+        if (day === 'monday') {
             return 8;
-        } else if(day === 'tuesday') {
+        } else if (day === 'tuesday') {
             return 7;
-        } else if(day === 'wednesday') {
+        } else if (day === 'wednesday') {
             return 6;
-        } else if(day === 'thursday') {
+        } else if (day === 'thursday') {
             return 6;
-        } else if(day === 'friday') {
+        } else if (day === 'friday') {
             return 7;
-        } else if(day === 'saturday') {
+        } else if (day === 'saturday') {
             return 10;
-        } else if(day === 'sunday') {
+        } else if (day === 'sunday') {
             return 9;
         }
 
@@ -219,12 +219,12 @@ function calculateSleepTime() {
         let actualSleepHours = getActualSleepHours();
         let idealSleepHours = getIdealSleepHours();
 
-        if(actualSleepHours === idealSleepHours) {
+        if (actualSleepHours === idealSleepHours) {
             console.log('The perfect amount of sleep.');
-        } else if(actualSleepHours > idealSleepHours) {
+        } else if (actualSleepHours > idealSleepHours) {
             console.log('You got more sleep than needed.');
-        } else if(actualSleepHours < idealSleepHours) {
-            console.log('You should get some rest, because you sleep ' + (actualSleepHours - idealSleepHours) +  ' hour(s) less than you needed this week.');
+        } else if (actualSleepHours < idealSleepHours) {
+            console.log('You should get some rest, because you sleep ' + (actualSleepHours - idealSleepHours) + ' hour(s) less than you needed this week.');
         }
     }
 
@@ -237,6 +237,7 @@ function calculateSleepTime() {
 
 function isBlocksDefineScope() {
     const city = 'New York City';
+
     function logCitySkyline() {
         let skyscraper = 'Empire State Building';
         return 'The stars over the ' + skyscraper + ' in ' + city;
@@ -392,7 +393,108 @@ function findMistakes() {
 //findMistakes();
 
 //--------------
+
+function getMealMaker() {
+    let menu = {
+        _meal: '',
+        _price: 0,
+        set meal(mealToCheck) {
+            if (typeof mealToCheck === 'string') {
+                return this._meal = mealToCheck;
+            }
+        },
+        set price(priceToCheck) {
+            if (typeof priceToCheck === 'number') {
+                return this._price = priceToCheck;
+            }
+        },
+        get todaysSpecial() {
+            if (this._meal && this._price) {
+                return `Today’s Special is ${this._meal} for $${this._price}!`;
+            } else {
+                return 'Meal or price was not set correctly!';
+            }
+        }
+    };
+
+    menu._meal = 'Tomatoes Pasta';
+    menu._price = 12.5;
+
+    console.log(menu.todaysSpecial);
+}
+
+//getMealMaker();
+
 //--------------
+
+function isTeamStats() {
+    let team = {
+        _players: [
+            {
+                firstName: 'Anastasia',
+                lastName: 'Hrynkevich',
+                age: 30
+            },
+            {
+                firstName: 'Stanislau',
+                lastName: 'Hrynkevich',
+                age: 32
+            },
+            {
+                firstName: 'Jame',
+                lastName: 'Hugh',
+                age: 32
+            }
+        ],
+        _games: [
+            {
+                opponent: 'Red',
+                teamPoints: 12,
+                opponentPoints: 42
+            },
+            {
+                opponent: 'Green',
+                teamPoints: 28,
+                opponentPoints: 19
+            },
+            {
+                opponent: 'Yellow',
+                teamPoints: 34,
+                opponentPoints: 57
+            }
+        ],
+        get players() {
+            return this._players;
+        },
+        get games() {
+            return this._games;
+        },
+        addPlayer(newFirstName, newLastName, NewAge) {
+            let player = {
+                firstName: newFirstName,
+                lastName: newLastName,
+                age: NewAge
+            };
+            this.players.push(player);
+        },
+        addGame(newOpponent, newTeamPoints, newOpponentPoints) {
+            let game = {
+                opponent: newOpponent,
+                teamPoints: newTeamPoints,
+                opponentPoints: newOpponentPoints
+            };
+            this.games.push(game);
+        }
+    };
+
+    team.addPlayer('Bugs', 'Bunny', 76);
+    team.addGame('Titans', 100, 98);
+
+    console.log(team.games);
+}
+
+//isTeamStats();
+
 //--------------
 //--------------
 //--------------
