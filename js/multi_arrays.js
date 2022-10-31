@@ -84,8 +84,8 @@ function multiArraysIteration1() {
 
     let res = 0;
 
-    for(let subArr of arr) {
-        for(let elem of subArr) {
+    for (let subArr of arr) {
+        for (let elem of subArr) {
             res += elem;
         }
     }
@@ -110,9 +110,9 @@ function multiArraysIteration2() {
 
     let res = 0;
 
-    for(let grandChildArr of arr) {
-        for(let childArr of grandChildArr) {
-            for(let elem of childArr) {
+    for (let grandChildArr of arr) {
+        for (let childArr of grandChildArr) {
+            for (let elem of childArr) {
                 res += elem;
             }
         }
@@ -133,8 +133,8 @@ function multiArraysIteration3() {
 
     let sum = 0;
 
-    for(let i = 0; i < arr.length; i++) {
-        for(let j = 0; j < arr[i].length; j++) {
+    for (let i = 0; i < arr.length; i++) {
+        for (let j = 0; j < arr[i].length; j++) {
             sum += arr[i][j];
         }
     }
@@ -143,6 +143,36 @@ function multiArraysIteration3() {
 }
 
 //multiArraysIteration3();
+
+//--------------
+
+//learning with mentor
+function useOneLoop() {
+    let arr = [
+        13,
+        [1, 2, 3, [4, 11, 12], 5],
+        [6, 7, 8],
+        [9, 10]
+    ];
+
+    function sumF(arr) {
+        let sum = 0;
+        for (let i = 0; i < arr.length; i++) {
+            if (Array.isArray(arr[i])) {
+                sum += sumF(arr[i]);
+            } else {
+                sum += arr[i];
+            }
+        }
+        return sum;
+    }
+
+    let result = sumF(arr);
+
+    console.log(result);
+}
+
+//useOneLoop();
 
 //--------------
 
@@ -160,9 +190,9 @@ function multiArraysIteration4() {
 
     let sum = 0;
 
-    for(let i = 0; i < arr.length; i++) {
-        for(let j = 0; j < arr[i].length; j++) {
-            for(let k = 0; k < arr[j].length; k++) {
+    for (let i = 0; i < arr.length; i++) {
+        for (let j = 0; j < arr[i].length; j++) {
+            for (let k = 0; k < arr[j].length; k++) {
                 sum += arr[i][j][k];
             }
         }
@@ -177,7 +207,7 @@ function multiArraysIteration4() {
 function multiArraysFilling() {
     let arr = [];
 
-    for(let i = 0; i < 3; i++) {
+    for (let i = 0; i < 3; i++) {
         arr[i] = [];
         for (let j = 0; j < 5; j++) {
             arr[i].push(j + 1); //will start with 1!
@@ -194,9 +224,9 @@ function multiArraysFilling() {
 function multiArraysFilling1() {
     let arr = [];
 
-    for(let i = 0; i < 3; i++) {
+    for (let i = 0; i < 3; i++) {
         arr[i] = [];
-        for(let j = 0; j < 4; j++) {
+        for (let j = 0; j < 4; j++) {
             arr[i].push('x');
         }
     }
@@ -211,11 +241,11 @@ function multiArraysFilling1() {
 function multiArraysFilling2() {
     let arr = [];
 
-    for(let i = 0; i < 3; i++) {
+    for (let i = 0; i < 3; i++) {
         arr[i] = [];
-        for(let j = 0; j < 2; j++) {
+        for (let j = 0; j < 2; j++) {
             arr[i][j] = [];
-            for(let k = 0; k < 5; k++) {
+            for (let k = 0; k < 5; k++) {
                 arr[i][j].push(k + 1);
             }
         }
@@ -250,9 +280,9 @@ function multiArraysOrder1() {
     let arr = [];
     let count = 1;
 
-    for(let i = 0; i < 4; i++) {
+    for (let i = 0; i < 4; i++) {
         arr[i] = [];
-        for(let j = 0; j < 2; j++) {
+        for (let j = 0; j < 2; j++) {
             arr[i].push(count++);
         }
     }
@@ -268,10 +298,10 @@ function multiArraysOrder2() {
     let arr = [];
     let count = 0;
 
-    for(let i = 0; i < 4; i++) {
+    for (let i = 0; i < 4; i++) {
         arr[i] = [];
-        for(let j = 0; j < 3; j++) {
-            arr[i].push(count+=2);
+        for (let j = 0; j < 3; j++) {
+            arr[i].push(count += 2);
         }
     }
 
@@ -287,11 +317,11 @@ function multiArraysOrder3() {
     let arr = [];
     let count = 1;
 
-    for(let i = 0; i < 2; i++) {
+    for (let i = 0; i < 2; i++) {
         arr[i] = [];
-        for(let j = 0; j < 2; j++) {
+        for (let j = 0; j < 2; j++) {
             arr[i][j] = [];
-            for(let k = 0; k < 2; k++) {
+            for (let k = 0; k < 2; k++) {
                 arr[i][j].push(count++);
             }
         }
@@ -422,9 +452,9 @@ function multiObjectsIteration1() {
     }
     let sum = 0;
 
-    for(let key in obj) {
+    for (let key in obj) {
         let subObj = obj[key];
-        for(let subKey in subObj) {
+        for (let subKey in subObj) {
             sum += subObj[subKey];
         }
     }
@@ -477,11 +507,11 @@ function multiObjectsIteration2() {
     }
     let sum = 0;
 
-    for(let key in obj) {
+    for (let key in obj) {
         let subObj = obj[key];
-        for(let subKey in subObj) {
+        for (let subKey in subObj) {
             let underSubObj = obj[key][subKey];
-            for(let underSubKey in underSubObj) {
+            for (let underSubKey in underSubObj) {
                 sum += obj[key][subKey][underSubKey];
             }
         }
@@ -533,8 +563,8 @@ function multiStructuresIteration1() {
         ],
     };
 
-    for(let key in data) {
-        for(let number of data[key]) {
+    for (let key in data) {
+        for (let number of data[key]) {
             console.log(number);
         }
     }
@@ -563,8 +593,8 @@ function multiStructuresIteration2() {
         },
     ];
 
-    for(let elem of data) {
-        for(let key in elem) {
+    for (let elem of data) {
+        for (let key in elem) {
             console.log(elem[key]);
         }
     }
@@ -616,9 +646,9 @@ function multiStructuresIteration3() {
         },
     ];
 
-    for(let elem of data) {
-        for(let key in elem) {
-            for(let subElem of elem[key]) {
+    for (let elem of data) {
+        for (let key in elem) {
+            for (let subElem of elem[key]) {
                 console.log(subElem);
             }
         }
@@ -647,8 +677,8 @@ function multiArrayOfObjects1() {
         },
     ];
 
-    for(let elem of employees) {
-        console.log('name: '+ elem.name + ' - ' + 'salary: ' + elem.salary);
+    for (let elem of employees) {
+        console.log('name: ' + elem.name + ' - ' + 'salary: ' + elem.salary);
     }
 }
 
@@ -674,7 +704,7 @@ function multiArrayOfObjects2() {
 
     let sum = 0;
 
-    for(let elem of employees) {
+    for (let elem of employees) {
         sum += elem.salary;
     }
 
@@ -717,8 +747,8 @@ function multiArrayOfObjects3() {
 
     let sum = 0;
 
-    for(let elem of employees) {
-        if(elem.age >= 30) {
+    for (let elem of employees) {
+        if (elem.age >= 30) {
             sum += elem.salary;
         }
     }

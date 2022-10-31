@@ -1603,13 +1603,21 @@ function advancedFunc37() {
 //--------------
 
 function advancedFunc38() {
-    /*let arr = [[1, 2, 3], [4, 5, 6], [7, 8, 9]];
+    let arr = [[1, 2, 3], [4, 5, 6], [7, 8, 9]];
 
     function each(arr, callback) {
         let result = [];
 
-        for(let elem of arr) {
+        //using a specific syntax - you put it in a box where you can't work with different levels multi arrays
+        /*for(let i = 0; i < arr.length; i++) {
+            result.push(callback(arr[i][i], i));
+        }*/
 
+        //you can use two loops to find result
+        for(let i = 0; i < arr.length; i++) {
+            for(let j = 0; j < arr[i].length; j++) {
+                result.push(callback(arr[i][j], i));
+            }
         }
 
         return result;
@@ -1617,7 +1625,7 @@ function advancedFunc38() {
 
     let result = each(arr, (elem, index) => elem * index > 10);
 
-    console.log(result);*/
+    console.log(result);
 }
 
 //advancedFunc38();
@@ -1626,9 +1634,63 @@ function advancedFunc38() {
 
 function advancedFunc39() {
 
+    function makeRecursion(arr) {
+        console.log(arr.shift());
+
+        if(arr.length !==0) {
+            makeRecursion(arr);
+        }
+
+        return arr;
+    }
+
+    let arrNumber = [5, 16, 11];
+    let result = makeRecursion(arrNumber);
+
+    console.log(result);
 }
 
 
-//advancedFunc2();
+//advancedFunc39();
+
+//--------------
+
+function advancedFunc40() {
+    let i = 1;
+
+    function func(){
+        console.log(i);
+        i++;
+
+        if (i <= 10){
+            func(); // here is recursion
+        }
+    }
+    func();
+}
+
+
+//advancedFunc40();
+
+//--------------
+
+function advancedFunc41() {
+    function getSumSquare(arr) {
+        let sum = arr.shift() ** 2;
+
+        if(arr.length !== 0) {
+            sum += getSumSquare(arr);
+        }
+
+        return sum;
+    }
+
+    let smallArr = [4, 9, 1, 5];
+    let result = getSumSquare(smallArr);
+
+    console.log(result);
+}
+
+//advancedFunc41();
 
 //--------------
