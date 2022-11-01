@@ -1215,13 +1215,13 @@ function advancedFunc17() {
 
 function advancedFunc18() {
     function test(arr, func) {
-        for(let i = 0; i < arr.length; i++) {
+        for (let i = 0; i < arr.length; i++) {
             arr[i] = func(arr[i]);
         }
         return arr;
     }
 
-    let result = test([5, 10, 24], function(num) {
+    let result = test([5, 10, 24], function (num) {
         return num * num * num;
     });
 
@@ -1237,8 +1237,9 @@ function advancedFunc19() {
         function sumSquare(num) {
             return num * num;
         }
+
         function sumCube(num) {
-            return num * num *num;
+            return num * num * num;
         }
 
         return sumSquare(num1) + sumCube(num2);
@@ -1253,13 +1254,13 @@ function advancedFunc19() {
 
 function advancedFunc20() {
     function func1() {
-        return function() {
+        return function () {
             return 1;
         };
     }
 
     function func2() {
-        return function() {
+        return function () {
             return 2;
         };
     }
@@ -1274,9 +1275,9 @@ function advancedFunc20() {
 
 function advancedFunc21() {
     function func() {
-        return function() {
-            return function() {
-                return function() {
+        return function () {
+            return function () {
+                return function () {
                     return '!';
                 };
             };
@@ -1293,8 +1294,8 @@ function advancedFunc21() {
 
 function advancedFunc22() {
     function func(num1) {
-        return function(num2) {
-            return function(num3) {
+        return function (num2) {
+            return function (num3) {
                 return num1 + num2 + num3;
             };
         };
@@ -1309,10 +1310,10 @@ function advancedFunc22() {
 
 function advancedFunc23() {
     function func(num1) {
-        return function(num2) {
-            return function(num3) {
-                return function(num4) {
-                    return function() {
+        return function (num2) {
+            return function (num3) {
+                return function (num4) {
+                    return function () {
                         return arr.push(num1, num2, num3, num4);
                     };
                 };
@@ -1333,7 +1334,7 @@ function advancedFunc23() {
 function advancedFunc24() {
     function test() {
         let num = 1;
-        return function() {
+        return function () {
             console.log(num);
             num++;
         };
@@ -1352,10 +1353,10 @@ function advancedFunc24() {
 function advancedFunc25() {
     function test() {
         let num = 10;
-        return function() {
+        return function () {
             console.log(num);
             num--;
-            if(num < 0) {
+            if (num < 0) {
                 console.log('The countdown has ended');
             }
         };
@@ -1380,9 +1381,9 @@ function advancedFunc25() {
 //--------------
 
 function advancedFunc26() {
-    let result = function() {
+    let result = function () {
         return 1;
-    }() + function() {
+    }() + function () {
         return 2;
     }();
 
@@ -1394,7 +1395,7 @@ function advancedFunc26() {
 //--------------
 
 function advancedFunc27() {
-    let result = (function() {
+    let result = (function () {
         return '!';
     })();
 
@@ -1406,9 +1407,9 @@ function advancedFunc27() {
 //--------------
 
 function advancedFunc28() {
-    (function() {
-        return function(){
-            return function() {
+    (function () {
+        return function () {
+            return function () {
                 console.log('!');
             };
         };
@@ -1420,8 +1421,8 @@ function advancedFunc28() {
 //--------------
 
 function advancedFunc29() {
-    (function(num1) {
-        return function(num2){
+    (function (num1) {
+        return function (num2) {
             console.log(num1 + num2);
         }
     })(1)(2);
@@ -1432,9 +1433,9 @@ function advancedFunc29() {
 //--------------
 
 function advancedFunc30() {
-    (function(num1) {
-        return function(num2) {
-            return function(num3) {
+    (function (num1) {
+        return function (num2) {
+            return function (num3) {
                 console.log(num1 + num2 + num3);
             }
         }
@@ -1446,12 +1447,12 @@ function advancedFunc30() {
 //--------------
 
 function advancedFunc31() {
-    let func = (function() {
+    let func = (function () {
         let num = 1;
-        return function() {
+        return function () {
             console.log(num);
             num++;
-            if(num > 5) {
+            if (num > 5) {
                 num = 1;
             }
         };
@@ -1484,7 +1485,7 @@ function advancedFunc32() {
         return result;
     }
 
-    let result = each([5, 14, 61, 2], function(num) {
+    let result = each([5, 14, 61, 2], function (num) {
         return num * 2;
     });
 
@@ -1499,14 +1500,14 @@ function advancedFunc33() {
     function each(arr, callback) {
         let result = [];
 
-        for(let elem of arr) {
+        for (let elem of arr) {
             result.push(callback(elem));
         }
 
         return result;
     }
 
-    let result = each(['Anastasia', 'Stanislau', 'Walle'], function(str) {
+    let result = each(['Anastasia', 'Stanislau', 'Walle'], function (str) {
         return str.split('').reverse().join('');
     });
 
@@ -1521,14 +1522,14 @@ function advancedFunc34() {
     function each(arr, callback) {
         let result = [];
 
-        for(let elem of arr) {
+        for (let elem of arr) {
             result.push(callback(elem));
         }
 
         return result;
     }
 
-    let result = each(['anastasia', 'stanislau', 'walle'], function(str) {
+    let result = each(['anastasia', 'stanislau', 'walle'], function (str) {
         return str.slice(0, 1).toUpperCase() + str.slice(1);
     });
 
@@ -1543,7 +1544,7 @@ function advancedFunc35() {
     function each(arr, cube) {
         let result = [];
 
-        for(let elem of arr) {
+        for (let elem of arr) {
             result.push(cube(elem));
         }
 
@@ -1566,7 +1567,7 @@ function advancedFunc36() {
     function every(arr, callback) {
         let result = [];
 
-        for(let elem of arr) {
+        for (let elem of arr) {
             result.push(callback(elem));
         }
 
@@ -1586,7 +1587,7 @@ function advancedFunc37() {
     function every(arr, callback) {
         let result = [];
 
-        for(let i = 0; i < arr.length; i++) {
+        for (let i = 0; i < arr.length; i++) {
             result.push(callback(arr[i], i));
         }
 
@@ -1614,8 +1615,8 @@ function advancedFunc38() {
         }*/
 
         //you can use two loops to find result
-        for(let i = 0; i < arr.length; i++) {
-            for(let j = 0; j < arr[i].length; j++) {
+        for (let i = 0; i < arr.length; i++) {
+            for (let j = 0; j < arr[i].length; j++) {
                 result.push(callback(arr[i][j], i));
             }
         }
@@ -1637,7 +1638,7 @@ function advancedFunc39() {
     function makeRecursion(arr) {
         console.log(arr.shift());
 
-        if(arr.length !==0) {
+        if (arr.length !== 0) {
             makeRecursion(arr);
         }
 
@@ -1658,14 +1659,15 @@ function advancedFunc39() {
 function advancedFunc40() {
     let i = 1;
 
-    function func(){
+    function func() {
         console.log(i);
         i++;
 
-        if (i <= 10){
+        if (i <= 10) {
             func(); // here is recursion
         }
     }
+
     func();
 }
 
@@ -1678,7 +1680,7 @@ function advancedFunc41() {
     function getSumSquare(arr) {
         let sum = arr.shift() ** 2;
 
-        if(arr.length !== 0) {
+        if (arr.length !== 0) {
             sum += getSumSquare(arr);
         }
 
@@ -1692,5 +1694,164 @@ function advancedFunc41() {
 }
 
 //advancedFunc41();
+
+//--------------
+
+function advancedFunc42() {
+    let multiObj = {
+        a: 1,
+        b:
+            {c: 2, d: 3, e: 4},
+        f:
+            {
+                g: 5, j: 6, k:
+                    {
+                        l: 7, m:
+                            {n: 8, o: 9}
+                    }
+            }
+    };
+
+    function func(obj) {
+        for (let key in obj) {
+            if (typeof obj[key] === 'object') {
+                func(obj[key]);
+            } else {
+                console.log(obj[key]);
+            }
+        }
+
+        return obj;
+    }
+
+    let result = func(multiObj);
+    console.log(result);
+}
+
+//advancedFunc42();
+
+//--------------
+
+function advancedFunc43() {
+    let arrMulti = [
+        1,
+        [2, 7, 8],
+        [3, 4,
+            [5,
+                [6, 7]
+            ]
+        ]
+    ];
+
+    let newArr = [];
+
+    function func(arr) {
+        for(let elem of arr) {
+            if(typeof elem === 'object') {
+                func(elem);
+            } else {
+                newArr.push(elem);
+            }
+        }
+
+        return arr;
+    }
+
+    func(arrMulti);
+    console.log(newArr);
+}
+
+//advancedFunc43();
+
+//--------------
+
+function advancedFunc44() {
+    let obj = {
+        a: 1,
+        b:
+            {c: 2, d: 3, e: 4},
+        f:
+            {g: 5, j: 6, k:
+                    {l: 7, m:
+                            {n: 8, o: 9}
+                    }
+            }
+    };
+
+    function findSum(obj) {
+        let sum = 0;
+        for(let key in obj) {
+            if(typeof obj[key] === 'object') {
+                sum += findSum(obj[key]);
+            } else {
+                sum += obj[key];
+            }
+        }
+
+        return sum;
+    }
+
+    let result = findSum(obj);
+    console.log(result);
+}
+
+//advancedFunc44();
+
+//--------------
+
+function advancedFunc45() {
+    let multiArr = [
+        'a',
+        ['b', 'c', 'd'],
+        ['e', 'f',
+            ['g',
+                ['j', 'k']
+            ]
+        ]
+    ];
+
+    let str = '';
+
+    function func(arr) {
+        for(let elem of arr) {
+            if(typeof elem === 'object') {
+                func(elem);
+            } else {
+                str += elem;
+            }
+        }
+    }
+
+    func(multiArr);
+    console.log(str);
+}
+
+//advancedFunc45();
+
+//--------------
+
+function advancedFunc46() {
+    let multiArr = [
+        1,
+        [2, 7, 8],
+        [3, 4],
+        [5,
+            [6, 7]]
+    ];
+
+    function func(arr) {
+        for(let i = 0; i < arr.length; i++) {
+            if(typeof arr[i] === 'object') {
+                func(arr[i]);
+            } else {
+                console.log(arr[i] ** 2);
+            }
+        }
+    }
+
+    func(multiArr);
+}
+
+//advancedFunc46();
 
 //--------------
