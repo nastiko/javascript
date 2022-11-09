@@ -1,0 +1,7 @@
+.flex-container {
+    display: flex;
+}
+
+.block-support_img, .block-meeting_img {
+    width: 300px;
+}

@@ -245,8 +245,8 @@ function elementText4() {
       let sum = Number(firstNum) + Number(secondNum) + Number(thirdNum);
 
       let showSum = document.querySelector('.block');
-      //showSum.textContent = sum.toString();
-      showSum.append(sum.toString());
+      showSum.textContent = sum.toString();
+      //showSum.append(sum.toString());
    }
 }
 
@@ -255,29 +255,185 @@ function elementText4() {
 //--------------
 
 function elementText5() {
+   let clickButton = document.querySelector('#btn');
+   clickButton.addEventListener('click', addOne);
 
+   function addOne() {
+      let findNumber = document.querySelector('#elem1');
+      let isNumber = findNumber.textContent;
+      let sum = Number(isNumber) + 1;
+      findNumber.textContent = sum.toString();
+   }
 }
 
-//elementText1();
+//elementText5();
 
 //--------------
 
 function elementText6() {
+   let clickButton = document.querySelector('#btn');
+   clickButton.addEventListener('click', addElement);
 
+   function addElement() {
+      let findElement = document.querySelector('#addElem');
+      findElement.textContent = findElement.textContent + '?';
+   }
 }
 
-//elementText1();
+//elementText6();
 
 //--------------
+
+function elementHTML1() {
+   let isButton = document.querySelector('#btn');
+   isButton.addEventListener('click', readParagraph);
+
+   function readParagraph() {
+      let isParagraph = document.querySelector('#addElem');
+      console.log(isParagraph.innerHTML);
+   }
+}
+
+//elementHTML1();
+
 //--------------
+
+function elementHTML2() {
+   let isButton = document.querySelector('#btn');
+   isButton.addEventListener('click', changeParagraph);
+
+   function changeParagraph() {
+      let isParagraph = document.querySelector('#addElem');
+      isParagraph.innerHTML = '<b>Hey, hey! Your texts are bold.</b>';
+   }
+}
+
+//elementHTML2();
+
 //--------------
+
+function attributesViaProperties1() {
+   let isButton = document.querySelector('#btn');
+   isButton.addEventListener('click', showTypeAttribute);
+
+   function showTypeAttribute() {
+      let isElem = document.querySelector('#elem');
+      console.log(isElem.type);
+   }
+}
+
+//attributesViaProperties1();
+
 //--------------
+
+function attributesViaProperties2() {
+   let isButton = document.querySelector('#btn');
+   isButton.addEventListener('click', changeTypeAttribute);
+
+   function changeTypeAttribute() {
+      let isElem = document.querySelector('#elem');
+      isElem.type = 'submit';
+      console.log(isElem.type);
+   }
+}
+
+//attributesViaProperties2();
+
 //--------------
+
+function attributesViaProperties3() {
+   let isButton = document.querySelector('#link-btn');
+   isButton.addEventListener('click', showTypeAttribute);
+
+   function showTypeAttribute() {
+      let isElem = document.querySelector('.paragraph #portfolio-link');
+      let isParagraph = document.querySelector('.paragraph');
+      isParagraph.textContent = isElem.href;
+   }
+}
+
+//attributesViaProperties3();
+
 //--------------
+
+function attributesViaProperties4() {
+   let isButton = document.querySelector('#link-btn');
+   isButton.addEventListener('click', addHref);
+
+   function addHref() {
+      let isElem = document.querySelector('.paragraph #portfolio-link');
+      isElem.textContent = isElem.textContent + ' (https://anastasia.grinkevi.ch/)';
+   }
+}
+
+//attributesViaProperties4();
+
 //--------------
+
+function attributesViaProperties5() {
+   let isButton = document.querySelector('#img-btn');
+   isButton.addEventListener('click', findWayToImg);
+
+   function findWayToImg() {
+      let isImage = document.querySelector('#img-coding');
+      let isParagraph = document.querySelector('.text-change');
+      isParagraph.textContent = isImage.src;
+   }
+}
+
+//attributesViaProperties5();
+
 //--------------
+
+function attributesViaProperties6() {
+   let isButton = document.querySelector('#img-btn');
+   isButton.addEventListener('click', findWidthImg);
+
+   function findWidthImg() {
+      let isImage = document.querySelector('#img-coding');
+      isImage.width = '250';
+   }
+}
+
+//attributesViaProperties6();
+
 //--------------
+
+function attributesViaProperties7() {
+   let isButton = document.querySelector('#img-btn');
+   isButton.addEventListener('click', increaseWidthImg);
+
+   function increaseWidthImg() {
+      let isImage = document.querySelector('#img-coding');
+      isImage.width = Number(isImage.width) / 2;
+   }
+}
+
+//attributesViaProperties7();
+
 //--------------
+
+function attributesViaProperties8() {
+   let isFirstButton = document.querySelector('.flex-container #support-btn');
+   let isSecondButton = document.querySelector('.flex-container #meeting-btn');
+   isFirstButton.addEventListener('click', fundFirstToHolder);
+   isSecondButton.addEventListener('click', fundSecondToHolder);
+
+   function fundFirstToHolder() {
+      let isFirstAttribute = document.querySelector('#img-support');
+      let isFirstParagraph = document.querySelector('.first-way');
+      isFirstParagraph.textContent = isFirstAttribute.src;
+   }
+
+   function fundSecondToHolder() {
+      let isSecondAttribute = document.querySelector('#img-meeting');
+      let isSecondParagraph = document.querySelector('.second-way');
+      isSecondParagraph.textContent = isSecondAttribute.src;
+   }
+}
+
+//attributesViaProperties8();
+
 //--------------
 //--------------
 //--------------
