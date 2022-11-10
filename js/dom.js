@@ -435,15 +435,259 @@ function attributesViaProperties8() {
 //attributesViaProperties8();
 
 //--------------
-//--------------
-//--------------
-//--------------
-//--------------
-//--------------
-//--------------
-//--------------
-//--------------
-//--------------
-//--------------
+
+function textFields1() {
+   let isButton = document.querySelector('#btn');
+   isButton.addEventListener('click', changeText);
+
+   function changeText() {
+      let getText = document.querySelector('#elem');
+      getText.value = 'Your email';
+   }
+}
+
+//textFields1();
+
 //--------------
 
+function textFields2() {
+   let isButton = document.querySelector('#text-field-1');
+   isButton.addEventListener('click', duplicateText);
+
+   function duplicateText() {
+      let isInput = document.querySelector('#text-input');
+      let textParagraph = document.querySelector('#change-text');
+      textParagraph.textContent = isInput.value;
+   }
+}
+
+//textFields2();
+
+//--------------
+
+function textFields3() {
+   let isButton = document.querySelector('#square');
+   isButton.addEventListener('click', findSquare);
+
+   function findSquare() {
+      let isNumber = document.querySelector('#number-input');
+      let getSquare = Number(isNumber.value) ** 2;
+      let result = document.querySelector('#text-field-2');
+      result.value = getSquare.toString();
+   }
+}
+
+//textFields3();
+
+//--------------
+
+function textFields4() {
+   let isButton = document.querySelector('#text-field-1');
+   isButton.addEventListener('click', changeValue);
+
+   function changeValue() {
+      let firstInput = document.querySelector('#text-input');
+      let secondInput = document.querySelector('#text-field-2');
+      let firstValue = firstInput.value;
+      firstInput.value = secondInput.value;
+      secondInput.value = firstValue;
+   }
+}
+
+//textFields4();
+
+//--------------
+
+function textFields5() {
+   let isButton = document.querySelector('#mean-btn');
+   isButton.addEventListener('click', findMean);
+
+   function findMean() {
+      let isFirstInput = document.querySelector('#first-input');
+      let isSecondInput = document.querySelector('#second-input');
+      let isThirdInput = document.querySelector('#third-input');
+      let isFourthInput = document.querySelector('#fourth-input');
+      let isFifthInput = document.querySelector('#fifth-input');
+      let result = (Number(isFirstInput.value) + Number(isSecondInput.value) + Number(isThirdInput.value) + Number(isFourthInput.value) + Number(isFifthInput.value)) / 5;
+      let isParagraph = document.querySelector('#result');
+      isParagraph.textContent = result.toString();
+   }
+}
+
+//textFields5();
+
+//--------------
+
+function textFieldsFocus1() {
+   let elem = document.querySelector('#text-input');
+   elem.addEventListener('focus', function() {
+      console.log(elem.value);
+   });
+}
+
+//textFieldsFocus1();
+
+//--------------
+
+function textFieldsFocus2() {
+   let elem = document.querySelector('#text-input');
+
+   elem.addEventListener('focus', function() {
+      elem.value = 1;
+   });
+
+   elem.addEventListener('blur', function() {
+      elem.value = 2;
+   });
+}
+
+//textFieldsFocus2();
+
+//--------------
+
+function textFieldsFocus3() {
+   let elem = document.querySelector('#number-input');
+
+   elem.addEventListener('focus', function() {
+      elem.value = '';
+   });
+
+   elem.addEventListener('blur', function() {
+      let square = Number(elem.value) ** 2;
+      elem.value = square.toString();
+   });
+}
+
+//textFieldsFocus3();
+
+//--------------
+
+function textFieldsFocus4() {
+   let elem = document.querySelector('#text-input');
+   elem.addEventListener('focus', function() {
+      elem.value = '';
+   });
+}
+
+//textFieldsFocus4();
+
+//--------------
+
+function exceptionAttributes1() {
+   let isButton = document.querySelector('.btn-sum');
+   isButton.addEventListener('click', getClassName);
+
+   function getClassName() {
+      let findClass = document.querySelector('.first-number');
+      console.log(findClass.className);
+   }
+}
+
+//exceptionAttributes1();
+
+//--------------
+
+function exceptionAttributes2() {
+   let isButton = document.querySelector('#elem-btn');
+   isButton.addEventListener('click', addAttribute);
+
+   function addAttribute() {
+      let isBlock = document.querySelector('#elem-div');
+      isBlock.className = 'style-block';
+   }
+}
+
+exceptionAttributes2();
+
+//--------------
+
+function exceptionAttributes3() {
+
+}
+
+//exceptionAttributes1();
+
+//--------------
+//--------------
+//--------------
+//--------------
+//--------------
+//--------------
+//--------------
+//--------------
+//--------------
+//--------------
+//--------------
+//--------------
+//--------------
+//--------------
+//--------------
+//--------------
+//--------------
+//--------------
+//--------------
+//--------------
+//--------------
+//--------------
+//--------------
+//--------------
+//--------------
+//--------------
+//--------------
+//--------------
+//--------------
+//--------------
+//--------------
+//--------------
+//--------------
+//--------------
+//--------------
+//--------------
+//--------------
+//--------------
+//--------------
+//--------------
+//--------------
+//--------------
+//--------------
+//--------------
+//--------------
+//--------------
+//--------------
+//--------------
+//--------------
+//--------------
+//--------------
+//--------------
+//--------------
+//--------------
+//--------------
+//--------------
+//--------------
+//--------------
+//--------------
+//--------------
+//--------------
+//--------------
+//--------------
+//--------------
+//--------------
+//--------------
+//--------------
+//--------------
+//--------------
+//--------------
+//--------------
+//--------------
+//--------------
+//--------------
+//--------------
+//--------------
+//--------------
+//--------------
+//--------------
+//--------------
+//--------------
+//--------------
+//--------------
+//--------------
