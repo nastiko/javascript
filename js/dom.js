@@ -602,19 +602,149 @@ exceptionAttributes2();
 //--------------
 
 function exceptionAttributes3() {
+   let isButton = document.querySelector('#elem-btn');
+   isButton.addEventListener('click', getArrClass);
 
+   function getArrClass() {
+      let getClass = document.querySelector('#elem-arr');
+      console.log(getClass.className.split(' '));
+   }
 }
 
-//exceptionAttributes1();
+//exceptionAttributes3();
 
 //--------------
+
+function chaining1() {
+   let image = document.querySelector('.block-meeting_img').src;
+   console.log(image);
+}
+
+//chaining1();
+
 //--------------
+
+function this1() {
+   let isInput = document.querySelector('#elem');
+   isInput.addEventListener('focus', function() {
+      this.value = '1';
+   });
+   isInput.addEventListener('blur', function() {
+      this.value = '2';
+   });
+}
+
+//this1();
+
 //--------------
+
+function this2() {
+   let isButton = document.querySelector('#value-btn');
+   isButton.addEventListener('click', changeValue);
+
+   function changeValue() {
+      this.value ++;
+      console.log(this.value);
+   }
+}
+
+//this2();
+
 //--------------
+
+function thisAdvantage1() {
+   let firstParagraph = document.querySelector('.www');
+   let secondParagraph = document.querySelector('.www-2');
+   let thirdParagraph = document.querySelector('#elem4');
+   let fourthParagraph = document.querySelector('#elem5');
+   let fifthParagraph = document.querySelector('#elem6');
+
+   firstParagraph.addEventListener('click', func);
+   secondParagraph.addEventListener('click', func);
+   thirdParagraph.addEventListener('click', func);
+   fourthParagraph.addEventListener('click', func);
+   fifthParagraph.addEventListener('click', func);
+
+   function func() {
+      this.textContent = this.textContent + '!';
+   }
+}
+
+//thisAdvantage1();
+
 //--------------
+
+function thisAdvantage2() {
+   let firstInput = document.querySelector('#first-input');
+   let secondInput = document.querySelector('#second-input');
+   let thirdInput = document.querySelector('#third-input');
+   let fourthInput = document.querySelector('#fourth-input');
+   let fifthInput = document.querySelector('#fifth-input');
+
+   firstInput.addEventListener('blur', findSquare);
+   secondInput.addEventListener('blur', findSquare);
+   thirdInput.addEventListener('blur', findSquare);
+   fourthInput.addEventListener('blur', findSquare);
+   fifthInput.addEventListener('blur', findSquare);
+
+   function findSquare() {
+      this.value = this.value ** 2;
+   }
+}
+
+//thisAdvantage2();
+
 //--------------
+
+function elementsGroupGetting1() {
+   let isButton = document.querySelector('#button4');
+   isButton.addEventListener('click', findParagraphs);
+
+   function findParagraphs() {
+      let allParagraphs = document.querySelectorAll('.www');
+      for(let elem of allParagraphs) {
+         elem.textContent = 'text';
+      }
+   }
+}
+
+//elementsGroupGetting1();
+
 //--------------
+
+function elementsGroupGetting2() {
+   let isButton = document.querySelector('#button4');
+   isButton.addEventListener('click', findIndex);
+
+   function findIndex() {
+      let allParagraphs = document.querySelectorAll('.www');
+      for(let i = 0; i < allParagraphs.length; i++) {
+         allParagraphs[i].textContent = allParagraphs[i].textContent + ` ${i} is the index in loop`;
+      }
+   }
+}
+
+//elementsGroupGetting2();
+
 //--------------
+
+function elementsGroupGetting3() {
+   let isButton = document.querySelector('#mean-btn');
+   isButton.addEventListener('click', findSum);
+
+   function findSum() {
+      let findClasses = document.querySelectorAll('.find-sum');
+      let result = document.querySelector('#result');
+      let sum = 0;
+      for(let i = 0; i < findClasses.length; i++) {
+         sum += Number(findClasses[i].value);
+         result.textContent = sum.toString();
+      }
+   }
+}
+
+//elementsGroupGetting3();
+
 //--------------
 //--------------
 //--------------
