@@ -1027,21 +1027,188 @@ function attributeStyleStylization3() {
 //attributeStyleStylization3();
 
 //--------------
+
+function cssStylization1() {
+    let isButtonFirst = document.querySelector('#mark-text');
+    isButtonFirst.addEventListener('click', function markText() {
+        let isTextMark = document.querySelector('#styling');
+        isTextMark.classList.toggle('mark-text');
+        isTextMark.removeEventListener('click', markText);
+    });
+
+    let isButtonSecond = document.querySelector('#bold-text');
+    isButtonSecond.addEventListener('click', function boldText() {
+        let isTextBold = document.querySelector('#styling');
+        isTextBold.classList.toggle('bold-text');
+        isTextBold.removeEventListener('click', boldText);
+    });
+
+    let isButtonThird = document.querySelector('#red-text');
+    isButtonThird.addEventListener('click', function coloredText() {
+        let isTextColored = document.querySelector('#styling');
+        isTextColored.classList.toggle('colored');
+        isTextColored.removeEventListener('click', coloredText);
+    });
+}
+
+//cssStylization1();
+
 //--------------
+
+function cssStylization2() {
+    let isButton = document.querySelector('#button');
+    let isElem = document.querySelector('#elem-hiding');
+
+    isButton.addEventListener('click', function() {
+        isElem.classList.toggle('active');
+    });
+}
+
+//cssStylization2();
+
 //--------------
+
+function parentRelationshipSearching1() {
+    let isElem = document.querySelector('.list');
+    isElem.firstElementChild.classList.add('colored');
+}
+
+//parentRelationshipSearching1();
+
 //--------------
+
+function parentRelationshipSearching2() {
+    let isElem = document.querySelector('.list');
+    isElem.lastElementChild.classList.add('colored');
+}
+
+//parentRelationshipSearching2();
+
 //--------------
+
+function parentRelationshipSearching3() {
+    let isElem = document.querySelector('.list');
+    let childElements = isElem.children;
+
+    for(let i = 0; i < childElements.length; i++) {
+        childElements[i].textContent = childElements[i].textContent + '!';
+    }
+}
+
+//parentRelationshipSearching3();
+
 //--------------
+
+function parentRelationshipSearching4() {
+let elem = document.querySelector('#elem-text');
+elem.parentElement.classList.add('border');
+}
+
+//parentRelationshipSearching4();
+
 //--------------
+
+function parentRelationshipSearching5() {
+    let getElem = document.querySelector('#elem-header');
+    console.log(getElem.closest('div'));
+}
+
+//parentRelationshipSearching5();
+
 //--------------
+
+function parentRelationshipSearching6() {
+    let getElem = document.querySelector('#elem-header');
+    console.log(getElem.closest('.www'));
+}
+
+//parentRelationshipSearching6();
+
 //--------------
+
+function parentRelationshipSearching7() {
+    let findSibling = document.querySelector('#elem-text');
+    findSibling.previousElementSibling.textContent = findSibling.previousElementSibling.textContent + '!';
+}
+
+//parentRelationshipSearching7();
+
 //--------------
+
+function parentRelationshipSearching8() {
+    let findSibling = document. querySelector('#elem-text');
+    findSibling.nextElementSibling.textContent = findSibling.nextElementSibling.textContent + '!';
+}
+
+//parentRelationshipSearching8();
+
 //--------------
+
+function parentRelationshipSearching9() {
+    let isElem = document.querySelector('#elem-text');
+    let findSibling = isElem.nextElementSibling;
+    findSibling.nextElementSibling.textContent = findSibling.nextElementSibling.textContent + '!';
+}
+
+//parentRelationshipSearching9();
+
 //--------------
+
+function parentRelationshipSearching10() {
+    let isChild = document.querySelector('#elem-text');
+    let previousChild = isChild.previousElementSibling;
+    let nextChild = isChild.nextElementSibling;
+    let a = previousChild.textContent;
+    let b = nextChild.textContent;
+    nextChild.textContent = a;
+    previousChild.textContent = b;
+}
+
+//parentRelationshipSearching10();
+
 //--------------
+
+function otherSearchMethods1() {
+    let getElem = document.getElementById('elem-header');
+    getElem.textContent = 'Hello there!';
+}
+
+//otherSearchMethods1();
+
 //--------------
+
+function otherSearchMethods2() {
+    let findList = document.getElementsByTagName('li');
+    for(let i = 0; i < findList.length; i++) {
+        findList[i].classList.add('colored');
+    }
+}
+
+//otherSearchMethods2();
+
 //--------------
+
+function otherSearchMethods3() {
+    let getClasses = document.getElementsByClassName('www');
+    for(let i = 0; i < getClasses.length; i++) {
+        getClasses[i].classList.add('colored');
+    }
+}
+
+//otherSearchMethods3();
+
 //--------------
+
+function insideElementSearching() {
+    let parent = document.querySelector('#parent');
+    let elem1 = parent.querySelectorAll('.xxx');
+    let elem2 = parent.querySelectorAll('.ggg');
+
+    console.log(elem1, elem2);
+}
+
+//insideElementSearching();
+
 //--------------
 //--------------
 //--------------

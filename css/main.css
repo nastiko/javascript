@@ -5,3 +5,29 @@
 .block-support_img, .block-meeting_img {
     width: 300px;
 }
+
+.mark-text {
+    text-decoration: line-through;
+}
+
+.bold-text {
+    font-weight: bold;
+}
+
+.colored {
+    color: chocolate;
+}
+
+#elem-hiding {
+    display: none;
+    width: 200px;
+    height: 200px;
+    border: 1px solid green;
+}
+#elem-hiding.active {
+    display: block;
+}
+
+.border {
+    border: 1px solid green;
+}
