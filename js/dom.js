@@ -1210,24 +1210,233 @@ function insideElementSearching() {
 //insideElementSearching();
 
 //--------------
+
+function dataAttribute1() {
+    let isBlock = document.getElementById('data-attribute');
+    isBlock.addEventListener('click', function addText() {
+        isBlock.textContent = isBlock.textContent + ` ${isBlock.dataset.text}`;
+        this.removeEventListener('click', addText);
+    });
+}
+
+//dataAttribute1();
+
 //--------------
+
+function dataAttribute2() {
+    let getList = document.querySelectorAll('.list li');
+    for(let i = 0; i < getList.length; i++) {
+        getList[i].addEventListener('click', function addIndex() {
+            this.textContent = this.textContent + `: ${this.dataset.num}`;
+            this.removeEventListener('click', addIndex);
+        });
+    }
+}
+
+dataAttribute2();
+
 //--------------
+
+function dataAttribute3() {
+    let isButton = document.getElementById('button5');
+    let getButton = document.getElementById('button6');
+    isButton.addEventListener('click', function countClick() {
+        isButton.dataset.click++;
+        getButton.value = isButton.dataset.click;
+    });
+}
+
+//dataAttribute3();
+
 //--------------
+
+function dataAttribute4() {
+    let isInput = document.getElementById('elem');
+    isInput.addEventListener('blur', function getText() {
+        if(isInput.id.length.toString() !== isInput.dataset.length) {
+            isInput.value = 'Doesn\'t match the specified one';
+        }
+    });
+}
+
+//dataAttribute4();
+
 //--------------
+
+function dataAttribute5() {
+    let getInput = document.getElementById('elem-data');
+    getInput.addEventListener('blur', function getText() {
+        if(getInput.id.length.toString() > getInput.dataset.min && getInput.id.length.toString() < getInput.dataset.max) {
+            getInput.value = 'Doesn\'t match the specified one';
+        } else {
+            getInput.value = 'Does match the specified one';
+        }
+    });
+}
+
+//dataAttribute5();
+
 //--------------
+
+function dataAttribute6() {
+    let isBlock = document.getElementById('elem-data');
+    isBlock.addEventListener('click', function totalItem() {
+        let total = Number(isBlock.dataset.productPrice) * Number(isBlock.dataset.productAmount);
+        isBlock.textContent = `${isBlock.textContent} - their price: ${total}`;
+    });
+}
+
+//dataAttribute6();
+
 //--------------
+
+function dataAttribute7() {
+    let getElem = document.querySelectorAll('.www');
+    for(let i = 0; i < getElem.length; i++) {
+        getElem[i].setAttribute('data-num', `${i}`);
+    }
+}
+
+//dataAttribute7();
+
 //--------------
+
+function nodes1() {
+    let elem = document.getElementById('elem-childnodes');
+    console.log(elem.firstChild);
+    console.log(elem.firstElementChild);
+}
+
+//nodes1();
+
 //--------------
+
+function nodes2() {
+    let elem = document.querySelector('b');
+    console.log(elem.nextSibling);
+    console.log(elem.nextElementSibling);
+}
+
+//nodes2();
+
 //--------------
+
+function nodes3() {
+    let elem = document.querySelector('b');
+    console.log(elem.previousSibling);
+    console.log(elem.previousElementSibling);
+}
+
+//nodes3();
+
 //--------------
+
+function nodes4() {
+    let getElem = document.querySelector('#elem-childnodes');
+    for (let node of getElem.childNodes) {
+        console.log(node);
+    }
+}
+
+//nodes4();
+
 //--------------
+
+function nodes5() {
+    let getElem = document.querySelector('#elem-childnodes');
+    for (let node of getElem.childNodes) {
+        console.log(node.nodeName);
+    }
+}
+
+//nodes5();
+
 //--------------
+
+function nodes6() {
+    let getElem = document.querySelector('#elem-childnodes');
+    for (let node of getElem.childNodes) {
+        console.log(node.TEXT_NODE, node.ELEMENT_NODE);
+    }
+}
+
+//nodes6();
+
 //--------------
+
+function nodes7() {
+    let getElem = document.querySelector('#elem-childnodes');
+    for (let node of getElem.childNodes) {
+        console.log(node.textContent);
+    }
+}
+
+//nodes7();
+
 //--------------
+
+function nodes8() {
+    let getElem = document.querySelector('#elem-childnodes');
+    for (let node of getElem.childNodes) {
+        console.log(node.data);
+    }
+}
+
+//nodes8();
+
 //--------------
+
+function nodes9() {
+    let getElem = document.querySelector('#elem-childnodes');
+    for (let node of getElem.childNodes) {
+        if(node.nodeType === 3 || node.nodeType === 1)
+        console.log(node.textContent);
+    }
+}
+
+//nodes9();
+
 //--------------
+
+function nodes10() {
+    let getElem = document.querySelector('#elem-childnodes');
+    for (let i = 0; i < getElem.childNodes.length; i++) {
+        getElem.childNodes[i].textContent = getElem.childNodes[i].textContent + ` - ${getElem.childNodes[i].nodeType} `;
+    }
+}
+
+//nodes10();
+
 //--------------
+
+function nodes11() {
+    let getElem = document.querySelector('#elem-childnodes');
+    getElem.removeChild(getElem.childNodes[3]);
+}
+
+//nodes11();
+
 //--------------
+
+/*function coding() {
+    let getElem = document.querySelectorAll('.list-years li');
+    let sumYears = 0;
+    for(let i = 0; i < getElem.length; i++) {
+        let content = getElem[i].textContent.split('');
+        let sum = 0;
+        for(let i = 0; i < content.length; i++) {
+            sum += Number(content[i]);
+            if(sum === 6) {
+                let getYears = Number(content.join(''));
+                sumYears += getYears;
+            }
+        }
+    }
+    console.log(sumYears);
+}
+
+coding();*/
+
 //--------------
 //--------------
 //--------------

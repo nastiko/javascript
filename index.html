@@ -6,17 +6,27 @@
     <title>Javascript</title>
 </head>
 <body>
+<h1>JS in console</h1>
 <header>
-    <div class="www">
+    <div class="www"> text
         <p class="www">
-            <span id="elem-header"></span>
+            <!--add span-->
+            <span id="elem-header">tag</span>
         </p>
     </div>
 </header>
-<h1>JS in console</h1>
+<div id="elem-nodes">
+    <!--сomm-->
+    test
+    <span>tag</span>
+</div>
 <div id="block">
     <p>1</p>
     <p>2</p>
+</div>
+<div id="elem-childnodes">First text
+    <b>tag1</b><!--Comment1-->Second text
+    <b>tag2</b><!--Comment2-->
 </div>
 <div class="block">Here you can see sum, when click the button
     <p class="first-number">3</p>
@@ -27,24 +37,27 @@
 <p id="elem1">5</p>
 <p id="elem2">6</p>
 <p id="elem3">7</p>
-<p class="www">First text</p>
-<p class="www">Repeat first text</p>
-<p class="www">Repeat again</p>
+<p class="www" data-num="">First text</p>
+<p class="www" data-num="">Repeat first text</p>
+<p class="www" data-num="">Repeat again</p>
 <p class="www-2">Second text</p>
 <input id="button1" type="submit">
 <input id="button2" type="submit">
 <input id="button3" type="submit">
 <input id="button4" type="submit" value="Button1">
-<input id="button5" type="submit" value="Button2">
-<input id="button6" type="submit" value="1">
+<input id="button5" type="submit" value="Button2" data-click='0'>
+<input id="button6" type="submit" value="0">
 <p id="elem4">Third text</p>
 <p id="elem5">Fourth text</p>
 <p id="elem6">Fifth text</p>
 <p id="elem7">Sixth text</p>
 <p id="elem8">Seventh text</p>
 <p id="addElem">Hello, how are you</p>
-<input id="elem" type="email" value="text">
+<input id="elem" type="email" value="text" data-length="5">
 <button id="btn">Click me!</button>
+<div id="elem-data" data-product-price="1000" data-product-amount="5" data-min="5" data-max="10">
+    Apples
+</div>
 <p class="paragraph">
     <a href="https://anastasia.grinkevi.ch/" id="portfolio-link">Anastasia Hrynkevich's portfolio</a>
     <button id="link-btn">Click me!</button>
@@ -94,12 +107,13 @@
 <div>3</div>
 <div>4</div>
 <div>5</div>
+<div id="data-attribute" data-text="str">You can see the context's attribute here</div>
 <div>
     <ul class="list">
-        <li>25</li>
-        <li>14</li>
-        <li>9</li>
-        <li>32</li>
+        <li data-num="1">25</li>
+        <li data-num="2">14</li>
+        <li data-num="3">9</li>
+        <li data-num="4">32</li>
     </ul>
     <button id="list-btn">Float List</button>
 </div>
@@ -127,6 +141,17 @@
     <p class="ggg">text</p>
     <p class="ggg">text</p>
     <p class="ggg">text</p>
+</div>
+<div>
+    <ul class="list-years">
+        <li>6000</li>
+        <li>2000</li>
+        <li>2004</li>
+        <li>2021</li>
+        <li>2022</li>
+        <li>2025</li>
+        <li>2031</li>
+    </ul>
 </div>
 
 
