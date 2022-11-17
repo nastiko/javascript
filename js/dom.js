@@ -1016,7 +1016,7 @@ function attributeStyleStylization3() {
 
     function floatList() {
         let isLists = document.querySelectorAll('li');
-        for(let i = 0; i < isLists.length; i++) {
+        for (let i = 0; i < isLists.length; i++) {
             isLists[i].style.cssFloat = 'left';
             isLists[i].style.margin = '5px';
             isLists[i].style.listStyle = 'none';
@@ -1059,7 +1059,7 @@ function cssStylization2() {
     let isButton = document.querySelector('#button');
     let isElem = document.querySelector('#elem-hiding');
 
-    isButton.addEventListener('click', function() {
+    isButton.addEventListener('click', function () {
         isElem.classList.toggle('active');
     });
 }
@@ -1090,7 +1090,7 @@ function parentRelationshipSearching3() {
     let isElem = document.querySelector('.list');
     let childElements = isElem.children;
 
-    for(let i = 0; i < childElements.length; i++) {
+    for (let i = 0; i < childElements.length; i++) {
         childElements[i].textContent = childElements[i].textContent + '!';
     }
 }
@@ -1100,8 +1100,8 @@ function parentRelationshipSearching3() {
 //--------------
 
 function parentRelationshipSearching4() {
-let elem = document.querySelector('#elem-text');
-elem.parentElement.classList.add('border');
+    let elem = document.querySelector('#elem-text');
+    elem.parentElement.classList.add('border');
 }
 
 //parentRelationshipSearching4();
@@ -1136,7 +1136,7 @@ function parentRelationshipSearching7() {
 //--------------
 
 function parentRelationshipSearching8() {
-    let findSibling = document. querySelector('#elem-text');
+    let findSibling = document.querySelector('#elem-text');
     findSibling.nextElementSibling.textContent = findSibling.nextElementSibling.textContent + '!';
 }
 
@@ -1179,7 +1179,7 @@ function otherSearchMethods1() {
 
 function otherSearchMethods2() {
     let findList = document.getElementsByTagName('li');
-    for(let i = 0; i < findList.length; i++) {
+    for (let i = 0; i < findList.length; i++) {
         findList[i].classList.add('colored');
     }
 }
@@ -1190,7 +1190,7 @@ function otherSearchMethods2() {
 
 function otherSearchMethods3() {
     let getClasses = document.getElementsByClassName('www');
-    for(let i = 0; i < getClasses.length; i++) {
+    for (let i = 0; i < getClasses.length; i++) {
         getClasses[i].classList.add('colored');
     }
 }
@@ -1225,7 +1225,7 @@ function dataAttribute1() {
 
 function dataAttribute2() {
     let getList = document.querySelectorAll('.list li');
-    for(let i = 0; i < getList.length; i++) {
+    for (let i = 0; i < getList.length; i++) {
         getList[i].addEventListener('click', function addIndex() {
             this.textContent = this.textContent + `: ${this.dataset.num}`;
             this.removeEventListener('click', addIndex);
@@ -1253,7 +1253,7 @@ function dataAttribute3() {
 function dataAttribute4() {
     let isInput = document.getElementById('elem');
     isInput.addEventListener('blur', function getText() {
-        if(isInput.id.length.toString() !== isInput.dataset.length) {
+        if (isInput.id.length.toString() !== isInput.dataset.length) {
             isInput.value = 'Doesn\'t match the specified one';
         }
     });
@@ -1266,7 +1266,7 @@ function dataAttribute4() {
 function dataAttribute5() {
     let getInput = document.getElementById('elem-data');
     getInput.addEventListener('blur', function getText() {
-        if(getInput.id.length.toString() > getInput.dataset.min && getInput.id.length.toString() < getInput.dataset.max) {
+        if (getInput.id.length.toString() > getInput.dataset.min && getInput.id.length.toString() < getInput.dataset.max) {
             getInput.value = 'Doesn\'t match the specified one';
         } else {
             getInput.value = 'Does match the specified one';
@@ -1292,7 +1292,7 @@ function dataAttribute6() {
 
 function dataAttribute7() {
     let getElem = document.querySelectorAll('.www');
-    for(let i = 0; i < getElem.length; i++) {
+    for (let i = 0; i < getElem.length; i++) {
         getElem[i].setAttribute('data-num', `${i}`);
     }
 }
@@ -1389,8 +1389,8 @@ function nodes8() {
 function nodes9() {
     let getElem = document.querySelector('#elem-childnodes');
     for (let node of getElem.childNodes) {
-        if(node.nodeType === 3 || node.nodeType === 1)
-        console.log(node.textContent);
+        if (node.nodeType === 3 || node.nodeType === 1)
+            console.log(node.textContent);
     }
 }
 
@@ -1418,25 +1418,365 @@ function nodes11() {
 
 //--------------
 
-/*function coding() {
+function coding1() {
     let getElem = document.querySelectorAll('.list-years li');
     let sumYears = 0;
-    for(let i = 0; i < getElem.length; i++) {
-        let content = getElem[i].textContent.split('');
-        let sum = 0;
-        for(let i = 0; i < content.length; i++) {
-            sum += Number(content[i]);
-            if(sum === 6) {
-                let getYears = Number(content.join(''));
-                sumYears += getYears;
+    for (let i = 0; i < getElem.length; i++) {
+        let separateSmallArrs = getElem[i].textContent.split('');
+
+        //after splitting, moved on every element in arr and find their sum.
+        function findSumEveryNumber(arr) {
+            let sum = 0;
+            for (let i = 0; i < arr.length; i++) {
+                sum += Number(arr[i]);
             }
+            return sum;
         }
+        let sumEveryArr = findSumEveryNumber(separateSmallArrs);
+
+        //comparing sum of every arr with 6 and get years
+        function getResultYears(sumArr) {
+            let result = '';
+            if (sumArr === 6) {
+                result = Number(separateSmallArrs.join(''));
+            }
+            return result;
+        }
+
+        let resultYears = getResultYears(sumEveryArr);
+        sumYears += Number(resultYears);
     }
     console.log(sumYears);
 }
 
-coding();*/
+//coding1();
 
+//--------------
+
+//how to make your code readable:
+function coding2() {
+    //after splitting, moved on every element in arr and find their sum.
+    function getDigitsSum(arr) {
+        let sum = 0;
+        for (let i = 0; i < arr.length; i++) {
+            sum += Number(arr[i]);
+        }
+        return sum;
+    }
+
+    let getElem = document.querySelectorAll('.list-years li');
+    let sumYears = 0;
+    for (let i = 0; i < getElem.length; i++) {
+        let yearDigits = getElem[i].textContent.split('');
+
+        //comparing sum of every arr with 6 and get years
+        if (getDigitsSum(yearDigits) === 6) {
+            sumYears += Number(yearDigits.join(''));
+        }
+    }
+
+    console.log(sumYears);
+}
+
+//coding2();
+
+//--------------
+
+//learning with mentor
+function coding3(){
+    function getDigitsSum(number = '') {
+        let sum = 0;
+        // adding "toString" so that getDigitsSum can work with numbers and strings parameter
+        // and splitting string to individual chars
+        number = number.toString().split('');
+
+        // walk through the number digits and add them to sum
+        for (let i = 0; i < number.length; i++) {
+            sum += Number(number[i]);
+        }
+
+        return sum;
+    }
+
+    function getSumYears(years) {
+        let sumYears = 0;
+
+        // walk through all years listed
+        for (let i = 0; i < years.length; i++) {
+            // extract year as text from DOM element
+            let year = years[i].textContent;
+
+            // check if sum of year digits is equal to six, then add this year to overall sum
+            if (getDigitsSum(year) === 6) {
+                sumYears += Number(year);
+            }
+        }
+
+        return sumYears;
+    }
+
+    let years = document.querySelectorAll('.list-years li');
+    console.log(getSumYears(years));
+}
+
+//coding3();
+
+//--------------
+
+function findMistakes1() {
+    let elems = document.querySelectorAll('#find-mistakes p');
+    for(let i = 0; i < elems.length; i++) {
+        elems[i].textContent += '!';
+    }
+}
+
+//findMistakes1();
+
+//--------------
+
+function findMistakes2() {
+    let elems = document.querySelectorAll('#find-mistakes p');
+
+    for (let elem of elems) {
+        elem.addEventListener('click', function() {
+            this.textContent = Number(this.textContent) + 1;
+        });
+    }
+}
+
+//findMistakes2();
+
+//--------------
+
+function findMistakes3() {
+    let button = document.querySelector('#find-mistakes button');
+    let elem   = document.querySelector('#bold');
+
+    button.addEventListener('click', function() {
+        elem.innerHTML = '<b>text</b>';
+    });
+}
+
+//findMistakes3();
+
+//--------------
+
+function findMistakes4() {
+    let button = document.querySelector('#find-mistakes button');
+    let elems  = document.querySelectorAll('#find-mistakes p');
+
+    button.addEventListener('click', function() {
+        let sum = 0;
+        for (let elem of elems) {
+            sum += Number(elem.textContent);
+        }
+        console.log(sum);
+    });
+}
+
+//findMistakes4();
+
+//--------------
+
+function findMistakes5() {
+    let elems = document.querySelectorAll('#find-mistakes p');
+
+    for (let elem of elems) {
+        elem.addEventListener('click', () => {
+            elem.textContent += '!';
+        });
+    }
+}
+
+//findMistakes5();
+
+//--------------
+
+function findMistakes6() {
+    let button = document.querySelector('#find-mistakes button');
+    let elems  = document.querySelectorAll('#find-mistakes span');
+
+    button.addEventListener('click', function() {
+        for (let elem of elems) {
+            elem.innerHTML = `<b>${elem.innerHTML}</b>`;
+        }
+    });
+}
+
+//findMistakes6();
+
+//--------------
+
+function findMistakes7() {
+    let button = document.querySelector('#find-mistakes button');
+    let elems  = document.querySelectorAll('#find-mistakes p');
+    let sum = 0;
+
+    for (let elem of elems) {
+        sum += Number(elem.textContent);
+
+        button.addEventListener('click', function() {
+            console.log(sum);
+        });
+    }
+}
+
+//findMistakes7();
+
+//--------------
+
+function findMistakes8() {
+    let button = document.querySelector('#find-mistakes button');
+    let elems  = document.querySelectorAll('#find-mistakes input');
+    button.addEventListener('click', function() {
+        let sum = 0;
+        for (let elem of elems) {
+            sum += Number(elem.value);
+        }
+        console.log(sum);
+    });
+}
+
+//findMistakes8();
+
+//--------------
+
+function findMistakes9() {
+    let btn  = document.querySelector('#find-mistakes button');
+    let inp1 = document.querySelector('#inp1');
+    let inp2 = document.querySelector('#inp2');
+    let inp3 = document.querySelector('#inp3');
+
+    btn.addEventListener('click', function() {
+        inp3.value = Number(inp1.value) + Number(inp2.value);
+    });
+}
+
+//findMistakes9();
+
+//--------------
+
+function findMistakes10() {
+    let btn  = document.querySelector('#find-mistakes button');
+    let res  = document.querySelector('#bold');
+    let inp1 = document.querySelector('#inp1');
+    let inp2 = document.querySelector('#inp2');
+
+    btn.addEventListener('click', function() {
+        let sum = Number(inp1.value) + Number(inp2.value);
+        res.textContent = sum.toString();
+    });
+}
+
+//findMistakes10();
+
+//--------------
+
+function findMistakes11() {
+    let button = document.querySelector('#find-mistakes button');
+    let inputs = document.querySelectorAll('#find-mistakes input');
+
+    button.addEventListener('click',function() {
+        for (let input of inputs) {
+            if (input.value === input.dataset.text) {
+                input.classList.add('right');
+            } else {
+                input.classList.add('wrong');
+            }
+        }
+    });
+}
+
+//findMistakes11();
+
+//--------------
+
+function findMistakes12() {
+    let button = document.querySelector('#find-mistakes button');
+    let inputs = document.querySelectorAll('#find-mistakes input');
+
+    let texts = ['text1', 'text2', 'text3'];
+
+    button.addEventListener('click',function() {
+        for (let i = 0; i < inputs.length; i++) {
+            for (let j = 0; j < texts.length; j++) {
+                if (inputs[i].value === texts[j]) {
+                    inputs[i].classList.add('right');
+                    break;
+                } else {
+                    inputs[i].classList.add('wrong');
+                }
+            }
+        }
+    });
+}
+
+findMistakes12();
+
+//--------------
+
+function findMistakes13() {
+    let inputs = document.querySelectorAll('#find-mistakes input');
+    let btn = document.querySelector('#find-mistakes button');
+
+    btn.addEventListener('click', function() {
+        let sum = 0;
+        for (let input of inputs) {
+            sum += Number(input.value);
+        }
+        console.log(sum);
+    });
+}
+
+//findMistakes13();
+
+//--------------
+
+function findMistakes14() {
+    let btn  = document.querySelector('#find-mistakes button');
+    let inp1 = document.querySelector('#inp1');
+    let inp2 = document.querySelector('#inp2');
+    let inp3 = document.querySelector('#inp3');
+
+    btn.addEventListener('click', function() {
+        let sum  = Number(inp1.value) + Number(inp2.value);
+        inp3.value = sum;
+    });
+}
+
+//findMistakes14();
+
+//--------------
+
+function findMistakes15() {
+    let input = document.querySelector('#inp1');
+
+    input.addEventListener('blur', function() {
+        let digits = input.value.split('');
+        let sum = 0;
+
+        for (let digit of digits) {
+            sum += Number(digit);
+        }
+
+        console.log(sum);
+    });
+}
+
+//findMistakes15();
+
+//--------------
+//--------------
+//--------------
+//--------------
+//--------------
+//--------------
+//--------------
+//--------------
+//--------------
+//--------------
+//--------------
+//--------------
 //--------------
 //--------------
 //--------------

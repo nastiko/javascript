@@ -31,3 +31,11 @@
 .border {
     border: 1px solid green;
 }
+
+.right {
+    color: green;
+}
+
+.wrong {
+    color: red;
+}
