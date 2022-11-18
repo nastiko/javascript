@@ -1766,29 +1766,200 @@ function findMistakes15() {
 //findMistakes15();
 
 //--------------
+
+function practicum1() {
+    let input = document.getElementById('elem');
+    input.addEventListener('blur', getValue);
+
+    function getValue() {
+        let paragraph = document.getElementById('addElem');
+        paragraph.textContent = paragraph.textContent + `: his value is ${input.value}`;
+    }
+}
+
+//practicum1();
+
 //--------------
+
+function practicum2() {
+
+    function updateParSum() {
+        let inputs = document.querySelectorAll('#numbers input'); // найди все элементы типа инпут относительно this на том же уровне
+        let sum = 0;
+        for(let i = 0; i < inputs.length; i++) {
+            sum += Number(inputs[i].value);
+        }
+        let paragraph = document.getElementById('result');
+        paragraph.textContent = `The sum of numbers: ${sum}`;
+    }
+
+    let button = document.getElementById('mean-btn');
+    button.addEventListener('click', updateParSum);
+}
+
+//practicum2();
+
 //--------------
+
+function practicum3() {
+    function getDigitSum() {
+        let digits = input.value.split('');
+        let sum = 0;
+        for(let i = 0; i < digits.length; i++) {
+            sum += Number(digits[i]);
+        }
+        this.value = sum;
+    }
+
+    let input = document.getElementById('number-input');
+    input.addEventListener('blur', getDigitSum);
+}
+
+//practicum3();
+
 //--------------
+
+function practicum4() {
+    function getMean() {
+        let digits = input.value.split(',');
+        let sum = 0;
+        let mean = 0;
+        for(let i = 0; i < digits.length; i++) {
+            sum += Number(digits[i]);
+            mean = sum / Number(digits.length);
+        }
+        this.value = mean;
+    }
+
+    let input = document.getElementById('text-field');
+    input.addEventListener('blur', getMean);
+}
+
+//practicum4();
+
+
 //--------------
+
+function practicum5() {
+
+}
+
+//practicum5();
+
 //--------------
+function practicum6() {
+
+}
+
+//practicum6();
 //--------------
+function practicum7() {
+
+}
+
+//practicum7();
 //--------------
+function practicum8() {
+
+}
+
+//practicum8();
 //--------------
+function practicum9() {
+
+}
+
+//practicum9();
 //--------------
+function practicum10() {
+
+}
+
+//practicum10();
 //--------------
+function practicum11() {
+
+}
+
+//practicum11();
 //--------------
+function practicum12() {
+
+}
+
+//practicum12();
 //--------------
+function practicum13() {
+
+}
+
+//practicum13();
 //--------------
+function practicum14() {
+
+}
+
+//practicum14();
 //--------------
+function practicum15() {
+
+}
+
+//practicum15();
 //--------------
+function practicum16() {
+
+}
+
+//practicum16();
 //--------------
+function practicum17() {
+
+}
+
+//practicum17();
 //--------------
+function practicum18() {
+
+}
+
+//practicum18();
 //--------------
+function practicum19() {
+
+}
+
+//practicum19();
 //--------------
+function practicum20() {
+
+}
+
+//practicum20();
 //--------------
+function practicum21() {
+
+}
+
+//practicum21();
 //--------------
+function practicum22() {
+
+}
+
+//practicum22();
 //--------------
+function practicum23() {
+
+}
+
+//practicum23();
 //--------------
+function practicum24() {
+
+}
+
+//practicum24();
 //--------------
 //--------------
 //--------------
