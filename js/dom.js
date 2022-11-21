@@ -597,7 +597,7 @@ function exceptionAttributes2() {
     }
 }
 
-exceptionAttributes2();
+//exceptionAttributes2();
 
 //--------------
 
@@ -1841,42 +1841,113 @@ function practicum4() {
 //--------------
 
 function practicum5() {
+    let input = document.getElementById('text-full_name');
+    input.addEventListener('blur', getNames);
 
+    function getNames() {
+        let nameParts = input.value.split(' ');
+        let classes = document.querySelectorAll('.name');
+        for(let i = 0; i < nameParts.length; i++) {
+            classes[i].value = nameParts[i];
+        }
+    }
+
+    //or we can leave code like this because we only have 2 inputs
+    function getNames_1() {
+        let nameParts = input.value.split(' ');
+        for(let i = 0; i < nameParts.length; i++) {
+            document.getElementById('text-first_name').value = nameParts[0];
+            document.getElementById('text-last_name').value = nameParts[1];
+        }
+    }
 }
 
 //practicum5();
 
 //--------------
-function practicum6() {
 
+function practicum6() {
+    let input = document.getElementById('text-full_name');
+    input.addEventListener('blur', setUpperCase);
+
+    function setUpperCase() {
+        let nameParts = input.value.split(' ');
+        for(let i = 0; i < nameParts.length; i++) {
+            nameParts[i] = nameParts[i].split('');
+            nameParts[i][0] = nameParts[i][0].toUpperCase();
+            nameParts[i] = nameParts[i].join('');
+        }
+        input.value = nameParts.join(' ');
+    }
 }
 
 //practicum6();
-//--------------
-function practicum7() {
 
+//--------------
+
+function practicum7() {
+    let input = document.getElementById('text-full_name');
+    input.addEventListener('blur', getLength);
+
+    function getLength() {
+        let worldParts = input.value.split(' ');
+        for(let i = 0; i < worldParts.length; i++) {
+            input.value = worldParts.length;
+        }
+    }
 }
 
 //practicum7();
-//--------------
-function practicum8() {
 
+//--------------
+
+function practicum8() {
+    let input = document.getElementById('text-full_name');
+    input.addEventListener('blur', reverseDate);
+
+    function reverseDate() {
+        let getDigits = input.value.split('.').reverse().join('-');
+        input.value = getDigits;
+    }
 }
 
 //practicum8();
-//--------------
-function practicum9() {
 
+//--------------
+
+function practicum9() {
+    let button = document.getElementById('square');
+    button.addEventListener('click', getSameWord);
+
+    function getSameWord() {
+        let input = document.getElementById('text-field');
+        let reverseWord = input.value.split('').reverse().join('');
+        input.value = input.value === reverseWord;
+    }
 }
 
 //practicum9();
+
 //--------------
 function practicum10() {
+    let input = document.getElementById('number-input');
+    input.addEventListener('blur', getNumber);
 
+    function getNumber() {
+        let digits = input.value.split('');
+        for(let i = 0; i < digits.length; i++) {
+            if(digits[i] === '3') {
+               alert('This number has 3');
+               break;
+            }
+        }
+    }
 }
 
 //practicum10();
+
 //--------------
+
 function practicum11() {
 
 }
