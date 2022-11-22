@@ -1432,6 +1432,7 @@ function coding1() {
             }
             return sum;
         }
+
         let sumEveryArr = findSumEveryNumber(separateSmallArrs);
 
         //comparing sum of every arr with 6 and get years
@@ -1483,7 +1484,7 @@ function coding2() {
 //--------------
 
 //learning with mentor
-function coding3(){
+function coding3() {
     function getDigitsSum(number = '') {
         let sum = 0;
         // adding "toString" so that getDigitsSum can work with numbers and strings parameter
@@ -1525,7 +1526,7 @@ function coding3(){
 
 function findMistakes1() {
     let elems = document.querySelectorAll('#find-mistakes p');
-    for(let i = 0; i < elems.length; i++) {
+    for (let i = 0; i < elems.length; i++) {
         elems[i].textContent += '!';
     }
 }
@@ -1538,7 +1539,7 @@ function findMistakes2() {
     let elems = document.querySelectorAll('#find-mistakes p');
 
     for (let elem of elems) {
-        elem.addEventListener('click', function() {
+        elem.addEventListener('click', function () {
             this.textContent = Number(this.textContent) + 1;
         });
     }
@@ -1550,9 +1551,9 @@ function findMistakes2() {
 
 function findMistakes3() {
     let button = document.querySelector('#find-mistakes button');
-    let elem   = document.querySelector('#bold');
+    let elem = document.querySelector('#bold');
 
-    button.addEventListener('click', function() {
+    button.addEventListener('click', function () {
         elem.innerHTML = '<b>text</b>';
     });
 }
@@ -1563,9 +1564,9 @@ function findMistakes3() {
 
 function findMistakes4() {
     let button = document.querySelector('#find-mistakes button');
-    let elems  = document.querySelectorAll('#find-mistakes p');
+    let elems = document.querySelectorAll('#find-mistakes p');
 
-    button.addEventListener('click', function() {
+    button.addEventListener('click', function () {
         let sum = 0;
         for (let elem of elems) {
             sum += Number(elem.textContent);
@@ -1594,9 +1595,9 @@ function findMistakes5() {
 
 function findMistakes6() {
     let button = document.querySelector('#find-mistakes button');
-    let elems  = document.querySelectorAll('#find-mistakes span');
+    let elems = document.querySelectorAll('#find-mistakes span');
 
-    button.addEventListener('click', function() {
+    button.addEventListener('click', function () {
         for (let elem of elems) {
             elem.innerHTML = `<b>${elem.innerHTML}</b>`;
         }
@@ -1609,13 +1610,13 @@ function findMistakes6() {
 
 function findMistakes7() {
     let button = document.querySelector('#find-mistakes button');
-    let elems  = document.querySelectorAll('#find-mistakes p');
+    let elems = document.querySelectorAll('#find-mistakes p');
     let sum = 0;
 
     for (let elem of elems) {
         sum += Number(elem.textContent);
 
-        button.addEventListener('click', function() {
+        button.addEventListener('click', function () {
             console.log(sum);
         });
     }
@@ -1627,8 +1628,8 @@ function findMistakes7() {
 
 function findMistakes8() {
     let button = document.querySelector('#find-mistakes button');
-    let elems  = document.querySelectorAll('#find-mistakes input');
-    button.addEventListener('click', function() {
+    let elems = document.querySelectorAll('#find-mistakes input');
+    button.addEventListener('click', function () {
         let sum = 0;
         for (let elem of elems) {
             sum += Number(elem.value);
@@ -1642,12 +1643,12 @@ function findMistakes8() {
 //--------------
 
 function findMistakes9() {
-    let btn  = document.querySelector('#find-mistakes button');
+    let btn = document.querySelector('#find-mistakes button');
     let inp1 = document.querySelector('#inp1');
     let inp2 = document.querySelector('#inp2');
     let inp3 = document.querySelector('#inp3');
 
-    btn.addEventListener('click', function() {
+    btn.addEventListener('click', function () {
         inp3.value = Number(inp1.value) + Number(inp2.value);
     });
 }
@@ -1657,12 +1658,12 @@ function findMistakes9() {
 //--------------
 
 function findMistakes10() {
-    let btn  = document.querySelector('#find-mistakes button');
-    let res  = document.querySelector('#bold');
+    let btn = document.querySelector('#find-mistakes button');
+    let res = document.querySelector('#bold');
     let inp1 = document.querySelector('#inp1');
     let inp2 = document.querySelector('#inp2');
 
-    btn.addEventListener('click', function() {
+    btn.addEventListener('click', function () {
         let sum = Number(inp1.value) + Number(inp2.value);
         res.textContent = sum.toString();
     });
@@ -1676,7 +1677,7 @@ function findMistakes11() {
     let button = document.querySelector('#find-mistakes button');
     let inputs = document.querySelectorAll('#find-mistakes input');
 
-    button.addEventListener('click',function() {
+    button.addEventListener('click', function () {
         for (let input of inputs) {
             if (input.value === input.dataset.text) {
                 input.classList.add('right');
@@ -1697,7 +1698,7 @@ function findMistakes12() {
 
     let texts = ['text1', 'text2', 'text3'];
 
-    button.addEventListener('click',function() {
+    button.addEventListener('click', function () {
         for (let i = 0; i < inputs.length; i++) {
             for (let j = 0; j < texts.length; j++) {
                 if (inputs[i].value === texts[j]) {
@@ -1719,7 +1720,7 @@ function findMistakes13() {
     let inputs = document.querySelectorAll('#find-mistakes input');
     let btn = document.querySelector('#find-mistakes button');
 
-    btn.addEventListener('click', function() {
+    btn.addEventListener('click', function () {
         let sum = 0;
         for (let input of inputs) {
             sum += Number(input.value);
@@ -1733,13 +1734,13 @@ function findMistakes13() {
 //--------------
 
 function findMistakes14() {
-    let btn  = document.querySelector('#find-mistakes button');
+    let btn = document.querySelector('#find-mistakes button');
     let inp1 = document.querySelector('#inp1');
     let inp2 = document.querySelector('#inp2');
     let inp3 = document.querySelector('#inp3');
 
-    btn.addEventListener('click', function() {
-        let sum  = Number(inp1.value) + Number(inp2.value);
+    btn.addEventListener('click', function () {
+        let sum = Number(inp1.value) + Number(inp2.value);
         inp3.value = sum;
     });
 }
@@ -1751,7 +1752,7 @@ function findMistakes14() {
 function findMistakes15() {
     let input = document.querySelector('#inp1');
 
-    input.addEventListener('blur', function() {
+    input.addEventListener('blur', function () {
         let digits = input.value.split('');
         let sum = 0;
 
@@ -1786,7 +1787,7 @@ function practicum2() {
     function updateParSum() {
         let inputs = document.querySelectorAll('#numbers input'); // найди все элементы типа инпут относительно this на том же уровне
         let sum = 0;
-        for(let i = 0; i < inputs.length; i++) {
+        for (let i = 0; i < inputs.length; i++) {
             sum += Number(inputs[i].value);
         }
         let paragraph = document.getElementById('result');
@@ -1805,7 +1806,7 @@ function practicum3() {
     function getDigitSum() {
         let digits = input.value.split('');
         let sum = 0;
-        for(let i = 0; i < digits.length; i++) {
+        for (let i = 0; i < digits.length; i++) {
             sum += Number(digits[i]);
         }
         this.value = sum;
@@ -1824,7 +1825,7 @@ function practicum4() {
         let digits = input.value.split(',');
         let sum = 0;
         let mean = 0;
-        for(let i = 0; i < digits.length; i++) {
+        for (let i = 0; i < digits.length; i++) {
             sum += Number(digits[i]);
             mean = sum / Number(digits.length);
         }
@@ -1847,7 +1848,7 @@ function practicum5() {
     function getNames() {
         let nameParts = input.value.split(' ');
         let classes = document.querySelectorAll('.name');
-        for(let i = 0; i < nameParts.length; i++) {
+        for (let i = 0; i < nameParts.length; i++) {
             classes[i].value = nameParts[i];
         }
     }
@@ -1855,7 +1856,7 @@ function practicum5() {
     //or we can leave code like this because we only have 2 inputs
     function getNames_1() {
         let nameParts = input.value.split(' ');
-        for(let i = 0; i < nameParts.length; i++) {
+        for (let i = 0; i < nameParts.length; i++) {
             document.getElementById('text-first_name').value = nameParts[0];
             document.getElementById('text-last_name').value = nameParts[1];
         }
@@ -1872,7 +1873,7 @@ function practicum6() {
 
     function setUpperCase() {
         let nameParts = input.value.split(' ');
-        for(let i = 0; i < nameParts.length; i++) {
+        for (let i = 0; i < nameParts.length; i++) {
             nameParts[i] = nameParts[i].split('');
             nameParts[i][0] = nameParts[i][0].toUpperCase();
             nameParts[i] = nameParts[i].join('');
@@ -1891,7 +1892,7 @@ function practicum7() {
 
     function getLength() {
         let worldParts = input.value.split(' ');
-        for(let i = 0; i < worldParts.length; i++) {
+        for (let i = 0; i < worldParts.length; i++) {
             input.value = worldParts.length;
         }
     }
@@ -1935,10 +1936,10 @@ function practicum10() {
 
     function getNumber() {
         let digits = input.value.split('');
-        for(let i = 0; i < digits.length; i++) {
-            if(digits[i] === '3') {
-               alert('This number has 3');
-               break;
+        for (let i = 0; i < digits.length; i++) {
+            if (digits[i] === '3') {
+                alert('This number has 3');
+                break;
             }
         }
     }
@@ -1949,41 +1950,122 @@ function practicum10() {
 //--------------
 
 function practicum11() {
+    let button = document.querySelector('.btn-sum');
+    button.addEventListener('click', getIndexs);
 
+    function getIndexs() {
+        let paragraphs = document.querySelectorAll('.block p');
+        for (let i = 0; i < paragraphs.length; i++) {
+            paragraphs[i].textContent += `- its index is: ${i}`;
+        }
+    }
 }
 
 //practicum11();
-//--------------
-function practicum12() {
 
+//--------------
+
+function practicum12() {
+    let links = document.querySelectorAll('.paragraph a');
+    for (let i = 0; i < links.length; i++) {
+        links[i].textContent += ` (${links[i].href})`;
+    }
 }
 
 //practicum12();
+
 //--------------
 function practicum13() {
-
+    let links = document.querySelectorAll('.paragraph a');
+    for (let i = 0; i < links.length; i++) {
+        if (links[i].href.indexOf('https://') === 0) {
+            links[i].innerHTML += '&rarr;';
+        }
+    }
 }
 
 //practicum13();
-//--------------
-function practicum14() {
 
+//--------------
+
+function practicum14() {
+    let paragraphs = document.querySelectorAll('.block p');
+    for (let i = 0; i < paragraphs.length; i++) {
+        paragraphs[i].addEventListener('click', countSquare);
+    }
+
+    function countSquare() {
+        this.textContent = Number(this.textContent) ** 2;
+    }
 }
 
 //practicum14();
-//--------------
-function practicum15() {
 
+//--------------
+
+function practicum15() {
+    let input = document.getElementById('elem');
+    input.addEventListener('blur', getDayWeek);
+
+    function getDayWeek() {
+        let dayMonthYear = input.value.split('.').reverse().join(' ');
+        let date = new Date(dayMonthYear);
+        let day = date.getDay();
+        let days = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
+        input.value = days[day];
+    }
 }
 
 //practicum15();
-//--------------
-function practicum16() {
 
+//--------------
+
+function practicum16_1() {
+    document.querySelectorAll('.p16-cls').forEach(element => element.addEventListener('click', sumNumber));
+
+    function sumNumber() {
+        let resultEl = document.getElementById('p16-input-result');
+        let resultVal = Number(resultEl.value) + Number(this.value);
+        resultEl.value = resultVal < 0 ? 0 : resultVal.toString();
+    }
 }
 
-//practicum16();
+function practicum16_2() {
+    function sumNumber(element) {
+        let value = Number(element.value) + Number(this.value);
+        element.value = value < 0 ? 0 : value.toString();
+    }
+
+    let result = document.getElementById('p16-input-result');
+    let buttons = document.querySelectorAll('.p16-cls');
+    buttons.forEach(function (element) {
+        element.addEventListener('click', function () {
+            sumNumber(result)
+        })
+    });
+}
+
+function practicum16_3() {
+    let classes = document.querySelectorAll('.p16-cls');
+    let input   = document.getElementById('p16-input-result');
+    let sum     = Number(input.value);
+
+    for (let i = 0; i < classes.length; i++) {
+        classes[i].addEventListener('click', function changeNumber() {
+            sum += Number(classes[i].textContent);
+            if (sum >= 0) {
+                input.value = sum.toString();
+            } else if (sum < 0) {
+                input.value = 0;
+            }
+        });
+    }
+}
+
+practicum16_3();
+
 //--------------
+
 function practicum17() {
 
 }
