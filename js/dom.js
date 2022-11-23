@@ -1,6 +1,6 @@
 function getElement1() {
-    let paragraphFirst = document.querySelector('#elem1');
-    console.log(paragraphFirst);
+    let paragraph = document.querySelector('#dom1-text');
+    console.log(paragraph);
 }
 
 //getElement1();
@@ -8,8 +8,8 @@ function getElement1() {
 //--------------
 
 function getElement2() {
-    let isParagraph = document.querySelector('#block p');
-    console.log(isParagraph);
+    let paragraph = document.querySelector('#dom2-second_number');
+    console.log(paragraph);
 }
 
 //getElement2();
@@ -17,8 +17,8 @@ function getElement2() {
 //--------------
 
 function getElement3() {
-    let isParagraph = document.querySelector('.block p');
-    console.log(isParagraph);
+    let paragraph = document.querySelector('#dom3 #dom3-third_number');
+    console.log(paragraph);
 }
 
 //getElement3();
@@ -2047,8 +2047,8 @@ function practicum16_2() {
 
 function practicum16_3() {
     let classes = document.querySelectorAll('.p16-cls');
-    let input   = document.getElementById('p16-input-result');
-    let sum     = Number(input.value);
+    let input = document.getElementById('p16-input-result');
+    let sum = Number(input.value);
 
     for (let i = 0; i < classes.length; i++) {
         classes[i].addEventListener('click', function changeNumber() {
@@ -2062,40 +2062,96 @@ function practicum16_3() {
     }
 }
 
-practicum16_3();
+//practicum16_3();
 
 //--------------
 
 function practicum17() {
+    let input = document.getElementById('p17-input-result');
+    let paragraphs = document.querySelectorAll('#p17 p');
+    for (let i = 0; i < paragraphs.length; i++) {
+        paragraphs[i].addEventListener('click', countClick);
+    }
 
+    let count = 0;
+
+    function countClick() {
+        count++;
+        input.value = count;
+    }
 }
 
 //practicum17();
-//--------------
-function practicum18() {
 
+//--------------
+
+function practicum18() {
+    let paragraphs = document.querySelectorAll('.style-block .text-lorem');
+    let str = '';
+    for (let i = 0; i < paragraphs.length; i++) {
+        str = paragraphs[i].textContent.slice(0, 350) + '...';
+        paragraphs[i].textContent = str;
+    }
 }
 
 //practicum18();
+
 //--------------
 function practicum19() {
+    let input = document.getElementById('p19-input_number');
+    input.addEventListener('blur', checkNumber);
 
+    function checkNumber() {
+        let inputNumber = input.value;
+        inputNumber > 1 && inputNumber < 100 ? input.classList.add('right') : input.classList.add('wrong');
+    }
 }
 
 //practicum19();
-//--------------
-function practicum20() {
 
+//--------------
+
+function practicum20() {
+    function randomSymbols() {
+        let alphabet = 'abcdefghijklmnopqrstuvwxyz';
+        let result = '';
+        for (let i = 0; i < 8; i++) {
+            result += alphabet.charAt(Math.floor(Math.random() * alphabet.length));
+            input.value = result;
+        }
+    }
+
+    let input = document.getElementById('p20-text');
+    let button = document.getElementById('p20-button');
+    button.addEventListener('click', randomSymbols);
 }
 
 //practicum20();
-//--------------
-function practicum21() {
 
+//--------------
+
+function practicum21() {
+    function mixLetters() {
+        let arr = input.value.split('');
+        for (let i = 0; i <= arr.length - 1; i++) {
+            let rnd = Math.floor(Math.random() * arr.length);
+            let temp = arr[rnd];
+            arr[rnd] = arr[i];
+            arr[i] = temp;
+        }
+        input.value = arr.join('');
+    }
+
+    let button = document.getElementById('p21-button');
+    button.addEventListener('click', mixLetters);
+
+    let input = document.getElementById('p21-text');
 }
 
 //practicum21();
+
 //--------------
+
 function practicum22() {
 
 }

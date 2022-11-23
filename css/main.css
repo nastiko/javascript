@@ -1,3 +1,7 @@
+.style-text {
+    font-weight: bold;
+}
+
 .flex-container {
     display: flex;
 }
@@ -38,4 +42,15 @@
 
 .wrong {
     color: red;
+}
+
+#p18 .flex-container {
+    justify-content: space-between;
+    font-size: 17px;
+    margin: 0 5rem;
+}
+
+.style-block {
+    width: 400px;
+    margin: 0 2rem;
 }

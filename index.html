@@ -7,6 +7,32 @@
 </head>
 <body>
 <h1>JS in console</h1>
+
+<!-- THEORY #1 -->
+<div id="dom1">
+    <p id="dom1-text">Find element with using theory DOM</p>
+</div>
+<hr/>
+
+<!-- THEORY #2 -->
+<div id="dom2">
+    <span>Find any element:</span>
+    <p id="dom2-first_number">1</p>
+    <p id="dom2-second_number">2</p>
+    <p id="dom2-third_number">3</p>
+</div>
+<hr/>
+
+<!-- THEORY #3 -->
+<div id="dom3">
+    <span>Find the third element with using id equal to dom3:</span>
+    <p id="dom3-first_number">1</p>
+    <p id="dom3-second_number">2</p>
+    <p id="dom3-third_number">3</p>
+</div>
+<hr/>
+
+
 <header>
     <div class="www"> text
         <p class="www">
@@ -19,10 +45,6 @@
     <!--сomm-->
     test
     <span>tag</span>
-</div>
-<div id="block">
-    <p>1</p>
-    <p>2</p>
 </div>
 <div id="elem-childnodes">First text
     <b>tag1</b><!--Comment1-->Second text
@@ -189,34 +211,79 @@
     <label for="element3">Text 3</label>
     <input id="element3" type="email" value="text" data-length="5"><br>
 </form>
-
 <hr/>
-<div style="padding-bottom: 20px"></div>
 
-<!-- ZADACHA #16 -->
+<!-- TASKS #16 -->
 
 <div id="p16">
+    <p class="style-text">Increment or decrement the input value by 1 or 2:</p>
     <label for="p16-input-result">Result</label>
-    <input id="p16-input-result" value="16" data-text="text1"><br>
+    <input id="p16-input-result" value="16" data-text="text1">
     <button value="2" class="p16-cls">+2</button>
     <button value="1" class="p16-cls">+1</button>
     <button value="-1" class="p16-cls">-1</button>
     <button value="-2" class="p16-cls">-2</button>
 </div>
 <hr/>
-<div style="padding-bottom: 20px"></div>
 
-<!-- ZADACHA #17 -->
+<!-- TASK #17 -->
 
 <div id="p17">
+    <p class="style-text">Calculate the total number of clicks on these paragraphs:</p>
     <label for="p17-input-result">Result</label>
-    <input id="p17-input-result" value="16" data-text="text1"><br>
-    <button value="2" class="p16-cls">+2</button>
-    <button value="1" class="p16-cls">+1</button>
-    <button value="-1" class="p16-cls">-1</button>
-    <button value="-2" class="p16-cls">-2</button>
+    <input id="p17-input-result"><br>
+    <p>Click me!</p>
+    <p>Click me!</p>
+    <p>Click me!</p>
+    <p>Click me!</p>
 </div>
+<hr/>
 
+<!-- TASK #18 -->
+
+<div id="p18">
+    <p class="style-text">Cut off the texts and add an ellipsis to the end of the truncated texts:</p>
+    <div class="flex-container">
+        <div class="style-block">
+            <p class="text-lorem">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+        </div>
+        <div class="style-block">
+            <p class="text-lorem">It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like).</p>
+        </div>
+        <div class="style-block">
+            <p class="text-lorem">There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text. All the Lorem Ipsum generators on the Internet tend to repeat predefined chunks as necessary, making this the first true generator on the Internet. It uses a dictionary of over 200 Latin words, combined with a handful of model sentence structures, to generate Lorem Ipsum which looks reasonable. The generated Lorem Ipsum is therefore always free from repetition, injected humour, or non-characteristic words etc.</p>
+        </div>
+    </div>
+</div>
+<hr/>
+
+<!-- TASK #19 -->
+
+<div id="p19">
+    <p class="style-text">Check that it contains a number from 1 to 100. If so, color the input into green, and if not, into red:</p>
+    <label for="p19-input_number">Result</label>
+    <input id="p19-input_number" value="" type="number">
+</div>
+<hr/>
+
+<!-- TASK #20 -->
+
+<div id="p20">
+    <p class="style-text">Generate a random string of 8 characters:</p>
+    <label for="p20-text">Result</label>
+    <input id="p20-text" value="">
+    <button id="p20-button">Click me!</button>
+</div>
+<hr/>
+
+<!-- TASK #21 -->
+
+<div id="p21">
+    <p class="style-text">Mix the entered characters randomly:</p>
+    <label for="p21-text">Result</label>
+    <input id="p21-text" value="">
+    <button id="p21-button">Click me!</button>
+</div>
 
 <script src="js/dom.js"></script>
 <script src="js/prettyPrint.js"></script>
