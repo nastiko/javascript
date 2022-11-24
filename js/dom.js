@@ -2153,25 +2153,76 @@ function practicum21() {
 //--------------
 
 function practicum22() {
+    let button = document.getElementById('p22-button');
+    button.addEventListener('click', convertDegrees);
 
+    function convertDegrees() {
+        let input = document.getElementById('p22-text');
+        let paragraph = document.getElementById('p22-paragraph');
+        let value = input.value;
+        paragraph.textContent = `${paragraph.textContent} ` + (Number(value) - 32) * (5 / 9);
+    }
 }
 
 //practicum22();
+
 //--------------
 function practicum23() {
+    function processClickEvent() {
+        function factorial(n) {
+            return (n !== 1) ? n * factorial(n - 1) : 1;
+        }
 
+        let value = input.value;
+        paragraph.textContent += Number(value) > 1 ? ` ${Number(factorial(value))}` : 'error';
+    }
+
+    let paragraph = document.getElementById('p23-paragraph');
+    let button = document.getElementById('p23-button');
+    let input = document.getElementById('p23-text');
+
+    button.addEventListener('click', processClickEvent);
 }
 
 //practicum23();
+
 //--------------
+
 function practicum24() {
+
+    function calculateRoot() {
+        function resultDiscriminant(num1, num2, num3) {
+            return (num2 ** 2) - (4 * num1 * num3);
+        }
+
+        let inputs = document.querySelectorAll('#p24 input');
+        let a = Number(inputs[0].value);
+        let b = Number(inputs[1].value);
+        let c = Number(inputs[2].value);
+        let result = resultDiscriminant(a, b, c);
+        let denom = 2 * a;
+        let oneRoot = '';
+        let twoRoots = '';
+        if (result === 0) {
+            oneRoot = (-b / denom).toFixed(2);
+            paragraph.textContent += oneRoot;
+        } else if (result > 0) {
+            oneRoot = ((-b - Math.sqrt(result)) / denom).toFixed(2);
+            twoRoots = ((-b + Math.sqrt(result)) / denom).toFixed(2);
+            paragraph.textContent += ` the first root is ${oneRoot} and the second root is ${twoRoots}`;
+        } else {
+            paragraph.textContent += ' Equation has no roots';
+        }
+    }
+
+    let button = document.getElementById('p24-button');
+    let paragraph = document.getElementById('p24-paragraph');
+
+    button.addEventListener('click', calculateRoot);
 
 }
 
-//practicum24();
+practicum24();
+
 //--------------
-//--------------
-//--------------
-//--------------
-//--------------
-//--------------
+
