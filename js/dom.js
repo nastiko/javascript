@@ -1,3 +1,4 @@
+//THEORY #1
 function getElement1() {
     let paragraph = document.querySelector('#dom1-text');
     console.log(paragraph);
@@ -7,6 +8,7 @@ function getElement1() {
 
 //--------------
 
+//THEORY #2
 function getElement2() {
     let paragraph = document.querySelector('#dom2-second_number');
     console.log(paragraph);
@@ -16,6 +18,7 @@ function getElement2() {
 
 //--------------
 
+//THEORY #3
 function getElement3() {
     let paragraph = document.querySelector('#dom3 #dom3-third_number');
     console.log(paragraph);
@@ -25,27 +28,29 @@ function getElement3() {
 
 //--------------
 
+//THEORY #4
 function getElement4() {
-    let isParagraph = document.querySelector('.www');
-    console.log(isParagraph);
+    let paragraph = document.querySelector('#dom4 .www');
+    console.log(paragraph);
 }
 
 //getElement4();
 
 //--------------
 
+//THEORY #5
 function eventsHandlersBinding() {
-    let buttonFirst = document.querySelector('#button1');
+    let buttonFirst = document.querySelector('#dom5-button1');
     buttonFirst.addEventListener('click', function () {
         alert(1);
     });
 
-    let buttonSecond = document.querySelector('#button2');
+    let buttonSecond = document.querySelector('#dom5-button2');
     buttonSecond.addEventListener('click', function () {
         alert('Hello JavaScript!');
     });
 
-    let buttonThird = document.querySelector('#button3');
+    let buttonThird = document.querySelector('#dom5-button3');
     buttonThird.addEventListener('click', function () {
         alert('It\'s so fun to do that!');
     });
@@ -55,16 +60,17 @@ function eventsHandlersBinding() {
 
 //--------------
 
+//THEORY #6
 function namedEventHandlers() {
-    let buttonFourth = document.querySelector('#button4');
-    buttonFourth.addEventListener('click', func1);
+    let buttonFirst = document.querySelector('#dom6-button1');
+    buttonFirst.addEventListener('click', func1);
 
     function func1() {
         console.log(1);
     }
 
-    let buttonFifth = document.querySelector('#button5');
-    buttonFifth.addEventListener('click', func2);
+    let buttonSecond = document.querySelector('#dom6-button2');
+    buttonSecond.addEventListener('click', func2);
 
     function func2() {
         console.log(2);
@@ -75,21 +81,22 @@ function namedEventHandlers() {
 
 //--------------
 
+//THEORY #7
 function manyElementsHandlers() {
-    let isParagraphFirst = document.querySelector('#elem4');
-    isParagraphFirst.addEventListener('click', func);
+    let paragraphFirst = document.querySelector('#dom7-elem1');
+    paragraphFirst.addEventListener('click', func);
 
-    let isParagraphSecond = document.querySelector('#elem5');
-    isParagraphSecond.addEventListener('click', func);
+    let paragraphSecond = document.querySelector('#dom7-elem2');
+    paragraphSecond.addEventListener('click', func);
 
-    let isParagraphThird = document.querySelector('#elem6');
-    isParagraphThird.addEventListener('click', func);
+    let paragraphThird = document.querySelector('#dom7-elem3');
+    paragraphThird.addEventListener('click', func);
 
-    let isParagraphFourth = document.querySelector('#elem7');
-    isParagraphFourth.addEventListener('click', func);
+    let paragraphFourth = document.querySelector('#dom7-elem4');
+    paragraphFourth.addEventListener('click', func);
 
-    let isParagraphFifth = document.querySelector('#elem8');
-    isParagraphFifth.addEventListener('click', func);
+    let paragraphFifth = document.querySelector('#dom7-elem5');
+    paragraphFifth.addEventListener('click', func);
 
     function func() {
         console.log('You have a message');
@@ -100,11 +107,12 @@ function manyElementsHandlers() {
 
 //--------------
 
+//THEORY #8
 function severalHandlers() {
-    let isParagraph = document.querySelector('#elem1');
-    isParagraph.addEventListener('click', func1);
-    isParagraph.addEventListener('click', func2);
-    isParagraph.addEventListener('click', func3);
+    let paragraph = document.querySelector('#dom8-elem');
+    paragraph.addEventListener('click', func1);
+    paragraph.addEventListener('click', func2);
+    paragraph.addEventListener('click', func3);
 
     function func1() {
         console.log('1');
@@ -123,9 +131,10 @@ function severalHandlers() {
 
 //--------------
 
+//THEORY #9
 function differentEventsHandlers1() {
-    let isButton = document.querySelector('#button1');
-    isButton.addEventListener('dblclick', func);
+    let button = document.querySelector('#dom9-button');
+    button.addEventListener('dblclick', func);
 
     function func() {
         alert('It was double click');
@@ -136,9 +145,10 @@ function differentEventsHandlers1() {
 
 //--------------
 
+//THEORY #10
 function differentEventsHandlers2() {
-    let isButton = document.querySelector('#button2');
-    isButton.addEventListener('mouseover', func);
+    let button = document.querySelector('#dom10-button');
+    button.addEventListener('mouseover', func);
 
     function func() {
         alert('Hello there!');
@@ -149,9 +159,10 @@ function differentEventsHandlers2() {
 
 //--------------
 
+//THEORY #11
 function differentEventsHandlers3() {
-    let isButton = document.querySelector('#button3');
-    isButton.addEventListener('mouseout', func);
+    let button = document.querySelector('#dom11-button');
+    button.addEventListener('mouseout', func);
 
     function func() {
         alert('See you soon!');
@@ -162,10 +173,11 @@ function differentEventsHandlers3() {
 
 //--------------
 
+//THEORY #12
 function differentEventsHandlers4() {
-    let isButton = document.querySelector('#button4');
-    isButton.addEventListener('mouseover', firstMessage);
-    isButton.addEventListener('mouseout', secondMessage);
+    let button = document.querySelector('#dom12-button');
+    button.addEventListener('mouseover', firstMessage);
+    button.addEventListener('mouseout', secondMessage);
 
     function firstMessage() {
         alert('Hello');
@@ -180,12 +192,13 @@ function differentEventsHandlers4() {
 
 //--------------
 
+//THEORY #13
 function elementText1() {
-    let isButton = document.querySelector('#btn');
-    isButton.addEventListener('click', textButton);
+    let button = document.querySelector('#dom13-button');
+    button.addEventListener('click', textButton);
 
     function textButton() {
-        console.log(isButton.textContent);
+        console.log(button.textContent);
     }
 }
 
@@ -193,12 +206,13 @@ function elementText1() {
 
 //--------------
 
+//THEORY #14
 function elementText2() {
-    let isButton = document.querySelector('#btn');
-    isButton.addEventListener('click', changeText);
+    let button = document.querySelector('#dom14-button');
+    button.addEventListener('click', changeText);
 
     function changeText() {
-        let paragraph = document.querySelector('#elem8');
+        let paragraph = document.querySelector('#dom14-elem');
         paragraph.textContent = 'Look at this!';
     }
 }
@@ -207,14 +221,14 @@ function elementText2() {
 
 //--------------
 
+//THEORY #15
 function elementText3() {
-    let isButton = document.querySelector('#btn');
-    isButton.addEventListener('click', sumNumber);
-
+    let button = document.querySelector('#dom15-button');
+    button.addEventListener('click', sumNumber);
 
     function sumNumber() {
-        let paragraphFirst = document.querySelector('#elem2');
-        let paragraphSecond = document.querySelector('#elem3');
+        let paragraphFirst = document.querySelector('#dom15-elem1');
+        let paragraphSecond = document.querySelector('#dom15-elem2');
 
         let firstNum = paragraphFirst.textContent;
         let secondNum = paragraphSecond.textContent;
@@ -230,14 +244,15 @@ function elementText3() {
 
 //--------------
 
+//THEORY #16
 function elementText4() {
-    let clickButton = document.querySelector('.block .btn-sum');
-    clickButton.addEventListener('click', findSum);
+    let button = document.querySelector('.dom16-btn');
+    button.addEventListener('click', findSum);
 
     function findSum() {
-        let paragraphFirst = document.querySelector('.block .first-number');
-        let paragraphSecond = document.querySelector('.block .second-number');
-        let paragraphThird = document.querySelector('.block .third-number');
+        let paragraphFirst = document.querySelector('.dom16-number_first');
+        let paragraphSecond = document.querySelector('.dom16-number_second');
+        let paragraphThird = document.querySelector('.dom16-number_third');
 
         let firstNum = paragraphFirst.textContent;
         let secondNum = paragraphSecond.textContent;
@@ -254,12 +269,13 @@ function elementText4() {
 
 //--------------
 
+//THEORY #17
 function elementText5() {
-    let clickButton = document.querySelector('#btn');
-    clickButton.addEventListener('click', addOne);
+    let button = document.querySelector('.dom17-button');
+    button.addEventListener('click', addOne);
 
     function addOne() {
-        let findNumber = document.querySelector('#elem1');
+        let findNumber = document.querySelector('#dom17-elem');
         let isNumber = findNumber.textContent;
         let sum = Number(isNumber) + 1;
         findNumber.textContent = sum.toString();
@@ -270,13 +286,14 @@ function elementText5() {
 
 //--------------
 
+//THEORY #18
 function elementText6() {
-    let clickButton = document.querySelector('#btn');
-    clickButton.addEventListener('click', addElement);
+    let button = document.querySelector('#dom18-button');
+    button.addEventListener('click', addElement);
 
     function addElement() {
-        let findElement = document.querySelector('#addElem');
-        findElement.textContent = findElement.textContent + '?';
+        let element = document.querySelector('#dom18-elem');
+        element.textContent = element.textContent + '!';
     }
 }
 
@@ -284,13 +301,14 @@ function elementText6() {
 
 //--------------
 
+//THEORY #19
 function elementHTML1() {
-    let isButton = document.querySelector('#btn');
-    isButton.addEventListener('click', readParagraph);
+    let button = document.querySelector('#dom19-button');
+    button.addEventListener('click', readParagraph);
 
     function readParagraph() {
-        let isParagraph = document.querySelector('#addElem');
-        console.log(isParagraph.innerHTML);
+        let paragraph = document.querySelector('#dom19-elem');
+        console.log(paragraph.innerHTML);
     }
 }
 
@@ -298,13 +316,14 @@ function elementHTML1() {
 
 //--------------
 
+//THEORY #20
 function elementHTML2() {
-    let isButton = document.querySelector('#btn');
-    isButton.addEventListener('click', changeParagraph);
+    let button = document.querySelector('#dom20-button');
+    button.addEventListener('click', changeParagraph);
 
     function changeParagraph() {
-        let isParagraph = document.querySelector('#addElem');
-        isParagraph.innerHTML = '<b>Hey, hey! Your texts are bold.</b>';
+        let paragraph = document.querySelector('#dom20-elem');
+        paragraph.innerHTML = '<b>Hey, hey! Your texts are bold.</b>';
     }
 }
 
@@ -312,13 +331,14 @@ function elementHTML2() {
 
 //--------------
 
+//THEORY #21
 function attributesViaProperties1() {
-    let isButton = document.querySelector('#btn');
-    isButton.addEventListener('click', showTypeAttribute);
+    let button = document.querySelector('#dom21-button');
+    button.addEventListener('click', showTypeAttribute);
 
     function showTypeAttribute() {
-        let isElem = document.querySelector('#elem');
-        console.log(isElem.type);
+        let elem = document.querySelector('#dom21-elem');
+        console.log(elem.type);
     }
 }
 
@@ -326,14 +346,15 @@ function attributesViaProperties1() {
 
 //--------------
 
+//THEORY #22
 function attributesViaProperties2() {
-    let isButton = document.querySelector('#btn');
-    isButton.addEventListener('click', changeTypeAttribute);
+    let button = document.querySelector('#dom22-button');
+    button.addEventListener('click', changeTypeAttribute);
 
     function changeTypeAttribute() {
-        let isElem = document.querySelector('#elem');
-        isElem.type = 'submit';
-        console.log(isElem.type);
+        let elem = document.querySelector('#dom22-elem');
+        elem.type = 'submit';
+        console.log(elem.type);
     }
 }
 
@@ -341,14 +362,15 @@ function attributesViaProperties2() {
 
 //--------------
 
+//THEORY #23
 function attributesViaProperties3() {
-    let isButton = document.querySelector('#link-btn');
-    isButton.addEventListener('click', showTypeAttribute);
+    let button = document.querySelector('#dom23-link_btn');
+    button.addEventListener('click', showTypeAttribute);
 
     function showTypeAttribute() {
-        let isElem = document.querySelector('.paragraph #portfolio-link');
-        let isParagraph = document.querySelector('.paragraph');
-        isParagraph.textContent = isElem.href;
+        let elem = document.querySelector('#dom23-portfolio_link');
+        let paragraph = document.querySelector('#dom23-text');
+        paragraph.textContent = elem.href;
     }
 }
 
@@ -356,13 +378,14 @@ function attributesViaProperties3() {
 
 //--------------
 
+//THEORY #24
 function attributesViaProperties4() {
-    let isButton = document.querySelector('#link-btn');
-    isButton.addEventListener('click', addHref);
+    let button = document.querySelector('#dom24-link_btn');
+    button.addEventListener('click', addHref);
 
     function addHref() {
-        let isElem = document.querySelector('.paragraph #portfolio-link');
-        isElem.textContent = isElem.textContent + ' (https://anastasia.grinkevi.ch/)';
+        let elem = document.querySelector('#dom24-portfolio_link');
+        elem.textContent += ' (https://anastasia.grinkevi.ch/)';
     }
 }
 
@@ -370,14 +393,15 @@ function attributesViaProperties4() {
 
 //--------------
 
+//THEORY #25
 function attributesViaProperties5() {
-    let isButton = document.querySelector('#img-btn');
-    isButton.addEventListener('click', findWayToImg);
+    let button = document.querySelector('#dom25-button');
+    button.addEventListener('click', findWayToImg);
 
     function findWayToImg() {
-        let isImage = document.querySelector('#img-coding');
-        let isParagraph = document.querySelector('.text-change');
-        isParagraph.textContent = isImage.src;
+        let image = document.querySelector('#dom25-img');
+        let paragraph = document.querySelector('.dom25-text');
+        paragraph.textContent = image.src;
     }
 }
 
@@ -385,26 +409,28 @@ function attributesViaProperties5() {
 
 //--------------
 
+//THEORY #26
 function attributesViaProperties6() {
-    let isButton = document.querySelector('#img-btn');
-    isButton.addEventListener('click', findWidthImg);
+    let button = document.querySelector('#dom26-button');
+    button.addEventListener('click', updateWidth);
 
-    function findWidthImg() {
-        let isImage = document.querySelector('#img-coding');
-        isImage.width = '250';
+    function updateWidth() {
+        let image = document.querySelector('#dom26-img');
+        image.width = '250';
     }
 }
 
-//attributesViaProperties6();
+attributesViaProperties6();
 
 //--------------
 
+//THEORY #27
 function attributesViaProperties7() {
-    let isButton = document.querySelector('#img-btn');
+    let isButton = document.querySelector('#dom27-button');
     isButton.addEventListener('click', increaseWidthImg);
 
     function increaseWidthImg() {
-        let isImage = document.querySelector('#img-coding');
+        let isImage = document.querySelector('#dom27-img');
         isImage.width = Number(isImage.width) / 2;
     }
 }
@@ -413,22 +439,23 @@ function attributesViaProperties7() {
 
 //--------------
 
+//THEORY #28
 function attributesViaProperties8() {
-    let isFirstButton = document.querySelector('.flex-container #support-btn');
-    let isSecondButton = document.querySelector('.flex-container #meeting-btn');
-    isFirstButton.addEventListener('click', fundFirstToHolder);
-    isSecondButton.addEventListener('click', fundSecondToHolder);
+    let firstButton = document.querySelector('#dom28-support_btn');
+    let secondButton = document.querySelector('#dom28-meeting_btn');
+    firstButton.addEventListener('click', fundFirstToHolder);
+    secondButton.addEventListener('click', fundSecondToHolder);
 
     function fundFirstToHolder() {
-        let isFirstAttribute = document.querySelector('#img-support');
-        let isFirstParagraph = document.querySelector('.first-way');
-        isFirstParagraph.textContent = isFirstAttribute.src;
+        let firstAttribute = document.querySelector('#dom28-img_support');
+        let firstParagraph = document.querySelector('.dom28-first_text');
+        firstParagraph.textContent = firstAttribute.src;
     }
 
     function fundSecondToHolder() {
-        let isSecondAttribute = document.querySelector('#img-meeting');
-        let isSecondParagraph = document.querySelector('.second-way');
-        isSecondParagraph.textContent = isSecondAttribute.src;
+        let secondAttribute = document.querySelector('#dom28-img_meeting');
+        let secondParagraph = document.querySelector('.dom28-second_text');
+        secondParagraph.textContent = secondAttribute.src;
     }
 }
 
@@ -436,13 +463,14 @@ function attributesViaProperties8() {
 
 //--------------
 
+//THEORY #29
 function textFields1() {
-    let isButton = document.querySelector('#btn');
-    isButton.addEventListener('click', changeText);
+    let button = document.querySelector('#dom29-btn');
+    button.addEventListener('click', changeText);
 
     function changeText() {
-        let getText = document.querySelector('#elem');
-        getText.value = 'Your email';
+        let elem = document.querySelector('#dom29-elem');
+        elem.value = 'Your email';
     }
 }
 
@@ -450,14 +478,15 @@ function textFields1() {
 
 //--------------
 
+//THEORY #30
 function textFields2() {
-    let isButton = document.querySelector('#text-field-1');
-    isButton.addEventListener('click', duplicateText);
+    let button = document.querySelector('#dom30-btn');
+    button.addEventListener('click', duplicateText);
 
     function duplicateText() {
-        let isInput = document.querySelector('#text-input');
-        let textParagraph = document.querySelector('#change-text');
-        textParagraph.textContent = isInput.value;
+        let input = document.querySelector('#dom30-input');
+        let paragraph = document.querySelector('#dom30-text');
+        paragraph.textContent = input.value;
     }
 }
 
@@ -465,14 +494,15 @@ function textFields2() {
 
 //--------------
 
+//THEORY #31
 function textFields3() {
-    let isButton = document.querySelector('#square');
-    isButton.addEventListener('click', findSquare);
+    let button = document.querySelector('#dom31-btn');
+    button.addEventListener('click', findSquare);
 
     function findSquare() {
-        let isNumber = document.querySelector('#number-input');
-        let getSquare = Number(isNumber.value) ** 2;
-        let result = document.querySelector('#text-field-2');
+        let inputNumber = document.querySelector('#dom31-number_input');
+        let getSquare = Number(inputNumber.value) ** 2;
+        let result = document.querySelector('#dom31-text');
         result.value = getSquare.toString();
     }
 }
@@ -481,13 +511,14 @@ function textFields3() {
 
 //--------------
 
+//THEORY #32
 function textFields4() {
-    let isButton = document.querySelector('#text-field-1');
-    isButton.addEventListener('click', changeValue);
+    let button = document.querySelector('#dom32-btn');
+    button.addEventListener('click', changeValue);
 
     function changeValue() {
-        let firstInput = document.querySelector('#text-input');
-        let secondInput = document.querySelector('#text-field-2');
+        let firstInput = document.querySelector('#dom32-input_first');
+        let secondInput = document.querySelector('#dom32-input_second');
         let firstValue = firstInput.value;
         firstInput.value = secondInput.value;
         secondInput.value = firstValue;
@@ -498,19 +529,20 @@ function textFields4() {
 
 //--------------
 
+//THEORY #33
 function textFields5() {
-    let isButton = document.querySelector('#mean-btn');
-    isButton.addEventListener('click', findMean);
+    let button = document.querySelector('#dom33-btn');
+    button.addEventListener('click', findMean);
 
     function findMean() {
-        let isFirstInput = document.querySelector('#first-input');
-        let isSecondInput = document.querySelector('#second-input');
-        let isThirdInput = document.querySelector('#third-input');
-        let isFourthInput = document.querySelector('#fourth-input');
-        let isFifthInput = document.querySelector('#fifth-input');
-        let result = (Number(isFirstInput.value) + Number(isSecondInput.value) + Number(isThirdInput.value) + Number(isFourthInput.value) + Number(isFifthInput.value)) / 5;
-        let isParagraph = document.querySelector('#result');
-        isParagraph.textContent = result.toString();
+        let firstInput = document.querySelector('#dom33-input_first');
+        let secondInput = document.querySelector('#dom33-input_second');
+        let thirdInput = document.querySelector('#dom33-input_third');
+        let fourthInput = document.querySelector('#dom33-input_fourth');
+        let fifthInput = document.querySelector('#dom33-input_fifth');
+        let result = (Number(firstInput.value) + Number(secondInput.value) + Number(thirdInput.value) + Number(fourthInput.value) + Number(fifthInput.value)) / 5;
+        let paragraph = document.querySelector('#result');
+        paragraph.textContent = result.toString();
     }
 }
 
@@ -518,8 +550,9 @@ function textFields5() {
 
 //--------------
 
+//THEORY #34
 function textFieldsFocus1() {
-    let elem = document.querySelector('#text-input');
+    let elem = document.querySelector('#dom34-text');
     elem.addEventListener('focus', function () {
         console.log(elem.value);
     });
@@ -529,8 +562,9 @@ function textFieldsFocus1() {
 
 //--------------
 
+//THEORY #35
 function textFieldsFocus2() {
-    let elem = document.querySelector('#text-input');
+    let elem = document.querySelector('#dom35-text');
 
     elem.addEventListener('focus', function () {
         elem.value = 1;
@@ -545,8 +579,9 @@ function textFieldsFocus2() {
 
 //--------------
 
+//THEORY #36
 function textFieldsFocus3() {
-    let elem = document.querySelector('#number-input');
+    let elem = document.querySelector('#dom36-number_input');
 
     elem.addEventListener('focus', function () {
         elem.value = '';
@@ -562,8 +597,9 @@ function textFieldsFocus3() {
 
 //--------------
 
+//THEORY #37
 function textFieldsFocus4() {
-    let elem = document.querySelector('#text-input');
+    let elem = document.querySelector('#dom37-text_input');
     elem.addEventListener('focus', function () {
         elem.value = '';
     });
@@ -573,13 +609,14 @@ function textFieldsFocus4() {
 
 //--------------
 
+//THEORY #38
 function exceptionAttributes1() {
-    let isButton = document.querySelector('.btn-sum');
-    isButton.addEventListener('click', getClassName);
+    let button = document.querySelector('#dom38-btn');
+    button.addEventListener('click', getClassName);
 
     function getClassName() {
-        let findClass = document.querySelector('.first-number');
-        console.log(findClass.className);
+        let elem = document.querySelector('.dom38-text');
+        console.log(elem.className);
     }
 }
 
@@ -587,13 +624,15 @@ function exceptionAttributes1() {
 
 //--------------
 
+//THEORY #39
 function exceptionAttributes2() {
-    let isButton = document.querySelector('#elem-btn');
-    isButton.addEventListener('click', addAttribute);
+    let button = document.querySelector('#dom39-btn');
+    button.addEventListener('click', addAttribute);
 
     function addAttribute() {
-        let isBlock = document.querySelector('#elem-div');
-        isBlock.className = 'style-block';
+        let elem = document.querySelector('#dom39-elem');
+        elem.className = 'style-block';
+        console.log(elem);
     }
 }
 
@@ -601,13 +640,14 @@ function exceptionAttributes2() {
 
 //--------------
 
+//THEORY #40
 function exceptionAttributes3() {
-    let isButton = document.querySelector('#elem-btn');
-    isButton.addEventListener('click', getArrClass);
+    let button = document.querySelector('#dom40-btn');
+    button.addEventListener('click', getArrClass);
 
     function getArrClass() {
-        let getClass = document.querySelector('#elem-arr');
-        console.log(getClass.className.split(' '));
+        let elem = document.querySelector('#dom40-elem');
+        console.log(elem.className.split(' '));
     }
 }
 
@@ -615,8 +655,9 @@ function exceptionAttributes3() {
 
 //--------------
 
+//THEORY #41
 function chaining1() {
-    let image = document.querySelector('.block-meeting_img').src;
+    let image = document.querySelector('.dom41-img').src;
     console.log(image);
 }
 
@@ -624,12 +665,13 @@ function chaining1() {
 
 //--------------
 
+//THEORY #42
 function this1() {
-    let isInput = document.querySelector('#elem');
-    isInput.addEventListener('focus', function () {
+    let input = document.querySelector('#dom42-elem');
+    input.addEventListener('focus', function () {
         this.value = '1';
     });
-    isInput.addEventListener('blur', function () {
+    input.addEventListener('blur', function () {
         this.value = '2';
     });
 }
@@ -638,9 +680,10 @@ function this1() {
 
 //--------------
 
+//THEORY #43
 function this2() {
-    let isButton = document.querySelector('#value-btn');
-    isButton.addEventListener('click', changeValue);
+    let button = document.querySelector('#dom43-btn');
+    button.addEventListener('click', changeValue);
 
     function changeValue() {
         this.value++;
@@ -652,6 +695,7 @@ function this2() {
 
 //--------------
 
+//THEORY #44
 function thisAdvantage1() {
     let firstParagraph = document.querySelector('.www');
     let secondParagraph = document.querySelector('.www-2');
@@ -674,6 +718,7 @@ function thisAdvantage1() {
 
 //--------------
 
+//THEORY #41
 function thisAdvantage2() {
     let firstInput = document.querySelector('#first-input');
     let secondInput = document.querySelector('#second-input');
@@ -696,6 +741,7 @@ function thisAdvantage2() {
 
 //--------------
 
+//THEORY #41
 function elementsGroupGetting1() {
     let isButton = document.querySelector('#button4');
     isButton.addEventListener('click', findParagraphs);
@@ -712,6 +758,7 @@ function elementsGroupGetting1() {
 
 //--------------
 
+//THEORY #41
 function elementsGroupGetting2() {
     let isButton = document.querySelector('#button4');
     isButton.addEventListener('click', findIndex);
@@ -728,6 +775,7 @@ function elementsGroupGetting2() {
 
 //--------------
 
+//THEORY #41
 function elementsGroupGetting3() {
     let isButton = document.querySelector('#mean-btn');
     isButton.addEventListener('click', findSum);
@@ -747,6 +795,7 @@ function elementsGroupGetting3() {
 
 //--------------
 
+//THEORY #41
 function loopNamedHandlers1() {
     let isInputs = document.querySelectorAll('.find-sum');
     for (let i = 0; i < isInputs.length; i++) {
@@ -762,6 +811,7 @@ function loopNamedHandlers1() {
 
 //--------------
 
+//THEORY #41
 function loopNamedHandlers2() {
     let isParagraph = document.querySelectorAll('.block p');
     for (let i = 0; i < isParagraph.length; i++) {
@@ -777,6 +827,7 @@ function loopNamedHandlers2() {
 
 //--------------
 
+//THEORY #41
 function loopAnonymousHandlers() {
     let divs = document.querySelectorAll('div');
 
@@ -791,6 +842,7 @@ function loopAnonymousHandlers() {
 
 //--------------
 
+//THEORY #41
 function handlersUnbinding1() {
     let isButton = document.querySelector('#link-btn');
     isButton.addEventListener('click', addHref);
@@ -806,6 +858,7 @@ function handlersUnbinding1() {
 
 //--------------
 
+//THEORY #41
 function handlersUnbinding2() {
     let isButton = document.querySelector('#button6');
     isButton.addEventListener('click', addNumbers);
@@ -822,6 +875,7 @@ function handlersUnbinding2() {
 
 //--------------
 
+//THEORY #41
 function loopHandlersUnbinding() {
     let isParagraph = document.querySelectorAll('.www');
     for (let i = 0; i < isParagraph.length; i++) {
@@ -838,6 +892,7 @@ function loopHandlersUnbinding() {
 
 //--------------
 
+//THEORY #41
 function anonymousHandlersUnbinding1() {
     let isList = document.querySelectorAll('.list li');
     for (let i = 0; i < isList.length; i++) {
@@ -852,6 +907,7 @@ function anonymousHandlersUnbinding1() {
 
 //--------------
 
+//THEORY #41
 function anonymousHandlersUnbinding2() {
     let isList = document.querySelectorAll('.list li');
     for (let i = 0; i < isList.length; i++) {
@@ -868,6 +924,7 @@ function anonymousHandlersUnbinding2() {
 
 //--------------
 
+//THEORY #41
 function attributesViaMethods1() {
     let isValue = document.querySelector('#text-input');
     isValue.getAttribute('value');
@@ -877,15 +934,17 @@ function attributesViaMethods1() {
 
 //--------------
 
+//THEORY #41
 function attributesViaMethods2() {
     let isClass = document.querySelector('#elem-arr');
     isClass.getAttribute('class');
 }
 
-attributesViaMethods2();
+//attributesViaMethods2();
 
 //--------------
 
+//THEORY #41
 function attributesViaMethods3() {
     let isParagraph = document.querySelector('#elem1');
     isParagraph.setAttribute('value', 'text');
@@ -895,6 +954,7 @@ function attributesViaMethods3() {
 
 //--------------
 
+//THEORY #41
 function attributesViaMethods4() {
     let isParagraph = document.querySelector('#elem1');
     isParagraph.setAttribute('class', 'valid');
@@ -904,6 +964,7 @@ function attributesViaMethods4() {
 
 //--------------
 
+//THEORY #41
 function attributesViaMethods5() {
     let isBlock = document.querySelector('#elem-arr');
     isBlock.removeAttribute('class');
