@@ -697,11 +697,11 @@ function this2() {
 
 //THEORY #44
 function thisAdvantage1() {
-    let firstParagraph = document.querySelector('.www');
-    let secondParagraph = document.querySelector('.www-2');
-    let thirdParagraph = document.querySelector('#elem4');
-    let fourthParagraph = document.querySelector('#elem5');
-    let fifthParagraph = document.querySelector('#elem6');
+    let firstParagraph = document.querySelector('.dom44-p_first');
+    let secondParagraph = document.querySelector('.dom44-p_second');
+    let thirdParagraph = document.querySelector('.dom44-p_third');
+    let fourthParagraph = document.querySelector('.dom44-p_fourth');
+    let fifthParagraph = document.querySelector('.dom44-p_fifth');
 
     firstParagraph.addEventListener('click', func);
     secondParagraph.addEventListener('click', func);
@@ -718,13 +718,13 @@ function thisAdvantage1() {
 
 //--------------
 
-//THEORY #41
+//THEORY #45
 function thisAdvantage2() {
-    let firstInput = document.querySelector('#first-input');
-    let secondInput = document.querySelector('#second-input');
-    let thirdInput = document.querySelector('#third-input');
-    let fourthInput = document.querySelector('#fourth-input');
-    let fifthInput = document.querySelector('#fifth-input');
+    let firstInput = document.querySelector('#dom45-first_input');
+    let secondInput = document.querySelector('#dom45-second_input');
+    let thirdInput = document.querySelector('#dom45-third_input');
+    let fourthInput = document.querySelector('#dom45-fourth_input');
+    let fifthInput = document.querySelector('#dom45-fifth_input');
 
     firstInput.addEventListener('blur', findSquare);
     secondInput.addEventListener('blur', findSquare);
@@ -741,14 +741,14 @@ function thisAdvantage2() {
 
 //--------------
 
-//THEORY #41
+//THEORY #46
 function elementsGroupGetting1() {
-    let isButton = document.querySelector('#button4');
-    isButton.addEventListener('click', findParagraphs);
+    let button = document.querySelector('#dom46-btn');
+    button.addEventListener('click', findParagraphs);
 
     function findParagraphs() {
-        let allParagraphs = document.querySelectorAll('.www');
-        for (let elem of allParagraphs) {
+        let paragraphs = document.querySelectorAll('.dom46-www');
+        for (let elem of paragraphs) {
             elem.textContent = 'text';
         }
     }
@@ -758,15 +758,15 @@ function elementsGroupGetting1() {
 
 //--------------
 
-//THEORY #41
+//THEORY #47
 function elementsGroupGetting2() {
-    let isButton = document.querySelector('#button4');
-    isButton.addEventListener('click', findIndex);
+    let button = document.querySelector('#dom47-btn');
+    button.addEventListener('click', findIndex);
 
     function findIndex() {
-        let allParagraphs = document.querySelectorAll('.www');
-        for (let i = 0; i < allParagraphs.length; i++) {
-            allParagraphs[i].textContent = allParagraphs[i].textContent + ` ${i} is the index in loop`;
+        let paragraphs = document.querySelectorAll('.dom47-www');
+        for (let i = 0; i < paragraphs.length; i++) {
+            paragraphs[i].textContent = paragraphs[i].textContent + ` - ${i} is the index in loop`;
         }
     }
 }
@@ -775,19 +775,19 @@ function elementsGroupGetting2() {
 
 //--------------
 
-//THEORY #41
+//THEORY #48
 function elementsGroupGetting3() {
-    let isButton = document.querySelector('#mean-btn');
-    isButton.addEventListener('click', findSum);
+    let button = document.querySelector('#dom48-btn');
+    button.addEventListener('click', findSum);
 
     function findSum() {
-        let findClasses = document.querySelectorAll('.find-sum');
-        let result = document.querySelector('#result');
+        let classes = document.querySelectorAll('.dom48-number');
+        let result = document.querySelector('#dom48-result');
         let sum = 0;
-        for (let i = 0; i < findClasses.length; i++) {
-            sum += Number(findClasses[i].value);
-            result.textContent = sum.toString();
+        for (let i = 0; i < classes.length; i++) {
+            sum += Number(classes[i].value);
         }
+        result.textContent += ` ${sum.toString()}`;
     }
 }
 
@@ -795,11 +795,11 @@ function elementsGroupGetting3() {
 
 //--------------
 
-//THEORY #41
+//THEORY #49
 function loopNamedHandlers1() {
-    let isInputs = document.querySelectorAll('.find-sum');
-    for (let i = 0; i < isInputs.length; i++) {
-        isInputs[i].addEventListener('blur', func);
+    let inputs = document.querySelectorAll('.dom49-input');
+    for (let i = 0; i < inputs.length; i++) {
+        inputs[i].addEventListener('blur', func);
     }
 
     function func() {
@@ -811,11 +811,11 @@ function loopNamedHandlers1() {
 
 //--------------
 
-//THEORY #41
+//THEORY #50
 function loopNamedHandlers2() {
-    let isParagraph = document.querySelectorAll('.block p');
-    for (let i = 0; i < isParagraph.length; i++) {
-        isParagraph[i].addEventListener('click', findSquare);
+    let paragraph = document.querySelectorAll('.dom50-number');
+    for (let i = 0; i < paragraph.length; i++) {
+       paragraph[i].addEventListener('click', findSquare);
     }
 
     function findSquare() {
@@ -827,9 +827,9 @@ function loopNamedHandlers2() {
 
 //--------------
 
-//THEORY #41
+//THEORY #51
 function loopAnonymousHandlers() {
-    let divs = document.querySelectorAll('div');
+    let divs = document.querySelectorAll('#dom51 div');
 
     for (let div of divs) {
         div.addEventListener('click', function () {
@@ -842,14 +842,14 @@ function loopAnonymousHandlers() {
 
 //--------------
 
-//THEORY #41
+//THEORY #52
 function handlersUnbinding1() {
-    let isButton = document.querySelector('#link-btn');
-    isButton.addEventListener('click', addHref);
+    let button = document.querySelector('#dom52-btn');
+    button.addEventListener('click', addHref);
 
     function addHref() {
-        let isLink = document.querySelector('#portfolio-link');
-        isLink.textContent = isLink.textContent + ` (${isLink.href})`;
+        let link = document.querySelector('#dom52-link');
+        link.textContent = link.textContent + ` (${link.href})`;
         this.removeEventListener('click', addHref);
     }
 }
@@ -858,13 +858,13 @@ function handlersUnbinding1() {
 
 //--------------
 
-//THEORY #41
+//THEORY #53
 function handlersUnbinding2() {
-    let isButton = document.querySelector('#button6');
-    isButton.addEventListener('click', addNumbers);
+    let button = document.querySelector('#dom53-btn');
+    button.addEventListener('click', addNumbers);
 
     function addNumbers() {
-        isButton.value++;
+        button.value++;
         if (this.value === '10') {
             this.removeEventListener('click', addNumbers);
         }
@@ -875,11 +875,11 @@ function handlersUnbinding2() {
 
 //--------------
 
-//THEORY #41
+//THEORY #54
 function loopHandlersUnbinding() {
-    let isParagraph = document.querySelectorAll('.www');
-    for (let i = 0; i < isParagraph.length; i++) {
-        isParagraph[i].addEventListener('click', addText);
+    let paragraphs = document.querySelectorAll('.dom54-www');
+    for (let i = 0; i < paragraphs.length; i++) {
+        paragraphs[i].addEventListener('click', addText);
     }
 
     function addText() {
@@ -892,12 +892,12 @@ function loopHandlersUnbinding() {
 
 //--------------
 
-//THEORY #41
+//THEORY #55
 function anonymousHandlersUnbinding1() {
-    let isList = document.querySelectorAll('.list li');
-    for (let i = 0; i < isList.length; i++) {
-        isList[i].addEventListener('click', function addNumber() {
-            isList[i].textContent++;
+    let lists = document.querySelectorAll('.dom55-list li');
+    for (let i = 0; i < lists.length; i++) {
+        lists[i].addEventListener('click', function addNumber() {
+            lists[i].textContent++;
             this.removeEventListener('click', addNumber);
         });
     }
@@ -907,13 +907,13 @@ function anonymousHandlersUnbinding1() {
 
 //--------------
 
-//THEORY #41
+//THEORY #56
 function anonymousHandlersUnbinding2() {
-    let isList = document.querySelectorAll('.list li');
-    for (let i = 0; i < isList.length; i++) {
-        isList[i].addEventListener('click', function addNumber() {
-            if (isList[i].textContent < 10) {
-                isList[i].textContent++;
+    let lists = document.querySelectorAll('.dom56-list li');
+    for (let i = 0; i < lists.length; i++) {
+        lists[i].addEventListener('click', function addNumber() {
+            if (lists[i].textContent < 10) {
+                lists[i].textContent++;
                 this.removeEventListener('click', addNumber);
             }
         });
@@ -924,78 +924,81 @@ function anonymousHandlersUnbinding2() {
 
 //--------------
 
-//THEORY #41
+//THEORY #57
 function attributesViaMethods1() {
-    let isValue = document.querySelector('#text-input');
-    isValue.getAttribute('value');
+    let value = document.querySelector('#dom57-input');
+    console.log(value.getAttribute('value'));
 }
 
 //attributesViaMethods1();
 
 //--------------
 
-//THEORY #41
+//THEORY #58
 function attributesViaMethods2() {
-    let isClass = document.querySelector('#elem-arr');
-    isClass.getAttribute('class');
+    let classes = document.querySelector('#dom58-elem');
+    console.log(classes.getAttribute('class'));
 }
 
 //attributesViaMethods2();
 
 //--------------
 
-//THEORY #41
+//THEORY #59
 function attributesViaMethods3() {
-    let isParagraph = document.querySelector('#elem1');
-    isParagraph.setAttribute('value', 'text');
+    let input = document.querySelector('#dom59-elem');
+    input.setAttribute('value', 'text');
 }
 
 //attributesViaMethods3();
 
 //--------------
 
-//THEORY #41
+//THEORY #60
 function attributesViaMethods4() {
-    let isParagraph = document.querySelector('#elem1');
-    isParagraph.setAttribute('class', 'valid');
+    let input = document.querySelector('#dom60-elem');
+    input.setAttribute('class', 'valid');
 }
 
 //attributesViaMethods4();
 
 //--------------
 
-//THEORY #41
+//THEORY #61
 function attributesViaMethods5() {
-    let isBlock = document.querySelector('#elem-arr');
-    isBlock.removeAttribute('class');
+    let input = document.querySelector('#dom61-elem');
+    input.removeAttribute('id');
 }
 
 //attributesViaMethods5();
 
 //--------------
 
+//THEORY #62
 function attributesViaMethods6() {
-    let isInput = document.querySelector('#button1');
-    isInput.hasAttribute('type');
+    let input = document.querySelector('#dom62-elem');
+    console.log(input.hasAttribute('value'));
 }
 
 //attributesViaMethods6();
 
 //--------------
 
+//THEORY #63
 function cssClassesManipulation1() {
-    let isClass = document.querySelector('#elem-arr');
-    isClass.classList.length;
+    let classes = document.querySelector('#dom63-elem');
+    console.log(classes.classList.length);
 }
 
 //cssClassesManipulation1();
 
 //--------------
 
+//THEORY #64
 function cssClassesManipulation2() {
-    let isClass = document.querySelector('#elem-arr');
-    for (let i = 0; i < isClass.classList.length; i++) {
-        console.log(isClass.classList[i]);
+    let classes = document.querySelector('#dom64-elem');
+    for (let i = 0; i < classes.classList.length; i++) {
+        console.log(classes.classList[i]);
     }
 }
 
@@ -1003,51 +1006,56 @@ function cssClassesManipulation2() {
 
 //--------------
 
+//THEORY #65
 function cssClassesManipulation3() {
-    let getClasses = document.querySelector('#elem-arr');
-    getClasses.classList.add('xxx');
+    let classes = document.querySelector('#dom65-elem');
+    classes.classList.add('xxx');
 }
 
 //cssClassesManipulation3();
 
 //--------------
 
+//THEORY #66
 function cssClassesManipulation4() {
-    let getClasses = document.querySelector('#elem-arr');
-    getClasses.classList.remove('bbb');
+    let classes = document.querySelector('#dom66-elem');
+    classes.classList.remove('www', 'zzz');
 }
 
 //cssClassesManipulation4();
 
 //--------------
 
+//THEORY #67
 function cssClassesManipulation5() {
-    let getClasses = document.querySelector('#elem-arr');
-    getClasses.classList.contains('aaa');
+    let classes = document.querySelector('#dom67-elem');
+    console.log(classes.classList.contains('aaa'));
 }
 
 //cssClassesManipulation5();
 
 //--------------
 
+//THEORY #68
 function cssClassesManipulation6() {
-    let getClasses = document.querySelector('#elem-arr');
-    getClasses.classList.toggle('www');
+    let classes = document.querySelector('#dom68-elem');
+    classes.classList.toggle('www');
 }
 
 //cssClassesManipulation6();
 
 //--------------
 
+//THEORY #69
 function attributeStyleStylization1() {
-    let isButton = document.querySelector('#img-btn');
-    isButton.addEventListener('click', changeSize);
+    let button = document.querySelector('#dom69-btn');
+    button.addEventListener('click', changeSize);
 
     function changeSize() {
-        let isBox = document.querySelector('#size-box');
-        isBox.style.width = '500px';
-        isBox.style.height = '500px';
-        isBox.style.backgroundColor = 'green';
+        let box = document.querySelector('#dom69-box');
+        box.style.width = '500px';
+        box.style.height = '500px';
+        box.style.backgroundColor = 'green';
     }
 }
 
@@ -1055,15 +1063,16 @@ function attributeStyleStylization1() {
 
 //--------------
 
+//THEORY #70
 function attributeStyleStylization2() {
-    let isButton = document.querySelector('.btn-sum');
-    isButton.addEventListener('click', addStyles);
+    let button = document.querySelector('.dom70-btn');
+    button.addEventListener('click', addStyles);
 
     function addStyles() {
-        let isElem = document.querySelector('.block');
-        isElem.style.fontSize = '20px';
-        isElem.style.marginTop = '1rem';
-        isElem.style.backgroundColor = 'green';
+        let elem = document.querySelector('.dom70-block');
+        elem.style.fontSize = '20px';
+        elem.style.marginBottom = '1rem';
+        elem.style.backgroundColor = 'green';
     }
 }
 
@@ -1071,16 +1080,17 @@ function attributeStyleStylization2() {
 
 //--------------
 
+//THEORY #71
 function attributeStyleStylization3() {
-    let isButton = document.querySelector('#list-btn');
-    isButton.addEventListener('click', floatList);
+    let button = document.querySelector('#dom71-btn');
+    button.addEventListener('click', floatList);
 
     function floatList() {
-        let isLists = document.querySelectorAll('li');
-        for (let i = 0; i < isLists.length; i++) {
-            isLists[i].style.cssFloat = 'left';
-            isLists[i].style.margin = '5px';
-            isLists[i].style.listStyle = 'none';
+        let lists = document.querySelectorAll('.dom71-list li');
+        for (let i = 0; i < lists.length; i++) {
+            lists[i].style.cssFloat = 'left';
+            lists[i].style.margin = '5px';
+            lists[i].style.listStyle = 'none';
         }
     }
 }
@@ -1089,6 +1099,7 @@ function attributeStyleStylization3() {
 
 //--------------
 
+//THEORY #72
 function cssStylization1() {
     let isButtonFirst = document.querySelector('#mark-text');
     isButtonFirst.addEventListener('click', function markText() {
@@ -1116,6 +1127,7 @@ function cssStylization1() {
 
 //--------------
 
+//THEORY #62
 function cssStylization2() {
     let isButton = document.querySelector('#button');
     let isElem = document.querySelector('#elem-hiding');
@@ -1129,6 +1141,7 @@ function cssStylization2() {
 
 //--------------
 
+//THEORY #62
 function parentRelationshipSearching1() {
     let isElem = document.querySelector('.list');
     isElem.firstElementChild.classList.add('colored');
@@ -1138,6 +1151,7 @@ function parentRelationshipSearching1() {
 
 //--------------
 
+//THEORY #62
 function parentRelationshipSearching2() {
     let isElem = document.querySelector('.list');
     isElem.lastElementChild.classList.add('colored');
@@ -1147,6 +1161,7 @@ function parentRelationshipSearching2() {
 
 //--------------
 
+//THEORY #62
 function parentRelationshipSearching3() {
     let isElem = document.querySelector('.list');
     let childElements = isElem.children;
@@ -1160,6 +1175,7 @@ function parentRelationshipSearching3() {
 
 //--------------
 
+//THEORY #62
 function parentRelationshipSearching4() {
     let elem = document.querySelector('#elem-text');
     elem.parentElement.classList.add('border');
@@ -1169,6 +1185,7 @@ function parentRelationshipSearching4() {
 
 //--------------
 
+//THEORY #62
 function parentRelationshipSearching5() {
     let getElem = document.querySelector('#elem-header');
     console.log(getElem.closest('div'));
@@ -1178,6 +1195,7 @@ function parentRelationshipSearching5() {
 
 //--------------
 
+//THEORY #62
 function parentRelationshipSearching6() {
     let getElem = document.querySelector('#elem-header');
     console.log(getElem.closest('.www'));
@@ -1187,6 +1205,7 @@ function parentRelationshipSearching6() {
 
 //--------------
 
+//THEORY #62
 function parentRelationshipSearching7() {
     let findSibling = document.querySelector('#elem-text');
     findSibling.previousElementSibling.textContent = findSibling.previousElementSibling.textContent + '!';
@@ -1196,6 +1215,7 @@ function parentRelationshipSearching7() {
 
 //--------------
 
+//THEORY #62
 function parentRelationshipSearching8() {
     let findSibling = document.querySelector('#elem-text');
     findSibling.nextElementSibling.textContent = findSibling.nextElementSibling.textContent + '!';
@@ -1205,6 +1225,7 @@ function parentRelationshipSearching8() {
 
 //--------------
 
+//THEORY #62
 function parentRelationshipSearching9() {
     let isElem = document.querySelector('#elem-text');
     let findSibling = isElem.nextElementSibling;
@@ -1215,6 +1236,7 @@ function parentRelationshipSearching9() {
 
 //--------------
 
+//THEORY #62
 function parentRelationshipSearching10() {
     let isChild = document.querySelector('#elem-text');
     let previousChild = isChild.previousElementSibling;
@@ -1229,6 +1251,7 @@ function parentRelationshipSearching10() {
 
 //--------------
 
+//THEORY #62
 function otherSearchMethods1() {
     let getElem = document.getElementById('elem-header');
     getElem.textContent = 'Hello there!';
@@ -1238,6 +1261,7 @@ function otherSearchMethods1() {
 
 //--------------
 
+//THEORY #62
 function otherSearchMethods2() {
     let findList = document.getElementsByTagName('li');
     for (let i = 0; i < findList.length; i++) {
@@ -1249,6 +1273,7 @@ function otherSearchMethods2() {
 
 //--------------
 
+//THEORY #62
 function otherSearchMethods3() {
     let getClasses = document.getElementsByClassName('www');
     for (let i = 0; i < getClasses.length; i++) {
@@ -1260,6 +1285,7 @@ function otherSearchMethods3() {
 
 //--------------
 
+//THEORY #62
 function insideElementSearching() {
     let parent = document.querySelector('#parent');
     let elem1 = parent.querySelectorAll('.xxx');
@@ -1272,6 +1298,7 @@ function insideElementSearching() {
 
 //--------------
 
+//THEORY #62
 function dataAttribute1() {
     let isBlock = document.getElementById('data-attribute');
     isBlock.addEventListener('click', function addText() {
@@ -1284,6 +1311,7 @@ function dataAttribute1() {
 
 //--------------
 
+//THEORY #62
 function dataAttribute2() {
     let getList = document.querySelectorAll('.list li');
     for (let i = 0; i < getList.length; i++) {
@@ -1298,6 +1326,7 @@ dataAttribute2();
 
 //--------------
 
+//THEORY #62
 function dataAttribute3() {
     let isButton = document.getElementById('button5');
     let getButton = document.getElementById('button6');
@@ -1311,6 +1340,7 @@ function dataAttribute3() {
 
 //--------------
 
+//THEORY #62
 function dataAttribute4() {
     let isInput = document.getElementById('elem');
     isInput.addEventListener('blur', function getText() {
@@ -1324,6 +1354,7 @@ function dataAttribute4() {
 
 //--------------
 
+//THEORY #62
 function dataAttribute5() {
     let getInput = document.getElementById('elem-data');
     getInput.addEventListener('blur', function getText() {
@@ -1339,6 +1370,7 @@ function dataAttribute5() {
 
 //--------------
 
+//THEORY #62
 function dataAttribute6() {
     let isBlock = document.getElementById('elem-data');
     isBlock.addEventListener('click', function totalItem() {
@@ -1351,6 +1383,7 @@ function dataAttribute6() {
 
 //--------------
 
+//THEORY #62
 function dataAttribute7() {
     let getElem = document.querySelectorAll('.www');
     for (let i = 0; i < getElem.length; i++) {
@@ -1362,6 +1395,7 @@ function dataAttribute7() {
 
 //--------------
 
+//THEORY #62
 function nodes1() {
     let elem = document.getElementById('elem-childnodes');
     console.log(elem.firstChild);
@@ -1372,6 +1406,7 @@ function nodes1() {
 
 //--------------
 
+//THEORY #62
 function nodes2() {
     let elem = document.querySelector('b');
     console.log(elem.nextSibling);
@@ -1382,6 +1417,7 @@ function nodes2() {
 
 //--------------
 
+//THEORY #62
 function nodes3() {
     let elem = document.querySelector('b');
     console.log(elem.previousSibling);
@@ -1392,6 +1428,7 @@ function nodes3() {
 
 //--------------
 
+//THEORY #62
 function nodes4() {
     let getElem = document.querySelector('#elem-childnodes');
     for (let node of getElem.childNodes) {
@@ -1403,6 +1440,7 @@ function nodes4() {
 
 //--------------
 
+//THEORY #62
 function nodes5() {
     let getElem = document.querySelector('#elem-childnodes');
     for (let node of getElem.childNodes) {
@@ -1414,6 +1452,7 @@ function nodes5() {
 
 //--------------
 
+//THEORY #62
 function nodes6() {
     let getElem = document.querySelector('#elem-childnodes');
     for (let node of getElem.childNodes) {
@@ -1425,6 +1464,7 @@ function nodes6() {
 
 //--------------
 
+//THEORY #62
 function nodes7() {
     let getElem = document.querySelector('#elem-childnodes');
     for (let node of getElem.childNodes) {
@@ -1436,6 +1476,7 @@ function nodes7() {
 
 //--------------
 
+//THEORY #62
 function nodes8() {
     let getElem = document.querySelector('#elem-childnodes');
     for (let node of getElem.childNodes) {
@@ -1447,6 +1488,7 @@ function nodes8() {
 
 //--------------
 
+//THEORY #62
 function nodes9() {
     let getElem = document.querySelector('#elem-childnodes');
     for (let node of getElem.childNodes) {
@@ -1459,6 +1501,7 @@ function nodes9() {
 
 //--------------
 
+//THEORY #62
 function nodes10() {
     let getElem = document.querySelector('#elem-childnodes');
     for (let i = 0; i < getElem.childNodes.length; i++) {
@@ -1470,6 +1513,7 @@ function nodes10() {
 
 //--------------
 
+//THEORY #62
 function nodes11() {
     let getElem = document.querySelector('#elem-childnodes');
     getElem.removeChild(getElem.childNodes[3]);
@@ -1479,6 +1523,7 @@ function nodes11() {
 
 //--------------
 
+//THEORY #62
 function coding1() {
     let getElem = document.querySelectorAll('.list-years li');
     let sumYears = 0;
@@ -1515,6 +1560,7 @@ function coding1() {
 
 //--------------
 
+//THEORY #62
 //how to make your code readable:
 function coding2() {
     //after splitting, moved on every element in arr and find their sum.
@@ -1544,6 +1590,7 @@ function coding2() {
 
 //--------------
 
+//THEORY #62
 //learning with mentor
 function coding3() {
     function getDigitsSum(number = '') {
