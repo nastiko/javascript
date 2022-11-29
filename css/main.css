@@ -1,3 +1,7 @@
+.header-style {
+    text-align: center;
+}
+
 .style-text {
     font-weight: bold;
 }
@@ -18,18 +22,19 @@
     font-weight: bold;
 }
 
-.colored {
-    color: chocolate;
-}
-
-#elem-hiding {
+#dom73-elem {
     display: none;
     width: 200px;
     height: 200px;
     border: 1px solid green;
+    margin-top: 1rem;
 }
-#elem-hiding.active {
+#dom73-elem.active {
     display: block;
+}
+
+.colored {
+    color: chocolate;
 }
 
 .border {

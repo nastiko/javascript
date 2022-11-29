@@ -6,7 +6,7 @@
     <title>Javascript</title>
 </head>
 <body>
-<h1>JS in console</h1>
+<h1 class="header-style">Introduction to the DOM</h1>
 
 <!-- THEORY #1 -->
 <div id="dom1">
@@ -522,7 +522,8 @@
 
 <!-- THEORY #56 -->
 <div id="dom56">
-    <p class="style-text">56. Modify the previous task so that each li increases its value only if its value is less than 10:</p>
+    <p class="style-text">56. Modify the previous task so that each li increases its value only if its value is less
+        than 10:</p>
     <ul class="dom56-list">
         <li>25</li>
         <li>14</li>
@@ -626,7 +627,8 @@
 
 <!-- THEORY #70 -->
 <div id="dom70">
-    <p class="style-text">70. On click on the button, set the div's font size to 20px, as well as the top border and background:</p>
+    <p class="style-text">70. On click on the button, set the div's font size to 20px, as well as the top border and
+        background:</p>
     <div class="dom70-block">Let's add styles.</div>
     <button class="dom70-btn">Click me!</button>
 </div>
@@ -634,7 +636,7 @@
 
 <!-- THEORY #71 -->
 <div id="dom71">
-    <p class="style-text">71.  On button click add property float with value left to li tags:</p>
+    <p class="style-text">71. On button click add property float with value left to li tags:</p>
     <ul class="dom71-list">
         <li>Info</li>
         <li>Menu</li>
@@ -645,24 +647,524 @@
 </div>
 <hr/>
 
+<!-- THEORY #72 -->
+<div id="dom72">
+    <p class="style-text">72. Given buttons 'cross out', 'make bold', 'make red'. Let on clicking on each button the
+        given action happens to the paragraph:</p>
+    <p id="dom72-styling">Styling with CSS classes in JavaScript</p>
+    <button id="dom72-mark_text">Mark text</button>
+    <button id="dom72-bold_text">Bold text</button>
+    <button id="dom72-red_text">Red text</button>
+</div>
+<hr/>
 
-<header>
+<!-- THEORY #73 -->
+<div id="dom73">
+    <p class="style-text">73. By clicking on which the element will be either shown or hidden:</p>
+    <button id="dom73-btn">Click me!</button>
+    <div id="dom73-elem"></div>
+</div>
+<hr/>
+
+<!-- THEORY #74 -->
+<div id="dom74">
+    <p class="style-text">74. Find the first child of this element and make its text red:</p>
+    <ul class="dom74-list">
+        <li>First text</li>
+        <li>Second text</li>
+        <li>Third text</li>
+        <li>Fourth text</li>
+    </ul>
+</div>
+<hr/>
+
+<!-- THEORY #75 -->
+<div id="dom75">
+    <p class="style-text">75. Find the last child of this element and make its text red:</p>
+    <ul class="dom75-list">
+        <li>First text</li>
+        <li>Second text</li>
+        <li>Third text</li>
+        <li>Fourth text</li>
+    </ul>
+</div>
+<hr/>
+
+<!-- THEORY #76 -->
+<div id="dom76">
+    <p class="style-text">76. Find all the children of this element and append the text '!' to the end of them:</p>
+    <ul class="dom76-list">
+        <li>First text</li>
+        <li>Second text</li>
+        <li>Third text</li>
+        <li>Fourth text</li>
+    </ul>
+</div>
+<hr/>
+
+<!-- THEORY #77 -->
+<div id="dom77">
+    <p class="style-text">77. Find its parent and give it a border:</p>
+    <ul class="dom77-list">
+        <li>First text</li>
+        <li>Second text</li>
+        <li id="dom77-elem">Third text</li>
+        <li>Fourth text</li>
+    </ul>
+</div>
+<hr/>
+
+<!-- THEORY #78 -->
+<div id="dom78">
+    <p class="style-text">78. Find the closest parent of this element, which is the div tag:</p>
+    <div>
+        <p>
+            <span id="dom78-elem"></span>
+        </p>
+    </div>
+</div>
+<hr/>
+
+<!-- THEORY #79 -->
+<div id="dom79">
+    <p class="style-text">79. Find the closest parent of this element, which is an element with the class www:</p>
+    <header>
+        <div class="www"> text
+            <p class="www">
+                <span id="dom79-elem"></span>
+            </p>
+        </div>
+    </header>
+</div>
+<hr/>
+
+<!-- THEORY #80 -->
+<div id="dom80">
+    <p class="style-text">80. Find its upper sibling element and add the text '!' to the end of it:</p>
+    <ul>
+        <li>First text</li>
+        <li>Second text</li>
+        <li id="dom80-elem">Third text</li>
+        <li>Fourth text</li>
+        <li>Fifth text</li>
+    </ul>
+</div>
+<hr/>
+
+<!-- THEORY #81 -->
+<div id="dom81">
+    <p class="style-text">81. Find its bottom sibling element and add the text '!' to the end of it:</p>
+    <ul>
+        <li>First text</li>
+        <li>Second text</li>
+        <li id="dom81-elem">Third text</li>
+        <li>Fourth text</li>
+        <li>Fifth text</li>
+    </ul>
+</div>
+<hr/>
+
+<!-- THEORY #82 -->
+<div id="dom82">
+    <p class="style-text">82. Find its bottom sibling of its bottom sibling (the next element after the next one) and
+        add the text '!' to the end of it:</p>
+    <ul>
+        <li>First text</li>
+        <li>Second text</li>
+        <li id="dom82-elem">Third text</li>
+        <li>Fourth text</li>
+        <li>Fifth text</li>
+    </ul>
+</div>
+<hr/>
+
+<!-- THEORY #83 -->
+<div id="dom83">
+    <p class="style-text">83. Swap the text of its upper sibling and the text of its bottom sibling:</p>
+    <ul>
+        <li>First text</li>
+        <li>Second text</li>
+        <li id="dom83-elem">Third text</li>
+        <li>Fourth text</li>
+        <li>Fifth text</li>
+    </ul>
+</div>
+<hr/>
+
+<!-- THEORY #84 -->
+<div id="dom84">
+    <p class="style-text">84. Get this element using the getElementById method and set some text to it:</p>
+    <div id="dom84-elem"></div>
+</div>
+<hr/>
+
+<!-- THEORY #85 -->
+<div id="dom85">
+    <p class="style-text">85. Get all the li tags by tag name and make their text red:</p>
+    <ul>
+        <li>First text</li>
+        <li>Second text</li>
+        <li>Third text</li>
+        <li>Fourth text</li>
+        <li>Fifth text</li>
+    </ul>
+</div>
+<hr/>
+
+<!-- THEORY #86 -->
+<div id="dom86">
+    <p class="style-text">86. Get these elements by class name and make their text red:</p>
+    <p class="www">elem 1</p>
+    <p class="www">elem 2</p>
+    <p class="www">elem 3</p>
+</div>
+<hr/>
+
+<!-- THEORY #87 -->
+<div id="dom87">
+    <p class="style-text">87. Find elements with the class www inside the parent and store them in the variable elems1.
+        Then find elements with the class ggg inside the parent and store them in the variable elems2:</p>
+    <div id="dom87-parent">
+        <p class="xxx">text</p>
+        <p class="xxx">text</p>
+        <p class="xxx">text</p>
+        <p class="ggg">text</p>
+        <p class="ggg">text</p>
+        <p class="ggg">text</p>
+    </div>
+</div>
+<hr/>
+
+<!-- THEORY #88 -->
+<div id="dom88">
+    <p class="style-text">88. Make it so that when you click on the div, the content of its data-text attribute is added
+        to the end of its text:</p>
+    <div id="dom88-data_attribute" data-text="str">You can see the context's attribute here</div>
+</div>
+<hr/>
+
+<!-- THEORY #89 -->
+<div id="dom89">
+    <p class="style-text">89. Make it so that when you click on the div, the content of its data-text attribute is added
+        to the end of its text:</p>
+    <ul class="dom89-list">
+        <li data-num="1">First text</li>
+        <li data-num="2">Second text</li>
+        <li data-num="3">Third text</li>
+        <li data-num="4">Fourth text</li>
+    </ul>
+</div>
+<hr/>
+
+<!-- THEORY #90 -->
+<div id="dom90">
+    <p class="style-text">90. Make it so that this button counts the number of clicks on it, writing them to some custom
+        attribute. Let on click on another button on the screen displays how many clicks were done on the first
+        button:</p>
+    <input id="dom90-btn_first" type="submit" value="Button" data-click='0'>
+    <input id="dom90-btn_second" type="submit" value="0">
+</div>
+<hr/>
+
+<!-- THEORY #91 -->
+<div id="dom91">
+    <p class="style-text">91. In this input, the data-length attribute contains the number of characters to be entered
+        into the input. Make it so that when focus is lost, if the number of characters entered does not match the
+        specified one, a message is displayed about this:</p>
+    <input id="dom91-elem" type="email" value="" data-length="5">
+</div>
+<hr/>
+
+<!-- THEORY #92 -->
+<div id="dom92">
+    <p class="style-text">92. In this input, the attributes data-min and data-max contain a range. Make it so that when
+        focus is lost, if the number of characters entered does not fall within this range, a message is displayed about
+        this:</p>
+    <input id="dom92-elem" data-min="5" data-max="10" value="">
+</div>
+<hr/>
+
+<!-- THEORY #93 -->
+<div id="dom93">
+    <p class="style-text">93. Make it so that when you click on the div, the purchase price is added to the end of its
+        text, equal to the price multiplied by the quantity:</p>
+    <div id="dom93-elem" data-product-price="1000" data-product-amount="5">
+        Apples
+    </div>
+</div>
+<hr/>
+
+<!-- THEORY #94 -->
+<div id="dom94">
+    <p class="style-text">94. Go through them in a loop and for each paragraph write down the ordinal number of this
+        paragraph into the data-num attribute. Use the setAttribute method:</p>
+    <p class="www" data-num="">First text</p>
+    <p class="www" data-num="">Second text</p>
+    <p class="www" data-num="">Third text</p>
+</div>
+<hr/>
+
+<!-- THEORY #95 -->
+<div id="dom95">
+    <p class="style-text">95. Write code that shows the difference between lastChild and lastElementChild:</p>
+    <div id="dom95-elem">First text
+        <b>tag1</b><!--Comment1-->Second text
+        <b>tag2</b><!--Comment2-->
+    </div>
+</div>
+<hr/>
+
+<!-- THEORY #96 -->
+<div id="dom96">
+    <p class="style-text">96. Write code that shows the difference between nextSibling and nextElementSibling:</p>
+    <div id="dom96-elem">First text
+        <b>tag1</b><!--Comment1-->Second text
+        <b>tag2</b><!--Comment2-->
+    </div>
+</div>
+<hr/>
+
+<!-- THEORY #97 -->
+<div id="dom97">
+    <p class="style-text">97. Write code that shows the difference between previousSibling and
+        previousElementSibling:</p>
+    <div id="dom97-elem">First text
+        <b>tag1</b><!--Comment1-->Second text
+        <b>tag2</b><!--Comment2-->
+    </div>
+</div>
+<hr/>
+
+<!-- THEORY #98 -->
+<div id="dom98">
+    <p class="style-text">98. Loop through all the nodes of this div and print them to the console:</p>
+    <div id="dom98-elem">First text
+        <b>tag1</b><!--Comment1-->Second text
+        <b>tag2</b><!--Comment2-->
+    </div>
+</div>
+<hr/>
+
+<!-- THEORY #99 -->
+<div id="dom99">
+    <p class="style-text">99. Loop through all the nodes of this div and print their names to the console:</p>
+    <div id="dom99-elem">First text
+        <b>tag1</b><!--Comment1-->Second text
+        <b>tag2</b><!--Comment2-->
+    </div>
+</div>
+<hr/>
+
+<!-- THEORY #100 -->
+<div id="dom100">
+    <p class="style-text">100. Loop through all the nodes of this div and output only the element nodes and text nodes
+        to the console:</p>
+    <div id="dom100-elem">First text
+        <b>tag1</b><!--Comment1-->Second text
+        <b>tag2</b><!--Comment2-->
+    </div>
+</div>
+<hr/>
+
+<!-- THEORY #101 -->
+<div id="dom101">
+    <p class="style-text">101. Loop through all the nodes of this div and output the texts of all nodes to the
+        console:</p>
+    <div id="dom101-elem">First text
+        <b>tag1</b><!--Comment1-->Second text
+        <b>tag2</b><!--Comment2-->
+    </div>
+</div>
+<hr/>
+
+<!-- THEORY #102 -->
+<div id="dom102">
+    <p class="style-text">102. Loop through all nodes of this div and print to the console the texts of all comments and
+        text nodes:</p>
+    <div id="dom102-elem">First text
+        <b>tag1</b><!--Comment1-->Second text
+        <b>tag2</b><!--Comment2-->
+    </div>
+</div>
+<hr/>
+
+<!-- THEORY #103 -->
+<div id="dom103">
+    <p class="style-text">103. Loop through all the nodes of this div and output to the console the texts of the text
+        nodes and elements:</p>
+    <div id="dom103-elem">First text
+        <b>tag1</b><!--Comment1-->Second text
+        <b>tag2</b><!--Comment2-->
+    </div>
+</div>
+<hr/>
+
+<!-- THEORY #104 -->
+<div id="dom104">
+    <p class="style-text">104. Loop through all the nodes of this div and write down the type of each node to the its
+        end:</p>
+    <div id="dom104-elem">First text
+        <b>tag1</b><!--Comment1-->Second text
+        <b>tag2</b><!--Comment2-->
+    </div>
+</div>
+<hr/>
+
+<!-- THEORY #105 -->
+<div id="dom105">
+    <p class="style-text">105. Find the childNodes[3]:</p>
+    <div id="dom105-elem">First text
+        <b>tag1</b><!--Comment1-->Second text
+        <b>tag2</b><!--Comment2-->
+    </div>
+</div>
+<hr/>
+
+<!-- THEORY #106 -->
+<div id="dom106">
+    <p class="style-text">106. Get years whose sum of digits is 6. Find the sum of the years obtained:</p>
+    <ul class="dom106-list_years">
+        <li>6000</li>
+        <li>2319</li>
+        <li>2000</li>
+        <li>2004</li>
+        <li>2004</li>
+        <li>5010</li>
+        <li>2021</li>
+        <li>2022</li>
+        <li>2025</li>
+        <li>2031</li>
+    </ul>
+</div>
+<hr/>
+
+<h1 class="header-style">Finding errors practice</h1>
+
+<!-- FIND MISTAKES #1 -->
+<div id="mistakes1">
+    <p class="style-text">1. The code should add text to the end of each paragraph:</p>
+    <div id="find1-mistakes">
+        <p>First text</p>
+        <p>Second text</p>
+        <p>Third text</p>
+    </div>
+</div>
+<hr/>
+
+<!-- FIND MISTAKES #2 -->
+<div id="mistakes2">
+    <p class="style-text">2. When you click on a paragraph, its value should increase by one:</p>
+    <div id="find2-mistakes">
+        <p>1</p>
+        <p>27</p>
+        <p>64</p>
+    </div>
+</div>
+<hr/>
+
+<!-- FIND MISTAKES #3 -->
+<div id="mistakes3">
+    <p class="style-text">3. By clicking on the button, the text of the paragraph should become bold:</p>
+    <p id="find3-mistakes_bold">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum
+        has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type
+        and scrambled it to make a type specimen book.</p>
+    <button id="find3-mistakes_btn">Click me!</button>
+</div>
+<hr/>
+
+<!-- FIND MISTAKES #4 -->
+<div id="mistakes4">
+    <p class="style-text">4. By clicking on the button, the sum of the numbers from the paragraphs should be
+        displayed:</p>
+    <div id="find4-mistakes">
+        <p>1</p>
+        <p>2</p>
+        <p>3</p>
+        <button id="find4-mistakes_btn">Click me!</button>
+    </div>
+</div>
+<hr/>
+
+<!-- FIND MISTAKES #5 -->
+<div id="mistakes5">
+    <p class="style-text">5. By clicking on a paragraph, the specified text should be added to the end of it:</p>
+    <div id="find5-mistakes">
+        <p>1</p>
+        <p>2</p>
+        <p>3</p>
+    </div>
+</div>
+<hr/>
+
+<!-- FIND MISTAKES #6 -->
+<div id="mistakes6">
+    <p class="style-text">6. By clicking on the button, the text of each paragraph should become bold:</p>
+    <div id="find6-mistakes">
+        <p>First text</p>
+        <p>Second text</p>
+        <p>Third text</p>
+        <button id="find6-mistakes_btn">Click me!</button>
+    </div>
+</div>
+<hr/>
+
+<!-- FIND MISTAKES #7 -->
+<div id="mistakes7">
+    <p class="style-text">7. By clicking on the button, the sum of the numbers from the paragraphs should be displayed
+        in the console:</p>
+    <div id="find7-mistakes">
+        <p>1</p>
+        <p>2</p>
+        <p>3</p>
+        <button id="find7-mistakes_btn">Click me!</button>
+    </div>
+</div>
+<hr/>
+
+<!-- FIND MISTAKES #8 -->
+<div id="mistakes8">
+    <p class="style-text">8. Numbers are entered into the inputs. By clicking on the button, the sum of the numbers from
+        the inputs should be displayed in the console:</p>
+    <input>
+    <input>
+    <input>
+    <button id="find8-mistakes_btn">Click me!</button>
+</div>
+<hr/>
+
+
+<!--<div id="find-mistakes">
+    <p>1</p>
+    <p>2</p>
+    <p>3</p>
+    <span id="bold">text1</span>
+    <span>text2</span>
+    <span>text3</span>
+    <span>text4</span>
+    <input id="inp1" value="" data-text="text1">
+    <input id="inp2" value="" data-text="text2">
+    <input id="inp3" value="" data-text="text3">
+    <button>click</button>
+</div>-->
+
+
+<!--<header>
     <div class="www"> text
         <p class="www">
-            <!--add span-->
+            &lt;!&ndash;add span&ndash;&gt;
             <span id="elem-header">tag</span>
         </p>
     </div>
-</header>
+</header>-->
 <div id="elem-nodes">
     <!--сomm-->
     test
     <span>tag</span>
 </div>
-<div id="elem-childnodes">First text
-    <b>tag1</b><!--Comment1-->Second text
-    <b>tag2</b><!--Comment2-->
-</div>
+<!--<div id="elem-childnodes">First text
+    <b>tag1</b>&lt;!&ndash;Comment1&ndash;&gt;Second text
+    <b>tag2</b>&lt;!&ndash;Comment2&ndash;&gt;
+</div>-->
 <!--<div class="block">Here you can see sum, when click the button
     <p class="first-number">3</p>
     <p class="second-number">31</p>
@@ -690,9 +1192,9 @@
 <p id="addElem">Hello, how are you</p>
 <!--<input id="elem" type="email" value="text" data-length="5">
 <button id="btn">Click me!</button>-->
-<div id="elem-data" data-product-price="1000" data-product-amount="5" data-min="5" data-max="10">
+<!--<div id="elem-data" data-product-price="1000" data-product-amount="5" data-min="5" data-max="10">
     Apples
-</div>
+</div>-->
 <!--<p class="paragraph">
     <a href="https://anastasia.grinkevi.ch/" id="portfolio-link">Anastasia Hrynkevich's portfolio</a>
     <a href="3458">JavaScript platform</a>
@@ -750,25 +1252,23 @@
 <div>3</div>
 <div>4</div>
 <div>5</div>-->
-<div id="data-attribute" data-text="str">You can see the context's attribute here</div>
-<div>
-    <!--<ul class="list">
-        <li data-num="1">25</li>
-        <li data-num="2">14</li>
-        <li data-num="3">9</li>
-        <li data-num="4">32</li>
-    </ul>-->
-   <!-- <button id="list-btn">Float List</button>-->
-</div>
-<div>
+<!--<div id="data-attribute" data-text="str">You can see the context's attribute here</div>-->
+<!--<ul class="list">
+    <li data-num="1">25</li>
+    <li data-num="2">14</li>
+    <li data-num="3">9</li>
+    <li data-num="4">32</li>
+</ul>-->
+<!-- <button id="list-btn">Float List</button>-->
+<!--<div>
     <p id="styling">Styling with CSS classes in JavaScript</p>
     <button id="mark-text">Mark text</button>
     <button id="bold-text">Bold text</button>
     <button id="red-text">Red text</button>
-</div>
-<button id="button">click me</button>
-<div id="elem-hiding"></div>
-<div>
+</div>-->
+<!--<button id="button">click me</button>
+<div id="elem-hiding"></div>-->
+<!--<div>
     <ul>
         <li>text1</li>
         <li>text2</li>
@@ -776,16 +1276,16 @@
         <li>text4</li>
         <li>text5</li>
     </ul>
-</div>
-<div id="parent">
+</div>-->
+<!--<div id="parent">
     <p class="xxx">text</p>
     <p class="xxx">text</p>
     <p class="xxx">text</p>
     <p class="ggg">text</p>
     <p class="ggg">text</p>
     <p class="ggg">text</p>
-</div>
-<div>
+</div>-->
+<!--<div>
     <ul class="list-years">
         <li>6000</li>
         <li>2319</li>
@@ -798,20 +1298,7 @@
         <li>2025</li>
         <li>2031</li>
     </ul>
-</div>
-<div id="find-mistakes">
-    <p>1</p>
-    <p>2</p>
-    <p>3</p>
-    <span id="bold">text1</span>
-    <span>text2</span>
-    <span>text3</span>
-    <span>text4</span>
-    <input id="inp1" value="" data-text="text1">
-    <input id="inp2" value="" data-text="text2">
-    <input id="inp3" value="" data-text="text3">
-    <button>click</button>
-</div>
+</div>-->
 
 <hr/>
 <div style="padding-bottom: 20px"></div>

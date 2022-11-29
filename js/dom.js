@@ -1101,25 +1101,25 @@ function attributeStyleStylization3() {
 
 //THEORY #72
 function cssStylization1() {
-    let isButtonFirst = document.querySelector('#mark-text');
-    isButtonFirst.addEventListener('click', function markText() {
-        let isTextMark = document.querySelector('#styling');
-        isTextMark.classList.toggle('mark-text');
-        isTextMark.removeEventListener('click', markText);
+    let buttonFirst = document.querySelector('#dom72-mark_text');
+    buttonFirst.addEventListener('click', function markText() {
+        let textMark = document.querySelector('#dom72-styling');
+        textMark.classList.toggle('mark-text');
+        textMark.removeEventListener('click', markText);
     });
 
-    let isButtonSecond = document.querySelector('#bold-text');
-    isButtonSecond.addEventListener('click', function boldText() {
-        let isTextBold = document.querySelector('#styling');
-        isTextBold.classList.toggle('bold-text');
-        isTextBold.removeEventListener('click', boldText);
+    let buttonSecond = document.querySelector('#dom72-bold_text');
+    buttonSecond.addEventListener('click', function boldText() {
+        let textBold = document.querySelector('#dom72-styling');
+        textBold.classList.toggle('bold-text');
+        textBold.removeEventListener('click', boldText);
     });
 
-    let isButtonThird = document.querySelector('#red-text');
-    isButtonThird.addEventListener('click', function coloredText() {
-        let isTextColored = document.querySelector('#styling');
-        isTextColored.classList.toggle('colored');
-        isTextColored.removeEventListener('click', coloredText);
+    let buttonThird = document.querySelector('#dom72-red_text');
+    buttonThird.addEventListener('click', function coloredText() {
+        let textColored = document.querySelector('#dom72-styling');
+        textColored.classList.toggle('colored');
+        textColored.removeEventListener('click', coloredText);
     });
 }
 
@@ -1127,13 +1127,13 @@ function cssStylization1() {
 
 //--------------
 
-//THEORY #62
+//THEORY #73
 function cssStylization2() {
-    let isButton = document.querySelector('#button');
-    let isElem = document.querySelector('#elem-hiding');
+    let button = document.querySelector('#dom73-btn');
+    let elem = document.querySelector('#dom73-elem');
 
-    isButton.addEventListener('click', function () {
-        isElem.classList.toggle('active');
+    button.addEventListener('click', function () {
+        elem.classList.toggle('active');
     });
 }
 
@@ -1141,33 +1141,33 @@ function cssStylization2() {
 
 //--------------
 
-//THEORY #62
+//THEORY #74
 function parentRelationshipSearching1() {
-    let isElem = document.querySelector('.list');
-    isElem.firstElementChild.classList.add('colored');
+    let elem = document.querySelector('.dom74-list');
+    elem.firstElementChild.classList.add('colored');
 }
 
 //parentRelationshipSearching1();
 
 //--------------
 
-//THEORY #62
+//THEORY #75
 function parentRelationshipSearching2() {
-    let isElem = document.querySelector('.list');
-    isElem.lastElementChild.classList.add('colored');
+    let elem = document.querySelector('.dom75-list');
+    elem.lastElementChild.classList.add('colored');
 }
 
 //parentRelationshipSearching2();
 
 //--------------
 
-//THEORY #62
+//THEORY #76
 function parentRelationshipSearching3() {
-    let isElem = document.querySelector('.list');
-    let childElements = isElem.children;
+    let elem = document.querySelector('.dom76-list');
+    let childElements = elem.children;
 
     for (let i = 0; i < childElements.length; i++) {
-        childElements[i].textContent = childElements[i].textContent + '!';
+        childElements[i].textContent += '!';
     }
 }
 
@@ -1175,9 +1175,9 @@ function parentRelationshipSearching3() {
 
 //--------------
 
-//THEORY #62
+//THEORY #77
 function parentRelationshipSearching4() {
-    let elem = document.querySelector('#elem-text');
+    let elem = document.querySelector('#dom77-elem');
     elem.parentElement.classList.add('border');
 }
 
@@ -1185,62 +1185,62 @@ function parentRelationshipSearching4() {
 
 //--------------
 
-//THEORY #62
+//THEORY #78
 function parentRelationshipSearching5() {
-    let getElem = document.querySelector('#elem-header');
-    console.log(getElem.closest('div'));
+    let elem = document.querySelector('#dom78-elem');
+    console.log(elem.closest('div'));
 }
 
 //parentRelationshipSearching5();
 
 //--------------
 
-//THEORY #62
+//THEORY #79
 function parentRelationshipSearching6() {
-    let getElem = document.querySelector('#elem-header');
-    console.log(getElem.closest('.www'));
+    let elem = document.querySelector('#dom79-elem');
+    console.log(elem.closest('.www'));
 }
 
 //parentRelationshipSearching6();
 
 //--------------
 
-//THEORY #62
+//THEORY #80
 function parentRelationshipSearching7() {
-    let findSibling = document.querySelector('#elem-text');
-    findSibling.previousElementSibling.textContent = findSibling.previousElementSibling.textContent + '!';
+    let sibling = document.querySelector('#dom80-elem');
+    sibling.previousElementSibling.textContent += '!';
 }
 
 //parentRelationshipSearching7();
 
 //--------------
 
-//THEORY #62
+//THEORY #81
 function parentRelationshipSearching8() {
-    let findSibling = document.querySelector('#elem-text');
-    findSibling.nextElementSibling.textContent = findSibling.nextElementSibling.textContent + '!';
+    let sibling = document.querySelector('#dom81-elem');
+    sibling.nextElementSibling.textContent += '!';
 }
 
 //parentRelationshipSearching8();
 
 //--------------
 
-//THEORY #62
+//THEORY #82
 function parentRelationshipSearching9() {
-    let isElem = document.querySelector('#elem-text');
-    let findSibling = isElem.nextElementSibling;
-    findSibling.nextElementSibling.textContent = findSibling.nextElementSibling.textContent + '!';
+    let elem = document.querySelector('#dom82-elem');
+    let sibling = elem.nextElementSibling;
+    sibling.nextElementSibling.textContent += '!';
 }
 
 //parentRelationshipSearching9();
 
 //--------------
 
-//THEORY #62
+//THEORY #83
 function parentRelationshipSearching10() {
-    let isChild = document.querySelector('#elem-text');
-    let previousChild = isChild.previousElementSibling;
-    let nextChild = isChild.nextElementSibling;
+    let child = document.querySelector('#dom83-elem');
+    let previousChild = child.previousElementSibling;
+    let nextChild = child.nextElementSibling;
     let a = previousChild.textContent;
     let b = nextChild.textContent;
     nextChild.textContent = a;
@@ -1251,21 +1251,22 @@ function parentRelationshipSearching10() {
 
 //--------------
 
-//THEORY #62
+//THEORY #84
 function otherSearchMethods1() {
-    let getElem = document.getElementById('elem-header');
-    getElem.textContent = 'Hello there!';
+    let elem = document.getElementById('dom84-elem');
+    elem.textContent = 'Hello there!';
 }
 
 //otherSearchMethods1();
 
 //--------------
 
-//THEORY #62
+//THEORY #85
 function otherSearchMethods2() {
-    let findList = document.getElementsByTagName('li');
-    for (let i = 0; i < findList.length; i++) {
-        findList[i].classList.add('colored');
+    let elem = document.getElementById('dom85');
+    let list = elem.getElementsByTagName('li');
+    for (let i = 0; i < list.length; i++) {
+        list[i].classList.add('colored');
     }
 }
 
@@ -1273,11 +1274,12 @@ function otherSearchMethods2() {
 
 //--------------
 
-//THEORY #62
+//THEORY #86
 function otherSearchMethods3() {
-    let getClasses = document.getElementsByClassName('www');
-    for (let i = 0; i < getClasses.length; i++) {
-        getClasses[i].classList.add('colored');
+    let elem = document.getElementById('dom86');
+    let classes = elem.getElementsByClassName('www');
+    for (let i = 0; i < classes.length; i++) {
+        classes[i].classList.add('colored');
     }
 }
 
@@ -1285,9 +1287,9 @@ function otherSearchMethods3() {
 
 //--------------
 
-//THEORY #62
+//THEORY #87
 function insideElementSearching() {
-    let parent = document.querySelector('#parent');
+    let parent = document.querySelector('#dom87-parent');
     let elem1 = parent.querySelectorAll('.xxx');
     let elem2 = parent.querySelectorAll('.ggg');
 
@@ -1298,11 +1300,11 @@ function insideElementSearching() {
 
 //--------------
 
-//THEORY #62
+//THEORY #88
 function dataAttribute1() {
-    let isBlock = document.getElementById('data-attribute');
-    isBlock.addEventListener('click', function addText() {
-        isBlock.textContent = isBlock.textContent + ` ${isBlock.dataset.text}`;
+    let block = document.getElementById('dom88-data_attribute');
+    block.addEventListener('click', function addText() {
+        block.textContent += `: ${block.dataset.text}`;
         this.removeEventListener('click', addText);
     });
 }
@@ -1311,28 +1313,28 @@ function dataAttribute1() {
 
 //--------------
 
-//THEORY #62
+//THEORY #89
 function dataAttribute2() {
-    let getList = document.querySelectorAll('.list li');
-    for (let i = 0; i < getList.length; i++) {
-        getList[i].addEventListener('click', function addIndex() {
-            this.textContent = this.textContent + `: ${this.dataset.num}`;
+    let list = document.querySelectorAll('.dom89-list li');
+    for (let i = 0; i < list.length; i++) {
+        list[i].addEventListener('click', function addIndex() {
+            this.textContent += `: ${this.dataset.num}`;
             this.removeEventListener('click', addIndex);
         });
     }
 }
 
-dataAttribute2();
+//dataAttribute2();
 
 //--------------
 
-//THEORY #62
+//THEORY #90
 function dataAttribute3() {
-    let isButton = document.getElementById('button5');
-    let getButton = document.getElementById('button6');
-    isButton.addEventListener('click', function countClick() {
-        isButton.dataset.click++;
-        getButton.value = isButton.dataset.click;
+    let buttonFirst = document.getElementById('dom90-btn_first');
+    let buttonSecond = document.getElementById('dom90-btn_second');
+    buttonFirst.addEventListener('click', function countClick() {
+        buttonFirst.dataset.click++;
+        buttonSecond.value = buttonFirst.dataset.click;
     });
 }
 
@@ -1340,12 +1342,14 @@ function dataAttribute3() {
 
 //--------------
 
-//THEORY #62
+//THEORY #91
 function dataAttribute4() {
-    let isInput = document.getElementById('elem');
-    isInput.addEventListener('blur', function getText() {
-        if (isInput.id.length.toString() !== isInput.dataset.length) {
-            isInput.value = 'Doesn\'t match the specified one';
+    let input = document.getElementById('dom91-elem');
+    input.addEventListener('blur', function getText() {
+        if (input.value.length.toString() === input.dataset.length) {
+            input.value = 'Does match the specified one';
+        } else {
+            input.value = 'Doesn\'t match the specified one';
         }
     });
 }
@@ -1354,14 +1358,14 @@ function dataAttribute4() {
 
 //--------------
 
-//THEORY #62
+//THEORY #92
 function dataAttribute5() {
-    let getInput = document.getElementById('elem-data');
-    getInput.addEventListener('blur', function getText() {
-        if (getInput.id.length.toString() > getInput.dataset.min && getInput.id.length.toString() < getInput.dataset.max) {
-            getInput.value = 'Doesn\'t match the specified one';
+    let input = document.getElementById('dom92-elem');
+    input.addEventListener('blur', function getText() {
+        if (input.value.length.toString() > input.dataset.min || input.value.length.toString() <= input.dataset.max) {
+            input.value = 'Does match the specified one';
         } else {
-            getInput.value = 'Does match the specified one';
+            input.value = 'Doesn\'t match the specified one';
         }
     });
 }
@@ -1370,12 +1374,12 @@ function dataAttribute5() {
 
 //--------------
 
-//THEORY #62
+//THEORY #93
 function dataAttribute6() {
-    let isBlock = document.getElementById('elem-data');
-    isBlock.addEventListener('click', function totalItem() {
-        let total = Number(isBlock.dataset.productPrice) * Number(isBlock.dataset.productAmount);
-        isBlock.textContent = `${isBlock.textContent} - their price: ${total}`;
+    let block = document.getElementById('dom93-elem');
+    block.addEventListener('click', function totalItem() {
+        let total = Number(block.dataset.productPrice) * Number(block.dataset.productAmount);
+        block.textContent = `${block.textContent} - their price: ${total}`;
     });
 }
 
@@ -1383,11 +1387,11 @@ function dataAttribute6() {
 
 //--------------
 
-//THEORY #62
+//THEORY #94
 function dataAttribute7() {
-    let getElem = document.querySelectorAll('.www');
-    for (let i = 0; i < getElem.length; i++) {
-        getElem[i].setAttribute('data-num', `${i}`);
+    let elem = document.querySelectorAll('#dom94 .www');
+    for (let i = 0; i < elem.length; i++) {
+        elem[i].setAttribute('data-num', `${i}`);
     }
 }
 
@@ -1395,9 +1399,9 @@ function dataAttribute7() {
 
 //--------------
 
-//THEORY #62
+//THEORY #95
 function nodes1() {
-    let elem = document.getElementById('elem-childnodes');
+    let elem = document.getElementById('dom95-elem');
     console.log(elem.firstChild);
     console.log(elem.firstElementChild);
 }
@@ -1406,9 +1410,9 @@ function nodes1() {
 
 //--------------
 
-//THEORY #62
+//THEORY #96
 function nodes2() {
-    let elem = document.querySelector('b');
+    let elem = document.querySelector('#dom96-elem b');
     console.log(elem.nextSibling);
     console.log(elem.nextElementSibling);
 }
@@ -1417,9 +1421,9 @@ function nodes2() {
 
 //--------------
 
-//THEORY #62
+//THEORY #97
 function nodes3() {
-    let elem = document.querySelector('b');
+    let elem = document.querySelector('#dom97-elem b');
     console.log(elem.previousSibling);
     console.log(elem.previousElementSibling);
 }
@@ -1428,10 +1432,10 @@ function nodes3() {
 
 //--------------
 
-//THEORY #62
+//THEORY #98
 function nodes4() {
-    let getElem = document.querySelector('#elem-childnodes');
-    for (let node of getElem.childNodes) {
+    let elem = document.querySelector('#dom98-elem');
+    for (let node of elem.childNodes) {
         console.log(node);
     }
 }
@@ -1440,10 +1444,10 @@ function nodes4() {
 
 //--------------
 
-//THEORY #62
+//THEORY #99
 function nodes5() {
-    let getElem = document.querySelector('#elem-childnodes');
-    for (let node of getElem.childNodes) {
+    let elem = document.querySelector('#dom99-elem');
+    for (let node of elem.childNodes) {
         console.log(node.nodeName);
     }
 }
@@ -1452,10 +1456,10 @@ function nodes5() {
 
 //--------------
 
-//THEORY #62
+//THEORY #100
 function nodes6() {
-    let getElem = document.querySelector('#elem-childnodes');
-    for (let node of getElem.childNodes) {
+    let elem = document.querySelector('#dom100-elem');
+    for (let node of elem.childNodes) {
         console.log(node.TEXT_NODE, node.ELEMENT_NODE);
     }
 }
@@ -1464,10 +1468,10 @@ function nodes6() {
 
 //--------------
 
-//THEORY #62
+//THEORY #101
 function nodes7() {
-    let getElem = document.querySelector('#elem-childnodes');
-    for (let node of getElem.childNodes) {
+    let elem = document.querySelector('#dom101-elem');
+    for (let node of elem.childNodes) {
         console.log(node.textContent);
     }
 }
@@ -1476,10 +1480,10 @@ function nodes7() {
 
 //--------------
 
-//THEORY #62
+//THEORY #102
 function nodes8() {
-    let getElem = document.querySelector('#elem-childnodes');
-    for (let node of getElem.childNodes) {
+    let elem = document.querySelector('#dom102-elem');
+    for (let node of elem.childNodes) {
         console.log(node.data);
     }
 }
@@ -1488,10 +1492,10 @@ function nodes8() {
 
 //--------------
 
-//THEORY #62
+//THEORY #103
 function nodes9() {
-    let getElem = document.querySelector('#elem-childnodes');
-    for (let node of getElem.childNodes) {
+    let elem = document.querySelector('#dom103-elem');
+    for (let node of elem.childNodes) {
         if (node.nodeType === 3 || node.nodeType === 1)
             console.log(node.textContent);
     }
@@ -1501,11 +1505,11 @@ function nodes9() {
 
 //--------------
 
-//THEORY #62
+//THEORY #104
 function nodes10() {
-    let getElem = document.querySelector('#elem-childnodes');
-    for (let i = 0; i < getElem.childNodes.length; i++) {
-        getElem.childNodes[i].textContent = getElem.childNodes[i].textContent + ` - ${getElem.childNodes[i].nodeType} `;
+    let elem = document.querySelector('#dom104-elem');
+    for (let i = 0; i < elem.childNodes.length; i++) {
+        elem.childNodes[i].textContent += ` - ${elem.childNodes[i].nodeType} `;
     }
 }
 
@@ -1513,22 +1517,22 @@ function nodes10() {
 
 //--------------
 
-//THEORY #62
+//THEORY #105
 function nodes11() {
-    let getElem = document.querySelector('#elem-childnodes');
-    getElem.removeChild(getElem.childNodes[3]);
+    let elem = document.querySelector('#dom105-elem');
+    elem.removeChild(elem.childNodes[3]);
 }
 
 //nodes11();
 
 //--------------
 
-//THEORY #62
+//THEORY #106
 function coding1() {
-    let getElem = document.querySelectorAll('.list-years li');
+    let elem = document.querySelectorAll('.dom106-list_years li');
     let sumYears = 0;
-    for (let i = 0; i < getElem.length; i++) {
-        let separateSmallArrs = getElem[i].textContent.split('');
+    for (let i = 0; i < elem.length; i++) {
+        let digits = elem[i].textContent.split('');
 
         //after splitting, moved on every element in arr and find their sum.
         function findSumEveryNumber(arr) {
@@ -1539,13 +1543,13 @@ function coding1() {
             return sum;
         }
 
-        let sumEveryArr = findSumEveryNumber(separateSmallArrs);
+        let sumEveryArr = findSumEveryNumber(digits);
 
         //comparing sum of every arr with 6 and get years
         function getResultYears(sumArr) {
             let result = '';
             if (sumArr === 6) {
-                result = Number(separateSmallArrs.join(''));
+                result = Number(digits.join(''));
             }
             return result;
         }
@@ -1556,11 +1560,6 @@ function coding1() {
     console.log(sumYears);
 }
 
-//coding1();
-
-//--------------
-
-//THEORY #62
 //how to make your code readable:
 function coding2() {
     //after splitting, moved on every element in arr and find their sum.
@@ -1572,7 +1571,7 @@ function coding2() {
         return sum;
     }
 
-    let getElem = document.querySelectorAll('.list-years li');
+    let getElem = document.querySelectorAll('.dom106-list_years li');
     let sumYears = 0;
     for (let i = 0; i < getElem.length; i++) {
         let yearDigits = getElem[i].textContent.split('');
@@ -1586,11 +1585,6 @@ function coding2() {
     console.log(sumYears);
 }
 
-//coding2();
-
-//--------------
-
-//THEORY #62
 //learning with mentor
 function coding3() {
     function getDigitsSum(number = '') {
@@ -1624,16 +1618,19 @@ function coding3() {
         return sumYears;
     }
 
-    let years = document.querySelectorAll('.list-years li');
+    let years = document.querySelectorAll('.dom106-list_years li');
     console.log(getSumYears(years));
 }
 
+//coding1();
+//coding2();
 //coding3();
 
 //--------------
 
+//FIND MISTAKES #1
 function findMistakes1() {
-    let elems = document.querySelectorAll('#find-mistakes p');
+    let elems = document.querySelectorAll('#find1-mistakes p');
     for (let i = 0; i < elems.length; i++) {
         elems[i].textContent += '!';
     }
@@ -1643,8 +1640,9 @@ function findMistakes1() {
 
 //--------------
 
+//FIND MISTAKES #2
 function findMistakes2() {
-    let elems = document.querySelectorAll('#find-mistakes p');
+    let elems = document.querySelectorAll('#find2-mistakes p');
 
     for (let elem of elems) {
         elem.addEventListener('click', function () {
@@ -1657,12 +1655,13 @@ function findMistakes2() {
 
 //--------------
 
+//FIND MISTAKES #3
 function findMistakes3() {
-    let button = document.querySelector('#find-mistakes button');
-    let elem = document.querySelector('#bold');
+    let button = document.querySelector('#find3-mistakes_btn');
+    let elem = document.querySelector('#find3-mistakes_bold');
 
     button.addEventListener('click', function () {
-        elem.innerHTML = '<b>text</b>';
+        elem.innerHTML = `<b>${elem.innerHTML}</b>`;
     });
 }
 
@@ -1670,9 +1669,10 @@ function findMistakes3() {
 
 //--------------
 
+//FIND MISTAKES #4
 function findMistakes4() {
-    let button = document.querySelector('#find-mistakes button');
-    let elems = document.querySelectorAll('#find-mistakes p');
+    let button = document.querySelector('#find4-mistakes_btn');
+    let elems = document.querySelectorAll('#find4-mistakes p');
 
     button.addEventListener('click', function () {
         let sum = 0;
@@ -1687,8 +1687,9 @@ function findMistakes4() {
 
 //--------------
 
+//FIND MISTAKES #5
 function findMistakes5() {
-    let elems = document.querySelectorAll('#find-mistakes p');
+    let elems = document.querySelectorAll('#find5-mistakes p');
 
     for (let elem of elems) {
         elem.addEventListener('click', () => {
@@ -1701,11 +1702,12 @@ function findMistakes5() {
 
 //--------------
 
+//FIND MISTAKES #6
 function findMistakes6() {
-    let button = document.querySelector('#find-mistakes button');
-    let elems = document.querySelectorAll('#find-mistakes span');
+    let button = document.querySelector('#find6-mistakes_btn');
 
     button.addEventListener('click', function () {
+        let elems = document.querySelectorAll('#find6-mistakes p');
         for (let elem of elems) {
             elem.innerHTML = `<b>${elem.innerHTML}</b>`;
         }
@@ -1716,9 +1718,10 @@ function findMistakes6() {
 
 //--------------
 
+//FIND MISTAKES #7
 function findMistakes7() {
-    let button = document.querySelector('#find-mistakes button');
-    let elems = document.querySelectorAll('#find-mistakes p');
+    let button = document.querySelector('#find7-mistakes_btn');
+    let elems = document.querySelectorAll('#find7-mistakes p');
     let sum = 0;
 
     for (let elem of elems) {
@@ -1734,9 +1737,10 @@ function findMistakes7() {
 
 //--------------
 
+//FIND MISTAKES #8
 function findMistakes8() {
-    let button = document.querySelector('#find-mistakes button');
-    let elems = document.querySelectorAll('#find-mistakes input');
+    let button = document.querySelector('#find8-mistakes_btn');
+    let elems = document.querySelectorAll('#mistakes8 input');
     button.addEventListener('click', function () {
         let sum = 0;
         for (let elem of elems) {
@@ -1750,6 +1754,7 @@ function findMistakes8() {
 
 //--------------
 
+//FIND MISTAKES #9
 function findMistakes9() {
     let btn = document.querySelector('#find-mistakes button');
     let inp1 = document.querySelector('#inp1');
@@ -1765,6 +1770,7 @@ function findMistakes9() {
 
 //--------------
 
+//FIND MISTAKES #1
 function findMistakes10() {
     let btn = document.querySelector('#find-mistakes button');
     let res = document.querySelector('#bold');
@@ -1781,6 +1787,7 @@ function findMistakes10() {
 
 //--------------
 
+//FIND MISTAKES #1
 function findMistakes11() {
     let button = document.querySelector('#find-mistakes button');
     let inputs = document.querySelectorAll('#find-mistakes input');
@@ -1800,6 +1807,7 @@ function findMistakes11() {
 
 //--------------
 
+//FIND MISTAKES #1
 function findMistakes12() {
     let button = document.querySelector('#find-mistakes button');
     let inputs = document.querySelectorAll('#find-mistakes input');
@@ -1820,10 +1828,11 @@ function findMistakes12() {
     });
 }
 
-findMistakes12();
+//findMistakes12();
 
 //--------------
 
+//FIND MISTAKES #1
 function findMistakes13() {
     let inputs = document.querySelectorAll('#find-mistakes input');
     let btn = document.querySelector('#find-mistakes button');
@@ -1841,6 +1850,7 @@ function findMistakes13() {
 
 //--------------
 
+//FIND MISTAKES #1
 function findMistakes14() {
     let btn = document.querySelector('#find-mistakes button');
     let inp1 = document.querySelector('#inp1');
@@ -1857,6 +1867,7 @@ function findMistakes14() {
 
 //--------------
 
+//FIND MISTAKES #1
 function findMistakes15() {
     let input = document.querySelector('#inp1');
 
