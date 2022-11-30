@@ -1756,10 +1756,10 @@ function findMistakes8() {
 
 //FIND MISTAKES #9
 function findMistakes9() {
-    let btn = document.querySelector('#find-mistakes button');
-    let inp1 = document.querySelector('#inp1');
-    let inp2 = document.querySelector('#inp2');
-    let inp3 = document.querySelector('#inp3');
+    let btn = document.querySelector('#find9-mistakes_btn');
+    let inp1 = document.querySelector('#mistakes9-inp1');
+    let inp2 = document.querySelector('#mistakes9-inp2');
+    let inp3 = document.querySelector('#mistakes9-inp3');
 
     btn.addEventListener('click', function () {
         inp3.value = Number(inp1.value) + Number(inp2.value);
@@ -1770,12 +1770,12 @@ function findMistakes9() {
 
 //--------------
 
-//FIND MISTAKES #1
+//FIND MISTAKES #10
 function findMistakes10() {
-    let btn = document.querySelector('#find-mistakes button');
-    let res = document.querySelector('#bold');
-    let inp1 = document.querySelector('#inp1');
-    let inp2 = document.querySelector('#inp2');
+    let btn = document.querySelector('#find10-mistakes_btn');
+    let res = document.querySelector('#mistakes10-text');
+    let inp1 = document.querySelector('#mistakes10-inp1');
+    let inp2 = document.querySelector('#mistakes10-inp2');
 
     btn.addEventListener('click', function () {
         let sum = Number(inp1.value) + Number(inp2.value);
@@ -1787,10 +1787,10 @@ function findMistakes10() {
 
 //--------------
 
-//FIND MISTAKES #1
+//FIND MISTAKES #11
 function findMistakes11() {
-    let button = document.querySelector('#find-mistakes button');
-    let inputs = document.querySelectorAll('#find-mistakes input');
+    let button = document.querySelector('#find11-mistakes_btn');
+    let inputs = document.querySelectorAll('#mistakes11 input');
 
     button.addEventListener('click', function () {
         for (let input of inputs) {
@@ -1807,22 +1807,20 @@ function findMistakes11() {
 
 //--------------
 
-//FIND MISTAKES #1
+//FIND MISTAKES #12
 function findMistakes12() {
-    let button = document.querySelector('#find-mistakes button');
-    let inputs = document.querySelectorAll('#find-mistakes input');
-
+    let button = document.querySelector('#find12-mistakes_btn');
     let texts = ['text1', 'text2', 'text3'];
 
     button.addEventListener('click', function () {
+        let inputs = document.querySelectorAll('#mistakes12 input');
         for (let i = 0; i < inputs.length; i++) {
-            for (let j = 0; j < texts.length; j++) {
-                if (inputs[i].value === texts[j]) {
-                    inputs[i].classList.add('right');
-                    break;
-                } else {
-                    inputs[i].classList.add('wrong');
-                }
+            if(inputs[i].value === texts[i]) {
+                inputs[i].classList.remove('wrong');
+                inputs[i].classList.add('right');
+            } else {
+                inputs[i].classList.remove('right');
+                inputs[i].classList.add('wrong');
             }
         }
     });
@@ -1832,10 +1830,10 @@ function findMistakes12() {
 
 //--------------
 
-//FIND MISTAKES #1
+//FIND MISTAKES #13
 function findMistakes13() {
-    let inputs = document.querySelectorAll('#find-mistakes input');
-    let btn = document.querySelector('#find-mistakes button');
+    let inputs = document.querySelectorAll('#mistakes13 input');
+    let btn = document.querySelector('#find13-mistakes_btn');
 
     btn.addEventListener('click', function () {
         let sum = 0;
@@ -1850,12 +1848,12 @@ function findMistakes13() {
 
 //--------------
 
-//FIND MISTAKES #1
+//FIND MISTAKES #14
 function findMistakes14() {
-    let btn = document.querySelector('#find-mistakes button');
-    let inp1 = document.querySelector('#inp1');
-    let inp2 = document.querySelector('#inp2');
-    let inp3 = document.querySelector('#inp3');
+    let btn = document.querySelector('#find14-mistakes_btn');
+    let inp1 = document.querySelector('#mistakes14-inp1');
+    let inp2 = document.querySelector('#mistakes14-inp2');
+    let inp3 = document.querySelector('#mistakes14-inp3');
 
     btn.addEventListener('click', function () {
         let sum = Number(inp1.value) + Number(inp2.value);
@@ -1867,9 +1865,9 @@ function findMistakes14() {
 
 //--------------
 
-//FIND MISTAKES #1
+//FIND MISTAKES #15
 function findMistakes15() {
-    let input = document.querySelector('#inp1');
+    let input = document.querySelector('#mistakes15-inp');
 
     input.addEventListener('blur', function () {
         let digits = input.value.split('');
@@ -1887,12 +1885,13 @@ function findMistakes15() {
 
 //--------------
 
+//PRACTICUM #1
 function practicum1() {
-    let input = document.getElementById('elem');
+    let input = document.getElementById('p1-elem');
     input.addEventListener('blur', getValue);
 
     function getValue() {
-        let paragraph = document.getElementById('addElem');
+        let paragraph = document.getElementById('p1-add_elem');
         paragraph.textContent = paragraph.textContent + `: his value is ${input.value}`;
     }
 }
@@ -1901,19 +1900,20 @@ function practicum1() {
 
 //--------------
 
+//PRACTICUM #2
 function practicum2() {
 
     function updateParSum() {
-        let inputs = document.querySelectorAll('#numbers input'); // найди все элементы типа инпут относительно this на том же уровне
+        let inputs = document.querySelectorAll('#p2 input');
         let sum = 0;
         for (let i = 0; i < inputs.length; i++) {
             sum += Number(inputs[i].value);
         }
-        let paragraph = document.getElementById('result');
+        let paragraph = document.getElementById('p2-result');
         paragraph.textContent = `The sum of numbers: ${sum}`;
     }
 
-    let button = document.getElementById('mean-btn');
+    let button = document.getElementById('p2-btn');
     button.addEventListener('click', updateParSum);
 }
 
@@ -1921,6 +1921,7 @@ function practicum2() {
 
 //--------------
 
+//PRACTICUM #3
 function practicum3() {
     function getDigitSum() {
         let digits = input.value.split('');
@@ -1931,7 +1932,7 @@ function practicum3() {
         this.value = sum;
     }
 
-    let input = document.getElementById('number-input');
+    let input = document.getElementById('p3-input');
     input.addEventListener('blur', getDigitSum);
 }
 
@@ -1939,6 +1940,7 @@ function practicum3() {
 
 //--------------
 
+//PRACTICUM #4
 function practicum4() {
     function getMean() {
         let digits = input.value.split(',');
@@ -1951,17 +1953,17 @@ function practicum4() {
         this.value = mean;
     }
 
-    let input = document.getElementById('text-field');
+    let input = document.getElementById('p4-input');
     input.addEventListener('blur', getMean);
 }
 
 //practicum4();
 
-
 //--------------
 
+//PRACTICUM #5
 function practicum5() {
-    let input = document.getElementById('text-full_name');
+    let input = document.getElementById('p5-full_name');
     input.addEventListener('blur', getNames);
 
     function getNames() {
@@ -1976,8 +1978,8 @@ function practicum5() {
     function getNames_1() {
         let nameParts = input.value.split(' ');
         for (let i = 0; i < nameParts.length; i++) {
-            document.getElementById('text-first_name').value = nameParts[0];
-            document.getElementById('text-last_name').value = nameParts[1];
+            document.getElementById('p5-first_name').value = nameParts[0];
+            document.getElementById('p5-last_name').value = nameParts[1];
         }
     }
 }
@@ -1986,8 +1988,9 @@ function practicum5() {
 
 //--------------
 
+//PRACTICUM #6
 function practicum6() {
-    let input = document.getElementById('text-full_name');
+    let input = document.getElementById('p6-full_name');
     input.addEventListener('blur', setUpperCase);
 
     function setUpperCase() {
@@ -2005,8 +2008,9 @@ function practicum6() {
 
 //--------------
 
+//PRACTICUM #7
 function practicum7() {
-    let input = document.getElementById('text-full_name');
+    let input = document.getElementById('p7-input');
     input.addEventListener('blur', getLength);
 
     function getLength() {
@@ -2021,8 +2025,9 @@ function practicum7() {
 
 //--------------
 
+//PRACTICUM #8
 function practicum8() {
-    let input = document.getElementById('text-full_name');
+    let input = document.getElementById('p8-input');
     input.addEventListener('blur', reverseDate);
 
     function reverseDate() {
@@ -2035,12 +2040,13 @@ function practicum8() {
 
 //--------------
 
+//PRACTICUM #9
 function practicum9() {
-    let button = document.getElementById('square');
+    let button = document.getElementById('p9-btn');
     button.addEventListener('click', getSameWord);
 
     function getSameWord() {
-        let input = document.getElementById('text-field');
+        let input = document.getElementById('p9-input');
         let reverseWord = input.value.split('').reverse().join('');
         input.value = input.value === reverseWord;
     }
@@ -2049,8 +2055,10 @@ function practicum9() {
 //practicum9();
 
 //--------------
+
+//PRACTICUM #10
 function practicum10() {
-    let input = document.getElementById('number-input');
+    let input = document.getElementById('p10-input');
     input.addEventListener('blur', getNumber);
 
     function getNumber() {
@@ -2068,12 +2076,13 @@ function practicum10() {
 
 //--------------
 
+//PRACTICUM #11
 function practicum11() {
-    let button = document.querySelector('.btn-sum');
+    let button = document.querySelector('.p11-btn');
     button.addEventListener('click', getIndexs);
 
     function getIndexs() {
-        let paragraphs = document.querySelectorAll('.block p');
+        let paragraphs = document.querySelectorAll('#p11-block p');
         for (let i = 0; i < paragraphs.length; i++) {
             paragraphs[i].textContent += `- its index is: ${i}`;
         }
@@ -2084,8 +2093,9 @@ function practicum11() {
 
 //--------------
 
+//PRACTICUM #12
 function practicum12() {
-    let links = document.querySelectorAll('.paragraph a');
+    let links = document.querySelectorAll('#p12 a');
     for (let i = 0; i < links.length; i++) {
         links[i].textContent += ` (${links[i].href})`;
     }
@@ -2094,8 +2104,10 @@ function practicum12() {
 //practicum12();
 
 //--------------
+
+//PRACTICUM #13
 function practicum13() {
-    let links = document.querySelectorAll('.paragraph a');
+    let links = document.querySelectorAll('#p13 a');
     for (let i = 0; i < links.length; i++) {
         if (links[i].href.indexOf('https://') === 0) {
             links[i].innerHTML += '&rarr;';
@@ -2107,8 +2119,9 @@ function practicum13() {
 
 //--------------
 
+//PRACTICUM #14
 function practicum14() {
-    let paragraphs = document.querySelectorAll('.block p');
+    let paragraphs = document.querySelectorAll('#p14-block p');
     for (let i = 0; i < paragraphs.length; i++) {
         paragraphs[i].addEventListener('click', countSquare);
     }
@@ -2122,8 +2135,9 @@ function practicum14() {
 
 //--------------
 
+//PRACTICUM #15
 function practicum15() {
-    let input = document.getElementById('elem');
+    let input = document.getElementById('p15-elem');
     input.addEventListener('blur', getDayWeek);
 
     function getDayWeek() {
@@ -2139,6 +2153,7 @@ function practicum15() {
 
 //--------------
 
+//PRACTICUM #16
 function practicum16_1() {
     document.querySelectorAll('.p16-cls').forEach(element => element.addEventListener('click', sumNumber));
 
@@ -2181,10 +2196,13 @@ function practicum16_3() {
     }
 }
 
+//practicum16_1();
+//practicum16_2();
 //practicum16_3();
 
 //--------------
 
+//PRACTICUM #17
 function practicum17() {
     let input = document.getElementById('p17-input-result');
     let paragraphs = document.querySelectorAll('#p17 p');
@@ -2204,6 +2222,7 @@ function practicum17() {
 
 //--------------
 
+//PRACTICUM #18
 function practicum18() {
     let paragraphs = document.querySelectorAll('.style-block .text-lorem');
     let str = '';
@@ -2216,6 +2235,8 @@ function practicum18() {
 //practicum18();
 
 //--------------
+
+//PRACTICUM #19
 function practicum19() {
     let input = document.getElementById('p19-input_number');
     input.addEventListener('blur', checkNumber);
@@ -2230,6 +2251,7 @@ function practicum19() {
 
 //--------------
 
+//PRACTICUM #20
 function practicum20() {
     function randomSymbols() {
         let alphabet = 'abcdefghijklmnopqrstuvwxyz';
@@ -2249,6 +2271,7 @@ function practicum20() {
 
 //--------------
 
+//PRACTICUM #21
 function practicum21() {
     function mixLetters() {
         let arr = input.value.split('');
@@ -2271,6 +2294,7 @@ function practicum21() {
 
 //--------------
 
+//PRACTICUM #22
 function practicum22() {
     let button = document.getElementById('p22-button');
     button.addEventListener('click', convertDegrees);
@@ -2286,6 +2310,8 @@ function practicum22() {
 //practicum22();
 
 //--------------
+
+//PRACTICUM #23
 function practicum23() {
     function processClickEvent() {
         function factorial(n) {
@@ -2307,14 +2333,24 @@ function practicum23() {
 
 //--------------
 
+//PRACTICUM #24
 function practicum24() {
+    let inputs = document.querySelectorAll('#p24 input');
+
+    function focusInputs() {
+        for(let i = 0; i < inputs.length; i++) {
+            inputs[i].addEventListener('focus', function() {
+                inputs[i].value = '';
+                paragraph.textContent = 'The roots of this equation:';
+            });
+        }
+    }
+
+    function resultDiscriminant(num1, num2, num3) {
+        return (num2 ** 2) - (4 * num1 * num3);
+    }
 
     function calculateRoot() {
-        function resultDiscriminant(num1, num2, num3) {
-            return (num2 ** 2) - (4 * num1 * num3);
-        }
-
-        let inputs = document.querySelectorAll('#p24 input');
         let a = Number(inputs[0].value);
         let b = Number(inputs[1].value);
         let c = Number(inputs[2].value);
@@ -2332,16 +2368,21 @@ function practicum24() {
         } else {
             paragraph.textContent += ' Equation has no roots';
         }
+
+        button.removeEventListener('click', calculateRoot);
+        console.log(result);
     }
 
     let button = document.getElementById('p24-button');
     let paragraph = document.getElementById('p24-paragraph');
+    paragraph.textContent = 'The roots of this equation:';
 
     button.addEventListener('click', calculateRoot);
-
+    focusInputs();
 }
 
-practicum24();
+//practicum24();
 
 //--------------
+
 
