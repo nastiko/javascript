@@ -59,3 +59,11 @@
     width: 400px;
     margin: 0 2rem;
 }
+
+.input-style_green {
+    border: 1px solid green;
+}
+
+.input-style_red {
+    border: 1px solid red;
+}

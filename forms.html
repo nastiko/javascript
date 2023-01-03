@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link href="css/main.css" rel="stylesheet">
+    <title>Forms DOM</title>
+</head>
+<body>
+<!-- THEORY #1 -->
+<div id="form1">
+    <p class="style-text">1. When textarea loses focus, write its text into the paragraph</p>
+    <textarea>Working with textarea...</textarea>
+    <p id="form1-text"></p>
+</div>
+
+<!-- THEORY #2 -->
+<div id="form2">
+    <p class="style-text">2. Given an input and a button. By pressing the button, disable the input</p>
+    <input id="form2-input">
+    <button>Click me!</button>
+</div>
+
+<!-- THEORY #3 -->
+<div id="form3">
+    <p class="style-text">3. Given an input and two buttons. Let pressing the first button disable the input, and pressing the second one will enable it</p>
+    <input id="form3-input">
+    <button id="form3-disabled">Disabled</button>
+    <button id="form3-enabled">Enabled</button>
+</div>
+
+<!-- THEORY #4 -->
+<div id="form4">
+    <p class="style-text">4. Given an input and a button. By pressing the button, find out if the input is disabled or not</p>
+    <input id="form4-input" disabled>
+    <button>Click me!</button>
+</div>
+
+<!-- THEORY #5 -->
+<div id="form5">
+    <p class="style-text">5. Given a checkbox and two buttons. By clicking on the first button, set the checkbox to the checked state, and by clicking on the second - to the unchecked state</p>
+    <input id="form5-input" type="checkbox">
+    <button id="form5-checked">Checked</button>
+    <button id="form5-unchecked">Unchecked</button>
+</div>
+
+<!-- THEORY #6 -->
+<div id="form6">
+    <p class="style-text">6. Given a checkbox, a button and a paragraph. On clicking the button, if the checkbox is checked, output the word 'hello' into the paragraph, and if the checkbox is not checked, then the word 'bye'</p>
+    <input id="form6-input" type="checkbox" checked>
+    <p id="form6-text">Output value of checkbox:</p>
+    <button>Click me!</button>
+</div>
+
+<!-- THEORY #7 -->
+<div id="form7">
+    <p class="style-text">7. Given a checkbox and a button. Make sure that each button click causes the checkbox to change its state</p>
+    <input id="form7-input" type="checkbox">
+    <button>Click me!</button>
+</div>
+
+<!-- THEORY #8 -->
+<div id="form8">
+    <p class="style-text">8. Given 3 radio buttons, a paragraph, and a button. On click on the button, display value of the checked radio button in the paragraph</p>
+    <input type="radio" value="1">
+    <input type="radio" value="2" checked>
+    <input type="radio" value="3">
+    <p id="form8-text">Output value of the checked radio button: </p>
+    <button>Click me!</button>
+</div>
+
+<!-- THEORY #9 -->
+<div id="form9">
+    <p class="style-text">9. Given an input and a paragraph. After changing the input, display its text in a paragraph</p>
+    <input id="form9-input" value="text">
+    <p id="form9-text">Changed input value: </p>
+</div>
+
+<!-- THEORY #10 -->
+<div id="form10">
+    <p class="style-text">10. Given a checkbox. When the checkbox changes, display its new state on the screen</p>
+    <input id="form10-input" type="checkbox">
+    <p id="form10-text">New state is:</p>
+</div>
+
+<!-- THEORY #11 -->
+<div id="form11">
+    <p class="style-text">11. Given an input. By changing it, check if the number of characters in it is less than 5 or not. If less - color the border of the input default, and if more - red</p>
+    <input id="form11-input" value="">
+</div>
+
+<!-- THEORY #12 -->
+<div id="form12">
+    <p class="style-text">12. Given an input. Let text be entered into it. As soon as the length of the text reaches 5, display a message about it on the screen</p>
+    <input id="form12-input" value="">
+    <p id="form12-text">You'll get a message if your length of the text reaches 5:</p>
+</div>
+
+<!-- THEORY #13 -->
+<div id="form13">
+    <p class="style-text">13. Given an input. Let it be allowed to enter 5 characters into it. There is also a paragraph. As you enter characters into the input, write how many more characters can be entered. When the number of characters exceeds 5, then output in the paragraph how many characters the length of the text is exceeded</p>
+    <input id="form13-input" type="text" value="" data-length="5">
+    <p id="form13-text"></p>
+</div>
+
+
+
+<script src="js/forms.js"></script>
+</body>
+</html>
