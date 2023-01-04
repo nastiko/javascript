@@ -200,27 +200,21 @@ function getNumberSymbols() {
     let paragraph = document.getElementById('form13-text');
     let input = document.getElementById('form13-input');
 
-    function permissibleSymbols(string1) {
-        input.addEventListener('focus', function() {
-            string1 = input.dataset.length - input.value.length.toString();
-            return string1;
-        });
+    function checkInput() {
+        let valueLength = parseInt(input.value.length);
+        let maxLength = parseInt(input.dataset.length);
 
+        if (valueLength < maxLength) {
+            paragraph.innerHTML += ` You can write ${maxLength-valueLength} symbols more<br/>`;
+        } else if (valueLength === maxLength) {
+            paragraph.innerHTML += ` You can't write symbols anymore<br/>`;
+        } else if (valueLength > maxLength) {
+            paragraph.innerHTML += ` You exceed the limit on ${valueLength-maxLength} symbols<br/>`;
+        }
     }
 
-    function prohibitedSymbols(string2) {
-        input.addEventListener('focus', function() {
-            string2 = input.value.length.toString() - input.dataset.length;
-            return string2;
-        });
-    }
-
-    let remainedSymbols = permissibleSymbols();
-    let exceededSymbols = prohibitedSymbols();
-
-    input.addEventListener('input', function () {
-        remainedSymbols < input.dataset.length ? paragraph.textContent += ` You can write ${remainedSymbols} symbols more` : paragraph.textContent += ` You exceed the limit on ${exceededSymbols} symbols`;
-    });
+    // adding listener to validate input
+    input.addEventListener('input', checkInput);
 }
 
 getNumberSymbols();
