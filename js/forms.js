@@ -205,11 +205,11 @@ function getNumberSymbols() {
         let maxLength = parseInt(input.dataset.length);
 
         if (valueLength < maxLength) {
-            paragraph.innerHTML += ` You can write ${maxLength-valueLength} symbols more<br/>`;
+            paragraph.innerHTML += ` You can write ${maxLength - valueLength} symbols more<br/>`;
         } else if (valueLength === maxLength) {
             paragraph.innerHTML += ` You can't write symbols anymore<br/>`;
         } else if (valueLength > maxLength) {
-            paragraph.innerHTML += ` You exceed the limit on ${valueLength-maxLength} symbols<br/>`;
+            paragraph.innerHTML += ` You exceed the limit on ${valueLength - maxLength} symbols<br/>`;
         }
     }
 
@@ -222,8 +222,145 @@ getNumberSymbols();
 //--------------
 
 //THEORY #14
+function focusBlur() {
+    let inputFirst = document.getElementById('form14-input_first');
+    let inputSecond = document.getElementById('form14-input_second');
+
+    inputFirst.addEventListener('keyup', focusStatus);
+    inputSecond.addEventListener('keyup', blurStatus);
+
+    function focusStatus() {
+        let firstValueLength = inputFirst.value.length;
+        if (firstValueLength === 2) {
+            inputSecond.focus();
+        }
+    }
+
+    function blurStatus() {
+        let secondValueLength = inputSecond.value.length;
+        if (secondValueLength === 2) {
+            inputSecond.blur();
+        }
+    }
+}
+
+focusBlur();
+
 //--------------
 
 //THEORY #15
+function getOption() {
+
+    let select = document.getElementById('form15-select');
+    let paragraph = document.getElementById('form15-text');
+    let btn = document.getElementById('form15-btn');
+
+    btn.addEventListener('click', getResult);
+
+    function getResult() {
+        paragraph.textContent += ` ${select.value}`;
+    }
+
+}
+
+getOption();
+
+//--------------
+
+//THEORY #16
+function findLeapYear() {
+    let select = document.getElementById('form16-select');
+    let paragraph = document.getElementById('form16-text');
+
+    select.addEventListener('change', findYear);
+
+    function findYear() {
+        let year = parseInt(select.value);
+        if (((year % 4 === 0) && (year % 100 !== 0)) || (year % 400 === 0)) {
+            paragraph.innerHTML += ' a leap year <br/>';
+        } else {
+            paragraph.innerHTML += ' not a leap year <br/>';
+        }
+    }
+}
+
+//findLeapYear();
+
+//--------------
+
+//THEORY #17
+function getDay() {
+    function getResult() {
+        let day = parseInt(select.value);
+        if(day === 0 || day === 6) {
+            paragraph.textContent += ' weekend';
+        } else {
+            paragraph.textContent += ' workday';
+        }
+    }
+
+    let paragraph = document.getElementById('form17-text');
+    let select = document.getElementById('form17-select');
+
+    select.addEventListener('change', getResult);
+}
+
+//getDay();
+
+//--------------
+
+//THEORY #18
+function getCurrentMonth() {
+    let select = document.getElementById('form18-select');
+    let date = new Date();
+    select.value = date.getMonth();
+}
+
+//getCurrentMonth();
+
+//--------------
+
+//THEORY #15
+
+//--------------
+
+//THEORY #15
+
+//--------------
+
+//THEORY #15
+
+//--------------
+
+//THEORY #15
+
+//--------------
+
+//THEORY #15
+
+//--------------
+
+//THEORY #15
+
+//--------------
+
+//THEORY #15
+
+//--------------
+
+//THEORY #15
+
+//--------------
+
+//THEORY #15
+
+//--------------
+
+//THEORY #15
+
+//--------------
+
+//THEORY #15
+
 //--------------
 
