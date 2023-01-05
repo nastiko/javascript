@@ -292,7 +292,7 @@ function findLeapYear() {
 function getDay() {
     function getResult() {
         let day = parseInt(select.value);
-        if(day === 0 || day === 6) {
+        if(day === 1 || day === 7) {
             paragraph.textContent += ' weekend';
         } else {
             paragraph.textContent += ' workday';
@@ -320,47 +320,156 @@ function getCurrentMonth() {
 
 //--------------
 
-//THEORY #15
+//THEORY #19
+function getSelectIndex() {
+    function getSelect() {
+        let value = parseInt(input.value);
+        select.selectedIndex = value;
+    }
+
+    let select = document.getElementById('form19-select');
+    let input = document.getElementById('form19-input');
+
+    input.addEventListener('blur', getSelect);
+}
+
+getSelectIndex();
 
 //--------------
 
-//THEORY #15
+//THEORY #20
+function getCurrentDay() {
+    let select = document.getElementById('form20-select');
+    let date = new Date();
+    select.value = date.getDate();
+}
+
+getCurrentDay();
 
 //--------------
 
-//THEORY #15
+//THEORY #21
+function addValue() {
+    let select = document.getElementById('form21-select');
+    for(let i = 0; i < select.length; i++) {
+        select[i].textContent += `: his value is - ${select[i].value}`;
+    }
+}
+
+//addValue();
 
 //--------------
 
-//THEORY #15
+//THEORY #22
+function addText() {
+    function getSelect() {
+        for(let i = 0; i < select.length; i++) {
+            select[i].selected ? select[i].textContent += ' !' : select[i].textContent += ' ?';
+        }
+    }
+
+    let select = document.getElementById('form22-select');
+    select.addEventListener('change', getSelect);
+}
+
+//addText();
 
 //--------------
 
-//THEORY #15
+//THEORY #23
+function getLastElem() {
+    function getElem() {
+        let option = select[2];
+        option.selected = true;
+    }
+
+    let select = document.getElementById('form23-select');
+    let btn = document.getElementById('form23-btn');
+
+    btn.addEventListener('click', getElem);
+}
+
+//getLastElem();
 
 //--------------
 
-//THEORY #15
+//THEORY #24
+function getMarkedElem() {
+    function getElem() {
+        paragraph.textContent += ` ${select[select.selectedIndex].value}`;
+    }
+
+    let select = document.getElementById('form24-select');
+    let paragraph = document.getElementById('form24-text');
+    let btn = document.getElementById('form24-btn');
+
+    btn.addEventListener('click', getElem);
+}
+
+//getMarkedElem();
 
 //--------------
 
-//THEORY #15
+//THEORY #25
+function addExclamationMark() {
+    function addMark() {
+        select[select.selectedIndex].textContent += '!';
+    }
+
+    let select = document.getElementById('form25-select');
+    let btn = document.getElementById('form25-btn');
+
+    btn.addEventListener('click', addMark);
+}
+
+//addExclamationMark();
 
 //--------------
 
-//THEORY #15
+//THEORY #26
+function findMistake1() {
+    let textarea = document.querySelector('#form26-textarea');
+    let block = document.querySelector('#form26-block');
+
+    textarea.addEventListener('blur', function() {
+        block.textContent += textarea.value;
+    });
+}
+findMistake1();
 
 //--------------
 
-//THEORY #15
+//THEORY #27
+function findMistake2() {
+    let input = document.querySelector('#form27-input');
+    let block = document.querySelector('#form27-block');
+    let btn = document.querySelector('#form27-btn');
+
+    btn.addEventListener('click', function() {
+        input.checked ? block.textContent += '111' : block.textContent += '222';
+    });
+
+    input.addEventListener('click', function deleteTextContent() {
+        block.textContent = '';
+    });
+}
+
+//findMistake2();
 
 //--------------
 
-//THEORY #15
+//THEORY #28
+function findMistake3() {
+    let input = document.querySelector('#form28-input');
+    let btn = document.querySelector('#form28-btn');
+
+    btn.addEventListener('click', function() {
+        input.checked ? console.log('+++') : console.log('---');
+    });
+}
+
+//findMistake3();
 
 //--------------
 
-//THEORY #15
-
-//--------------
 
