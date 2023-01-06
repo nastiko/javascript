@@ -67,3 +67,14 @@
 .input-style_red {
     border: 1px solid red;
 }
+
+.border-style {
+    padding: 30px;
+    border: 1px solid red;
+}
+
+.list-style {
+    list-style-type: none;
+    margin-bottom: 20px;
+    border: 1px dashed black;
+}
