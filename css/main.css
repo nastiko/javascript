@@ -78,3 +78,36 @@
     margin-bottom: 20px;
     border: 1px dashed black;
 }
+
+.red-box {
+    height: 300px;
+    width: 300px;
+    background-color: red;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.yellow-box {
+    height: 225px;
+    width: 225px;
+    background-color: yellow;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.green-box {
+    height: 150px;
+    width: 150px;
+    background-color: green;
+}
+
+#event14-block {
+    display: none;
+    margin-top: 1rem;
+}
+
+#event14-block.show {
+    display: block;
+}

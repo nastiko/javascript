@@ -169,18 +169,161 @@ calculateSum();
 
 //--------------
 
-//THEORY #1
+//THEORY #11
+function eventBubbling() {
+    let blockFirst = document.getElementById('event11-parent');
+    let blockSecond = document.getElementById('event11-subparent');
+    let blockThird = document.getElementById('event11-child');
+
+    blockFirst.addEventListener('click', function() {
+        console.log('Red');
+    });
+
+    blockSecond.addEventListener('click', function() {
+        console.log('Yellow');
+    });
+
+    blockThird.addEventListener('click', function() {
+        console.log('Green');
+    });
+}
+
+//eventBubbling();
 
 //--------------
 
-//THEORY #1
+//THEORY #12
+function determineTags() {
+    let block = document.getElementById('event12-block');
+    block.addEventListener('click', function(event) {
+        console.log(event.target);
+    });
+}
+
+//determineTags();
 
 //--------------
 
-//THEORY #1
+//THEORY #13
+function modifyTask() {
+    function addHtml(event) {
+        if (event.target.matches('ul')) {
+            list.innerHTML += '<li class="list-group-item list-group-item-success p-2">text</li>'
+        }
+
+        if(event.target.matches('li')) {
+            let lists = document.querySelectorAll('#event13-list li');
+            for(let i = 0; i < lists.length; i++) {
+                lists[i].addEventListener('click', addMark);
+            }
+            function addMark() {
+                this.innerHTML += '!';
+                block.removeEventListener('click', addHtml);
+            }
+        }
+    }
+
+    let list = document.getElementById('event13-list');
+    let block = document.getElementById('event13-block');
+    block.addEventListener('click', addHtml);
+}
+
+//modifyTask();
 
 //--------------
 
-//THEORY #1
+//THEORY #14
+function stopEventBubbling() {
+    let parent = document.querySelector('#event14-parent');
+    let btn = document.querySelector('#event14-btn');
+    let block  = document.querySelector('#event14-block');
+
+    btn.addEventListener('click', function(event) {
+        block.classList.add('show');
+        event.stopImmediatePropagation();
+    });
+
+    parent.addEventListener('click', function(event) {
+        block.classList.remove('show');
+    });
+}
+
+//stopEventBubbling();
+
+//--------------
+
+//THEORY #15
+function eventCapturing() {
+
+    let blockFirst = document.getElementById('event15-parent');
+    let blockSecond = document.getElementById('event15-subparent');
+    let blockThird = document.getElementById('event15-child');
+
+    blockFirst.addEventListener('click', function() {
+        console.log('red - capturing');
+    }, true);
+
+    blockFirst.addEventListener('click', function() {
+        console.log('red - bubbling');
+    }, false);
+
+    blockSecond.addEventListener('click', function() {
+        console.log('yellow - capturing');
+    }, true);
+
+    blockSecond.addEventListener('click', function() {
+        console.log('yellow - bubbling');
+    }, false);
+
+    blockThird.addEventListener('click', function() {
+        console.log('green - capturing');
+    }, true);
+
+    blockThird.addEventListener('click', function() {
+        console.log('green- bubbling');
+    }, false);
+}
+
+//eventCapturing();
+
+//--------------
+
+//THEORY #16
+function eventDelegation() {
+    let list = document.getElementById('event16-list');
+    let btn = document.getElementById('event16-btn');
+
+    btn.addEventListener('click', function() {
+        list.innerHTML += '<li>item</li>';
+    });
+
+    list.addEventListener('click', function(event) {
+        event.target.innerHTML += '!';
+    });
+
+}
+
+//eventDelegation();
+
+//--------------
+
+//THEORY #17
+function advanceDelegation() {
+    let list = document.getElementById('event17-list');
+    let btn = document.getElementById('event17-btn');
+
+    btn.addEventListener('click', function() {
+        list.innerHTML += '<li>item <i>italic</i> item</li>';
+    });
+
+    list.addEventListener('click', function(event) {
+        let li = event.target.closest('li');
+        if (li) {
+            li.innerHTML = li.innerHTML + '!';
+        }
+    });
+}
+
+//advanceDelegation();
 
 //--------------

@@ -3,26 +3,30 @@
 <head>
     <meta charset="UTF-8">
     <link href="css/main.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/libraries/bootstrap/bootstrap.min.css">
     <title>Even Object</title>
 </head>
-<body>
+<body class="container-fluid mt-3">
 <!-- THEORY #1 -->
 <div id="event1">
     <p class="style-text">1. Output the object with the event to the console</p>
     <button id="event1-btn">Click me!</button>
 </div>
+<hr/>
 
 <!-- THEORY #2 -->
 <div id="event2">
     <p class="style-text">2. Make it so that when the mouse moves across the page, the cursor coordinates are displayed</p>
     <div id="event2-block">0 : 0</div>
 </div>
+<hr/>
 
 <!-- THEORY #3 -->
 <div id="event3">
     <p class="style-text">3. Add a code to the function func so that when you click on an element, this element is colored green, and when double-clicked - red</p>
     <button id="event3-btn">Click me!</button>
 </div>
+<hr/>
 
 <!-- THEORY #4 -->
 <div id="event4">
@@ -35,12 +39,14 @@
         <li class="list-style">text</li>
     </ul>
 </div>
+<hr/>
 
 <!-- THEORY #5 -->
 <div id="event5">
     <p class="style-text">5. Make an input that will display the values of the entered keys and their codes on input</p>
     <input id="event5-input">
 </div>
+<hr/>
 
 <!-- THEORY #6 -->
 <div id="event6">
@@ -48,12 +54,14 @@
     <input id="event6-input">
     <p id="event6-text">Here is text:</p>
 </div>
+<hr/>
 
 <!-- THEORY #7 -->
 <div id="event7">
     <p class="style-text">7. Given an element. Make it turn red when clicked, but only if the Alt key is pressed at the time of the click</p>
     <button id="event7-btn">Click me!</button>
 </div>
+<hr/>
 
 <!-- THEORY #8 -->
 <div id="event8">
@@ -66,12 +74,14 @@
         <li>text</li>
     </ul>
 </div>
+<hr/>
 
 <!-- THEORY #9 -->
 <div id="event9">
     <p class="style-text">9. Links are given. Make it so that when you click on the link, its href is written to the its end, and there is no transition by link</p>
     <a id="event9-link" href="https://anastasia.grinkevi.ch/">Portfolio's Anastasia Hrynkevich</a>
 </div>
+<hr/>
 
 <!-- THEORY #10 -->
 <div id="event10">
@@ -81,6 +91,93 @@
     <p id="event10-text">Total is:</p>
     <a id="event10-link" href="#">Click me!</a>
 </div>
+<hr/>
+
+<!-- THEORY #11 -->
+<div id="event11">
+    <p class="style-text">11. By your own, write the code that will demonstrate the bubbling of events. Check it for bubbling different types of events</p>
+    <div id="event11-parent" class="red-box">
+        <div id="event11-subparent" class="yellow-box">
+            <div id="event11-child" class="green-box"></div>
+        </div>
+    </div>
+</div>
+<hr/>
+
+<!-- THEORY #12 -->
+<div id="event12">
+    <p class="style-text">12. Attach a click handler to the div. In this handler, determine in which of the tags the event fired</p>
+    <div id="event12-block" class="m-5">
+        <ul id="event12-list" class="list-group p-5">
+            <li class="list-group-item list-group-item-danger p-2">1</li>
+            <li class="list-group-item list-group-item-warning p-2">2</li>
+            <li class="list-group-item list-group-item-success p-2">3</li>
+        </ul>
+    </div>
+</div>
+<hr/>
+
+<!-- THEORY #13 -->
+<div id="event13">
+    <p class="style-text">13. Modify the previous task. Make sure that when you click on li, an exclamation mark is added to the its end, and when you click on ul, a new li is added to the end</p>
+    <div id="event13-block">
+        <ul id="event13-list" class="list-group p-5">
+            <li class="list-group-item list-group-item-danger p-2">1</li>
+            <li class="list-group-item list-group-item-warning p-2">2</li>
+            <li class="list-group-item list-group-item-success p-2">3</li>
+        </ul>
+    </div>
+</div>
+<hr/>
+
+<!-- THEORY #14 -->
+<div id="event14">
+    <p class="style-text">14. Click on the button to cancel the bubbling, the parent does not react to this click</p>
+    <div id="event14-parent">
+        <button id="event14-btn">Click me!</button>
+        <div id="event14-block">text</div>
+    </div>
+</div>
+<hr/>
+
+<!-- THEORY #15 -->
+<div id="event15">
+    <p class="style-text">15. Use third optional parameter in addEventListener. If it is equal to true - the event will fire at the capturing stage, and if false - at the bubbling stage (this is by default)</p>
+    <div id="event15-parent" class="red-box">
+        <div id="event15-subparent" class="yellow-box">
+            <div id="event15-child" class="green-box"></div>
+        </div>
+    </div>
+</div>
+<hr/>
+
+<!-- THEORY #16 -->
+<div id="event16">
+    <p class="style-text">16. Make sure the new li will also respond to the click</p>
+    <ul id="event16-list">
+        <li>item</li>
+        <li>item</li>
+        <li>item</li>
+        <li>item</li>
+        <li>item</li>
+    </ul>
+    <button id="event16-btn">Add item!</button>
+</div>
+<hr/>
+
+<!-- THEORY #17 -->
+<div id="event17">
+    <p class="style-text">17. Modify the previous task</p>
+    <ul id="event17-list">
+        <li>item <i>italic</i> item</li>
+        <li>item <i>italic</i> item</li>
+        <li>item <i>italic</i> item</li>
+        <li>item <i>italic</i> item</li>
+        <li>item <i>italic</i> item</li>
+    </ul>
+    <button id="event17-btn">Add item!</button>
+</div>
+<hr/>
 
 
 
