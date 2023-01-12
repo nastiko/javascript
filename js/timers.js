@@ -32,9 +32,9 @@ function decreaseValue2() {
 function stopTimer() {
     let startNum = 10;
     let timerId = setInterval(function () {
-        console.log(--startNum);
+        console.log(startNum--);
 
-        if (startNum === 0) {
+        if (startNum < 0) {
             clearInterval(timerId);
         }
 
@@ -50,7 +50,7 @@ function getResult() {
     function decreaseNum() {
         let start = 100;
         setInterval(function () {
-            console.log(--start);
+            console.log(start--);
         }, 1000);
 
         this.removeEventListener('click', decreaseNum);
@@ -68,9 +68,9 @@ function getResult() {
 function useButtons() {
     function decreaseNumber() {
         timerId = setInterval(function () {
-            console.log(--startNumber);
+            console.log(startNumber--);
 
-            if (startNumber === 0) {
+            if (startNumber < 0) {
                 clearInterval(timerId);
             }
         }, 1000);
@@ -146,11 +146,12 @@ function findMistakes2() {
 //THEORY #8
 function setTimer() {
     let input = document.getElementById('timer8-input');
-    let timerInput = setInterval(function () {
-        let num = parseInt(input.value);
-        input.value = num - 1;
+    let num = parseInt(input.value);
 
-        if (Number(input.value) === 0) {
+    let timerInput = setInterval(function () {
+        input.value = num--;
+
+        if (num < 0) {
             clearInterval(timerInput);
         }
 
@@ -208,6 +209,8 @@ function practice1() {
             let num = parseInt(paragraph.textContent);
             paragraph.textContent = (num + 1).toString();
         }, 1000);
+
+        this.removeEventListener('click', getTimer); //remove double-click
     }
 
     let paragraph = document.getElementById('timer11-text');
@@ -223,15 +226,18 @@ function practice1() {
 //THEORY #12
 function practice2() {
     function decreaseStopTimer() {
-        timer = setInterval(function () {
-            let num = parseInt(paragraph.textContent);
-            paragraph.textContent = (num - 1).toString();
+        let num = parseInt(paragraph.textContent);
 
-            if (Number(paragraph.textContent) === 0) {
+        timer = setInterval(function () {
+            paragraph.textContent = (num--).toString();
+
+            if (num < 0) {
                 clearInterval(timer);
             }
 
         }, 1000);
+
+        this.removeEventListener('click', decreaseStopTimer);
     }
 
     let timer;
@@ -261,13 +267,12 @@ function practice3() {
 //THEORY #14
 function practice4() {
     function countDown() {
-        paragraph.textContent = input.value;
+        let num = Number(input.value);
 
         timer = setInterval(function () {
-            let num = Number(paragraph.textContent);
-            paragraph.textContent = (num - 1).toString();
+            paragraph.textContent = ` ${(num--).toString()}`;
 
-            if (Number(paragraph.textContent) === 0) {
+            if (num < 0) {
                 clearInterval(timer);
             }
 
@@ -287,13 +292,12 @@ function practice4() {
 //THEORY #15
 function practice5() {
     function setCountdown() {
-        paragraph.textContent = input.value;
+        let num = parseInt(input.value);
 
         timer = setInterval(function () {
-            let userNums = parseInt(paragraph.textContent);
-            paragraph.textContent = (userNums - 1).toString();
+            paragraph.textContent = ` ${(num--).toString()}`;
 
-            if (Number(paragraph.textContent) === 0) {
+            if (num < 0) {
                 clearInterval(timer);
             }
 
@@ -318,7 +322,7 @@ function practice5() {
 function practice6() {
     function startCount() {
         timer = setInterval(function () {
-            paragraph.textContent = (++num).toString();
+            paragraph.textContent = ` ${(num++).toString()}`;
         }, 750);
     }
 
@@ -327,7 +331,7 @@ function practice6() {
     }
 
     let timer;
-    let num = 0;
+    let num = 1;
     let paragraph = document.getElementById('timer16-text');
 
     let startBtn = document.getElementById('timer16-start_btn');
@@ -345,7 +349,7 @@ function practice6() {
 function practice7() {
     let paragraph = document.getElementById('timer17-text');
     setInterval(function () {
-        if(paragraph.style.color === 'red') {
+        if (paragraph.style.color === 'red') {
             paragraph.style.color = 'green';
         } else {
             paragraph.style.color = 'red';
@@ -360,12 +364,43 @@ function practice7() {
 //THEORY #18
 function practice8() {
     let paragraph = document.getElementById('timer18-text');
-    setInterval(function() {
+    setInterval(function () {
         let date = new Date();
         paragraph.textContent = (date.getHours() + ':' + date.getMinutes() + ':' + date.getSeconds());
     }, 1000);
 }
 
 //practice8();
+
+//--------------
+
+//THEORY #19
+function displayMessage() {
+    let paragraph = document.getElementById('timer19-text');
+    setTimeout(function () {
+        console.log(paragraph.textContent);
+    }, 3000);
+}
+
+//displayMessage();
+
+//--------------
+
+//THEORY #20
+function displayResult() {
+    let startNum = 0;
+    function timer() {
+        setTimeout(function () {
+            console.log(startNum++);
+
+            timer(); //cal ourselves
+
+        }, 1000);
+    }
+
+    timer();
+}
+
+//displayResult();
 
 //--------------
