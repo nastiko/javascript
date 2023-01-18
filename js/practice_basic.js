@@ -324,7 +324,7 @@ function removeItem() {
         link.textContent = ' Remove me';
         items[i].appendChild(link);
 
-        items[i].addEventListener('click', function(event) {
+        items[i].addEventListener('click', function (event) {
             items[i].remove();
             event.preventDefault();
         });
@@ -347,7 +347,7 @@ function removeRow() {
         link.textContent = 'Remove row..';
         td.appendChild(link);
 
-        trs[i].addEventListener('click', function(event) {
+        trs[i].addEventListener('click', function (event) {
             trs[i].remove();
             event.preventDefault();
         });
@@ -382,7 +382,7 @@ function getInput() {
         input.value = paragraph.textContent;
         paragraph.parentElement.appendChild(input);
 
-        input.addEventListener('blur', function() {
+        input.addEventListener('blur', function () {
             paragraph.textContent = input.value;
             input.remove();
         });
@@ -406,7 +406,7 @@ function HiddenShowInput() {
 
         paragraph.removeEventListener('click', addInput);
 
-        input.addEventListener('blur', function() {
+        input.addEventListener('blur', function () {
             paragraph.textContent = input.value;
             paragraph.addEventListener('click', addInput);
         });
@@ -417,7 +417,247 @@ function HiddenShowInput() {
     paragraph.addEventListener('click', addInput);
 }
 
-HiddenShowInput();
+//HiddenShowInput();
+
+//--------------
+
+//PRACTICE #19
+function createInputs() {
+    let lists = document.querySelectorAll('#basic19-list li');
+    for (let i = 0; i < lists.length; i++) {
+        let input = document.createElement('input');
+        input.value = lists[i].textContent;
+        lists[i].textContent = '';
+
+        lists[i].appendChild(input);
+    }
+}
+
+//createInputs();
+
+//--------------
+
+//PRACTICE #20
+function editItems() {
+    let tds = document.querySelectorAll('#basic20-table td');
+    for (let i = 0; i < tds.length; i++) {
+        tds[i].addEventListener('click', function editItem() {
+            let input = document.createElement('input');
+            input.value = tds[i].textContent;
+            tds[i].textContent = '';
+            tds[i].appendChild(input);
+
+            tds[i].removeEventListener('click', editItem);
+
+            input.addEventListener('blur', function getResult() {
+                tds[i].textContent = input.value;
+                tds[i].addEventListener('click', editItem);
+            });
+        });
+    }
+}
+
+//editItems();
+
+//--------------
+
+//PRACTICE #21
+function addRemoveLink() {
+    let paragraphs = document.querySelectorAll('#basic21-block span');
+
+    for (let i = 0; i < paragraphs.length; i++) {
+
+        let span = document.createElement('span');
+        span.textContent = paragraphs[i].textContent;
+        paragraphs[i].textContent = '';
+        paragraphs[i].appendChild(span);
+
+        paragraphs[i].addEventListener('click', function addInput() {
+            let input = document.createElement('input');
+            input.value = paragraphs[i].textContent;
+            paragraphs[i].textContent = '';
+            paragraphs[i].appendChild(input);
+
+            paragraphs[i].removeEventListener('click', addInput);
+
+            input.addEventListener('blur', function () {
+                paragraphs[i].textContent = input.value;
+                paragraphs[i].addEventListener('click', addInput);
+            });
+        });
+
+        let link = document.createElement('a');
+        link.href = '';
+        link.textContent = ' remove me...';
+        paragraphs[i].insertAdjacentElement('afterEnd', link);
+
+        link.addEventListener('click', function (event) {
+            paragraphs[i].remove();
+            link.remove();
+            event.preventDefault();
+        });
+    }
+}
+
+//addRemoveLink();
+
+//--------------
+
+//PRACTICE #22
+function manipulationSpan() {
+    let paragraphs = document.querySelectorAll('#basic22-block p');
+    for (let i = 0; i < paragraphs.length; i++) {
+        let span = document.createElement('span');
+        span.textContent = paragraphs[i].textContent;
+        paragraphs[i].textContent = '';
+        paragraphs[i].appendChild(span);
+    }
+
+    let spans = document.querySelectorAll('#basic22-block span');
+
+    for (let j = 0; j < spans.length; j++) {
+        spans[j].addEventListener('click', function addInput() {
+            let input = document.createElement('input');
+            input.value = spans[j].textContent;
+            spans[j].textContent = '';
+            spans[j].appendChild(input);
+
+            spans[j].removeEventListener('click', addInput);
+
+            input.addEventListener('blur', function () {
+                spans[j].textContent = input.value;
+                spans[j].addEventListener('click', addInput);
+            });
+        });
+
+        let link = document.createElement('a');
+        link.href = '';
+        link.textContent = ' remove me...';
+        spans[j].insertAdjacentElement('afterEnd', link);
+
+        link.addEventListener('click', function (event) {
+            spans[j].remove();
+            link.remove();
+            event.preventDefault();
+        });
+    }
+}
+
+//manipulationSpan();
+
+//--------------
+
+//PRACTICE #23
+function styleElems() {
+    let paragraphs = document.querySelectorAll('#basic23-block p');
+    for (let i = 0; i < paragraphs.length; i++) {
+        let span = document.createElement('span');
+        span.textContent = paragraphs[i].textContent;
+        paragraphs[i].textContent = '';
+        paragraphs[i].appendChild(span);
+
+        let link = document.createElement('a');
+        link.href = '';
+        link.textContent = ' decoration text';
+        paragraphs[i].appendChild(link);
+
+        link.addEventListener('click', function (event) {
+            span.style.textDecoration = 'line-through';
+            link.remove();
+            event.preventDefault();
+        });
+    }
+}
+
+//styleElems();
+
+//--------------
+
+//PRACTICE #24
+function styleColumns() {
+    let lists = document.querySelectorAll('#basic24-table tr');
+    for (let i = 0; i < lists.length; i++) {
+        let td = document.createElement('td');
+        lists[i].appendChild(td);
+
+        let link = document.createElement('a');
+        link.href = '';
+        link.textContent = 'Change bg-color';
+        td.appendChild(link);
+
+        link.addEventListener('click', function setBgColorGreen(event) {
+            let tr = this.closest('tr');
+            tr.classList.toggle('bg-color');
+            event.preventDefault();
+        });
+    }
+}
+
+//styleColumns();
+
+//--------------
+
+//PRACTICE #1
+
+//--------------
+
+//PRACTICE #1
+
+//--------------
+
+//PRACTICE #1
+
+//--------------
+
+//PRACTICE #1
+
+//--------------
+
+//PRACTICE #1
+
+//--------------
+
+//PRACTICE #1
+
+//--------------
+
+//PRACTICE #1
+
+//--------------
+
+//PRACTICE #1
+
+//--------------
+
+//PRACTICE #1
+
+//--------------
+
+//PRACTICE #1
+
+//--------------
+
+//PRACTICE #1
+
+//--------------
+
+//PRACTICE #1
+
+//--------------
+
+//PRACTICE #1
+
+//--------------
+
+//PRACTICE #1
+
+//--------------
+
+//PRACTICE #1
+
+//--------------
+
+//PRACTICE #1
 
 //--------------
 
