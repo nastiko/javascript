@@ -10,6 +10,14 @@ button {
     border: 1px solid grey;
 }
 
+.hidden {
+    display: none;
+}
+
+.text-decoration {
+    text-decoration: line-through;
+}
+
 .flex-container {
     display: flex;
 }
@@ -55,6 +63,13 @@ button {
 
 .bg-color {
     background-color: green;
+}
+
+.color1 {
+    background: red;
+}
+.color2 {
+    background: green;
 }
 
 #p18 .flex-container {

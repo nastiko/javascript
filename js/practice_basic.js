@@ -38,7 +38,7 @@ function createElemArray2() {
 
 }
 
-//createElemArray2();
+createElemArray2();
 
 //--------------
 
@@ -597,23 +597,128 @@ function styleColumns() {
 
 //--------------
 
-//PRACTICE #1
+//PRACTICE #25
+function showHiddenElem() {
+    function showHidden() {
+        paragraph.classList.toggle('hidden');
+    }
+
+    let paragraph = document.getElementById('basic25-text');
+    let input = document.getElementById('basic25-toggle');
+
+    input.addEventListener('click', showHidden);
+}
+
+//showHiddenElem();
 
 //--------------
 
-//PRACTICE #1
+//PRACTICE #26
+function toggleCorrespondingElem() {
+    let paragraphs = document.querySelectorAll('#basic26-block p');
+    let btns = document.querySelectorAll('#basic26-block button');
+
+    for (let i = 0; i < btns.length; i++) {
+        btns[i].addEventListener('click', function () {
+            paragraphs[i].classList.toggle('hidden');
+        });
+    }
+}
+
+//toggleCorrespondingElem();
 
 //--------------
 
-//PRACTICE #1
+//PRACTICE #27
+function addStyleItem() {
+    let list = document.querySelectorAll('#basic27-list li');
+    for (let i = 0; i < list.length; i++) {
+        list[i].addEventListener('click', function () {
+            list[i].classList.toggle('bg-color');
+        });
+    }
+}
+
+//addStyleItem();
 
 //--------------
 
-//PRACTICE #1
+//PRACTICE #28
+function styleCells() {
+    let tds = document.querySelectorAll('#basic28-table td');
+    let color = 'color1';
+
+    for (let i = 0; i < tds.length; i++) {
+        tds[i].addEventListener('click', function () {
+        });
+    }
+}
+
+//styleCells();
 
 //--------------
 
-//PRACTICE #1
+//PRACTICE #29
+function getList() {
+    let block = document.getElementById('basic29-block');
+    let inputBtn = document.getElementById('basic29-input_btn');
+    inputBtn.addEventListener('click', addItem);
+
+    let arr = ['HTML', 'CSS', 'JavaScript'];
+
+    for (let i = 0; i < arr.length; i++) {
+        let list = document.createElement('ul');
+        let item = document.createElement('li');
+        item.textContent = arr[i];
+        block.appendChild(list);
+        inputBtn.insertAdjacentElement('beforebegin', item);
+
+        item.addEventListener('click', (event)=> rewriteText(event.target));
+
+        addLink(item);
+    }
+
+    function addLink(item) {
+        let link = document.createElement('a');
+        link.href = '';
+        link.textContent = 'Decoration text';
+        item.insertAdjacentElement('beforeend', link);
+
+        link.addEventListener('click', function lineThrough(event) {
+            item.classList.toggle('text-decoration');
+            event.preventDefault();
+        });
+    }
+
+    function rewriteText(item) {
+        let input = document.createElement('input');
+        input.value = item.textContent;
+        item.textContent = '';
+        item.appendChild(input);
+
+        input.addEventListener('click', (event)=> {event.stopPropagation()});
+        input.addEventListener('blur', function () {
+            item.textContent = input.value;
+        });
+
+        input.focus();
+    }
+
+    function addItem(item) {
+        let clickItem = document.createElement('li');
+        clickItem.textContent = 'Please, change context';
+        inputBtn.insertAdjacentElement('beforebegin', clickItem);
+
+        clickItem.addEventListener('click', (event)=> rewriteText(event.target));
+        addLink(item);
+    }
+
+
+
+
+}
+
+getList();
 
 //--------------
 
