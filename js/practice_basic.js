@@ -660,33 +660,35 @@ function styleCells() {
 
 //PRACTICE #29
 function getList() {
-    let block = document.getElementById('basic29-block');
     let inputBtn = document.getElementById('basic29-input_btn');
-    inputBtn.addEventListener('click', addItem);
+    inputBtn.addEventListener('click', (event) => addItem(event.target));
 
     let arr = ['HTML', 'CSS', 'JavaScript'];
 
     for (let i = 0; i < arr.length; i++) {
         let list = document.createElement('ul');
         let item = document.createElement('li');
-        item.textContent = arr[i];
-        block.appendChild(list);
+        let span = document.createElement('span');
+        span.textContent = arr[i];
+        list.appendChild(item);
+        item.appendChild(span);
         inputBtn.insertAdjacentElement('beforebegin', item);
 
-        item.addEventListener('click', (event)=> rewriteText(event.target));
+        item.addEventListener('click', (event) => rewriteText(event.target));
 
-        addLink(item);
+        addLink(span, item);
     }
 
-    function addLink(item) {
+    function addLink(span, item) {
         let link = document.createElement('a');
         link.href = '';
         link.textContent = 'Decoration text';
         item.insertAdjacentElement('beforeend', link);
 
-        link.addEventListener('click', function lineThrough(event) {
-            item.classList.toggle('text-decoration');
+        link.addEventListener('click', function (event) {
+            span.classList.toggle('text-decoration');
             event.preventDefault();
+            event.stopPropagation();
         });
     }
 
@@ -696,7 +698,9 @@ function getList() {
         item.textContent = '';
         item.appendChild(input);
 
-        input.addEventListener('click', (event)=> {event.stopPropagation()});
+        input.addEventListener('click', (event) => {
+            event.stopPropagation()
+        });
         input.addEventListener('blur', function () {
             item.textContent = input.value;
         });
@@ -704,85 +708,124 @@ function getList() {
         input.focus();
     }
 
-    function addItem(item) {
-        let clickItem = document.createElement('li');
-        clickItem.textContent = 'Please, change context';
-        inputBtn.insertAdjacentElement('beforebegin', clickItem);
+    function addItem(span, item, link) {
 
-        clickItem.addEventListener('click', (event)=> rewriteText(event.target));
-        addLink(item);
+        let newItem = document.createElement('li');
+        let newSpan = document.createElement('span');
+        let newLink = document.createElement('a');
+        newSpan.textContent = 'Please, change context';
+        newItem.appendChild(newSpan);
+        newSpan.appendChild(newLink);
+        inputBtn.insertAdjacentElement('beforebegin', newItem);
+
+        //newItem.addEventListener('click', (event) => rewriteText(event.target));
+
+        addLink(span, item, link);
     }
-
-
-
 
 }
 
-getList();
+//getList();
 
 //--------------
 
-//PRACTICE #1
+//PRACTICE #30
+function arrayObject() {
+    let block = document.getElementById('basic30-block');
 
-//--------------
+    let employees = [
+        {name: 'employee1', age: 30, salary: 400},
+        {name: 'employee2', age: 31, salary: 500},
+        {name: 'employee3', age: 32, salary: 600},
+    ];
 
-//PRACTICE #1
+    function createTable() {
+        let table = document.createElement('table');
 
-//--------------
+        for (let i = 0; i < employees.length; i++) {
 
-//PRACTICE #1
+            //create table with using date
+            let row = document.createElement('tr');
 
-//--------------
+            let td1 = document.createElement('td');
+            td1.textContent = employees[i].name;
+            row.appendChild(td1);
 
-//PRACTICE #1
+            let td2 = document.createElement('td');
+            td2.textContent = ` Age: ${employees[i].age}`;
+            row.appendChild(td2);
 
-//--------------
+            let td3 = document.createElement('td');
+            td3.textContent = ` Salary: ${employees[i].salary}`;
+            row.appendChild(td3);
 
-//PRACTICE #1
+            //create extra column
+            let td4 = document.createElement('td');
+            let link = document.createElement('a');
+            link.href = '';
+            link.textContent = 'Delete rows';
+            td4.appendChild(link);
+            row.appendChild(td4);
 
-//--------------
+            link.addEventListener('click', function (event) {
+                row.remove();
+                event.preventDefault();
+                //event.stopPropagation();
+            });
 
-//PRACTICE #1
+            /*employees[i].name.addEventListener('click', rewriteItem);
+            employees[i].age.addEventListener('click', rewriteItem);
+            employees[i].salary.addEventListener('click', rewriteItem);*/
 
-//--------------
+            /*function rewriteItem() {
+                let input = document.createElement('input');
+                input.value = employees[i].textContent;
+                employees[i].textContent = '';
+                employees[i].appendChild(input);
 
-//PRACTICE #1
+                employees[i].removeEventListener('click', rewriteItem);
 
-//--------------
+                input.addEventListener('blur', function () {
+                    employees[i].textContent = input.value;
+                    employees[i].addEventListener('click', rewriteItem);
+                });
+            }*/
 
-//PRACTICE #1
 
-//--------------
+            table.appendChild(row);
+        }
 
-//PRACTICE #1
+        block.appendChild(table);
 
-//--------------
+        rewriteItem();
+    }
 
-//PRACTICE #1
+    function rewriteItem(item) {
 
-//--------------
+        // tds[i].addEventListener('click', rewriteItem);
 
-//PRACTICE #1
+        /*function rewriteItem() {
+            let input = document.createElement('input');
+            input.value = tds[i].textContent;
+            tds[i].textContent = '';
+            tds[i].appendChild(input);
 
-//--------------
+            tds[i].removeEventListener('click', rewriteItem);
 
-//PRACTICE #1
+            input.addEventListener('blur', function () {
+                tds[i].textContent = input.value;
+                tds[i].addEventListener('click', rewriteItem);
+            });
+        }*/
 
-//--------------
+    }
 
-//PRACTICE #1
+    createTable();
 
-//--------------
+}
 
-//PRACTICE #1
 
-//--------------
-
-//PRACTICE #1
-
-//--------------
-
-//PRACTICE #1
+arrayObject();
 
 //--------------
 
