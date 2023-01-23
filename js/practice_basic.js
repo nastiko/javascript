@@ -721,6 +721,7 @@ function getList() {
         //newItem.addEventListener('click', (event) => rewriteText(event.target));
 
         addLink(span, item, link);
+        return object;
     }
 
 }
@@ -730,7 +731,7 @@ function getList() {
 //--------------
 
 //PRACTICE #30
-function arrayObject() {
+function arrayObject1() {
     let block = document.getElementById('basic30-block');
 
     let employees = [
@@ -772,6 +773,10 @@ function arrayObject() {
                 event.preventDefault();
                 //event.stopPropagation();
             });
+
+            for(let key in employees) {
+                console.log(employees[key]);
+            }
 
             /*employees[i].name.addEventListener('click', rewriteItem);
             employees[i].age.addEventListener('click', rewriteItem);
@@ -825,7 +830,100 @@ function arrayObject() {
 }
 
 
-arrayObject();
+function arrayObject2() {
+    let block = document.getElementById('basic30-block');
+    let employees = [
+        {name: 'employee1', age: 30, salary: 400, position:"worker", gender: 'female'},
+        {name: 'employee2', age: 31, salary: 500, position:"accountant", gender: 'male'},
+        {name: 'employee3', age: 32, salary: 600, position:"secretary", gender: 'female'},
+        {name: 'employee3', age: 32, salary: 600, position:"worker", gender: 'male'},
+        {name: 'employee3', age: 32, salary: 600, position:"director", gender: 'male'},
+        {name: 'employee3', age: 32, salary: 600, position:"worker", gender: 'female'},
+        {name: 'employee3', age: 32, salary: 600, position:"worker", gender: 'male'},
+    ];
+
+    function createTable() {
+        // make the first letter upper case
+        function capitalizeFirstLetter(string) {
+            return string.charAt(0).toUpperCase() + string.slice(1);
+        }
+
+        // create "Delete Row" link element
+        function createDeleteRowLink() {
+            // create an extra column for "delete row"
+            let tdDelRow = document.createElement('td');
+            let link = document.createElement('a');
+            link.textContent = 'Delete rows';
+            link.href = '';
+
+            // create event for the "delete row" click
+            link.addEventListener('click', function (event) {
+                event.preventDefault();
+                event.target.closest('tr').remove();
+            });
+
+            // append "delete row" link to the cell
+            tdDelRow.appendChild(link);
+
+            return tdDelRow;
+        }
+
+        // editing content for each cell
+        function rewriteItem(event) {
+            // find the current element for editing
+            let element = event.target;
+
+            // create new empty input element
+            // and set value as current element content
+            let input = document.createElement('input');
+            input.value = element.textContent;
+            element.textContent = '';
+            element.appendChild(input);
+
+            // make sure that the input has focus to edit its value
+            input.focus();
+
+            // save edits to the cell on input blur
+            input.addEventListener('blur', function (event) {
+                let td = event.target.closest('td');
+                td.textContent = event.target.value;
+                td.addEventListener('click', rewriteItem);
+            });
+        }
+
+        let table = document.createElement('table');
+
+        for (let i = 0; i < employees.length; i++) {
+            //create table with using date
+            let row = document.createElement('tr');
+            let tdDelRow = createDeleteRowLink();
+            let employee = employees[i];
+
+            for (let key in employee) {
+                // generate a new table cell
+                let td = document.createElement('td');
+                td.textContent = `${capitalizeFirstLetter(key)}: ${employee[key]}`;
+                td.addEventListener('click', rewriteItem);
+
+                // add new cell to the table
+                row.appendChild(td);
+            }
+
+            // add "Delete Row" element as the last cell in the row
+            row.appendChild(tdDelRow);
+            // add the full row to the table
+            table.appendChild(row);
+        }
+
+        // add the full table to the page
+        block.appendChild(table);
+    }
+
+    createTable();
+}
+
+//arrayObject1();
+arrayObject2();
 
 //--------------
 
