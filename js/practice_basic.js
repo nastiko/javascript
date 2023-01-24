@@ -721,7 +721,6 @@ function getList() {
         //newItem.addEventListener('click', (event) => rewriteText(event.target));
 
         addLink(span, item, link);
-        return object;
     }
 
 }
