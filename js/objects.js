@@ -197,4 +197,78 @@ let car = {
 
 console.log(car.getModel());*/
 
+//--------------
+
+/*let salaries = {
+    John: 100,
+    Ann: 160,
+    Pete: 130
+}
+
+let sum = 0;
+
+for(let key in salaries) {
+    sum += parseInt(salaries[key]);
+}
+
+console.log(sum);*/
+
+//--------------
+
+function multiplyNum() {
+    let menu = {
+        width: 200,
+        height: 300,
+        title: "My menu"
+    };
+
+    function multiplyNumeric(obj) {
+        for(let key in obj) {
+            if(typeof obj[key] === 'number') {
+                obj[key] *= 2;
+            }
+        }
+        console.log(obj);
+    }
+
+    multiplyNumeric(menu);
+}
+
+//multiplyNum();
+
+//--------------
+
+function responseUser() {
+    let user = {
+        name: "",
+        age: 30
+    };
+
+    user.name = prompt('What\'s your name?', '');
+
+    user.sayHello = function() {
+        console.log(`Hello, ${user.name}`);
+    };
+
+    //user.sayHello();
+}
+
+function responseUser1() {
+    user = {
+        sayHi: function() {
+            alert('Hello!');
+        }
+    };
+
+    user.sayHi();
+}
+
+//responseUser();
+//responseUser1();
+
+//--------------
+
+
+
+
 
