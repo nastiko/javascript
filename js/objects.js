@@ -223,8 +223,8 @@ function multiplyNum() {
     };
 
     function multiplyNumeric(obj) {
-        for(let key in obj) {
-            if(typeof obj[key] === 'number') {
+        for (let key in obj) {
+            if (typeof obj[key] === 'number') {
                 obj[key] *= 2;
             }
         }
@@ -246,7 +246,7 @@ function responseUser() {
 
     user.name = prompt('What\'s your name?', '');
 
-    user.sayHello = function() {
+    user.sayHello = function () {
         console.log(`Hello, ${user.name}`);
     };
 
@@ -254,8 +254,8 @@ function responseUser() {
 }
 
 function responseUser1() {
-    user = {
-        sayHi: function() {
+    let user = {
+        sayHi: function () {
             alert('Hello!');
         }
     };
@@ -267,6 +267,72 @@ function responseUser1() {
 //responseUser1();
 
 //--------------
+
+function createCalculator() {
+
+    let calculator = {
+        num1: 0,
+        num2: 0,
+
+        readNumbers: function () {
+            this.num1 = parseInt(prompt('First number...'));
+            this.num2 = parseInt(prompt('Second number...'));
+        },
+
+        getSum: function () {
+            this.readNumbers();
+            console.log(`Sum = ${this.num1 + this.num2}`);
+        },
+
+        getMul: function () {
+            console.log(`Mul = ${this.num1 * this.num2}`);
+        }
+    };
+
+    calculator.getSum();
+    calculator.getMul();
+}
+
+//createCalculator();
+
+//--------------
+
+function getElemInsideArr() {
+    let paragraph = document.getElementById('object4-text');
+    let name = '';
+    let obj = {
+        name: "John",
+        age: 30,
+        cars: [
+            {name:"Ford", models:["Fiesta", "Focus", "Mustang"]},
+            {name:"BMW", models:["320", "X3", "X5"]},
+            {name:"Fiat", models:["500", "Panda"]}
+        ]
+    }
+
+    for(let key1 in obj.cars) {
+        name += '<h2>' + obj.cars[key1].name + '</h2>';
+        for(let key2 in obj.cars) {
+            name += obj.cars[key1].models[key2] + '<br>';
+        }
+    }
+
+    paragraph.innerHTML = name;
+}
+
+//getElemInsideArr();
+
+//--------------
+
+
+//--------------
+
+//--------------
+
+//--------------
+
+//--------------
+
 
 
 
