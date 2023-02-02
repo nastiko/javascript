@@ -215,6 +215,8 @@ console.log(sum);*/
 
 //--------------
 
+<!-- OBJECT #1 -->
+
 function multiplyNum() {
     let menu = {
         width: 200,
@@ -237,6 +239,8 @@ function multiplyNum() {
 //multiplyNum();
 
 //--------------
+
+<!-- OBJECT #2 -->
 
 function responseUser() {
     let user = {
@@ -268,6 +272,8 @@ function responseUser1() {
 
 //--------------
 
+<!-- OBJECT #3 -->
+
 function createCalculator() {
 
     let calculator = {
@@ -297,6 +303,8 @@ function createCalculator() {
 
 //--------------
 
+<!-- OBJECT #4 -->
+
 function getElemInsideArr() {
     let paragraph = document.getElementById('object4-text');
     let name = '';
@@ -304,15 +312,15 @@ function getElemInsideArr() {
         name: "John",
         age: 30,
         cars: [
-            {name:"Ford", models:["Fiesta", "Focus", "Mustang"]},
-            {name:"BMW", models:["320", "X3", "X5"]},
-            {name:"Fiat", models:["500", "Panda"]}
+            {name: "Ford", models: ["Fiesta", "Focus", "Mustang"]},
+            {name: "BMW", models: ["320", "X3", "X5"]},
+            {name: "Fiat", models: ["500", "Panda"]}
         ]
     }
 
-    for(let key1 in obj.cars) {
+    for (let key1 in obj.cars) {
         name += '<h2>' + obj.cars[key1].name + '</h2>';
-        for(let key2 in obj.cars) {
+        for (let key2 in obj.cars) {
             name += obj.cars[key1].models[key2] + '<br>';
         }
     }
@@ -324,13 +332,178 @@ function getElemInsideArr() {
 
 //--------------
 
-//--------------
+<!-- OBJECT #5 -->
+
+function createDogObj() {
+
+    let dogFeature = {
+        isAwesome: false,
+        name: 'Default',
+        legs: 1,
+        age: 1,
+
+        doBark: function (outputId) {
+            let paragraph = document.getElementById(outputId);
+            paragraph.textContent = `Wof-Wof! My name is ${this.name}!`;
+        },
+
+        init(params) {
+            for (let key in params) {
+                this[key] = params[key];
+            }
+        },
+
+        init2(name, legs, age, isAwesome) {
+            this.name = name;
+            this.legs = legs;
+            this.age = age;
+            this.isAwesome = isAwesome;
+        }
+    };
+
+    dogFeature.init({
+        name: 'Holly',
+        legs: 4,
+        isAwesome: true,
+        age: 6
+    });
+
+    dogFeature.init2('Holly', 4, 6, true);
+    dogFeature.doBark('object5-text');
+}
+
+//createDogObj();
 
 //--------------
 
-//--------------
+<!-- OBJECT #6 -->
+
+function createCatObj() {
+
+    let defaultFeatures = {
+        name: 'Default',
+        leg: 1,
+        age: 1,
+        sound: 'Sound',
+
+        speak: function (idText) {
+            let paragraph = document.getElementById(idText);
+            paragraph.textContent = `My name is ${this.name}. I can ${this.sound}-${this.sound}-${this.sound}!!!`;
+        },
+
+        init(name, leg, age, sound) {
+            this.name = name;
+            this.leg = leg;
+            this.age = age;
+            this.sound = sound;
+        },
+    };
+
+    defaultFeatures.init('Walle', 4, 1, 'meow');
+    defaultFeatures.speak('object6-text');
+}
+
+//createCatObj();
 
 //--------------
+
+<!-- OBJECT #7 -->
+
+class Animal {
+    constructor(name, age, leg, sound, speed, isAwesome) {
+        this.isAwesome = isAwesome;
+        this.name = name;
+        this.sound = sound;
+        this.speed = speed;
+        this.leg = leg;
+        this.age = age;
+    }
+
+    speak() {
+        this.writeOutput(`${this.getSound()}! My name is ${this.name}!`);
+    }
+
+    run() {
+        this.writeOutput(`${this.name} runs for ${this.speed} meters!`);
+    }
+
+    getSound() {
+        return this.sound.charAt(0).toUpperCase() + this.sound.slice(1);
+    }
+
+    writeOutput(text) {
+        let element = document.getElementById(this.outputId);
+        element.innerHTML += text + "<br>";
+    }
+
+    setOutput(elementId) {
+        this.outputId = elementId;
+    }
+}
+
+class Dog extends Animal {
+    run() {
+        this.writeOutput(`${this.name} runs for ${this.speed * 2} meters and says ${this.getSound()}!`);
+    }
+}
+
+class Cat extends Animal {
+    run() {
+        this.writeOutput(`${this.name} walks for ${this.speed / 2} meters and lazily says ${this.getSound()}!`);
+    }
+
+    getSound() {
+        return '<i>' + this.sound.charAt(0).toUpperCase() + this.sound.slice(1) + '</i>';
+    }
+
+    walk() {
+        this.writeOutput(`${this.name} walks for ${this.speed} meters and lies down to nap!`);
+    }
+}
+
+class Bird extends Animal {
+    constructor(name, age, leg, sound, speed, isAwesome, wings) {
+        super(name, age, leg, sound, speed, isAwesome);
+        this.wings = wings;
+    }
+
+    fly() {
+        this.writeOutput(`${this.name} flies for ${this.speed * 2 * this.wings} meters!`);
+    }
+}
+
+class Eagle extends Bird {
+    hunt() {
+        this.fly();
+        this.writeOutput(`${this.name} caught a prey!`);
+    }
+}
+
+
+let dog = new Dog('Wolfie', 10, 4, "woof woof", 10, false);
+let cat = new Cat('Kitty', 5, 4, "meow", 14, false);
+let eagle = new Eagle('Boeing', 3, 2, "wie", 50, false, 2);
+
+dog.setOutput('object7-text');
+cat.setOutput('object7-text');
+eagle.setOutput('object7-text');
+
+dog.speak();
+dog.run();
+
+cat.speak();
+cat.run();
+cat.walk();
+
+
+eagle.hunt();
+
+
+//--------------
+<!-- OBJECT #1 -->
+
+//--------------
+<!-- OBJECT #1 -->
 
 
 

@@ -103,6 +103,11 @@ class createGame {
         let result = '';
 
         // check user input
+        if (letter === null) {
+            alert('Could you type any letter, please!');
+        } else if (letter.length !== 1) {
+            alert('Could you type only one letter, please!');
+        }
 
         for (let i = 0; i < this.userWord.length; i++) {
             if (this.userWord[i] === letter) {
@@ -115,26 +120,31 @@ class createGame {
             }
 
             // check if game ended
-            if(result === this.userWord){
-                alert('Hurray! You\'re not a looser');
+            if (result === this.userWord) {
+                alert('Hurray!');
             }
         }
         this.spanHiddenLetters.textContent = result;
     }
 
-    init(idSetWord, idSetLetters) {
+    leaveGame() {
+        alert('See you later!');
+        this.spanHiddenLetters.textContent = '';
+    }
+
+    init(idSetWord, idSetLetters, idLeaveGame) {
         // save span for later use as global object variable
         this.spanHiddenLetters = document.getElementById(this.idHiddenLetters);
 
         // add event listeners for buttons
         document.getElementById(idSetWord).addEventListener('click', () => this.setWord());
         document.getElementById(idSetLetters).addEventListener('click', () => this.setLetters());
+        document.getElementById(idLeaveGame).addEventListener('click', () => this.leaveGame());
     }
 }
 
 let game1 = new createGame();
-game1.init('practice4-setWord_btn', 'practice4-setLetter_btn');
-//createGame();
+game1.init('practice4-setWord_btn', 'practice4-setLetter_btn', 'practice4-leaveGame_btn');
 
 //--------------
 
