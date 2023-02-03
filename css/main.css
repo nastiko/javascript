@@ -141,7 +141,7 @@ table {
     margin: 5px auto;
 }
 
-td {
+th, td {
     border: 1px solid grey;
     height: 25px;
     width: 150px;
