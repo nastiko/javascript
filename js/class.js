@@ -49,6 +49,7 @@ addText.writeOutput();
 
 //--------------
 
+//still working
 //CLASS #3
 class Employee {
     constructor(name, age, gender, position, salary, bonus) {
@@ -59,6 +60,7 @@ class Employee {
         this.salary = salary;
         this.bonus = bonus;
     }
+
     totalIncome;
 }
 
@@ -113,12 +115,12 @@ class DataTable {
         return tr;
     }
 
-    renderTable(){
+    renderTable() {
         // render table header row
         this.table.appendChild(this.renderTitle(this.employees[0]));
 
         // walk through all employees, render each one and add to the table
-        for (let employee of this.employees){
+        for (let employee of this.employees) {
             // add employee to the table
             this.table.appendChild(this.renderRow(employee));
         }
@@ -127,7 +129,7 @@ class DataTable {
         return this.table;
     }
 
-    showTable(){
+    showTable() {
         this.init();
         let output = document.getElementById(this.outputElementId);
         output.innerHTML = '';
@@ -154,15 +156,107 @@ table.showTable();
 
 //--------------
 
-//CLASS #1
+//CLASS #4
+
+//still working
+class ArithmeticOperations {
+    // declare property "arr" with type array
+    arr = [];
+
+    constructor(arr) {
+        // property our class assigns parameter value
+        this.arr = arr;
+    }
+
+    isNumberEven(number, multiplier = 2) {
+        // return parameter 'number'
+        return number % multiplier === 0;
+    }
+
+    getEvenNumbers(multiplier = 2) {
+        let result = [];
+
+        for (let i = 0; i < this.arr.length; i++) {
+            if (this.isNumberEven(this.arr[i], multiplier)) {
+                result.push(this.arr[i]);
+            }
+        }
+
+        return result;
+    }
+
+    solve(){
+        // basic method to solve
+    }
+}
+
+class Task1 extends ArithmeticOperations{
+    solve() {
+        let paragraph = document.getElementById('class4-arr');
+        for (let number of this.getEvenNumbers()) {
+            paragraph.textContent += ` ${number} |`;
+        }
+    }
+}
+class Task2 extends ArithmeticOperations{
+    solve() {
+        console.log('Done!');
+    }
+}
+
+let input = [
+    1, 23, 523, 213, 90, 845, 289, 211, 98, 4, 15,
+    140, 431, 436, 881, 671, 671, 23, 55, 671, 999,
+    17, 269, 254, 453, 290, 57, 198, 701, 764, 260,
+    774, 336, 190, 90, 126, 99, 134, 77, 90, 211, 198,
+    9, 199, 211, 900, 211, 98
+];
+let task1 = new Task1(input);
+let task2 = new Task2(input);
+task1.solve();
+task2.solve();
 
 //--------------
 
-//CLASS #1
+//CLASS #5
+
+class Student {
+    show(name, surn) {
+        name = 'anastasia';
+        surn = 'hrynkevich';
+        console.log(this.cape(`${name}`) + ' ' + this.cape(`${surn}`));
+    }
+
+    cape(str) {
+        return str[0].toUpperCase() + str.slice(1);
+    }
+}
+
+let student1 = new Student();
+student1.show();
 
 //--------------
 
-//CLASS #1
+//CLASS #6
+
+class Employer {
+    constructor(name, salary) {
+        this.name = name;
+        this.salary = salary;
+    }
+
+    show() {
+        console.log(`My name is ${this.name}. I earn ${this.getBonus(this.salary)}`);
+    }
+
+    getBonus() {
+       return this.salary * 10;
+    }
+}
+
+let employer1 = new Employer('John', 35600);
+employer1.show();
+
 
 //--------------
 
