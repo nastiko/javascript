@@ -161,14 +161,21 @@ table.showTable();
 //still working
 class ArithmeticOperations {
     // declare property "arr" with type array
-    arr = [];
+    #arr = [];
+
+    getData(){
+        return this.#arr;
+    }
+    setData(arr){
+       this.#arr = arr;
+    }
 
     constructor(arr) {
         // property our class assigns parameter value
-        this.arr = arr;
+        this.#arr = arr;
     }
 
-    isNumberEven(number, multiplier = 2) {
+    #isNumberEven(number, multiplier = 2) {
         // return parameter 'number'
         return number % multiplier === 0;
     }
@@ -176,9 +183,9 @@ class ArithmeticOperations {
     getEvenNumbers(multiplier = 2) {
         let result = [];
 
-        for (let i = 0; i < this.arr.length; i++) {
-            if (this.isNumberEven(this.arr[i], multiplier)) {
-                result.push(this.arr[i]);
+        for (let i = 0; i < this.getData().length; i++) {
+            if (this.#isNumberEven(this.getData()[i], multiplier)) {
+                result.push(this.getData()[i]);
             }
         }
 
@@ -257,18 +264,130 @@ class Employer {
 let employer1 = new Employer('John', 35600);
 employer1.show();
 
+//--------------
+
+//CLASS #7
+
+class ZooEmployee {
+    #name;
+    #age;
+    #salary;
+
+    constructor(name, age, salary) {
+        this.#name = name;
+        this.#age = age;
+        this.#salary = salary;
+    }
+
+    show() {
+        console.log(`My name is ${this.#name}. I'm ${this.#age} and I get £${this.#salary} per year.`)
+    }
+}
+
+let zooEmployee1 = new ZooEmployee('Owly', 28, 35500);
+zooEmployee1.show();
 
 //--------------
 
-//CLASS #1
+//CLASS #8
+
+class PetEmployee {
+
+    //declare property at the beginning of the class code
+    #name;
+    #age;
+    #salary;
+
+    /*constructor(name, salary) {
+        this.#name = name;
+        this.#salary = salary;
+    }*/
+
+    setName(name) {
+        this.#name = name;
+        // call one after another in a chain in 'set'
+        return this;
+    }
+
+    setAge(age) {
+        //check value
+        if(age > 0 && age <= 100) {
+            this.#age = age;
+        } else {
+            // get error in console
+            throw new Error('name is incorrect');
+        }
+        return this;
+    }
+
+    setSalary(salary) {
+        this.#salary = salary;
+        return this;
+    }
+
+    // allow to read this property
+    getName() {
+        return this.#name;
+    }
+
+    getAge() {
+        return this.#age;
+    }
+
+    getSalary() {
+        return this.#addSign(this.#salary);
+    }
+
+    #addSign(num) {
+        return num + '$';
+    }
+}
+
+//let petEmployee1 = new PetEmployee('Henry', 65210); //if you use constructor, you need declare variable with parameters
+//petEmployee1.getSalary();
+
+// declare 'set' method
+let petEmployee1 = new PetEmployee;
+petEmployee1.setName('John').setAge(45).setSalary(45000);
+
+console.log(petEmployee1.getName());
+console.log(petEmployee1.getAge());
+console.log(petEmployee1.getSalary());
 
 //--------------
 
-//CLASS #1
+//CLASS #9
 
-//--------------
+class StudentCollege {
+    constructor(name) {
+        this.name = name;
+    }
+}
+class StaffCollege {
+    constructor(name) {
+        this.name = name;
+    }
+}
 
-//CLASS #1
+let users = [
+    new StudentCollege('student1'),
+    new StaffCollege('staff1'),
+    new StudentCollege('student2'),
+    new StaffCollege('staff2'),
+    new StudentCollege('student3'),
+    new StaffCollege('staff3'),
+    new StudentCollege('student4'),
+];
+
+console.log(users instanceof StaffCollege); //why is false?
+
+for(let i = 0; i < users.length; i++) {
+    if(users instanceof StaffCollege) {
+        console.log(users[i].name);
+    } else {
+        console.log('false');
+    }
+}
 
 //--------------
 
