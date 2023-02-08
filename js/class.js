@@ -163,11 +163,12 @@ class ArithmeticOperations {
     // declare property "arr" with type array
     #arr = [];
 
-    getData(){
+    getData() {
         return this.#arr;
     }
-    setData(arr){
-       this.#arr = arr;
+
+    setData(arr) {
+        this.#arr = arr;
     }
 
     constructor(arr) {
@@ -192,12 +193,12 @@ class ArithmeticOperations {
         return result;
     }
 
-    solve(){
+    solve() {
         // basic method to solve
     }
 }
 
-class Task1 extends ArithmeticOperations{
+class Task1 extends ArithmeticOperations {
     solve() {
         let paragraph = document.getElementById('class4-arr');
         for (let number of this.getEvenNumbers()) {
@@ -205,7 +206,8 @@ class Task1 extends ArithmeticOperations{
         }
     }
 }
-class Task2 extends ArithmeticOperations{
+
+class Task2 extends ArithmeticOperations {
     solve() {
         console.log('Done!');
     }
@@ -257,7 +259,7 @@ class Employer {
     }
 
     getBonus() {
-       return this.salary * 10;
+        return this.salary * 10;
     }
 }
 
@@ -311,7 +313,7 @@ class PetEmployee {
 
     setAge(age) {
         //check value
-        if(age > 0 && age <= 100) {
+        if (age > 0 && age <= 100) {
             this.#age = age;
         } else {
             // get error in console
@@ -363,12 +365,14 @@ class StudentCollege {
         this.name = name;
     }
 }
+
 class StaffCollege {
     constructor(name) {
         this.name = name;
     }
 }
 
+// create instant class
 let users = [
     new StudentCollege('student1'),
     new StaffCollege('staff1'),
@@ -379,15 +383,229 @@ let users = [
     new StudentCollege('student4'),
 ];
 
-console.log(users instanceof StaffCollege); //why is false?
-
-for(let i = 0; i < users.length; i++) {
-    if(users instanceof StaffCollege) {
-        console.log(users[i].name);
-    } else {
-        console.log('false');
+for (let staff of users) {
+    if (staff instanceof StaffCollege) {
+        console.log(staff.name);
     }
 }
+
+//--------------
+
+//CLASS #10
+
+class Validator {
+
+    #elem;
+
+    constructor(elem) {
+        this.#elem = elem;
+    }
+
+    #checkElem() {
+        if (typeof this.#elem === 'string') {
+            return this.#elem;
+        } else {
+            return 'The element is not string!';
+        }
+    }
+
+    show(elemId) {
+        let paragraph = document.getElementById(elemId);
+        paragraph.textContent += ` ${this.#checkElem(this.#elem)}`;
+    }
+}
+
+let string = new Validator('Hello, there!');
+string.show('class10-result');
+
+//--------------
+
+//CLASS #11
+
+class Email {
+
+    #email;
+
+    constructor(email) {
+        this.#email = email;
+    }
+
+    #checkEmail() {
+        if (this.#email.indexOf('@')) {
+            return this.#email;
+        } else {
+            return 'Write a correct email, please!';
+        }
+    }
+
+    show(elemId) {
+        let paragraph = document.getElementById(elemId);
+        paragraph.textContent += `You wrote a correct email: ${this.#checkEmail(this.#email)}`;
+    }
+}
+
+let isEmail = new Email('anastasia.hrynkevich@outlook.com');
+isEmail.show('class11-result');
+
+//--------------
+
+//CLASS #12
+
+class Client {
+    constructor(name, position, department) {
+        this.name = name;
+        this.position = position;
+        this.department = department;
+    }
+
+    show(elemId) {
+        let paragraph = document.getElementById(elemId);
+        paragraph.textContent += ` Our client is ${this.name}. He's ${client1.position.name} of ${client1.department.name} department.`;
+    }
+}
+
+class Position {
+    constructor(name) {
+        this.name = name;
+    }
+}
+
+class Department {
+    constructor(name) {
+        this.name = name;
+    }
+}
+
+let position = new Position('SEO, director');
+let department = new Department('Marketing');
+
+let client1 = new Client('Wolfy', position, department);
+
+client1.show('class12-result');
+
+//--------------
+
+//CLASS #13
+
+class Flowers {
+    #name;
+    #price;
+
+    constructor(name, price) {
+        this.#name = name;
+        this.#price = price;
+    }
+
+    getName() {
+        return this.#name;
+    }
+
+    getPrice() {
+        return ` - £${this.#price}`;
+    }
+}
+
+let result = document.getElementById('class13-result');
+
+let flowers = [
+    new Flowers('Orchid', 15),
+    new Flowers('Rose', 9),
+    new Flowers('Sunflower', 25),
+    new Flowers('Gardenias', 3.5)
+];
+
+for (let item of flowers) {
+    result.innerHTML += `${item.getName()} ${item.getPrice()}` + '<br>';
+}
+
+//--------------
+
+//CLASS #14
+
+
+class Employees {
+    #name;
+    #salary;
+
+    constructor(name, salary) {
+        this.#name = name;
+        this.#salary = salary;
+    }
+
+    getName() {
+        return this.#name;
+    }
+
+    getSalary() {
+        return this.#salary;
+    }
+}
+
+class EmployeesCollection {
+    #employees;
+
+    constructor() {
+        this.#employees = [];
+    }
+
+    add(employee) {
+        this.#employees.push(employee);
+    }
+
+    show(elemId) {
+        let result = document.getElementById(elemId);
+        for (let employee of this.#employees) {
+            result.innerHTML += `${employee.getName()} - salary: £${employee.getSalary()}` + '<br>';
+        }
+    }
+
+    #calculateTotal() {
+        let sum = 0;
+
+        for (let employee of this.#employees) {
+            sum += employee.getSalary();
+        }
+
+        //.textContent += ` £${sum}`;
+
+        return sum;
+    }
+
+    calculateMean() {
+        mean.textContent += `£${(Math.ceil((this.#calculateTotal() / this.#employees.length)).toString())}`;
+    }
+
+    init(totalId, meanId) {
+        let totalResult = document.getElementById(totalId);
+        let meanResult = document.getElementById(meanId);
+    }
+}
+
+
+let collection = new EmployeesCollection;
+
+collection.add(new Employees('John', 45000));
+collection.add(new Employees('Eric', 28500));
+collection.add(new Employees('Kyle', 32750));
+
+collection.show('class14-result');
+collection.init('class14-total', 'class14-mean');
+
+//--------------
+
+//CLASS #1
+
+//--------------
+
+//CLASS #1
+
+//--------------
+
+//CLASS #1
+
+//--------------
+
+//CLASS #1
 
 //--------------
 

@@ -479,7 +479,6 @@ class Eagle extends Bird {
     }
 }
 
-
 let dog = new Dog('Wolfie', 10, 4, "woof woof", 10, false);
 let cat = new Cat('Kitty', 5, 4, "meow", 14, false);
 let eagle = new Eagle('Boeing', 3, 2, "wie", 50, false, 2);
@@ -495,15 +494,10 @@ cat.speak();
 cat.run();
 cat.walk();
 
-
 eagle.hunt();
 
-
 //--------------
-<!-- OBJECT #1 -->
 
-//--------------
-<!-- OBJECT #1 -->
 
 
 
