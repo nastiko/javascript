@@ -498,6 +498,92 @@ eagle.hunt();
 
 //--------------
 
+class User {
+
+    setName(name) {
+        this.name = name;
+    }
+
+    setAge(age) {
+        this.age = age;
+    }
+
+    getName() {
+        return this.name;
+    }
+
+    getAge() {
+        return this.age;
+    }
+}
+
+// this is child class
+class Student extends User {
+
+    // changed and added a new behaviour to the method
+    setAge(age) {
+        if(age >= 18 && age <= 65) {
+            // call parents method
+            super.setAge(age);
+        } else {
+            throw new Error('Student name error');
+        }
+    }
+
+    setYear(year) {
+        this.year = year;
+    }
+
+    getYear() {
+        return this.year;
+    }
+}
+
+let student = new Student;
+
+student.setName('Joseph');
+student.setYear(1895);
+student.setAge(25);
+
+console.log(student.getName(), student.getYear(), student.getAge());
+
+//--------------
+
+class Users {
+
+    // change which method you can use: constructor our setMethod
+    // for this example, to check how constructor will override parent constructor
+
+    constructor(name, age) {
+        this.name = name;
+        this.age = age;
+    }
+
+    getName() {
+        return this.name;
+    }
+
+    getAge() {
+        return this.age;
+    }
+}
+
+class Employee extends Users {
+    constructor(name, age, salary) {
+        super(name, age);
+        // add a new property of salary
+        this.salary = salary;
+    }
+
+    getSalary() {
+        return `£${this.salary}`;
+    }
+}
+
+let employee = new Employee('Rose', 18, 18500);
+
+console.log(employee.getName(), employee.getAge(), employee.getSalary());
+
 
 
 

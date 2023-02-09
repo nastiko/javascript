@@ -372,7 +372,7 @@ class StaffCollege {
     }
 }
 
-// create instant class
+// create class instance
 let users = [
     new StudentCollege('student1'),
     new StaffCollege('staff1'),
@@ -522,7 +522,6 @@ for (let item of flowers) {
 
 //CLASS #14
 
-
 class Employees {
     #name;
     #salary;
@@ -541,10 +540,13 @@ class Employees {
     }
 }
 
+//manipulation of objects employees
 class EmployeesCollection {
     #employees;
 
-    constructor() {
+    constructor(totalResult, meanResult) {
+        this.totalResult = totalResult;
+        this.meanResult = meanResult;
         this.#employees = [];
     }
 
@@ -566,34 +568,40 @@ class EmployeesCollection {
             sum += employee.getSalary();
         }
 
-        //.textContent += ` £${sum}`;
+        this.totalResult.textContent += ` £${sum}`;
 
         return sum;
     }
 
     calculateMean() {
-        mean.textContent += `£${(Math.ceil((this.#calculateTotal() / this.#employees.length)).toString())}`;
+        this.meanResult.textContent += ` £${(Math.ceil((this.#calculateTotal() / this.#employees.length)).toString())}`;
     }
 
     init(totalId, meanId) {
-        let totalResult = document.getElementById(totalId);
-        let meanResult = document.getElementById(meanId);
+        this.totalResult = document.getElementById(totalId);
+        this.meanResult = document.getElementById(meanId);
     }
 }
 
 
 let collection = new EmployeesCollection;
 
+// add class instance
 collection.add(new Employees('John', 45000));
 collection.add(new Employees('Eric', 28500));
 collection.add(new Employees('Kyle', 32750));
 
-collection.show('class14-result');
 collection.init('class14-total', 'class14-mean');
+
+collection.show('class14-result');
+collection.calculateMean();
+
 
 //--------------
 
-//CLASS #1
+//CLASS #15
+
+
 
 //--------------
 
