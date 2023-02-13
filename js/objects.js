@@ -522,6 +522,7 @@ class Student extends User {
 
     // changed and added a new behaviour to the method
     setAge(age) {
+        this.getAge();
         if(age >= 18 && age <= 65) {
             // call parents method
             super.setAge(age);
@@ -583,6 +584,33 @@ class Employee extends Users {
 let employee = new Employee('Rose', 18, 18500);
 
 console.log(employee.getName(), employee.getAge(), employee.getSalary());
+
+//--------------
+
+class Employee1 {
+    constructor(name, salary, coeffs) {
+        this.name = name;
+        this.salary = salary;
+        this.coeffs = coeffs;
+    }
+
+    getTotal() {
+        return this.coeffs.reduce((res, coeff) => {
+            return res + this.salary * coeff;
+        }, 0);
+    }
+}
+
+let employee1 = new Employee1('john', 1000, [1.1, 1.2, 1.3]);
+let total = employee1.getTotal();
+console.log(employee1.getTotal);
+
+//--------------
+
+
+//--------------
+
+//--------------
 
 
 

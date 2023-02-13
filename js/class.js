@@ -601,11 +601,67 @@ collection.calculateMean();
 
 //CLASS #15
 
+class Circle {
+    #radius;
 
+    constructor(radius, areaResult, circumferenceResult) {
+        this.#radius = radius;
+        this.areaResult = areaResult;
+        this.circumferenceResult = circumferenceResult;
+    }
+
+    calculateArea() {
+        this.areaResult.textContent += ` ${(Math.PI * (this.#radius ** 2)).toFixed(2)}`;
+    }
+
+    calculateCircumference() {
+        this.circumferenceResult.textContent += ` ${(2 * Math.PI * this.#radius).toFixed(2)}`;
+    }
+
+    init(areaId, circumferenceId) {
+        this.areaResult = document.getElementById(areaId);
+        this.circumferenceResult = document.getElementById(circumferenceId);
+    }
+
+
+}
+
+let circle = new Circle(5);
+
+circle.init('class15-area', 'class15-circumference');
+
+circle.calculateArea();
+circle.calculateCircumference();
 
 //--------------
 
-//CLASS #1
+//CLASS #16
+
+class Rectangle {
+    #width;
+    #length;
+
+    constructor(width, length) {
+        this.#width = width;
+        this.#length = length;
+    }
+
+    #getArea() {
+        return this.#width * this.#length;
+    }
+
+    #getPerimeter() {
+        return 2 * (this.#width + this.#length);
+    }
+
+    getRatio() {
+        let paragraph = document.getElementById('class16-ratio');
+        paragraph.textContent += ` ${(this.#getArea() / this.#getPerimeter()).toFixed(2)}`;
+    }
+}
+
+let rectangle = new Rectangle(7, 5);
+rectangle.getRatio();
 
 //--------------
 
