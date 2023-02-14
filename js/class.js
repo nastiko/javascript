@@ -660,12 +660,72 @@ class Rectangle {
     }
 }
 
+class Square extends Rectangle {
+    constructor(a) {
+        super(a,a);
+    }
+}
+
 let rectangle = new Rectangle(7, 5);
 rectangle.getRatio();
 
+let square = new Square(5);
+square.getRatio();
+
 //--------------
 
-//CLASS #1
+//CLASS #17
+class Text {
+    constructor(input, numSymbols, numLetters, numSpaces, numOnlySymbols) {
+        this.input = input;
+        this.numSymbols = numSymbols;
+        this.numLetters = numLetters;
+        this.numSpaces = numSpaces;
+        this.numOnlySymbols = numOnlySymbols;
+    }
+
+    getText() {
+        return this.input.value;
+    }
+
+    getNumberSymbols() {
+        return this.numSymbols.textContent = `${this.getText().length}`;
+    }
+
+    getOnlyNumbersLetters() {
+        // only count letters and numbers
+        let regex = /[a-zA-Z0-9]/g;
+        this.numLetters.textContent = ` ${this.getText().match(regex).length}`;
+    }
+
+    getNumberSpaces() {
+        // only count spaces between words and symbols
+        return this.numSpaces.textContent = ` ${this.getText().split(" ").length - 1}`;
+    }
+
+    getSymbolsExcludingSpaces() {
+        this.numOnlySymbols.textContent = ` ${this.getNumberSymbols() - this.getNumberSpaces()}`;
+    }
+
+    init(inputId, spanSymbolsId, spanLettersId, spanSpacesId, spanOnlySymbolsId) {
+        this.input = document.getElementById(inputId);
+        this.numSymbols = document.getElementById(spanSymbolsId);
+        this.numLetters = document.getElementById(spanLettersId);
+        this.numSpaces = document.getElementById(spanSpacesId);
+        this.numOnlySymbols = document.getElementById(spanOnlySymbolsId);
+
+        this.input.addEventListener('keyup', () => this.getNumberSymbols());
+        this.input.addEventListener('keyup', () => this.getOnlyNumbersLetters());
+        this.input.addEventListener('keyup', () => this.getNumberSpaces());
+        this.input.addEventListener('keyup', () => this.getSymbolsExcludingSpaces());
+    }
+}
+
+let manipulation = new Text;
+
+manipulation.init('class17-text', 'class17-symbols', 'class17-number_letters', 'class17-space', 'class17-only_symbols');
+
+manipulation.getNumberSymbols();
 
 //--------------
 
