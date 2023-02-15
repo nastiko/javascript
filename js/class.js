@@ -662,7 +662,7 @@ class Rectangle {
 
 class Square extends Rectangle {
     constructor(a) {
-        super(a,a);
+        super(a, a);
     }
 }
 
@@ -676,12 +676,16 @@ square.getRatio();
 
 //CLASS #17
 class Text {
-    constructor(input, numSymbols, numLetters, numSpaces, numOnlySymbols) {
+    newArr = [];
+
+    constructor(input, numSymbols, numLetters, numSpaces, numOnlySymbols, arrSymbols, arrSentences) {
         this.input = input;
         this.numSymbols = numSymbols;
         this.numLetters = numLetters;
         this.numSpaces = numSpaces;
         this.numOnlySymbols = numOnlySymbols;
+        this.arrSymbols = arrSymbols;
+        this.arrSentences = arrSentences;
     }
 
     getText() {
@@ -707,29 +711,126 @@ class Text {
         this.numOnlySymbols.textContent = ` ${this.getNumberSymbols() - this.getNumberSpaces()}`;
     }
 
-    init(inputId, spanSymbolsId, spanLettersId, spanSpacesId, spanOnlySymbolsId) {
+    getArrSymbols() {
+         return this.arrSymbols.textContent = ` ${this.newArr.push(this.getText()) - 1}`;
+    }
+
+    getArrSentences() {
+        this.arrSentences.textContent = ` ${this.newArr}`;
+    }
+
+    init(inputId, spanSymbolsId, spanLettersId, spanSpacesId, spanOnlySymbolsId, spanArrSymbolsId, spanArrSentencesId) {
         this.input = document.getElementById(inputId);
         this.numSymbols = document.getElementById(spanSymbolsId);
         this.numLetters = document.getElementById(spanLettersId);
         this.numSpaces = document.getElementById(spanSpacesId);
         this.numOnlySymbols = document.getElementById(spanOnlySymbolsId);
+        this.arrSymbols = document.getElementById(spanArrSymbolsId);
+        this.arrSentences = document.getElementById(spanArrSentencesId);
 
         this.input.addEventListener('keyup', () => this.getNumberSymbols());
         this.input.addEventListener('keyup', () => this.getOnlyNumbersLetters());
         this.input.addEventListener('keyup', () => this.getNumberSpaces());
         this.input.addEventListener('keyup', () => this.getSymbolsExcludingSpaces());
+        this.input.addEventListener('keyup', () => this.getArrSymbols());
+        this.input.addEventListener('keyup', () => this.getArrSentences());
     }
 }
 
 let manipulation = new Text;
 
-manipulation.init('class17-text', 'class17-symbols', 'class17-number_letters', 'class17-space', 'class17-only_symbols');
+manipulation.init('class17-text', 'class17-symbols', 'class17-number_letters', 'class17-space',
+    'class17-only_symbols', 'class17-arr_symbols', 'class17-arr_sentences');
 
 manipulation.getNumberSymbols();
 
 //--------------
 
-//CLASS #1
+//CLASS #18
+
+class Zate {
+
+    #year;
+    #month;
+    #day;
+
+    constructor(spanYear, spanMonth, spanDayMonth, spanDate, spanNumWeek, spanWeek) {
+        this.spanYear = spanYear;
+        this.spanMonth = spanMonth;
+        this.spanDayMonth = spanDayMonth;
+        this.spanDate = spanDate;
+        this.spanNumWeek = spanNumWeek;
+        this.spanWeek = spanWeek;
+    }
+
+    setYear(year) {
+        this.#year = year;
+        // return this for declare methods one after another in a chain
+        return this;
+    }
+
+    setMonth(month) {
+        this.#month = month;
+        return this;
+    }
+
+    setDate(day) {
+        this.#day = day;
+        return this;
+    }
+
+
+    getFullYear() {
+        return this.spanYear.textContent = ` ${this.#year}`;
+    }
+
+    getMonth() {
+        this.spanMonth.textContent = ` ${this.#month}`;
+    }
+
+    getDayMonth() {
+        this.spanDayMonth.textContent = ` ${initMonth[date.getMonth()]}`;
+    }
+
+    getDate() {
+        this.spanDate.textContent = ` ${this.#day}`;
+    }
+
+    getNumWeek() {
+        this.spanNumWeek.textContent = ` ${initDayWeek[date.getDay()]}`;
+    }
+
+    getDayWeek() {
+        this.spanWeek.textContent = ` ${initDays[date.getDay()]}`;
+    }
+
+
+    init(yearId, monthId, dayMonthId, dateId, numWeekId, weekId) {
+        this.spanYear = document.getElementById(yearId);
+        this.spanMonth = document.getElementById(monthId);
+        this.spanDayMonth = document.getElementById(dayMonthId);
+        this.spanDate = document.getElementById(dateId);
+        this.spanNumWeek = document.getElementById(numWeekId);
+        this.spanWeek = document.getElementById(weekId);
+    }
+}
+
+const initMonth = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
+const initDayWeek = [7, 1, 2, 3, 4, 5, 6];
+const initDays = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
+
+let today = new Zate;
+let date = new Date();
+
+today.init('class18-year', 'class18-num_month', 'class18-day_month', 'class18-date', 'class18-num_week', 'class18-week');
+today.setYear(date.getFullYear()).setMonth(date.getMonth() + 1).setDate(date.getDate());
+
+today.getFullYear();
+today.getMonth();
+today.getDayMonth();
+today.getDate();
+today.getNumWeek();
+today.getDayWeek();
 
 //--------------
 

@@ -646,10 +646,16 @@ function addStyleItem() {
 //PRACTICE #28
 function styleCells() {
     let tds = document.querySelectorAll('#basic28-table td');
-    let color = 'color1';
 
     for (let i = 0; i < tds.length; i++) {
         tds[i].addEventListener('click', function () {
+            if (this.classList.contains('color1')) {
+                this.classList.add('color2');
+                this.classList.remove('color1');
+            } else {
+                this.classList.add('color1');
+                this.classList.remove('color2');
+            }
         });
     }
 }
@@ -708,8 +714,7 @@ function getList() {
         input.focus();
     }
 
-    function addItem(span, item, link) {
-
+    function addItem(span) {
         let newItem = document.createElement('li');
         let newSpan = document.createElement('span');
         let newLink = document.createElement('a');
@@ -718,11 +723,10 @@ function getList() {
         newSpan.appendChild(newLink);
         inputBtn.insertAdjacentElement('beforebegin', newItem);
 
-        //newItem.addEventListener('click', (event) => rewriteText(event.target));
+        newItem.addEventListener('click', (event) => rewriteText(event.target));
 
-        addLink(span, item, link);
+        addLink(span);
     }
-
 }
 
 //getList();
@@ -730,115 +734,18 @@ function getList() {
 //--------------
 
 //PRACTICE #30
-function arrayObject1() {
-    let block = document.getElementById('basic30-block');
 
-    let employees = [
-        {name: 'employee1', age: 30, salary: 400},
-        {name: 'employee2', age: 31, salary: 500},
-        {name: 'employee3', age: 32, salary: 600},
-    ];
-
-    function createTable() {
-        let table = document.createElement('table');
-
-        for (let i = 0; i < employees.length; i++) {
-
-            //create table with using date
-            let row = document.createElement('tr');
-
-            let td1 = document.createElement('td');
-            td1.textContent = employees[i].name;
-            row.appendChild(td1);
-
-            let td2 = document.createElement('td');
-            td2.textContent = ` Age: ${employees[i].age}`;
-            row.appendChild(td2);
-
-            let td3 = document.createElement('td');
-            td3.textContent = ` Salary: ${employees[i].salary}`;
-            row.appendChild(td3);
-
-            //create extra column
-            let td4 = document.createElement('td');
-            let link = document.createElement('a');
-            link.href = '';
-            link.textContent = 'Delete rows';
-            td4.appendChild(link);
-            row.appendChild(td4);
-
-            link.addEventListener('click', function (event) {
-                row.remove();
-                event.preventDefault();
-                //event.stopPropagation();
-            });
-
-            for(let key in employees) {
-                console.log(employees[key]);
-            }
-
-            /*employees[i].name.addEventListener('click', rewriteItem);
-            employees[i].age.addEventListener('click', rewriteItem);
-            employees[i].salary.addEventListener('click', rewriteItem);*/
-
-            /*function rewriteItem() {
-                let input = document.createElement('input');
-                input.value = employees[i].textContent;
-                employees[i].textContent = '';
-                employees[i].appendChild(input);
-
-                employees[i].removeEventListener('click', rewriteItem);
-
-                input.addEventListener('blur', function () {
-                    employees[i].textContent = input.value;
-                    employees[i].addEventListener('click', rewriteItem);
-                });
-            }*/
-
-
-            table.appendChild(row);
-        }
-
-        block.appendChild(table);
-
-        rewriteItem();
-    }
-
-    function rewriteItem(item) {
-
-        // tds[i].addEventListener('click', rewriteItem);
-
-        /*function rewriteItem() {
-            let input = document.createElement('input');
-            input.value = tds[i].textContent;
-            tds[i].textContent = '';
-            tds[i].appendChild(input);
-
-            tds[i].removeEventListener('click', rewriteItem);
-
-            input.addEventListener('blur', function () {
-                tds[i].textContent = input.value;
-                tds[i].addEventListener('click', rewriteItem);
-            });
-        }*/
-
-    }
-
-    createTable();
-
-}
-
-
-function arrayObject2() {
+// working with mentor
+function arrayObject() {
     let block = document.getElementById('basic30-block');
     let employees = [
-        {name: 'employee1', age: 30, salary: 400, position:"worker", gender: 'female'},
-        {name: 'employee2', age: 31, salary: 500, position:"accountant", gender: 'male'},
-        {name: 'employee3', age: 32, salary: 600, position:"secretary", gender: 'female'},
-        {name: 'employee3', age: 32, salary: 600, position:"worker", gender: 'male'},
-        {name: 'employee3', age: 32, salary: 600, position:"director", gender: 'male'},
-        {name: 'employee3', age: 32, salary: 600, position:"worker", gender: 'female'},
-        {name: 'employee3', age: 32, salary: 600, position:"worker", gender: 'male'},
+        {name: 'employee1', age: 30, salary: 400, position: "worker", gender: 'female'},
+        {name: 'employee2', age: 31, salary: 500, position: "accountant", gender: 'male'},
+        {name: 'employee3', age: 32, salary: 600, position: "secretary", gender: 'female'},
+        {name: 'employee3', age: 32, salary: 600, position: "worker", gender: 'male'},
+        {name: 'employee3', age: 32, salary: 600, position: "director", gender: 'male'},
+        {name: 'employee3', age: 32, salary: 600, position: "worker", gender: 'female'},
+        {name: 'employee3', age: 32, salary: 600, position: "worker", gender: 'male'},
     ];
 
     function createTable() {
@@ -921,12 +828,7 @@ function arrayObject2() {
     createTable();
 }
 
-//arrayObject1();
-arrayObject2();
-
-//--------------
-
-//PRACTICE #1
+//arrayObject();
 
 //--------------
 
