@@ -147,19 +147,3 @@ let game1 = new createGame();
 game1.init('practice4-setWord_btn', 'practice4-setLetter_btn', 'practice4-leaveGame_btn');
 
 //--------------
-
-//PRACTICUM #1
-
-//--------------
-
-//PRACTICUM #1
-
-//--------------
-
-//PRACTICUM #1
-
-//--------------
-
-//PRACTICUM #1
-
-//--------------

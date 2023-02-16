@@ -712,7 +712,7 @@ class Text {
     }
 
     getArrSymbols() {
-         return this.arrSymbols.textContent = ` ${this.newArr.push(this.getText()) - 1}`;
+        return this.arrSymbols.textContent = ` ${this.newArr.push(this.getText()) - 1}`;
     }
 
     getArrSentences() {
@@ -835,6 +835,51 @@ today.getDayWeek();
 //--------------
 
 //CLASS #19
+
+class Store {
+
+    //data storage in object
+    #storage = {};
+
+    set(key, value) {
+        // property class assigns parameter value
+        this.#storage[key] = value;
+    }
+
+    get(key) {
+        //return value
+        return this.#storage[key];
+    }
+
+   /* rewriteData(key, newValue) {
+       this.#storage[key] = newValue;
+
+       return this.#storage[key];
+    }
+
+    deleteData() {
+       return delete this.get();
+    }*/
+
+}
+
+let store = new Store;
+store.set('key', {num1: 1, num2: 2, num3: 3});
+
+let res = store.get('key.num1');
+/*
+let deleteItem = store.deleteData('key.num2');
+
+let newItem = store.rewriteData('key.num2', '!');
+*/
+
+console.log(res);
+
+//return boolean value
+/*console.log(deleteItem);
+
+console.log(newItem);*/
+
 
 //--------------
 
