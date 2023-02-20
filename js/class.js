@@ -172,7 +172,7 @@ class ArithmeticOperations {
     }
 
     constructor(arr) {
-        // property our class assigns parameter value
+        // property of the class assigns parameter value
         this.#arr = arr;
     }
 
@@ -199,17 +199,66 @@ class ArithmeticOperations {
 }
 
 class Task1 extends ArithmeticOperations {
-    solve() {
+    showCurrentArr() {
         let paragraph = document.getElementById('class4-arr');
+        for (let elem of input) {
+            paragraph.textContent += ` ${elem} |`;
+        }
+    }
+
+    solve() {
+        let paragraph = document.getElementById('class4-even_nums');
         for (let number of this.getEvenNumbers()) {
             paragraph.textContent += ` ${number} |`;
         }
     }
+
+    solveMean() {
+
+    }
 }
 
 class Task2 extends ArithmeticOperations {
-    solve() {
-        console.log('Done!');
+    solveLargestNum() {
+        let max = this.getData()[0];
+        let paragraph = document.getElementById('class4-large_num');
+        for (let i = 0; i < this.getData().length; i++) {
+            if (this.getData()[i] > max) {
+                max = this.getData()[i];
+            }
+        }
+        paragraph.textContent += ` ${max}`;
+    }
+
+    solveSmallestNum() {
+        let min = this.getData()[0];
+        let paragraph = document.getElementById('class4-small_num');
+        for (let i = 0; i < this.getData().length; i++) {
+            if (this.getData()[i] < min) {
+                min = this.getData()[i];
+            }
+        }
+        paragraph.textContent += ` ${min}`;
+    }
+
+    solveLargestEvenNum(multiply = 5) {
+        let max = this.getEvenNumbers()[0];
+        let paragraph = document.getElementById('class4-large_even');
+        for (let number of this.getEvenNumbers(multiply)) {
+            if (number > max) {
+                max = number;
+            }
+        }
+
+        paragraph.textContent += ` ${max}`;
+    }
+
+    solveTotalEvenElem() {
+        let total = 0;
+        let paragraph = document.getElementById('class4-total_evenElems');
+        total = this.getEvenNumbers().length;
+
+        paragraph.textContent += ` ${total}`;
     }
 }
 
@@ -222,8 +271,14 @@ let input = [
 ];
 let task1 = new Task1(input);
 let task2 = new Task2(input);
+
+task1.showCurrentArr();
 task1.solve();
-task2.solve();
+
+task2.solveLargestNum();
+task2.solveSmallestNum();
+task2.solveLargestEvenNum();
+task2.solveTotalEvenElem();
 
 //--------------
 
@@ -841,45 +896,50 @@ class Store {
     //data storage in object
     #storage = {};
 
-    set(key, value) {
-        // property class assigns parameter value
-        this.#storage[key] = value;
-    }
+    get(dataKey) {
+        let [key, property] = dataKey.split('.');
 
-    get(key) {
+        if (this.#storage[key] === undefined) {
+            return false;
+        }
+
+        let value = this.#storage[key];
+
+        if (property) {
+            value = value[property];
+        }
+
         //return value
-        return this.#storage[key];
+        return value;
     }
 
-   /* rewriteData(key, newValue) {
-       this.#storage[key] = newValue;
+    set(dataKey, newValue) {
+        let [key, property] = dataKey.split('.');
 
-       return this.#storage[key];
+        if (property) {
+            if (this.get(key)) {
+                this.#storage[key][property] = newValue;
+            } else {
+                this.set(key, {[property]: newValue});
+            }
+        } else {
+            this.#storage[key] = newValue;
+        }
     }
 
-    deleteData() {
-       return delete this.get();
-    }*/
+    delete(dataKey) {
+        let [key, property] = dataKey.split('.');
+
+        return delete this.#storage[key][property];
+    }
 
 }
 
 let store = new Store;
-store.set('key', {num1: 1, num2: 2, num3: 3});
+store.set('fruits', {mango: 1, apple: 3, banana: 6});
 
-let res = store.get('key.num1');
-/*
-let deleteItem = store.deleteData('key.num2');
-
-let newItem = store.rewriteData('key.num2', '!');
-*/
-
-console.log(res);
-
-//return boolean value
-/*console.log(deleteItem);
-
-console.log(newItem);*/
-
+store.set('books.fantasy', '50');
+store.delete('books.fantasy');
 
 //--------------
 

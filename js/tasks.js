@@ -54,7 +54,7 @@ function maxNumberOfFive() {
     console.log(max);
 }
 
-//maxNumberOfFive();
+maxNumberOfFive();
 
 //--------------
 
