@@ -69,6 +69,22 @@ async function showAvatar() {
 showAvatar();
 
 //--------------
+
+function ex3() {
+
+    let text = '{"name":"John", "age":30, "city":"New York"}';
+    let obj = JSON.parse(text);
+
+    let block = document.getElementById('ex2-block');
+    let paragraph = document.createElement('p');
+    paragraph.textContent = ` ${obj.name}, ${obj.age}`;
+
+    block.appendChild(paragraph);
+}
+
+//ex3();
+
+
 //--------------
 //--------------
 //--------------
