@@ -107,26 +107,39 @@ function ex4() {
 //--------------
 
 //PRACTICE #3
-async function showProducts(currentPage, showPerPage
-) {
+async function showProducts(currentPage, showPerPage) {
+
+    let block = document.getElementById('pr3-block');
+    let btnNext = document.getElementById('next-btn');
+
+    btnNext.addEventListener('click', nextItems);
+
     let currentPageSkip = currentPage * showPerPage;
     let url = `https://dummyjson.com/products?limit=${showPerPage}&skip=${currentPageSkip}&select=title,price`;
 
     let response = await fetch(url);
     let result = await response.json();
 
-    let block = document.getElementById('pr3-block');
-    let products = document.createElement('p');
-
-    for (let item of result['products']) {
-        products.innerHTML += item.title + ' - ';
+    //async loop return only Promise, get data from server.
+    // The order is guaranteed because the next request will not start until the previous one has finished.
+    for await (let item of result['products']) {
+        let paragraphs = document.createElement('p');
+        paragraphs.innerHTML += item.title;
+        block.appendChild(paragraphs);
     }
-    products.innerHTML += '<br>'
 
+        function nextItems() {
+        let paragraphs = document.querySelectorAll('#pr3-block p');
+        for(let i = 0; i < paragraphs.length; i++) {
+            paragraphs.innerHTML += '';
+            //++currentPage;
+        }
+    }
 
-    block.appendChild(products);
 }
 
 let currentPage = 0;
 let showPerPage = 10;
+
+showProducts(currentPage, showPerPage);
 
