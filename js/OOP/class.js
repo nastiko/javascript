@@ -942,7 +942,3 @@ store.set('books.fantasy', '50');
 store.delete('books.fantasy');
 
 //--------------
-
-//CLASS #1
-
-//--------------

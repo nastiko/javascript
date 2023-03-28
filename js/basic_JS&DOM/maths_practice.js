@@ -55,9 +55,5 @@ let perimeterTriangle = firstSide + (Number(secondSide)) + (Number(thirdSide));
 
 console.log(perimeterTriangle);*/
 
+//--------------
 
-//--------------
-//--------------
-//--------------
-//--------------
-//--------------

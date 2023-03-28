@@ -77,9 +77,7 @@ let ccc = 3;
 console.log(aaa + bbb + ccc);//it was console.log(aaa + bbb + ссс-Russian letter); */
 
 //--------------
-//--------------
-//--------------
-//--------------
+
 
 
 
