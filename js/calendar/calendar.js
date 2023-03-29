@@ -12,13 +12,15 @@ class Calendar {
     #year;
     #leftArrow;
     #rightArrow;
+    #cells
 
-    constructor(days, month, year, leftArrow, rightArrow) {
+    constructor(days, month, year, leftArrow, rightArrow, cells) {
         this.#days = days;
         this.#month = month;
         this.#year = year;
         this.#leftArrow = leftArrow;
         this.#rightArrow = rightArrow;
+        this.#cells = cells;
     }
 
     getDays() {
@@ -30,7 +32,7 @@ class Calendar {
 
         for (let i = 1; i <= this.getLastDay(); i++) {
             if (i === new Date().getDate() && date.getMonth() === new Date().getMonth()) {
-                days += `<div class="today">${i}</div>`;
+                days += `<div class="today clicked">${i}</div>`;
             } else {
                 days += `<div>${i}</div>`;
             }
@@ -51,7 +53,7 @@ class Calendar {
     }
 
     getNextDays() {
-        return 7 - this.getLastDayIndex();
+        return 7 - this.getLastDayIndex() - 1;
     }
 
     getFirstDayIndex() {
@@ -80,15 +82,28 @@ class Calendar {
         this.update();
     }
 
+    addClickAction() {
+        this.#cells = document.querySelectorAll('#days div:not(.prev-date,.next-date)');
+        for (let i = 0; i < this.#cells.length; i++) {
+            this.#cells[i].addEventListener('click', function () {
+                document.querySelectorAll('#days div.clicked').forEach((el) => {
+                    el.classList.remove('clicked')
+                });
+                this.classList.add('clicked');
+            });
+        }
+    }
+
+
     init(daysId, dayMonthId, yearId, leftArrow, rightArrow) {
         this.#days = document.getElementById(daysId);
         this.#month = document.getElementById(dayMonthId);
         this.#year = document.getElementById(yearId);
-        this.leftArrow = document.getElementById(leftArrow);
-        this.rightArrow = document.getElementById(rightArrow);
+        this.#leftArrow = document.getElementById(leftArrow);
+        this.#rightArrow = document.getElementById(rightArrow);
 
-        this.leftArrow.addEventListener('click', () => this.getPrevMonth());
-        this.rightArrow.addEventListener('click', () => this.getNextMonth());
+        this.#leftArrow.addEventListener('click', () => this.getPrevMonth());
+        this.#rightArrow.addEventListener('click', () => this.getNextMonth());
 
         this.update();
     }
@@ -98,6 +113,7 @@ class Calendar {
         this.getLastDay();
         this.getDayMonth();
         this.getYear();
+        this.addClickAction();
     }
 }
 
@@ -107,3 +123,4 @@ let date = new Date();
 // check last day in month: date.setMonth(1);
 
 calendar.init('days', 'day-month', 'year', 'left-arrow', 'right-arrow');
+calendar.addClickAction();

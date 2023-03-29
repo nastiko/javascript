@@ -303,7 +303,7 @@ function eventDelegation() {
 
 }
 
-//eventDelegation();
+eventDelegation();
 
 //--------------
 

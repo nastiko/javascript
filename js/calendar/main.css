@@ -103,11 +103,18 @@
     background-color: var(--light-brown);
 }
 
-.days div:hover:not(.today) {
+.days div:hover:not(.today,.prev-date,.next-date) {
     border: 0.2rem solid var(--light-brown);
     cursor: pointer;
 }
 
 .prev-date, .next-date {
     opacity: .5;
+}
+
+#days div {
+    background-color: transparent;
+}
+#days div.clicked {
+    background-color: var(--light-brown);
 }
