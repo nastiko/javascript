@@ -50,14 +50,20 @@
 
 .left-arrow {
     background-image: url("img/left-arrow.svg");
+    background-repeat: no-repeat;
     width: 16px;
     height: 16px;
+    margin: 20px;
+    cursor: pointer;
 }
 
 .right-arrow {
     background-image: url("img/right-arrow.svg");
+    background-repeat: no-repeat;
     width: 16px;
     height: 16px;
+    margin: 20px;
+    cursor: pointer;
 }
 
 .month {
@@ -100,11 +106,13 @@
 }
 
 .today {
-    background-color: var(--light-brown);
+    background-color: var(--chinese-silver) !important;
+    color: var(--black-magic) !important;
 }
 
-.days div:hover:not(.today,.prev-date,.next-date) {
-    border: 0.2rem solid var(--light-brown);
+.days div:hover:not(.today, .prev-date,.next-date) {
+    background-color: var(--light-brown) !important;
+    color: var(--white) !important;
     cursor: pointer;
 }
 
@@ -114,7 +122,9 @@
 
 #days div {
     background-color: transparent;
+    color: var(--black-magic);
 }
 #days div.clicked {
     background-color: var(--light-brown);
+    color: var(--white);
 }

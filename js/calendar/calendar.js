@@ -12,15 +12,16 @@ class Calendar {
     #year;
     #leftArrow;
     #rightArrow;
-    #cells
 
-    constructor(days, month, year, leftArrow, rightArrow, cells) {
-        this.#days = days;
-        this.#month = month;
-        this.#year = year;
-        this.#leftArrow = leftArrow;
-        this.#rightArrow = rightArrow;
-        this.#cells = cells;
+    #date = new Date();
+    #selectedDate = {};
+
+    constructor(daysId, dayMonthId, yearId, leftArrow, rightArrow) {
+        this.#days = document.getElementById(daysId);
+        this.#month = document.getElementById(dayMonthId);
+        this.#year = document.getElementById(yearId);
+        this.#leftArrow = document.getElementById(leftArrow);
+        this.#rightArrow = document.getElementById(rightArrow);
     }
 
     getDays() {
@@ -31,11 +32,19 @@ class Calendar {
         }
 
         for (let i = 1; i <= this.getLastDay(); i++) {
-            if (i === new Date().getDate() && date.getMonth() === new Date().getMonth()) {
-                days += `<div class="today clicked">${i}</div>`;
-            } else {
-                days += `<div>${i}</div>`;
+            let elClass = '';
+
+            // check if current date is currently rendering element
+            if (i === new Date().getDate() && this.#date.getMonth() === new Date().getMonth()) {
+                elClass = "today";
             }
+
+            // check if saved date is currently rendered element
+            if(i === this.#selectedDate.day && this.#date.getMonth() === this.#selectedDate.month){
+                elClass += " clicked";
+            }
+
+            days += `<div class="${elClass}" data-month="${this.#date.getMonth()}" data-day="${i}" data-year="${this.#date.getFullYear()}">${i}</div>`;
         }
 
         for (let j = 1; j <= this.getNextDays(); j++) {
@@ -45,63 +54,65 @@ class Calendar {
     }
 
     getLastDay() {
-        return new Date(date.getFullYear(), date.getMonth() + 1, 0).getDate();
+        return new Date(this.#date.getFullYear(), this.#date.getMonth() + 1, 0).getDate();
     }
 
     getPrevDays() {
-        return new Date(date.getFullYear(), date.getMonth(), 0).getDate();
+        return new Date(this.#date.getFullYear(), this.#date.getMonth(), 0).getDate();
     }
 
     getNextDays() {
-        return 7 - this.getLastDayIndex() - 1;
+        return 7 - this.getLastDayIndex();
     }
 
+    // get index of the first day of the month
     getFirstDayIndex() {
-        return date.getDay();
+        return new Date(this.#date.getFullYear(), this.#date.getMonth(), 0).getDay();
     }
 
     getLastDayIndex() {
-        return new Date(date.getFullYear(), date.getMonth() + 1, 0).getDay();
+        return new Date(this.#date.getFullYear(), this.#date.getMonth() + 1, 0).getDay();
     }
 
     getDayMonth() {
-        this.#month.innerHTML = `${(this.initMonth[date.getMonth()]).toUpperCase()}`;
+        this.#month.innerHTML = `${(this.initMonth[this.#date.getMonth()]).toUpperCase()}`;
     }
 
     getYear() {
-        this.#year.innerHTML = `${date.getFullYear()}`;
+        this.#year.innerHTML = `${this.#date.getFullYear()}`;
     }
 
     getPrevMonth() {
-        date.setMonth(date.getMonth() - 1);
+        this.#date.setMonth(this.#date.getMonth() - 1);
         this.update();
     }
 
     getNextMonth() {
-        date.setMonth(date.getMonth() + 1);
+        this.#date.setMonth(this.#date.getMonth() + 1);
         this.update();
     }
 
     addClickAction() {
-        this.#cells = document.querySelectorAll('#days div:not(.prev-date,.next-date)');
-        for (let i = 0; i < this.#cells.length; i++) {
-            this.#cells[i].addEventListener('click', function () {
-                document.querySelectorAll('#days div.clicked').forEach((el) => {
-                    el.classList.remove('clicked')
-                });
-                this.classList.add('clicked');
-            });
+        let cells = document.querySelectorAll('#days div:not(.prev-date,.next-date)');
+        for (let i = 0; i < cells.length; i++) {
+            cells[i].addEventListener('click', (event) => this.clickHandler(event));
         }
     }
 
+    clickHandler(event) {
+        // visually mark element as clicked
+        document.querySelectorAll('#days div.clicked').forEach((el) => {
+            el.classList.remove('clicked');
+        });
+        event.target.classList.add('clicked');
 
-    init(daysId, dayMonthId, yearId, leftArrow, rightArrow) {
-        this.#days = document.getElementById(daysId);
-        this.#month = document.getElementById(dayMonthId);
-        this.#year = document.getElementById(yearId);
-        this.#leftArrow = document.getElementById(leftArrow);
-        this.#rightArrow = document.getElementById(rightArrow);
+        // save selected date
+        this.#selectedDate.day = parseInt(event.target.dataset.day);
+        this.#selectedDate.month = parseInt(event.target.dataset.month);
+        this.#selectedDate.year = parseInt(event.target.dataset.year);
+    }
 
+    init() {
         this.#leftArrow.addEventListener('click', () => this.getPrevMonth());
         this.#rightArrow.addEventListener('click', () => this.getNextMonth());
 
@@ -117,10 +128,5 @@ class Calendar {
     }
 }
 
-let calendar = new Calendar();
-let date = new Date();
-
-// check last day in month: date.setMonth(1);
-
-calendar.init('days', 'day-month', 'year', 'left-arrow', 'right-arrow');
-calendar.addClickAction();
+let calendar = new Calendar('days', 'day-month', 'year', 'left-arrow', 'right-arrow');
+calendar.init();
