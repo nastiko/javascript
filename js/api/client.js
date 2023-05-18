@@ -128,9 +128,9 @@ async function showProducts(currentPage, showPerPage) {
         block.appendChild(paragraphs);
     }
 
-        function nextItems() {
+    function nextItems() {
         let paragraphs = document.querySelectorAll('#pr3-block p');
-        for(let i = 0; i < paragraphs.length; i++) {
+        for (let i = 0; i < paragraphs.length; i++) {
             paragraphs.innerHTML += '';
             //++currentPage;
         }

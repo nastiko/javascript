@@ -660,7 +660,7 @@ function styleCells() {
     }
 }
 
-styleCells();
+//styleCells();
 
 //--------------
 
