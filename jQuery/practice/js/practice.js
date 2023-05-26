@@ -164,7 +164,7 @@ function multiplyNumber() {
 //PRACTICE #16
 function removeElems() {
     $('#practice16 div p').on('click', (event) => {
-    $(event.currentTarget).prev().not('h2').remove();
+        $(event.currentTarget).prev().not('h2').remove();
     });
 
     $('#practice16 div p').on('click', () => {
@@ -185,50 +185,72 @@ function swapElems() {
     prevElem.after(currentElem);
 }
 
-swapElems();
+//swapElems();
 
 //--------------
 
-//PRACTICE #1
+//PRACTICE #18
+function wrapElem2() {
+    $('#practice18 :header').wrapAll('<div></div>');
+    $('#practice18 :header').siblings().wrap('<div class="www"></div>');
+    $('#practice18 :header').eq(2).unwrap();
+}
+
+//wrapElem2();
 
 //--------------
 
-//PRACTICE #1
+//PRACTICE #19
+function getParent() {
+    $('#practice19 #bbb').parent().attr('class', 'parent').css({"color": "red", "border": "2px solid red"});
+}
+
+//getParent();
 
 //--------------
 
-//PRACTICE #1
+//PRACTICE #20
+function styleElem4() {
+    $('#practice20 div p').append('!').closest('#practice20 .www').css('color', 'red');
+    $('#practice20 div p').last().on('click', function() {
+        $(this).append('<p>Added a new elem</p>');
+    });
+
+    $('#practice20 div').css({
+        border: '1px solid red',
+        height: '200px',
+        width: '200px'
+    });
+
+    let height = $('#practice20 div').height();
+    let width = $('#practice20 div').width();
+
+    let increaseHeight = height * 2;
+    let increaseWidth = width * 2;
+
+    let total = increaseHeight + increaseWidth;
+    console.log(total);
+
+    $('#practice20 div').css({
+        height: increaseHeight,
+        width: increaseWidth
+    });
+}
+
+//styleElem4();
 
 //--------------
 
-//PRACTICE #1
+//PRACTICE #21
+function checkCheckbox() {
+    $('#practice21 input').on('click', () => {
+        let checked = $('#practice21 input:checkbox:checked').length;
+        if(checked >= 2) {
+            $('#practice21 input:checkbox:not(:checked)').attr("disabled", true);
+        }
+    });
+}
 
-//--------------
-
-//PRACTICE #1
-
-//--------------
-
-//PRACTICE #1
-
-//--------------
-
-//PRACTICE #1
-
-//--------------
-
-//PRACTICE #1
-
-//--------------
-
-//PRACTICE #1
-
-//--------------
-
-//PRACTICE #1
-
-//--------------
-
-//PRACTICE #1
+//checkCheckbox();
 
 //--------------
