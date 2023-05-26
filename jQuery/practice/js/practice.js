@@ -133,10 +133,101 @@ function styleElem3() {
 
 //--------------
 
-//PRACTICE #23
+//PRACTICE #14
+function cloneElems() {
+    $('#practice14 div p').each(function (index) {
+        $(this).clone().insertBefore($(this)).append(' - his index is: ' + index);
+    });
+}
+
+//cloneElems();
 
 //--------------
 
+//PRACTICE #15
+function multiplyNumber() {
+    $('#practice15 ul').children().map(function (index) {
+        let element = Number($(this).text() * index);
+        $(this).append(' * ' + index + ' = ' + element);
+    });
+
+    $('#practice15 ul').children().on('click', (event) => {
+        $(event.currentTarget).prev().remove();
+        $(event.currentTarget).next().remove();
+    });
+}
+
+//multiplyNumber();
+
+//--------------
+
+//PRACTICE #16
+function removeElems() {
+    $('#practice16 div p').on('click', (event) => {
+    $(event.currentTarget).prev().not('h2').remove();
+    });
+
+    $('#practice16 div p').on('click', () => {
+        $('p:nth-child(5)').remove();
+    });
+}
+
+//removeElems();
+
+//--------------
+
+//PRACTICE #17
+function swapElems() {
+    let currentElem = $('#practice17 .aaa').css('color', 'red');
+    let prevElem = currentElem.next();
+
+    currentElem.before(prevElem);
+    prevElem.after(currentElem);
+}
+
+swapElems();
+
+//--------------
+
+//PRACTICE #1
+
+//--------------
+
+//PRACTICE #1
+
+//--------------
+
+//PRACTICE #1
+
+//--------------
+
+//PRACTICE #1
+
+//--------------
+
+//PRACTICE #1
+
+//--------------
+
+//PRACTICE #1
+
+//--------------
+
+//PRACTICE #1
+
+//--------------
+
+//PRACTICE #1
+
+//--------------
+
+//PRACTICE #1
+
+//--------------
+
+//PRACTICE #1
+
+//--------------
 
 //PRACTICE #1
 
