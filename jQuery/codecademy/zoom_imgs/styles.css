@@ -83,6 +83,7 @@ nav .container .menu-button {
 
 .nav-menu .container ul li {
     padding: 0.25em 2em;
+    cursor: pointer;
 }
 
 .nav-menu .container ul li:first-child {
@@ -170,6 +171,7 @@ nav .container .menu-button {
     background-color: #EFEFEF;
     display: flex;
     justify-content: space-between;
+    cursor: context-menu;
 }
 
 .product-card .product-details h4,
@@ -230,6 +232,7 @@ nav .container .menu-button {
     width: 100%;
     text-align: center;
     margin-right: 2px;
+    cursor: pointer;
 }
 
 .product-card .buy-now-button {
@@ -278,4 +281,8 @@ footer .container {
 
 footer .container object {
     width: 4.5em;
+}
+
+footer .container .contact-block {
+    padding: 0 1.25em;
 }
