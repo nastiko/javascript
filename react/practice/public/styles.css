@@ -1,0 +1,33 @@
+body {
+    padding: 0;
+    margin: 0;
+}
+
+.navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.nav-menu {
+    display: flex;
+    gap: 25px;
+    list-style: none;
+}
+
+.img-style {
+    width: 40px;
+}
+
+.main-style h1 {
+    text-align: center;
+}
+
+.main-style ol {
+    margin: 32px 0;
+}
+
+.footer-style {
+    background-color: #6b6b6b;
+    padding: 25px 0 25px 5px;
+}
