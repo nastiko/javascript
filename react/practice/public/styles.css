@@ -1,33 +1,87 @@
 body {
+    font-family: Inter, sans-serif;
+    background-color: #282D35;
+    height: 100vh;
     padding: 0;
     margin: 0;
+}
+
+
+/*Generale styles*/
+.width-container {
+    width: 1420px;
+    margin: 0 auto;
+}
+
+
+/*Headers styles*/
+header, footer {
+    background-color: #21222A;
 }
 
 .navbar {
     display: flex;
     align-items: center;
     justify-content: space-between;
+    height: 91px;
 }
 
-.nav-menu {
+.logo {
     display: flex;
-    gap: 25px;
-    list-style: none;
+    align-items: center;
 }
 
 .img-style {
     width: 40px;
 }
 
-.main-style h1 {
-    text-align: center;
+.logo-title {
+    font-size: 23px;
+    font-weight: 700;
+    color: #61DAFB;
+    margin-left: 10px;
 }
 
-.main-style ol {
-    margin: 32px 0;
+.project-title {
+    font-size: 16px;
+    color: #DEEBF8;
 }
 
-.footer-style {
-    background-color: #6b6b6b;
-    padding: 25px 0 25px 5px;
+/*Main styles*/
+.h1-style {
+    color: #FFFFFF;
+    font-size: 40px;
+    font-weight: 600;
+    margin-top: 0;
+    padding-top: 25px;
+}
+
+.bg-img {
+    background-image: url(/images/bg-logo.svg);
+    background-repeat: no-repeat;
+    background-position-x: right;
+    background-position-y: center;
+}
+
+.list-style {
+    max-width: 400px;
+}
+
+.list-style > li {
+    color: #FFFFFF;
+    padding-block: 10px;
+}
+
+.list-style > li::marker {
+    color: #61DAFB;
+    font-size: 25px
+}
+
+/*Footer*/
+.footer-info {
+    display: flex;
+    align-items: center;
+    font-size: 14px;
+    color: #DEEBF8;
+    height: 70px;
 }
